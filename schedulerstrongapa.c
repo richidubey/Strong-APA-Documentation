@@ -16,10 +16,13 @@ _Scheduler_strong_APA_Get_context( const Scheduler_Control *scheduler )
  * Sets the chain containing all the nodes to empty 
  * and initializes the SMP scheduler.
  *
- * @param scheduler Scheduler_Control used to get 
+ * @param scheduler used to get 
  * reference to Strong APA scheduler context 
  *
+ * @return void
+ *
  * @see _Scheduler_strong_APA_Node_initialize()
+ *
  *
  */
 void _Scheduler_strong_APA_Initialize( const Scheduler_Control *scheduler )
