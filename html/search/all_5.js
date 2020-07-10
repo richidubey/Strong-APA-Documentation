@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['strong_2dapa_2ddocumentation',['Strong-APA-Documentation',['../md_README.html',1,'']]],
-  ['scheduler_5fstrong_5fapa_5fcontext',['Scheduler_strong_APA_Context',['../structScheduler__strong__APA__Context.html',1,'']]],
-  ['scheduler_5fstrong_5fapa_5fnode',['Scheduler_strong_APA_Node',['../structScheduler__strong__APA__Node.html',1,'']]],
-  ['schedulerstrongapa_2ec',['schedulerstrongapa.c',['../schedulerstrongapa_8c.html',1,'']]],
-  ['schedulerstrongapa_2eh',['schedulerstrongapa.h',['../schedulerstrongapa_8h.html',1,'']]]
+  ['node',['Node',['../structScheduler__strong__APA__Node.html#aed93ad80a3757ffbbe0a0d1b5426b3cc',1,'Scheduler_strong_APA_Node']]],
+  ['nodes',['Nodes',['../structScheduler__strong__APA__Context.html#a07cebd5016654b5c7d05ec9982449d4d',1,'Scheduler_strong_APA_Context']]]
 ];
