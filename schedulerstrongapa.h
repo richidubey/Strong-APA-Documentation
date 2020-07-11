@@ -6,19 +6,6 @@
  * @brief Strong APA Scheduler API
  */
 
-/*
- * Copyright (c) 2013, 2018 embedded brains GmbH.  All rights reserved.
- *
- *  embedded brains GmbH
- *  Dornierstr. 4
- *  82178 Puchheim
- *  Germany
- *  <rtems@embedded-brains.de>
- *
- * The license and distribution terms for this file may be
- * found in the file LICENSE in this distribution or at
- * http://www.rtems.org/license/LICENSE.
- */
 
 #ifndef _RTEMS_SCORE_SCHEDULERSTRONGAPA_H
 #define _RTEMS_SCORE_SCHEDULERSTRONGAPA_H
@@ -30,25 +17,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
-
-/**
- * @defgroup RTEMSScoreSchedulerStrongAPA Strong APA Scheduler
- *
- * @ingroup RTEMSScoreSchedulerSMP
- *
- * @brief Strong APA Scheduler
- *
- * This is an implementation of the global fixed priority scheduler (G-FP).  It
- * uses one ready chain per priority to ensure constant time insert operations.
- * The scheduled chain uses linear insert operations and has at most processor
- * count entries.  Since the processor and priority count are constants all
- * scheduler operations complete in a bounded execution time.
- *
- * The the_thread preempt mode will be ignored.
- *
- * @{
- */
-
 
  
  /**

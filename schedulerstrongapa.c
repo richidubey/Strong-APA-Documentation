@@ -1,3 +1,11 @@
+/**
+ * @file
+ *
+ * @ingroup RTEMSScoreSchedulerStrongAPA
+ *
+ * @brief Strong APA Scheduler Implementation
+ */
+
 -----------------------------------------------------------------------------------
 ToAdd:
     _Scheduler_strong_APA_Initialize, \  --------------
