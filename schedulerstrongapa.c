@@ -1,4 +1,56 @@
- static inline Scheduler_strong_APA_Node *
+-----------------------------------------------------------------------------------
+ToAdd:
+    _Scheduler_strong_APA_Initialize, \  --------------
+    _Scheduler_default_Schedule, \
+    _Scheduler_strong_APA_Yield, \
+    _Scheduler_strong_APA_Block, \
+    _Scheduler_strong_APA_Unblock, \
+    _Scheduler_strong_APA_Update_priority, \
+    _Scheduler_default_Map_priority, \
+    _Scheduler_default_Unmap_priority, \
+    _Scheduler_strong_APA_Ask_for_help, \
+    _Scheduler_strong_APA_Reconsider_help_request, \
+    _Scheduler_strong_APA_Withdraw_node, \
+    _Scheduler_default_Pin_or_unpin, \
+    _Scheduler_default_Pin_or_unpin, \
+    _Scheduler_strong_APA_Add_processor, \
+    _Scheduler_strong_APA_Remove_processor, \
+    _Scheduler_strong_APA_Node_initialize, \
+    _Scheduler_default_Node_destroy, \
+    _Scheduler_default_Release_job, \
+    _Scheduler_default_Cancel_job, \
+    _Scheduler_default_Tick, \
+    _Scheduler_SMP_Start_idle \
+    _Scheduler_strong_APA_Set_affinity \
+  
+    SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY \
+    
+    
+    Refer from
+    _Scheduler_EDF_SMP_Initialize, \
+    _Scheduler_default_Schedule, \
+    _Scheduler_EDF_SMP_Yield, \
+    _Scheduler_EDF_SMP_Block, \
+    _Scheduler_EDF_SMP_Unblock, \
+    _Scheduler_EDF_SMP_Update_priority, \
+    _Scheduler_EDF_Map_priority, \
+    _Scheduler_EDF_Unmap_priority, \
+    _Scheduler_EDF_SMP_Ask_for_help, \
+    _Scheduler_EDF_SMP_Reconsider_help_request, \
+    _Scheduler_EDF_SMP_Withdraw_node, \
+    _Scheduler_EDF_SMP_Pin, \
+    _Scheduler_EDF_SMP_Unpin, \
+    _Scheduler_EDF_SMP_Add_processor, \
+    _Scheduler_EDF_SMP_Remove_processor, \
+    _Scheduler_EDF_SMP_Node_initialize, \
+    _Scheduler_default_Node_destroy, \
+    _Scheduler_EDF_Release_job, \
+    _Scheduler_EDF_Cancel_job, \
+    _Scheduler_default_Tick, \
+    _Scheduler_EDF_SMP_Start_idle, \
+    _Scheduler_EDF_SMP_Set_affinity \
+  -------------------------------------------------------------------------------------------
+static inline Scheduler_strong_APA_Node *
 _Scheduler_strong_APA_Node_downcast( Scheduler_Node *node )
 {
   return (Scheduler_strong_APA_Node *) node;
