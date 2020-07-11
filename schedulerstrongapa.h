@@ -18,6 +18,19 @@
 extern "C" {
 #endif /* __cplusplus */
 
+/**
+ * @defgroup RTEMSScoreSchedulerStrongAPA Strong APA Scheduler
+ *
+ * @ingroup RTEMSScoreSchedulerSMP
+ *
+ * @brief Strong APA Scheduler
+ *
+ * This is an implementation of the Whahahahahaha
+ *
+ * WhahahahahHHHAAAAHHHAA
+ *
+ * @{
+ */
  
  /**
  * @brief Scheduler context for Strong APA
