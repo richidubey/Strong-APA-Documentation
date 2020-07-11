@@ -50,6 +50,15 @@ ToAdd:
     _Scheduler_EDF_SMP_Start_idle, \
     _Scheduler_EDF_SMP_Set_affinity \
   -------------------------------------------------------------------------------------------
+  
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
+
+#include <rtems/score/schedulerstrongapa.h>
+#include <rtems/score/schedulersmpimpl.h>
+
 static inline Scheduler_strong_APA_Node *
 _Scheduler_strong_APA_Node_downcast( Scheduler_Node *node )
 {
