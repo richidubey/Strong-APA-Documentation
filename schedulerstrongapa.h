@@ -32,6 +32,13 @@ extern "C" {
  * @{
  */
  
+  /**
+ * @brief CPU Structure for Strong APA
+ * scheduler.
+ *
+ * This structure stores nodes associated
+ * with a CPU and the currently scheduled node.
+ */
  typedef struct {
   /**
    * @brief Chain of nodes that have affinity to this CPU.
@@ -77,6 +84,14 @@ typedef struct {
    * @brief SMP scheduler node.
    */
   Scheduler_SMP_Node Base;
+  
+ /**
+   * @brief Chain node for 
+   * Scheduler_strong_APA_Context::
+   * Scheduler_strong_APA_CPU::
+   * affineNode.
+   */
+  Chain_Node Node;
 
   /**
    * @brief The associated affinity set of this node.

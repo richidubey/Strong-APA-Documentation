@@ -1,4 +1,4 @@
 <map id="Scheduler_strong_APA_Context" name="Scheduler_strong_APA_Context">
-<area shape="rect" id="node2" href="$structScheduler__strong__APA__CPU.html" title="Scheduler_strong_APA_CPU" alt="" coords="6,95,199,121"/>
+<area shape="rect" id="node2" href="$structScheduler__strong__APA__CPU.html" title="CPU Structure for Strong APA scheduler. " alt="" coords="6,95,199,121"/>
 <area shape="rect" id="node3" href="$structScheduler__strong__APA__Node.html" title="Scheduler node specialization for Strong APA schedulers. " alt="" coords="5,5,200,32"/>
 </map>

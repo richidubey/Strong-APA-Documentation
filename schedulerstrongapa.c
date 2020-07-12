@@ -17,7 +17,7 @@ ToAdd:
     _Scheduler_strong_APA_Ask_for_help, \
     _Scheduler_strong_APA_Reconsider_help_request, \
     _Scheduler_strong_APA_Withdraw_node, \
-    _Scheduler_strong_APA_Add_processor, \
+    _Scheduler_strong_APA_Add_processor, \  ****************************
     _Scheduler_strong_APA_Remove_processor, \
     _Scheduler_strong_APA_Node_initialize, \      ****************************
     _Scheduler_strong_APA_Set_affinity \	********************************
