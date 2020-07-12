@@ -9,26 +9,17 @@
 -----------------------------------------------------------------------------------
 ToAdd:
     _Scheduler_strong_APA_Initialize, \  ****************************
-    _Scheduler_default_Schedule, \
+    
     _Scheduler_strong_APA_Yield, \
     _Scheduler_strong_APA_Block, \
     _Scheduler_strong_APA_Unblock, \
     _Scheduler_strong_APA_Update_priority, \
-    _Scheduler_default_Map_priority, \
-    _Scheduler_default_Unmap_priority, \
     _Scheduler_strong_APA_Ask_for_help, \
     _Scheduler_strong_APA_Reconsider_help_request, \
     _Scheduler_strong_APA_Withdraw_node, \
-    _Scheduler_default_Pin_or_unpin, \
-    _Scheduler_default_Pin_or_unpin, \
     _Scheduler_strong_APA_Add_processor, \
     _Scheduler_strong_APA_Remove_processor, \
     _Scheduler_strong_APA_Node_initialize, \      ****************************
-    _Scheduler_default_Node_destroy, \
-    _Scheduler_default_Release_job, \
-    _Scheduler_default_Cancel_job, \
-    _Scheduler_default_Tick, \
-    _Scheduler_SMP_Start_idle \
     _Scheduler_strong_APA_Set_affinity \	********************************
   
     SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY \
@@ -279,11 +270,6 @@ static inline void _Scheduler_strong_APA_Insert_ready(
  
 }
 
-
-
-
-
-
 static inline void _Scheduler_strong_APA_Allocate_processor(
   Scheduler_Context *context,
   Scheduler_Node    *scheduled_base,
@@ -293,7 +279,7 @@ static inline void _Scheduler_strong_APA_Allocate_processor(
 {
   _Scheduler_strong_APA_Context     *self;
   _Scheduler_strong_APA_Node        *scheduled;
-  uint8_t                        rqi;
+  
 
   (void) victim_base;
   self = _Scheduler_strong_APA_Get_self( context );
@@ -337,10 +323,6 @@ static inline void _Scheduler_strong_APA_Allocate_processor(
     victim_cpu
   );
 }
-
-
-
-
 
 static inline bool _Scheduler_strong_APA_Enqueue(
   Scheduler_Context *context,
@@ -397,6 +379,65 @@ bool _Scheduler_strong_APA_Set_affinity(
       _Scheduler_strong_APA_Allocate_processor
     );
 
-
   return true;
 }
+
+void _Scheduler_strong_APA_Add_processor(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *idle
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  _Scheduler_SMP_Add_processor(
+    context,
+    idle,
+    _Scheduler_strong_APA_Has_ready,
+    _Scheduler_strong_APA_Enqueue_scheduled,
+    _Scheduler_strong_APA_Register_idle
+  );
+}
+
+static inline bool _Scheduler_strong_APA_Has_ready( Scheduler_Context *context )
+{
+  Scheduler_EDF_SMP_Context *self = _Scheduler_strong_APA_Get_self( context );
+
+  return !_Chain_Is_empty(self->readyNodes);
+}
+
+static inline bool _Scheduler_strong_APA_Enqueue_scheduled(
+  Scheduler_Context *context,
+  Scheduler_Node    *node,
+  Priority_Control   insert_priority
+)
+{	//TODO: Check if you need to add the node to the scheduled node's chain list
+  return _Scheduler_SMP_Enqueue_scheduled(
+    context,
+    node,
+    insert_priority,
+    _Scheduler_SMP_Priority_less_equal,
+    _Scheduler_strong_APA_Extract_from_ready,
+    _Scheduler_strong_APA_Get_highest_ready,
+    _Scheduler_strong_APA_Insert_ready,
+    _Scheduler_SMP_Insert_scheduled,
+    _Scheduler_strong_APA_Move_from_ready_to_scheduled,
+    _Scheduler_strong_APA_Allocate_processor
+  );
+}
+
+static inline void _Scheduler_strong_APA_Register_idle(
+  Scheduler_Context *context,
+  Scheduler_Node    *idle_base,
+  Per_CPU_Control   *cpu
+)
+{
+  _Scheduler_strong_APA_Context *self;
+  _Scheduler_strong_APA_Node    *idle;
+
+  self = _Scheduler_strong_APA_Get_self( context );
+  idle = _Scheduler_strong_APA_Node_downcast( idle_base );
+  _Scheduler_strong_APA_Set_scheduled( self, idle, cpu );
+}
+
+
+
