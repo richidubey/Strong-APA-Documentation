@@ -78,7 +78,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:ae86cbf5fd8743267abe33bed6d8b0fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">SMP scheduler node.  <a href="#ae86cbf5fd8743267abe33bed6d8b0fe6">More...</a><br /></td></tr>
 <tr class="separator:ae86cbf5fd8743267abe33bed6d8b0fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed93ad80a3757ffbbe0a0d1b5426b3cc"><td class="memItemLeft" align="right" valign="top">Chain_Node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Node.html#aed93ad80a3757ffbbe0a0d1b5426b3cc">Node</a></td></tr>
-<tr class="memdesc:aed93ad80a3757ffbbe0a0d1b5426b3cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chain node for <a class="el" href="structScheduler__strong__APA__Context.html#a07cebd5016654b5c7d05ec9982449d4d" title="Chain of all nodes present in the scheduler. ">Scheduler_strong_APA_Context::Nodes</a>.  <a href="#aed93ad80a3757ffbbe0a0d1b5426b3cc">More...</a><br /></td></tr>
+<tr class="memdesc:aed93ad80a3757ffbbe0a0d1b5426b3cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chain node for <a class="el" href="structScheduler__strong__APA__Context.html#a5b31ff1b54bde351d53a41abee3e91ed" title="Chain of ready nodes present in the scheduler. ">Scheduler_strong_APA_Context::readyNodes</a> and <a class="el" href="structScheduler__strong__APA__Context.html#a144c4296c745b8d5bfa5e3a00fe14e81" title="Chain of scheduled nodes present in the scheduler. ">Scheduler_strong_APA_Context::scheduledNodes</a> .  <a href="#aed93ad80a3757ffbbe0a0d1b5426b3cc">More...</a><br /></td></tr>
 <tr class="separator:aed93ad80a3757ffbbe0a0d1b5426b3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e8928b11f1738a11c228780eb849989"><td class="memItemLeft" align="right" valign="top">Processor_mask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Node.html#a2e8928b11f1738a11c228780eb849989">affinity</a></td></tr>
 <tr class="memdesc:a2e8928b11f1738a11c228780eb849989"><td class="mdescLeft">&#160;</td><td class="mdescRight">The associated affinity set of this node.  <a href="#a2e8928b11f1738a11c228780eb849989">More...</a><br /></td></tr>
@@ -87,7 +87,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Scheduler node specialization for Strong APA schedulers. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00060">60</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00065">65</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a2e8928b11f1738a11c228780eb849989"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e8928b11f1738a11c228780eb849989">&#9670;&nbsp;</a></span>affinity</h2>
@@ -103,7 +103,7 @@ Public Attributes</h2></td></tr>
 
 <p>The associated affinity set of this node. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00074">74</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00080">80</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 
 </div>
 </div>
@@ -121,7 +121,7 @@ Public Attributes</h2></td></tr>
 
 <p>SMP scheduler node. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00064">64</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00069">69</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 
 </div>
 </div>
@@ -137,9 +137,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Chain node for <a class="el" href="structScheduler__strong__APA__Context.html#a07cebd5016654b5c7d05ec9982449d4d" title="Chain of all nodes present in the scheduler. ">Scheduler_strong_APA_Context::Nodes</a>. </p>
+<p>Chain node for <a class="el" href="structScheduler__strong__APA__Context.html#a5b31ff1b54bde351d53a41abee3e91ed" title="Chain of ready nodes present in the scheduler. ">Scheduler_strong_APA_Context::readyNodes</a> and <a class="el" href="structScheduler__strong__APA__Context.html#a144c4296c745b8d5bfa5e3a00fe14e81" title="Chain of scheduled nodes present in the scheduler. ">Scheduler_strong_APA_Context::scheduledNodes</a> . </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00069">69</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00075">75</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 
 </div>
 </div>

@@ -30,30 +30,17 @@ struct \hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gafcd6fde337d7542784698219322b6365}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Initialize} (const Scheduler\+\_\+\+Control $\ast$scheduler)
+\begin{DoxyCompactList}\small\item\em Initializes the Strong\+\_\+\+A\+PA scheduler. \end{DoxyCompactList}\item 
 void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga1cde4345d4dc0b5a37a696fa446bb47e}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize} (const Scheduler\+\_\+\+Control $\ast$scheduler, Scheduler\+\_\+\+Node $\ast$node, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Priority\+\_\+\+Control priority)
 \begin{DoxyCompactList}\small\item\em Initializes the node with the given priority. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga0f3ca9f9dcaff88a5df871622caf5e3f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
-\begin{DoxyCompactList}\small\item\em Blocks the thread. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga6b96ab0939d82ee5813092159265840e}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
-\begin{DoxyCompactList}\small\item\em Unblocks the thread. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga3cdc0079d2d16a392834bd03b5115ad9}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
-\begin{DoxyCompactList}\small\item\em Updates the priority of the node. \end{DoxyCompactList}\item 
-bool \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gad863eddc3fa4e2d785fb64af6505e90b}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
-\begin{DoxyCompactList}\small\item\em Asks for help. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga7809e64065ec5d291f3dc82220a68d3f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
-\begin{DoxyCompactList}\small\item\em Reconsiders help request. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gaf43eb65a6fbbe2826ca4cec68a930cb5}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node, Thread\+\_\+\+Scheduler\+\_\+state next\+\_\+state)
-\begin{DoxyCompactList}\small\item\em Withdraws the node. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga6ac09dac24785561fd7c5ee5bbd8f5ca}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$idle)
-\begin{DoxyCompactList}\small\item\em Adds the idle thread to a processor. \end{DoxyCompactList}\item 
-Thread\+\_\+\+Control $\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gac83f4ab63b404cdfea31e572fa9590a5}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor} (const Scheduler\+\_\+\+Control $\ast$scheduler, struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
-\begin{DoxyCompactList}\small\item\em Removes an idle thread from the given cpu. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga0720c2d79f2b6dd8e91d19879f72b8c7}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
-\begin{DoxyCompactList}\small\item\em Performs a yield operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
+static void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga60129e44fa73e5241abc2f5f9f78bb1d}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+to\+\_\+extract)
+\begin{DoxyCompactList}\small\item\em Removes the ready node from the Chain of nodes. \end{DoxyCompactList}\item 
+bool \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, const Processor\+\_\+mask $\ast$affinity)
+\begin{DoxyCompactList}\small\item\em Checks if the processor set of the scheduler is the subset of the affinity set. \end{DoxyCompactList}\item 
+static Scheduler\+\_\+\+Node $\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gaeca59d69f6f261d5af4b17e73186ed98}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$filter)
 \item 
-To Change from \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga2642e9c7c12fd0dfb1a66f42949a95c4}{here}
+static void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gaaf649166522c7d7b2e9cca719d61e371}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+ready\+\_\+to\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$ready\+\_\+to\+\_\+scheduled)
 \end{DoxyCompactItemize}
 
 

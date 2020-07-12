@@ -62,8 +62,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">schedulerstrongapa.h File Reference<div class="ingroups"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html">Strong APA Scheduler</a></div></div>  </div>
 </div><!--header-->
@@ -99,41 +98,22 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gafcd6fde337d7542784698219322b6365"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gafcd6fde337d7542784698219322b6365">_Scheduler_strong_APA_Initialize</a> (const Scheduler_Control *scheduler)</td></tr>
+<tr class="memdesc:gafcd6fde337d7542784698219322b6365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Strong_APA scheduler.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#gafcd6fde337d7542784698219322b6365">More...</a><br /></td></tr>
+<tr class="separator:gafcd6fde337d7542784698219322b6365"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1cde4345d4dc0b5a37a696fa446bb47e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga1cde4345d4dc0b5a37a696fa446bb47e">_Scheduler_strong_APA_Node_initialize</a> (const Scheduler_Control *scheduler, Scheduler_Node *node, Thread_Control *the_thread, Priority_Control priority)</td></tr>
 <tr class="memdesc:ga1cde4345d4dc0b5a37a696fa446bb47e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the node with the given priority.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#ga1cde4345d4dc0b5a37a696fa446bb47e">More...</a><br /></td></tr>
 <tr class="separator:ga1cde4345d4dc0b5a37a696fa446bb47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f3ca9f9dcaff88a5df871622caf5e3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga0f3ca9f9dcaff88a5df871622caf5e3f">_Scheduler_strong_APA_Block</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
-<tr class="memdesc:ga0f3ca9f9dcaff88a5df871622caf5e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the thread.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#ga0f3ca9f9dcaff88a5df871622caf5e3f">More...</a><br /></td></tr>
-<tr class="separator:ga0f3ca9f9dcaff88a5df871622caf5e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6b96ab0939d82ee5813092159265840e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga6b96ab0939d82ee5813092159265840e">_Scheduler_strong_APA_Unblock</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
-<tr class="memdesc:ga6b96ab0939d82ee5813092159265840e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unblocks the thread.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#ga6b96ab0939d82ee5813092159265840e">More...</a><br /></td></tr>
-<tr class="separator:ga6b96ab0939d82ee5813092159265840e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3cdc0079d2d16a392834bd03b5115ad9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga3cdc0079d2d16a392834bd03b5115ad9">_Scheduler_strong_APA_Update_priority</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
-<tr class="memdesc:ga3cdc0079d2d16a392834bd03b5115ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the priority of the node.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#ga3cdc0079d2d16a392834bd03b5115ad9">More...</a><br /></td></tr>
-<tr class="separator:ga3cdc0079d2d16a392834bd03b5115ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad863eddc3fa4e2d785fb64af6505e90b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gad863eddc3fa4e2d785fb64af6505e90b">_Scheduler_strong_APA_Ask_for_help</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
-<tr class="memdesc:gad863eddc3fa4e2d785fb64af6505e90b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asks for help.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#gad863eddc3fa4e2d785fb64af6505e90b">More...</a><br /></td></tr>
-<tr class="separator:gad863eddc3fa4e2d785fb64af6505e90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7809e64065ec5d291f3dc82220a68d3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga7809e64065ec5d291f3dc82220a68d3f">_Scheduler_strong_APA_Reconsider_help_request</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
-<tr class="memdesc:ga7809e64065ec5d291f3dc82220a68d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reconsiders help request.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#ga7809e64065ec5d291f3dc82220a68d3f">More...</a><br /></td></tr>
-<tr class="separator:ga7809e64065ec5d291f3dc82220a68d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf43eb65a6fbbe2826ca4cec68a930cb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gaf43eb65a6fbbe2826ca4cec68a930cb5">_Scheduler_strong_APA_Withdraw_node</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node, Thread_Scheduler_state next_state)</td></tr>
-<tr class="memdesc:gaf43eb65a6fbbe2826ca4cec68a930cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Withdraws the node.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#gaf43eb65a6fbbe2826ca4cec68a930cb5">More...</a><br /></td></tr>
-<tr class="separator:gaf43eb65a6fbbe2826ca4cec68a930cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ac09dac24785561fd7c5ee5bbd8f5ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga6ac09dac24785561fd7c5ee5bbd8f5ca">_Scheduler_strong_APA_Add_processor</a> (const Scheduler_Control *scheduler, Thread_Control *idle)</td></tr>
-<tr class="memdesc:ga6ac09dac24785561fd7c5ee5bbd8f5ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the idle thread to a processor.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#ga6ac09dac24785561fd7c5ee5bbd8f5ca">More...</a><br /></td></tr>
-<tr class="separator:ga6ac09dac24785561fd7c5ee5bbd8f5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac83f4ab63b404cdfea31e572fa9590a5"><td class="memItemLeft" align="right" valign="top">Thread_Control *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gac83f4ab63b404cdfea31e572fa9590a5">_Scheduler_strong_APA_Remove_processor</a> (const Scheduler_Control *scheduler, struct Per_CPU_Control *cpu)</td></tr>
-<tr class="memdesc:gac83f4ab63b404cdfea31e572fa9590a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an idle thread from the given cpu.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#gac83f4ab63b404cdfea31e572fa9590a5">More...</a><br /></td></tr>
-<tr class="separator:gac83f4ab63b404cdfea31e572fa9590a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0720c2d79f2b6dd8e91d19879f72b8c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga0720c2d79f2b6dd8e91d19879f72b8c7">_Scheduler_strong_APA_Yield</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
-<tr class="memdesc:ga0720c2d79f2b6dd8e91d19879f72b8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a yield operation.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#ga0720c2d79f2b6dd8e91d19879f72b8c7">More...</a><br /></td></tr>
-<tr class="separator:ga0720c2d79f2b6dd8e91d19879f72b8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga2642e9c7c12fd0dfb1a66f42949a95c4"><td class="memItemLeft" align="right" valign="top">To Change from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga2642e9c7c12fd0dfb1a66f42949a95c4">here</a></td></tr>
-<tr class="separator:ga2642e9c7c12fd0dfb1a66f42949a95c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga60129e44fa73e5241abc2f5f9f78bb1d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga60129e44fa73e5241abc2f5f9f78bb1d">_Scheduler_strong_APA_Extract_from_ready</a> (Scheduler_Context *context, Scheduler_Node *node_to_extract)</td></tr>
+<tr class="memdesc:ga60129e44fa73e5241abc2f5f9f78bb1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the ready node from the Chain of nodes.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#ga60129e44fa73e5241abc2f5f9f78bb1d">More...</a><br /></td></tr>
+<tr class="separator:ga60129e44fa73e5241abc2f5f9f78bb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63ef624a9881cf77a2b1eef2c6f05223"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> (const Scheduler_Control *scheduler, Thread_Control *thread, Scheduler_Node *node_base, const Processor_mask *affinity)</td></tr>
+<tr class="memdesc:ga63ef624a9881cf77a2b1eef2c6f05223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the processor set of the scheduler is the subset of the affinity set.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">More...</a><br /></td></tr>
+<tr class="separator:ga63ef624a9881cf77a2b1eef2c6f05223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeca59d69f6f261d5af4b17e73186ed98"><td class="memItemLeft" align="right" valign="top">static Scheduler_Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gaeca59d69f6f261d5af4b17e73186ed98">_Scheduler_strong_APA_Get_highest_ready</a> (Scheduler_Context *context, Scheduler_Node *filter)</td></tr>
+<tr class="separator:gaeca59d69f6f261d5af4b17e73186ed98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf649166522c7d7b2e9cca719d61e371"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gaaf649166522c7d7b2e9cca719d61e371">_Scheduler_strong_APA_Move_from_ready_to_scheduled</a> (Scheduler_Context *context, Scheduler_Node *ready_to_scheduled)</td></tr>
+<tr class="separator:gaaf649166522c7d7b2e9cca719d61e371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Strong APA Scheduler API. </p>

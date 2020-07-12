@@ -12,10 +12,8 @@ var menudata={children:[
 {text:"File Members",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
 {text:"_",url:"globals.html#index__"},
-{text:"h",url:"globals.html#index_h"},
 {text:"s",url:"globals.html#index_s"}]},
 {text:"Functions",url:"globals_func.html"},
 {text:"Variables",url:"globals_vars.html",children:[
-{text:"_",url:"globals_vars.html#index__"},
-{text:"h",url:"globals_vars.html#index_h"}]},
+{text:"_",url:"globals_vars.html#index__"}]},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

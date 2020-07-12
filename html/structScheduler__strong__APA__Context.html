@@ -77,9 +77,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a55755b445b7e7beaf1b87b178521e615"><td class="memItemLeft" align="right" valign="top">Scheduler_SMP_Context&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Context.html#a55755b445b7e7beaf1b87b178521e615">Base</a></td></tr>
 <tr class="memdesc:a55755b445b7e7beaf1b87b178521e615"><td class="mdescLeft">&#160;</td><td class="mdescRight">SMP Context to refer to SMP implementation code.  <a href="#a55755b445b7e7beaf1b87b178521e615">More...</a><br /></td></tr>
 <tr class="separator:a55755b445b7e7beaf1b87b178521e615"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07cebd5016654b5c7d05ec9982449d4d"><td class="memItemLeft" align="right" valign="top">Chain_Control&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Context.html#a07cebd5016654b5c7d05ec9982449d4d">Nodes</a></td></tr>
-<tr class="memdesc:a07cebd5016654b5c7d05ec9982449d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chain of all nodes present in the scheduler.  <a href="#a07cebd5016654b5c7d05ec9982449d4d">More...</a><br /></td></tr>
-<tr class="separator:a07cebd5016654b5c7d05ec9982449d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b31ff1b54bde351d53a41abee3e91ed"><td class="memItemLeft" align="right" valign="top">Chain_Control&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Context.html#a5b31ff1b54bde351d53a41abee3e91ed">readyNodes</a></td></tr>
+<tr class="memdesc:a5b31ff1b54bde351d53a41abee3e91ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chain of ready nodes present in the scheduler.  <a href="#a5b31ff1b54bde351d53a41abee3e91ed">More...</a><br /></td></tr>
+<tr class="separator:a5b31ff1b54bde351d53a41abee3e91ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144c4296c745b8d5bfa5e3a00fe14e81"><td class="memItemLeft" align="right" valign="top">Chain_Control&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Context.html#a144c4296c745b8d5bfa5e3a00fe14e81">scheduledNodes</a></td></tr>
+<tr class="memdesc:a144c4296c745b8d5bfa5e3a00fe14e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chain of scheduled nodes present in the scheduler.  <a href="#a144c4296c745b8d5bfa5e3a00fe14e81">More...</a><br /></td></tr>
+<tr class="separator:a144c4296c745b8d5bfa5e3a00fe14e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Scheduler context for Strong APA scheduler. </p>
@@ -105,21 +108,39 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a07cebd5016654b5c7d05ec9982449d4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07cebd5016654b5c7d05ec9982449d4d">&#9670;&nbsp;</a></span>Nodes</h2>
+<a id="a5b31ff1b54bde351d53a41abee3e91ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b31ff1b54bde351d53a41abee3e91ed">&#9670;&nbsp;</a></span>readyNodes</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Chain_Control Scheduler_strong_APA_Context::Nodes</td>
+          <td class="memname">Chain_Control Scheduler_strong_APA_Context::readyNodes</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Chain of all nodes present in the scheduler. </p>
+<p>Chain of ready nodes present in the scheduler. </p>
 
 <p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00052">52</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+
+</div>
+</div>
+<a id="a144c4296c745b8d5bfa5e3a00fe14e81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a144c4296c745b8d5bfa5e3a00fe14e81">&#9670;&nbsp;</a></span>scheduledNodes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Chain_Control Scheduler_strong_APA_Context::scheduledNodes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Chain of scheduled nodes present in the scheduler. </p>
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00057">57</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 
 </div>
 </div>

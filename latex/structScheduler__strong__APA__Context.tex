@@ -14,8 +14,10 @@ Scheduler context for Strong A\+PA scheduler.
 \item 
 Scheduler\+\_\+\+S\+M\+P\+\_\+\+Context \hyperlink{structScheduler__strong__APA__Context_a55755b445b7e7beaf1b87b178521e615}{Base}
 \begin{DoxyCompactList}\small\item\em S\+MP Context to refer to S\+MP implementation code. \end{DoxyCompactList}\item 
-Chain\+\_\+\+Control \hyperlink{structScheduler__strong__APA__Context_a07cebd5016654b5c7d05ec9982449d4d}{Nodes}
-\begin{DoxyCompactList}\small\item\em Chain of all nodes present in the scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+Chain\+\_\+\+Control \hyperlink{structScheduler__strong__APA__Context_a5b31ff1b54bde351d53a41abee3e91ed}{ready\+Nodes}
+\begin{DoxyCompactList}\small\item\em Chain of ready nodes present in the scheduler. \end{DoxyCompactList}\item 
+Chain\+\_\+\+Control \hyperlink{structScheduler__strong__APA__Context_a144c4296c745b8d5bfa5e3a00fe14e81}{scheduled\+Nodes}
+\begin{DoxyCompactList}\small\item\em Chain of scheduled nodes present in the scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -42,19 +44,33 @@ S\+MP Context to refer to S\+MP implementation code.
 
 Definition at line 47 of file schedulerstrongapa.\+h.
 
-\mbox{\Hypertarget{structScheduler__strong__APA__Context_a07cebd5016654b5c7d05ec9982449d4d}\label{structScheduler__strong__APA__Context_a07cebd5016654b5c7d05ec9982449d4d}} 
-\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}!Nodes@{Nodes}}
-\index{Nodes@{Nodes}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}}
-\subsubsection{\texorpdfstring{Nodes}{Nodes}}
-{\footnotesize\ttfamily Chain\+\_\+\+Control Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+Nodes}
+\mbox{\Hypertarget{structScheduler__strong__APA__Context_a5b31ff1b54bde351d53a41abee3e91ed}\label{structScheduler__strong__APA__Context_a5b31ff1b54bde351d53a41abee3e91ed}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}!ready\+Nodes@{ready\+Nodes}}
+\index{ready\+Nodes@{ready\+Nodes}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}}
+\subsubsection{\texorpdfstring{ready\+Nodes}{readyNodes}}
+{\footnotesize\ttfamily Chain\+\_\+\+Control Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::ready\+Nodes}
 
 
 
-Chain of all nodes present in the scheduler. 
+Chain of ready nodes present in the scheduler. 
 
 
 
 Definition at line 52 of file schedulerstrongapa.\+h.
+
+\mbox{\Hypertarget{structScheduler__strong__APA__Context_a144c4296c745b8d5bfa5e3a00fe14e81}\label{structScheduler__strong__APA__Context_a144c4296c745b8d5bfa5e3a00fe14e81}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}!scheduled\+Nodes@{scheduled\+Nodes}}
+\index{scheduled\+Nodes@{scheduled\+Nodes}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}}
+\subsubsection{\texorpdfstring{scheduled\+Nodes}{scheduledNodes}}
+{\footnotesize\ttfamily Chain\+\_\+\+Control Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::scheduled\+Nodes}
+
+
+
+Chain of scheduled nodes present in the scheduler. 
+
+
+
+Definition at line 57 of file schedulerstrongapa.\+h.
 
 
 

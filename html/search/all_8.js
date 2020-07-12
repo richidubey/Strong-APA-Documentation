@@ -1,7 +1,6 @@
 var searchData=
 [
   ['strong_20apa_20scheduler',['Strong APA Scheduler',['../group__RTEMSScoreSchedulerStrongAPA.html',1,'']]],
-  ['schedulednodes',['scheduledNodes',['../structScheduler__strong__APA__Context.html#a144c4296c745b8d5bfa5e3a00fe14e81',1,'Scheduler_strong_APA_Context']]],
   ['scheduler_5fstrong_5fapa_5fcontext',['Scheduler_strong_APA_Context',['../structScheduler__strong__APA__Context.html',1,'']]],
   ['scheduler_5fstrong_5fapa_5fentry_5fpoints',['SCHEDULER_STRONG_APA_ENTRY_POINTS',['../group__RTEMSScoreSchedulerStrongAPA.html#ga98b37281082c0be47dc489eed554c5cc',1,'schedulerstrongapa.h']]],
   ['scheduler_5fstrong_5fapa_5fnode',['Scheduler_strong_APA_Node',['../structScheduler__strong__APA__Node.html',1,'']]],

@@ -8,7 +8,7 @@
 
 -----------------------------------------------------------------------------------
 ToAdd:
-    _Scheduler_strong_APA_Initialize, \  --------------
+    _Scheduler_strong_APA_Initialize, \  ****************************
     _Scheduler_default_Schedule, \
     _Scheduler_strong_APA_Yield, \
     _Scheduler_strong_APA_Block, \
@@ -23,13 +23,13 @@ ToAdd:
     _Scheduler_default_Pin_or_unpin, \
     _Scheduler_strong_APA_Add_processor, \
     _Scheduler_strong_APA_Remove_processor, \
-    _Scheduler_strong_APA_Node_initialize, \
+    _Scheduler_strong_APA_Node_initialize, \      ****************************
     _Scheduler_default_Node_destroy, \
     _Scheduler_default_Release_job, \
     _Scheduler_default_Cancel_job, \
     _Scheduler_default_Tick, \
     _Scheduler_SMP_Start_idle \
-    _Scheduler_strong_APA_Set_affinity \
+    _Scheduler_strong_APA_Set_affinity \	********************************
   
     SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY \
     
@@ -73,34 +73,21 @@ _Scheduler_strong_APA_Node_downcast( Scheduler_Node *node )
   return (Scheduler_strong_APA_Node *) node;
 }
 
-static inline Scheduler_EDF_SMP_Context *
+static inline _Scheduler_strong_APA_Context *
 _Scheduler_strong_APA_Get_context( const Scheduler_Control *scheduler )
 {
   return (_Scheduler_strong_APA_Context *) _Scheduler_Get_context( scheduler );
 }
 
-/**
- * Initializes the Strong_APA scheduler.
- *
- * Sets the chain containing all the nodes to empty 
- * and initializes the SMP scheduler.
- *
- * @param scheduler used to get 
- * reference to Strong APA scheduler context 
- *
- * @return void
- *
- * @see _Scheduler_strong_APA_Node_initialize()
- *
- *
- */
+
 void _Scheduler_strong_APA_Initialize( const Scheduler_Control *scheduler )
 {
   Scheduler_strong_APA_Context *self =
     _Scheduler_strong_APA_Get_context( scheduler );
 
   _Scheduler_SMP_Initialize( &self->Base );
-  _Chain_Initialize_empty( &self->Nodes );
+  _Chain_Initialize_empty( &self->readyNodes );
+  _Chain_Initialize_empty( &self->scheduledNodes );
 }
 
 void _Scheduler_strong_APA_Node_initialize(
@@ -121,7 +108,7 @@ void _Scheduler_strong_APA_Node_initialize(
   smp_node = _Scheduler_SMP_Node_downcast( node );
   _Scheduler_SMP_Node_initialize( scheduler, smp_node, the_thread, priority );
 
-   _Chain_Append_unprotected( &self->Nodes, &self_node->Node );
+   _Chain_Append_unprotected( &self->readyNodes, &self_node->Node );	//Is it right to put it in the ready chain right away?
 }
 
 static inline void  _Scheduler_strong_APA_Do_set_affinity(
@@ -138,6 +125,242 @@ static inline void  _Scheduler_strong_APA_Do_set_affinity(
   node->affinity = *affinity;
 }
 
+
+static inline void _Scheduler_strong_APA_Extract_from_ready(
+  Scheduler_Context *context,
+  Scheduler_Node    *node_to_extract
+)
+{
+  _Scheduler_strong_APA_Context     *self;
+  _Scheduler_strong_APA_Node        *node;
+
+
+  self = _Scheduler_strong_APA_Get_self( context );
+  node = _Scheduler_strong_APA_Node_downcast( node_to_extract );
+ 
+  _Assert( _Chain_Is_empty(self->readyNodes) == false );
+  _Assert( _Chain_Is_node_off_chain( &node->Node ) == false );
+   
+   _Chain_Extract_unprotected( &node->Node );
+   _Chain_Set_off_chain( &node->Node );
+ }
+
+
+
+static inline Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
+  Scheduler_Context *context,
+  Scheduler_Node    *filter
+)	//TODO
+{
+/*  _Scheduler_strong_APA_Context *self;*/
+/*  _Scheduler_strong_APA_Node    *highest_ready;*/
+/*  _Scheduler_strong_APA_Node    *node;*/
+/*  const Chain_Node          *tail;*/
+/*  Chain_Node                *next;*/
+
+/*  self = _Scheduler_EDF_SMP_Get_self( context );*/
+/*  highest_ready = (Scheduler_EDF_SMP_Node *)*/
+/*    _RBTree_Minimum( &self->Ready[ 0 ].Queue );*/
+/*  _Assert( highest_ready != NULL );*/
+
+/*  tail = _Chain_Immutable_tail( &self->Affine_queues );*/
+/*  next = _Chain_First( &self->Affine_queues );*/
+
+/*  while ( next != tail ) {*/
+/*    Scheduler_EDF_SMP_Ready_queue *ready_queue;*/
+
+/*    ready_queue = (Scheduler_EDF_SMP_Ready_queue *) next;*/
+/*    highest_ready = _Scheduler_EDF_SMP_Challenge_highest_ready(*/
+/*      self,*/
+/*      highest_ready,*/
+/*      &ready_queue->Queue*/
+/*    );*/
+
+/*    next = _Chain_Next( next );*/
+/*  }*/
+
+/*  return &highest_ready->Base.Base;*/
+}
+
+
+ 
+static inline void  _Scheduler_strong_APA_Move_from_ready_to_scheduled(
+  Scheduler_Context *context,
+  Scheduler_Node    *ready_to_scheduled
+)
+{
+  Priority_Control insert_priority;
+
+  _Scheduler_strong_APA_Extract_from_ready( context, ready_to_scheduled );
+  insert_priority = _Scheduler_SMP_Node_priority( ready_to_scheduled );
+  insert_priority = SCHEDULER_PRIORITY_APPEND( insert_priority );
+  _Scheduler_SMP_Insert_scheduled(
+    context,
+    ready_to_scheduled,
+    insert_priority
+  );
+  
+  self = _Scheduler_strong_APA_Get_self( context );
+  node = _Scheduler_strong_APA_Node_downcast( node_base );
+  _Chain_Append_unprotected( &self->scheduledNodes, node->Node );  
+}
+
+
+
+static inline void _Scheduler_strong_APA_Move_from_scheduled_to_ready(
+  Scheduler_Context *context,
+  Scheduler_Node    *scheduled_to_ready
+)
+{
+  Priority_Control insert_priority;
+
+  _Scheduler_SMP_Extract_from_scheduled( context, scheduled_to_ready );
+  insert_priority = _Scheduler_SMP_Node_priority( scheduled_to_ready );
+ 
+  self = _Scheduler_strong_APA_Get_self( context );
+  node = _Scheduler_strong_APA_Node_downcast( scheduled_to_ready );
+ 
+  _Assert( _Chain_Is_empty(self->scheduledNodes) == false );
+  _Assert( _Chain_Is_node_off_chain( &node->Node ) == false );
+   
+  _Chain_Extract_unprotected( &node->Node );
+  _Chain_Set_off_chain( &node->Node ); 
+  
+  _Scheduler_strong_APA_Insert_ready(
+    context,
+    scheduled_to_ready,
+    insert_priority
+  );
+ 
+}
+
+static inline Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
+  Scheduler_Context *context,
+  Scheduler_Node    *filter_base
+)
+{	//Checkout about this function.
+/*  Scheduler_EDF_SMP_Node *filter;*/
+/*  uint8_t                 rqi;*/
+
+/*  filter = _Scheduler_EDF_SMP_Node_downcast( filter_base );*/
+/*  rqi = filter->ready_queue_index;*/
+
+/*  if ( rqi != 0 ) {*/
+/*    Scheduler_EDF_SMP_Context *self;*/
+/*    Scheduler_EDF_SMP_Node    *node;*/
+
+/*    self = _Scheduler_EDF_SMP_Get_self( context );*/
+/*    node = _Scheduler_EDF_SMP_Get_scheduled( self, rqi );*/
+
+/*    if ( node->ready_queue_index > 0 ) {*/
+/*      _Assert( node->ready_queue_index == rqi );*/
+/*      return &node->Base.Base;*/
+/*    }*/
+/*  }*/
+
+/*  return _Scheduler_SMP_Get_lowest_scheduled( context, filter_base );*/
+}
+
+static inline void _Scheduler_strong_APA_Insert_ready(
+  Scheduler_Context *context,
+  Scheduler_Node    *node_base,
+  Priority_Control   insert_priority
+)
+{
+  _Scheduler_strong_APA_Context     *self;
+  _Scheduler_strong_APA_Node        *node;
+
+  self = _Scheduler_strong_APA_Get_self( context );
+  node = _Scheduler_strong_APA_Node_downcast( node_base );
+  
+  _Assert( _Chain_Is_node_off_chain( &node->Node ) == true );
+     
+  _Chain_Append_unprotected( &self->readyNodes, node->Node );
+ 
+}
+
+
+
+
+
+
+static inline void _Scheduler_strong_APA_Allocate_processor(
+  Scheduler_Context *context,
+  Scheduler_Node    *scheduled_base,
+  Scheduler_Node    *victim_base,
+  Per_CPU_Control   *victim_cpu
+)
+{
+  _Scheduler_strong_APA_Context     *self;
+  _Scheduler_strong_APA_Node        *scheduled;
+  uint8_t                        rqi;
+
+  (void) victim_base;
+  self = _Scheduler_strong_APA_Get_self( context );
+  scheduled = _Scheduler_strong_APA_Node_downcast( scheduled_base );
+  rqi = scheduled->ready_queue_index;
+
+  if ( rqi != 0 ) {
+    Scheduler_EDF_SMP_Ready_queue *ready_queue;
+    Per_CPU_Control               *desired_cpu;
+
+    ready_queue = &self->Ready[ rqi ];
+
+    if ( !_Chain_Is_node_off_chain( &ready_queue->Node ) ) {
+      _Chain_Extract_unprotected( &ready_queue->Node );
+      _Chain_Set_off_chain( &ready_queue->Node );
+    }
+
+    desired_cpu = _Per_CPU_Get_by_index( rqi - 1 );
+
+    if ( victim_cpu != desired_cpu ) {
+      Scheduler_EDF_SMP_Node *node;
+
+      node = _Scheduler_EDF_SMP_Get_scheduled( self, rqi );
+      _Assert( node->ready_queue_index == 0 );
+      _Scheduler_strong_APA_Set_scheduled( self, node, victim_cpu );
+      _Scheduler_SMP_Allocate_processor_exact(
+        context,
+        &node->Base.Base,
+        NULL,
+        victim_cpu
+      );
+      victim_cpu = desired_cpu;
+    }
+  }
+
+  _Scheduler_EDF_SMP_Set_scheduled( self, scheduled, victim_cpu );
+  _Scheduler_SMP_Allocate_processor_exact(
+    context,
+    &scheduled->Base.Base,
+    NULL,
+    victim_cpu
+  );
+}
+
+
+
+
+
+static inline bool _Scheduler_strong_APA_Enqueue(
+  Scheduler_Context *context,
+  Scheduler_Node    *node,
+  Priority_Control   insert_priority
+)
+{//TODO: Checkout what this is supposed to do
+  return _Scheduler_SMP_Enqueue(
+    context,
+    node,
+    insert_priority,
+    _Scheduler_SMP_Priority_less_equal,
+    _Scheduler_strong_APA_Insert_ready,
+    _Scheduler_SMP_Insert_scheduled,
+    _Scheduler_strong_APA_Move_from_scheduled_to_ready,
+    _Scheduler_strong_APA_Get_lowest_scheduled,
+    _Scheduler_strong_APA_Allocate_processor
+  );
+}
+
 bool _Scheduler_strong_APA_Set_affinity(
   const Scheduler_Control *scheduler,
   Thread_Control          *thread,
@@ -148,8 +371,7 @@ bool _Scheduler_strong_APA_Set_affinity(
   Scheduler_Context     	*context;
   Scheduler_strong_APA_Node 	*node;
   Processor_mask          	local_affinity;
-  States_Control          	current_state;
-
+ 
   context = _Scheduler_Get_context( scheduler );
   _Processor_mask_And( &local_affinity, &context->Processors, affinity );
 
@@ -168,8 +390,8 @@ bool _Scheduler_strong_APA_Set_affinity(
       node_base,
       &local_affinity,
       _Scheduler_strong_APA_Do_set_affinity,
-      _Scheduler_strong_APA_Extract_from_ready,		//--------------------------INCOMPLETE FROM HERE DOWNWARDS TILL Line no 96.
-      _Scheduler_strong_APA_Get_highest_ready,	//TODO Next! We would also need the info of the cpu the node was executing on.
+      _Scheduler_strong_APA_Extract_from_ready,		
+      _Scheduler_strong_APA_Get_highest_ready,	
       _Scheduler_strong_APA_Move_from_ready_to_scheduled,
       _Scheduler_strong_APA_Enqueue,
       _Scheduler_strong_APA_Allocate_processor

@@ -63,8 +63,7 @@ $(function() {
 <a href="#files">Files</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Strong APA Scheduler</div>  </div>
 </div><!--header-->
@@ -99,41 +98,22 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gafcd6fde337d7542784698219322b6365"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gafcd6fde337d7542784698219322b6365">_Scheduler_strong_APA_Initialize</a> (const Scheduler_Control *scheduler)</td></tr>
+<tr class="memdesc:gafcd6fde337d7542784698219322b6365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Strong_APA scheduler.  <a href="#gafcd6fde337d7542784698219322b6365">More...</a><br /></td></tr>
+<tr class="separator:gafcd6fde337d7542784698219322b6365"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1cde4345d4dc0b5a37a696fa446bb47e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga1cde4345d4dc0b5a37a696fa446bb47e">_Scheduler_strong_APA_Node_initialize</a> (const Scheduler_Control *scheduler, Scheduler_Node *node, Thread_Control *the_thread, Priority_Control priority)</td></tr>
 <tr class="memdesc:ga1cde4345d4dc0b5a37a696fa446bb47e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the node with the given priority.  <a href="#ga1cde4345d4dc0b5a37a696fa446bb47e">More...</a><br /></td></tr>
 <tr class="separator:ga1cde4345d4dc0b5a37a696fa446bb47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f3ca9f9dcaff88a5df871622caf5e3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga0f3ca9f9dcaff88a5df871622caf5e3f">_Scheduler_strong_APA_Block</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
-<tr class="memdesc:ga0f3ca9f9dcaff88a5df871622caf5e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the thread.  <a href="#ga0f3ca9f9dcaff88a5df871622caf5e3f">More...</a><br /></td></tr>
-<tr class="separator:ga0f3ca9f9dcaff88a5df871622caf5e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6b96ab0939d82ee5813092159265840e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga6b96ab0939d82ee5813092159265840e">_Scheduler_strong_APA_Unblock</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
-<tr class="memdesc:ga6b96ab0939d82ee5813092159265840e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unblocks the thread.  <a href="#ga6b96ab0939d82ee5813092159265840e">More...</a><br /></td></tr>
-<tr class="separator:ga6b96ab0939d82ee5813092159265840e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3cdc0079d2d16a392834bd03b5115ad9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga3cdc0079d2d16a392834bd03b5115ad9">_Scheduler_strong_APA_Update_priority</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
-<tr class="memdesc:ga3cdc0079d2d16a392834bd03b5115ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the priority of the node.  <a href="#ga3cdc0079d2d16a392834bd03b5115ad9">More...</a><br /></td></tr>
-<tr class="separator:ga3cdc0079d2d16a392834bd03b5115ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad863eddc3fa4e2d785fb64af6505e90b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gad863eddc3fa4e2d785fb64af6505e90b">_Scheduler_strong_APA_Ask_for_help</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
-<tr class="memdesc:gad863eddc3fa4e2d785fb64af6505e90b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asks for help.  <a href="#gad863eddc3fa4e2d785fb64af6505e90b">More...</a><br /></td></tr>
-<tr class="separator:gad863eddc3fa4e2d785fb64af6505e90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7809e64065ec5d291f3dc82220a68d3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga7809e64065ec5d291f3dc82220a68d3f">_Scheduler_strong_APA_Reconsider_help_request</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
-<tr class="memdesc:ga7809e64065ec5d291f3dc82220a68d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reconsiders help request.  <a href="#ga7809e64065ec5d291f3dc82220a68d3f">More...</a><br /></td></tr>
-<tr class="separator:ga7809e64065ec5d291f3dc82220a68d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf43eb65a6fbbe2826ca4cec68a930cb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gaf43eb65a6fbbe2826ca4cec68a930cb5">_Scheduler_strong_APA_Withdraw_node</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node, Thread_Scheduler_state next_state)</td></tr>
-<tr class="memdesc:gaf43eb65a6fbbe2826ca4cec68a930cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Withdraws the node.  <a href="#gaf43eb65a6fbbe2826ca4cec68a930cb5">More...</a><br /></td></tr>
-<tr class="separator:gaf43eb65a6fbbe2826ca4cec68a930cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ac09dac24785561fd7c5ee5bbd8f5ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga6ac09dac24785561fd7c5ee5bbd8f5ca">_Scheduler_strong_APA_Add_processor</a> (const Scheduler_Control *scheduler, Thread_Control *idle)</td></tr>
-<tr class="memdesc:ga6ac09dac24785561fd7c5ee5bbd8f5ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the idle thread to a processor.  <a href="#ga6ac09dac24785561fd7c5ee5bbd8f5ca">More...</a><br /></td></tr>
-<tr class="separator:ga6ac09dac24785561fd7c5ee5bbd8f5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac83f4ab63b404cdfea31e572fa9590a5"><td class="memItemLeft" align="right" valign="top">Thread_Control *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gac83f4ab63b404cdfea31e572fa9590a5">_Scheduler_strong_APA_Remove_processor</a> (const Scheduler_Control *scheduler, struct Per_CPU_Control *cpu)</td></tr>
-<tr class="memdesc:gac83f4ab63b404cdfea31e572fa9590a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an idle thread from the given cpu.  <a href="#gac83f4ab63b404cdfea31e572fa9590a5">More...</a><br /></td></tr>
-<tr class="separator:gac83f4ab63b404cdfea31e572fa9590a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0720c2d79f2b6dd8e91d19879f72b8c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga0720c2d79f2b6dd8e91d19879f72b8c7">_Scheduler_strong_APA_Yield</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
-<tr class="memdesc:ga0720c2d79f2b6dd8e91d19879f72b8c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a yield operation.  <a href="#ga0720c2d79f2b6dd8e91d19879f72b8c7">More...</a><br /></td></tr>
-<tr class="separator:ga0720c2d79f2b6dd8e91d19879f72b8c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga2642e9c7c12fd0dfb1a66f42949a95c4"><td class="memItemLeft" align="right" valign="top">To Change from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga2642e9c7c12fd0dfb1a66f42949a95c4">here</a></td></tr>
-<tr class="separator:ga2642e9c7c12fd0dfb1a66f42949a95c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga60129e44fa73e5241abc2f5f9f78bb1d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga60129e44fa73e5241abc2f5f9f78bb1d">_Scheduler_strong_APA_Extract_from_ready</a> (Scheduler_Context *context, Scheduler_Node *node_to_extract)</td></tr>
+<tr class="memdesc:ga60129e44fa73e5241abc2f5f9f78bb1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the ready node from the Chain of nodes.  <a href="#ga60129e44fa73e5241abc2f5f9f78bb1d">More...</a><br /></td></tr>
+<tr class="separator:ga60129e44fa73e5241abc2f5f9f78bb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63ef624a9881cf77a2b1eef2c6f05223"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> (const Scheduler_Control *scheduler, Thread_Control *thread, Scheduler_Node *node_base, const Processor_mask *affinity)</td></tr>
+<tr class="memdesc:ga63ef624a9881cf77a2b1eef2c6f05223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the processor set of the scheduler is the subset of the affinity set.  <a href="#ga63ef624a9881cf77a2b1eef2c6f05223">More...</a><br /></td></tr>
+<tr class="separator:ga63ef624a9881cf77a2b1eef2c6f05223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeca59d69f6f261d5af4b17e73186ed98"><td class="memItemLeft" align="right" valign="top">static Scheduler_Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gaeca59d69f6f261d5af4b17e73186ed98">_Scheduler_strong_APA_Get_highest_ready</a> (Scheduler_Context *context, Scheduler_Node *filter)</td></tr>
+<tr class="separator:gaeca59d69f6f261d5af4b17e73186ed98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf649166522c7d7b2e9cca719d61e371"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gaaf649166522c7d7b2e9cca719d61e371">_Scheduler_strong_APA_Move_from_ready_to_scheduled</a> (Scheduler_Context *context, Scheduler_Node *ready_to_scheduled)</td></tr>
+<tr class="separator:gaaf649166522c7d7b2e9cca719d61e371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Strong APA Scheduler. </p>
@@ -154,71 +134,31 @@ Variables</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">{ \</div><div class="line">    _Scheduler_strong_APA_Initialize, \</div><div class="line">    _Scheduler_default_Schedule, \</div><div class="line">    _Scheduler_strong_APA_Yield, \</div><div class="line">    _Scheduler_strong_APA_Block, \</div><div class="line">    _Scheduler_strong_APA_Unblock, \</div><div class="line">    _Scheduler_strong_APA_Update_priority, \</div><div class="line">    _Scheduler_default_Map_priority, \</div><div class="line">    _Scheduler_default_Unmap_priority, \</div><div class="line">    _Scheduler_strong_APA_Ask_for_help, \</div><div class="line">    _Scheduler_strong_APA_Reconsider_help_request, \</div><div class="line">    _Scheduler_strong_APA_Withdraw_node, \</div><div class="line">    _Scheduler_default_Pin_or_unpin, \</div><div class="line">    _Scheduler_default_Pin_or_unpin, \</div><div class="line">    _Scheduler_strong_APA_Add_processor, \</div><div class="line">    _Scheduler_strong_APA_Remove_processor, \</div><div class="line">    _Scheduler_strong_APA_Node_initialize, \</div><div class="line">    _Scheduler_default_Node_destroy, \</div><div class="line">    _Scheduler_default_Release_job, \</div><div class="line">    _Scheduler_default_Cancel_job, \</div><div class="line">    _Scheduler_default_Tick, \</div><div class="line">    _Scheduler_SMP_Start_idle \</div><div class="line">    _Scheduler_strong_APA_Set_affinity \</div><div class="line">  }</div></div><!-- fragment -->
 <p>Entry points for the Strong APA Scheduler. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00080">80</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00086">86</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga6ac09dac24785561fd7c5ee5bbd8f5ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6ac09dac24785561fd7c5ee5bbd8f5ca">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Add_processor()</h2>
+<a id="ga60129e44fa73e5241abc2f5f9f78bb1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga60129e44fa73e5241abc2f5f9f78bb1d">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Extract_from_ready()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void _Scheduler_strong_APA_Add_processor </td>
+          <td class="memname">static void _Scheduler_strong_APA_Extract_from_ready </td>
           <td>(</td>
-          <td class="paramtype">const Scheduler_Control *&#160;</td>
-          <td class="paramname"><em>scheduler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Thread_Control *&#160;</td>
-          <td class="paramname"><em>idle</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Adds the idle thread to a processor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">scheduler</td><td>The scheduler control instance. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">The</td><td>idle thread to add to the processor. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="gad863eddc3fa4e2d785fb64af6505e90b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad863eddc3fa4e2d785fb64af6505e90b">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Ask_for_help()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool _Scheduler_strong_APA_Ask_for_help </td>
-          <td>(</td>
-          <td class="paramtype">const Scheduler_Control *&#160;</td>
-          <td class="paramname"><em>scheduler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Thread_Control *&#160;</td>
-          <td class="paramname"><em>the_thread</em>, </td>
+          <td class="paramtype">Scheduler_Context *&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Scheduler_Node *&#160;</td>
-          <td class="paramname"><em>node</em>&#160;</td>
+          <td class="paramname"><em>node_to_extract</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -226,50 +166,44 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Asks for help. </p>
+<p>Removes the ready node from the Chain of nodes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">scheduler</td><td>The scheduler control instance. </td></tr>
-    <tr><td class="paramname">the_thread</td><td>The thread that asks for help. </td></tr>
-    <tr><td class="paramname">node</td><td>The node of <em>the_thread</em>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">true</td><td>The request for help was successful. </td></tr>
-    <tr><td class="paramname">false</td><td>The request for help was not successful. </td></tr>
+    <tr><td class="paramname">context</td><td>The scheduler context instance. </td></tr>
+    <tr><td class="paramname">node_to_extract</td><td>The node to remove from the chain. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ga0f3ca9f9dcaff88a5df871622caf5e3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0f3ca9f9dcaff88a5df871622caf5e3f">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Block()</h2>
+<a id="gaeca59d69f6f261d5af4b17e73186ed98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeca59d69f6f261d5af4b17e73186ed98">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Get_highest_ready()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void _Scheduler_strong_APA_Block </td>
+          <td class="memname">static Scheduler_Node* _Scheduler_strong_APA_Get_highest_ready </td>
           <td>(</td>
-          <td class="paramtype">const Scheduler_Control *&#160;</td>
-          <td class="paramname"><em>scheduler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Thread_Control *&#160;</td>
-          <td class="paramname"><em>the_thread</em>, </td>
+          <td class="paramtype">Scheduler_Context *&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Scheduler_Node *&#160;</td>
-          <td class="paramname"><em>node</em>&#160;</td>
+          <td class="paramname"><em>filter</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -277,17 +211,79 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Blocks the thread. </p>
+</div>
+</div>
+<a id="gafcd6fde337d7542784698219322b6365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafcd6fde337d7542784698219322b6365">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _Scheduler_strong_APA_Initialize </td>
+          <td>(</td>
+          <td class="paramtype">const Scheduler_Control *&#160;</td>
+          <td class="paramname"><em>scheduler</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the Strong_APA scheduler. </p>
+<p>Sets the chain containing all the nodes to empty and initializes the SMP scheduler.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">scheduler</td><td>The scheduler control instance. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">the_thread</td><td>The thread to block. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">node</td><td>The node of the thread to block. </td></tr>
+    <tr><td class="paramname">scheduler</td><td>used to get reference to Strong APA scheduler context </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga1cde4345d4dc0b5a37a696fa446bb47e" title="Initializes the node with the given priority. ">_Scheduler_strong_APA_Node_initialize()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00083">83</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+
+</div>
+</div>
+<a id="gaaf649166522c7d7b2e9cca719d61e371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaf649166522c7d7b2e9cca719d61e371">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Move_from_ready_to_scheduled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void _Scheduler_strong_APA_Move_from_ready_to_scheduled </td>
+          <td>(</td>
+          <td class="paramtype">Scheduler_Context *&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Scheduler_Node *&#160;</td>
+          <td class="paramname"><em>ready_to_scheduled</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -340,18 +336,18 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00106">106</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00093">93</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
-<a id="ga7809e64065ec5d291f3dc82220a68d3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7809e64065ec5d291f3dc82220a68d3f">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Reconsider_help_request()</h2>
+<a id="ga63ef624a9881cf77a2b1eef2c6f05223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga63ef624a9881cf77a2b1eef2c6f05223">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Set_affinity()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void _Scheduler_strong_APA_Reconsider_help_request </td>
+          <td class="memname">bool _Scheduler_strong_APA_Set_affinity </td>
           <td>(</td>
           <td class="paramtype">const Scheduler_Control *&#160;</td>
           <td class="paramname"><em>scheduler</em>, </td>
@@ -360,13 +356,19 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Thread_Control *&#160;</td>
-          <td class="paramname"><em>the_thread</em>, </td>
+          <td class="paramname"><em>thread</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Scheduler_Node *&#160;</td>
-          <td class="paramname"><em>node</em>&#160;</td>
+          <td class="paramname"><em>node_base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Processor_mask *&#160;</td>
+          <td class="paramname"><em>affinity</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -376,253 +378,27 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Reconsiders help request. </p>
+<p>Checks if the processor set of the scheduler is the subset of the affinity set. </p>
+<p>Default implementation of the set affinity scheduler operation.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">scheduler</td><td>The scheduler control instance. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">the_thread</td><td>The thread to reconsider the help request of. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">node</td><td>The node of <em>the_thread</em> </td></tr>
+    <tr><td class="paramname">scheduler</td><td>This parameter is unused. </td></tr>
+    <tr><td class="paramname">thread</td><td>This parameter is unused. </td></tr>
+    <tr><td class="paramname">node</td><td>This parameter is unused. </td></tr>
+    <tr><td class="paramname">affinity</td><td>The new processor affinity set for the thread.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="schedulerstrongapa_8c.html#ac9a5de4acab29440ea33ab4ef3bd34c1">_Scheduler_strong_APA_Do_set_affinity()</a></dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>The processor set of the scheduler is a subset of the affinity set. </td></tr>
+    <tr><td class="paramname">false</td><td>The processor set of the scheduler is not a subset of the affinity set. </td></tr>
   </table>
   </dd>
 </dl>
 
-</div>
-</div>
-<a id="gac83f4ab63b404cdfea31e572fa9590a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac83f4ab63b404cdfea31e572fa9590a5">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Remove_processor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Thread_Control* _Scheduler_strong_APA_Remove_processor </td>
-          <td>(</td>
-          <td class="paramtype">const Scheduler_Control *&#160;</td>
-          <td class="paramname"><em>scheduler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct Per_CPU_Control *&#160;</td>
-          <td class="paramname"><em>cpu</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Removes an idle thread from the given cpu. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">scheduler</td><td>The scheduler instance. </td></tr>
-    <tr><td class="paramname">cpu</td><td>The cpu control to remove from <em>scheduler</em>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The idle thread of the processor. </dd></dl>
-
-</div>
-</div>
-<a id="ga6b96ab0939d82ee5813092159265840e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6b96ab0939d82ee5813092159265840e">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Unblock()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void _Scheduler_strong_APA_Unblock </td>
-          <td>(</td>
-          <td class="paramtype">const Scheduler_Control *&#160;</td>
-          <td class="paramname"><em>scheduler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Thread_Control *&#160;</td>
-          <td class="paramname"><em>the_thread</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Scheduler_Node *&#160;</td>
-          <td class="paramname"><em>node</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Unblocks the thread. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">scheduler</td><td>The scheduler control instance. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">the_thread</td><td>The thread to unblock. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">node</td><td>The node of the thread to unblock. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga3cdc0079d2d16a392834bd03b5115ad9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3cdc0079d2d16a392834bd03b5115ad9">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Update_priority()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void _Scheduler_strong_APA_Update_priority </td>
-          <td>(</td>
-          <td class="paramtype">const Scheduler_Control *&#160;</td>
-          <td class="paramname"><em>scheduler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Thread_Control *&#160;</td>
-          <td class="paramname"><em>the_thread</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Scheduler_Node *&#160;</td>
-          <td class="paramname"><em>node</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Updates the priority of the node. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">scheduler</td><td>The scheduler control instance. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">the_thread</td><td>The thread for the operation. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">node</td><td>The node to update the priority of. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="gaf43eb65a6fbbe2826ca4cec68a930cb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf43eb65a6fbbe2826ca4cec68a930cb5">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Withdraw_node()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void _Scheduler_strong_APA_Withdraw_node </td>
-          <td>(</td>
-          <td class="paramtype">const Scheduler_Control *&#160;</td>
-          <td class="paramname"><em>scheduler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Thread_Control *&#160;</td>
-          <td class="paramname"><em>the_thread</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Scheduler_Node *&#160;</td>
-          <td class="paramname"><em>node</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Thread_Scheduler_state&#160;</td>
-          <td class="paramname"><em>next_state</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Withdraws the node. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">scheduler</td><td>The scheduler control instance. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">the_thread</td><td>The thread to change the state to <em>next_state</em>. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">node</td><td>The node to withdraw. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">next_state</td><td>The next state for <em>the_thread</em>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga0720c2d79f2b6dd8e91d19879f72b8c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0720c2d79f2b6dd8e91d19879f72b8c7">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Yield()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void _Scheduler_strong_APA_Yield </td>
-          <td>(</td>
-          <td class="paramtype">const Scheduler_Control *&#160;</td>
-          <td class="paramname"><em>scheduler</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Thread_Control *&#160;</td>
-          <td class="paramname"><em>the_thread</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Scheduler_Node *&#160;</td>
-          <td class="paramname"><em>node</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Performs a yield operation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">scheduler</td><td>The scheduler control instance. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">the_thread</td><td>The thread to yield. </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">node</td><td>The node of <em>the_thread</em>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ga2642e9c7c12fd0dfb1a66f42949a95c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2642e9c7c12fd0dfb1a66f42949a95c4">&#9670;&nbsp;</a></span>here</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">To Change from here</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00114">114</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00364">364</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
