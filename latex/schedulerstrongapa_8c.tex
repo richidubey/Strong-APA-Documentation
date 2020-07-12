@@ -52,6 +52,8 @@ static bool \hyperlink{schedulerstrongapa_8c_a62c553216bd05f6e382334f08431cbd3}{
 static bool \hyperlink{schedulerstrongapa_8c_ab9e66cbf8ed4e98cf4a6c11fb309673f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node, Priority\+\_\+\+Control insert\+\_\+priority)
 \item 
 static void \hyperlink{schedulerstrongapa_8c_a94dbe1ee9ef6afd61ef8b773486f50bc}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Register\+\_\+idle} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$idle\+\_\+base, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
+\item 
+static void \hyperlink{schedulerstrongapa_8c_af84aab458fa8146f74cec54fe4c0d2ab}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+scheduled} (\hyperlink{structScheduler__strong__APA__Context}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context} $\ast$self, \hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node} $\ast$scheduled, const Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -136,7 +138,7 @@ Strong A\+PA Scheduler Implementation.
 
 
 
-Definition at line 389 of file schedulerstrongapa.\+c.
+Definition at line 385 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a970d0f587d69ebe4088cfeb0f8019033}\label{schedulerstrongapa_8c_a970d0f587d69ebe4088cfeb0f8019033}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Allocate\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Allocate\+\_\+processor}}
@@ -176,7 +178,7 @@ Definition at line 327 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 412 of file schedulerstrongapa.\+c.
+Definition at line 408 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a60129e44fa73e5241abc2f5f9f78bb1d}\label{schedulerstrongapa_8c_a60129e44fa73e5241abc2f5f9f78bb1d}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready}}
@@ -226,7 +228,7 @@ Definition at line 228 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 405 of file schedulerstrongapa.\+c.
+Definition at line 401 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a74822bb885194be893943b121601eba7}\label{schedulerstrongapa_8c_a74822bb885194be893943b121601eba7}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Insert\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Insert\+\_\+ready}}
@@ -276,7 +278,17 @@ Definition at line 62 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 432 of file schedulerstrongapa.\+c.
+Definition at line 428 of file schedulerstrongapa.\+c.
+
+\mbox{\Hypertarget{schedulerstrongapa_8c_af84aab458fa8146f74cec54fe4c0d2ab}\label{schedulerstrongapa_8c_af84aab458fa8146f74cec54fe4c0d2ab}} 
+\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+scheduled}}
+\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+scheduled}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+scheduled()}{\_Scheduler\_strong\_APA\_Set\_scheduled()}}
+{\footnotesize\ttfamily static void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+scheduled (\begin{DoxyParamCaption}\item[{\hyperlink{structScheduler__strong__APA__Context}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context} $\ast$}]{self,  }\item[{\hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node} $\ast$}]{scheduled,  }\item[{const Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$}]{cpu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 442 of file schedulerstrongapa.\+c.
 
 
 

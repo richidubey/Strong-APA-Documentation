@@ -32,6 +32,18 @@ extern "C" {
  * @{
  */
  
+ typedef struct {
+  /**
+   * @brief Chain of nodes that have affinity to this CPU.
+   */
+  Chain_Control affineNode;
+
+  /**
+   * @brief The scheduled thread of the corresponding processor.
+   */
+  Scheduler_strong_APA_Node *scheduled;
+} Scheduler_strong_APA_CPU;
+
  /**
  * @brief Scheduler context for Strong APA
  * scheduler.
@@ -45,16 +57,14 @@ extern "C" {
    * code.  
    */
   Scheduler_SMP_Context Base;
-
- /**
-   * @brief Chain of ready nodes present in the scheduler.
-   */
-  Chain_Control readyNodes;
   
-   /**
-   * @brief Chain of scheduled nodes present in the scheduler.
+  /**
+   * @brief A table with structure for each CPU.
+   *
+   * The index correspond to the CPU index, 
+   * so index 0 points to CPU 0 and so on. 
    */
-  Chain_Control scheduledNodes;
+  Scheduler_strong_APA_CPU CPU[ RTEMS_ZERO_LENGTH_ARRAY ];
 
 } Scheduler_strong_APA_Context;
 
@@ -67,12 +77,6 @@ typedef struct {
    * @brief SMP scheduler node.
    */
   Scheduler_SMP_Node Base;
-
-  /**
-   * @brief Chain node for Scheduler_strong_APA_Context::readyNodes
-   * and Scheduler_strong_APA_Context::scheduledNodes  .
-   */
-  Chain_Node Node;
 
   /**
    * @brief The associated affinity set of this node.

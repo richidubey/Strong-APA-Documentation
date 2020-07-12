@@ -439,5 +439,12 @@ static inline void _Scheduler_strong_APA_Register_idle(
   _Scheduler_strong_APA_Set_scheduled( self, idle, cpu );
 }
 
-
+static inline void _Scheduler_strong_APA_Set_scheduled(
+  Scheduler_strong_APA_Context 	*self,
+  Scheduler_strong_APA_Node   	*scheduled,
+  const Per_CPU_Control     	*cpu
+)
+{
+  self->CPU[ _Per_CPU_Get_index( cpu ) ].scheduled = scheduled;
+}
 
