@@ -80,22 +80,29 @@ Include dependency graph for schedulerstrongapa.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1292bf94e89d38dc295f558e91d3527a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structScheduler__strong__APA__Node.html">Scheduler_strong_APA_Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a1292bf94e89d38dc295f558e91d3527a">_Scheduler_strong_APA_Node_downcast</a> (Scheduler_Node *node)</td></tr>
-<tr class="separator:a1292bf94e89d38dc295f558e91d3527a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c6a0cbfb38651e3698501a1eca038db"><td class="memItemLeft" align="right" valign="top">static _Scheduler_strong_APA_Context *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a3c6a0cbfb38651e3698501a1eca038db">_Scheduler_strong_APA_Get_context</a> (const Scheduler_Control *scheduler)</td></tr>
 <tr class="separator:a3c6a0cbfb38651e3698501a1eca038db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b78bc26365ff79e6570cc1df857c54"><td class="memItemLeft" align="right" valign="top">static _Scheduler_strong_APA_Context *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a82b78bc26365ff79e6570cc1df857c54">_Scheduler_strong_APA_Get_self</a> (Scheduler_Context *context)</td></tr>
+<tr class="separator:a82b78bc26365ff79e6570cc1df857c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1292bf94e89d38dc295f558e91d3527a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structScheduler__strong__APA__Node.html">Scheduler_strong_APA_Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a1292bf94e89d38dc295f558e91d3527a">_Scheduler_strong_APA_Node_downcast</a> (Scheduler_Node *node)</td></tr>
+<tr class="separator:a1292bf94e89d38dc295f558e91d3527a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafcd6fde337d7542784698219322b6365"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gafcd6fde337d7542784698219322b6365">_Scheduler_strong_APA_Initialize</a> (const Scheduler_Control *scheduler)</td></tr>
 <tr class="memdesc:gafcd6fde337d7542784698219322b6365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Strong_APA scheduler.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#gafcd6fde337d7542784698219322b6365">More...</a><br /></td></tr>
 <tr class="separator:gafcd6fde337d7542784698219322b6365"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1cde4345d4dc0b5a37a696fa446bb47e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga1cde4345d4dc0b5a37a696fa446bb47e">_Scheduler_strong_APA_Node_initialize</a> (const Scheduler_Control *scheduler, Scheduler_Node *node, Thread_Control *the_thread, Priority_Control priority)</td></tr>
 <tr class="memdesc:ga1cde4345d4dc0b5a37a696fa446bb47e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the node with the given priority.  <a href="group__RTEMSScoreSchedulerStrongAPA.html#ga1cde4345d4dc0b5a37a696fa446bb47e">More...</a><br /></td></tr>
 <tr class="separator:ga1cde4345d4dc0b5a37a696fa446bb47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb6b87df52cea4341e73667f00dce0d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#afb6b87df52cea4341e73667f00dce0d5">_Scheduler_strong_APA_Do_update</a> (Scheduler_Context *context, Scheduler_Node *node, Priority_Control new_priority)</td></tr>
+<tr class="separator:afb6b87df52cea4341e73667f00dce0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62c553216bd05f6e382334f08431cbd3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a62c553216bd05f6e382334f08431cbd3">_Scheduler_strong_APA_Has_ready</a> (Scheduler_Context *context)</td></tr>
+<tr class="separator:a62c553216bd05f6e382334f08431cbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca59d69f6f261d5af4b17e73186ed98"><td class="memItemLeft" align="right" valign="top">static Scheduler_Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#aeca59d69f6f261d5af4b17e73186ed98">_Scheduler_strong_APA_Get_highest_ready</a> (Scheduler_Context *context, Scheduler_Node *filter)</td></tr>
+<tr class="memdesc:aeca59d69f6f261d5af4b17e73186ed98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the next highest node ready on run on the CPU on which  node was running on.  <a href="#aeca59d69f6f261d5af4b17e73186ed98">More...</a><br /></td></tr>
+<tr class="separator:aeca59d69f6f261d5af4b17e73186ed98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9a5de4acab29440ea33ab4ef3bd34c1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ac9a5de4acab29440ea33ab4ef3bd34c1">_Scheduler_strong_APA_Do_set_affinity</a> (Scheduler_Context *context, Scheduler_Node *node_base, void *arg)</td></tr>
 <tr class="separator:ac9a5de4acab29440ea33ab4ef3bd34c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60129e44fa73e5241abc2f5f9f78bb1d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a60129e44fa73e5241abc2f5f9f78bb1d">_Scheduler_strong_APA_Extract_from_ready</a> (Scheduler_Context *context, Scheduler_Node *node_to_extract)</td></tr>
 <tr class="separator:a60129e44fa73e5241abc2f5f9f78bb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeca59d69f6f261d5af4b17e73186ed98"><td class="memItemLeft" align="right" valign="top">static Scheduler_Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#aeca59d69f6f261d5af4b17e73186ed98">_Scheduler_strong_APA_Get_highest_ready</a> (Scheduler_Context *context, Scheduler_Node *filter)</td></tr>
-<tr class="separator:aeca59d69f6f261d5af4b17e73186ed98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf649166522c7d7b2e9cca719d61e371"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#aaf649166522c7d7b2e9cca719d61e371">_Scheduler_strong_APA_Move_from_ready_to_scheduled</a> (Scheduler_Context *context, Scheduler_Node *ready_to_scheduled)</td></tr>
 <tr class="separator:aaf649166522c7d7b2e9cca719d61e371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0834423e32bb300a5a52fe53636df96d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a0834423e32bb300a5a52fe53636df96d">_Scheduler_strong_APA_Move_from_scheduled_to_ready</a> (Scheduler_Context *context, Scheduler_Node *scheduled_to_ready)</td></tr>
@@ -113,8 +120,6 @@ Functions</h2></td></tr>
 <tr class="separator:ga63ef624a9881cf77a2b1eef2c6f05223"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ac09dac24785561fd7c5ee5bbd8f5ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a6ac09dac24785561fd7c5ee5bbd8f5ca">_Scheduler_strong_APA_Add_processor</a> (const Scheduler_Control *scheduler, Thread_Control *idle)</td></tr>
 <tr class="separator:a6ac09dac24785561fd7c5ee5bbd8f5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62c553216bd05f6e382334f08431cbd3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a62c553216bd05f6e382334f08431cbd3">_Scheduler_strong_APA_Has_ready</a> (Scheduler_Context *context)</td></tr>
-<tr class="separator:a62c553216bd05f6e382334f08431cbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9e66cbf8ed4e98cf4a6c11fb309673f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ab9e66cbf8ed4e98cf4a6c11fb309673f">_Scheduler_strong_APA_Enqueue_scheduled</a> (Scheduler_Context *context, Scheduler_Node *node, Priority_Control insert_priority)</td></tr>
 <tr class="separator:ab9e66cbf8ed4e98cf4a6c11fb309673f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94dbe1ee9ef6afd61ef8b773486f50bc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a94dbe1ee9ef6afd61ef8b773486f50bc">_Scheduler_strong_APA_Register_idle</a> (Scheduler_Context *context, Scheduler_Node *idle_base, Per_CPU_Control *cpu)</td></tr>
@@ -131,8 +136,6 @@ Functions</h2></td></tr>
 <tr class="separator:a91dc29dcdeea35e3329623be7a798e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e6ee051e6a359186fd6964051db69e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a8e6ee051e6a359186fd6964051db69e2">_Scheduler_strong_APA_Unblock</a> (const Scheduler_Control *scheduler, Thread_Control *thread, Scheduler_Node *node)</td></tr>
 <tr class="separator:a8e6ee051e6a359186fd6964051db69e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb6b87df52cea4341e73667f00dce0d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#afb6b87df52cea4341e73667f00dce0d5">_Scheduler_strong_APA_Do_update</a> (Scheduler_Context *context, Scheduler_Node *node, Priority_Control new_priority)</td></tr>
-<tr class="separator:afb6b87df52cea4341e73667f00dce0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd1bbcb35f99dd53b4ffe2fe52030cdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#afd1bbcb35f99dd53b4ffe2fe52030cdc">_Scheduler_strong_APA_Update_priority</a> (const Scheduler_Control *scheduler, Thread_Control *thread, Scheduler_Node *node)</td></tr>
 <tr class="separator:afd1bbcb35f99dd53b4ffe2fe52030cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad863eddc3fa4e2d785fb64af6505e90b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ad863eddc3fa4e2d785fb64af6505e90b">_Scheduler_strong_APA_Ask_for_help</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
@@ -175,7 +178,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00321">321</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00412">412</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -225,7 +228,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00209">209</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00300">300</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -261,7 +264,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00508">508</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00579">579</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -297,7 +300,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00405">405</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00489">489</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -341,7 +344,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00519">519</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00590">590</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -385,7 +388,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00060">60</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00190">190</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -429,7 +432,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00474">474</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00055">55</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -473,7 +476,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00263">263</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00354">354</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -517,7 +520,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00344">344</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00428">428</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -555,7 +558,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00075">75</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00205">205</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -593,7 +596,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00425">425</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00509">509</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -621,7 +624,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00023">23</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00017">17</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -659,7 +662,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00096">96</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p>Checks the next highest node ready on run on the CPU on which  node was running on. </p>
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00104">104</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -697,7 +702,35 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00183">183</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00274">274</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+
+</div>
+</div>
+<a id="a82b78bc26365ff79e6570cc1df857c54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b78bc26365ff79e6570cc1df857c54">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Get_self()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static _Scheduler_strong_APA_Context* _Scheduler_strong_APA_Get_self </td>
+          <td>(</td>
+          <td class="paramtype">Scheduler_Context *&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00023">23</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -725,7 +758,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00337">337</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00069">69</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -769,7 +802,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00191">191</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00282">282</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -807,7 +840,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00133">133</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00224">224</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -845,7 +878,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00156">156</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00247">247</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -873,7 +906,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00017">17</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00029">29</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -909,7 +942,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00539">539</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00610">610</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -953,7 +986,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00364">364</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00448">448</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -983,7 +1016,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00441">441</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00525">525</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -1027,7 +1060,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00378">378</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00462">462</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -1063,7 +1096,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00456">456</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00540">540</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -1099,7 +1132,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00488">488</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00559">559</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -1141,7 +1174,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00556">556</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00627">627</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -1177,7 +1210,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00387">387</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00471">471</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>

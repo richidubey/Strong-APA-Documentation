@@ -9,22 +9,13 @@ Scheduler context for Strong A\+PA scheduler.
 
 {\ttfamily \#include $<$schedulerstrongapa.\+h$>$}
 
-
-
-Collaboration diagram for Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=226pt]{structScheduler__strong__APA__Context__coll__graph}
-\end{center}
-\end{figure}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 Scheduler\+\_\+\+S\+M\+P\+\_\+\+Context \hyperlink{structScheduler__strong__APA__Context_a55755b445b7e7beaf1b87b178521e615}{Base}
 \begin{DoxyCompactList}\small\item\em S\+MP Context to refer to S\+MP implementation code. \end{DoxyCompactList}\item 
-\hyperlink{structScheduler__strong__APA__CPU}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU} \hyperlink{structScheduler__strong__APA__Context_afdc7dcc1fef07a07130a8ddde0895e9c}{C\+PU} \mbox{[}R\+T\+E\+M\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+A\+R\+R\+AY\mbox{]}
-\begin{DoxyCompactList}\small\item\em A table with structure for each C\+PU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+Chain\+\_\+\+Control \hyperlink{structScheduler__strong__APA__Context_ad850b98c29b7ab48bb7aff1a941fb331}{all\+Nodes}
+\begin{DoxyCompactList}\small\item\em Chain of all the nodes present in the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -32,11 +23,25 @@ Scheduler context for Strong A\+PA scheduler.
 
 Has the structure for scheduler context and Node defintion for Strong A\+PA scheduler 
 
-Definition at line 61 of file schedulerstrongapa.\+h.
+Definition at line 42 of file schedulerstrongapa.\+h.
 
 
 
 \subsection{Member Data Documentation}
+\mbox{\Hypertarget{structScheduler__strong__APA__Context_ad850b98c29b7ab48bb7aff1a941fb331}\label{structScheduler__strong__APA__Context_ad850b98c29b7ab48bb7aff1a941fb331}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}!all\+Nodes@{all\+Nodes}}
+\index{all\+Nodes@{all\+Nodes}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}}
+\subsubsection{\texorpdfstring{all\+Nodes}{allNodes}}
+{\footnotesize\ttfamily Chain\+\_\+\+Control Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::all\+Nodes}
+
+
+
+Chain of all the nodes present in the system. 
+
+Accounts for ready and scheduled nodes. 
+
+Definition at line 53 of file schedulerstrongapa.\+h.
+
 \mbox{\Hypertarget{structScheduler__strong__APA__Context_a55755b445b7e7beaf1b87b178521e615}\label{structScheduler__strong__APA__Context_a55755b445b7e7beaf1b87b178521e615}} 
 \index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}!Base@{Base}}
 \index{Base@{Base}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}}
@@ -49,21 +54,7 @@ S\+MP Context to refer to S\+MP implementation code.
 
 
 
-Definition at line 66 of file schedulerstrongapa.\+h.
-
-\mbox{\Hypertarget{structScheduler__strong__APA__Context_afdc7dcc1fef07a07130a8ddde0895e9c}\label{structScheduler__strong__APA__Context_afdc7dcc1fef07a07130a8ddde0895e9c}} 
-\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}!C\+PU@{C\+PU}}
-\index{C\+PU@{C\+PU}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}}
-\subsubsection{\texorpdfstring{C\+PU}{CPU}}
-{\footnotesize\ttfamily \hyperlink{structScheduler__strong__APA__CPU}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU} Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+C\+PU\mbox{[}R\+T\+E\+M\+S\+\_\+\+Z\+E\+R\+O\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+A\+R\+R\+AY\mbox{]}}
-
-
-
-A table with structure for each C\+PU. 
-
-The index correspond to the C\+PU index, so index 0 points to C\+PU 0 and so on. 
-
-Definition at line 74 of file schedulerstrongapa.\+h.
+Definition at line 47 of file schedulerstrongapa.\+h.
 
 
 
