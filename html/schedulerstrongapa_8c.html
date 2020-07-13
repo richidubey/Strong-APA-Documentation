@@ -122,6 +122,8 @@ Functions</h2></td></tr>
 <tr class="separator:a94dbe1ee9ef6afd61ef8b773486f50bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af84aab458fa8146f74cec54fe4c0d2ab"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#af84aab458fa8146f74cec54fe4c0d2ab">_Scheduler_strong_APA_Set_scheduled</a> (<a class="el" href="structScheduler__strong__APA__Context.html">Scheduler_strong_APA_Context</a> *self, <a class="el" href="structScheduler__strong__APA__Node.html">Scheduler_strong_APA_Node</a> *scheduled, const Per_CPU_Control *cpu)</td></tr>
 <tr class="separator:af84aab458fa8146f74cec54fe4c0d2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d1206459f21c74882cd2fb3ddd4aae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ad6d1206459f21c74882cd2fb3ddd4aae">_Scheduler_strong_APA_Yield</a> (const Scheduler_Control *scheduler, Thread_Control *thread, Scheduler_Node *node)</td></tr>
+<tr class="separator:ad6d1206459f21c74882cd2fb3ddd4aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -143,8 +145,8 @@ Variables</h2></td></tr>
 <tr class="separator:a51496fdfb596c6b2eb2c3beafa7d39d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fd003aab858ebba4664fa5934368385"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a4fd003aab858ebba4664fa5934368385">_Scheduler_strong_APA_Add_processor</a></td></tr>
 <tr class="separator:a4fd003aab858ebba4664fa5934368385"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d189bb139fa6f6c1f65a9244178412b"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a6d189bb139fa6f6c1f65a9244178412b">_Scheduler_strong_APA_Remove_processor</a></td></tr>
-<tr class="separator:a6d189bb139fa6f6c1f65a9244178412b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1ba2aa8f9d0f55340760ac49858f583"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ac1ba2aa8f9d0f55340760ac49858f583">_Scheduler_strong_APA_Remove_processor</a></td></tr>
+<tr class="separator:ac1ba2aa8f9d0f55340760ac49858f583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6ed869799a85c0f29252a85d9ef3541"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ac6ed869799a85c0f29252a85d9ef3541">_Scheduler_strong_APA_Node_initialize</a></td></tr>
 <tr class="separator:ac6ed869799a85c0f29252a85d9ef3541"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57664a96af3293675377841ed089e5d4"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a57664a96af3293675377841ed089e5d4">_Scheduler_EDF_SMP_Initialize</a></td></tr>
@@ -813,6 +815,42 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ad6d1206459f21c74882cd2fb3ddd4aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6d1206459f21c74882cd2fb3ddd4aae">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Yield()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _Scheduler_strong_APA_Yield </td>
+          <td>(</td>
+          <td class="paramtype">const Scheduler_Control *&#160;</td>
+          <td class="paramname"><em>scheduler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Thread_Control *&#160;</td>
+          <td class="paramname"><em>thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Scheduler_Node *&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00451">451</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a72fea2084c662e7ee54c4ec79afa6cb1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a72fea2084c662e7ee54c4ec79afa6cb1">&#9670;&nbsp;</a></span>__pad0__</h2>
@@ -1246,14 +1284,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6d189bb139fa6f6c1f65a9244178412b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d189bb139fa6f6c1f65a9244178412b">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Remove_processor</h2>
+<a id="ac1ba2aa8f9d0f55340760ac49858f583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ba2aa8f9d0f55340760ac49858f583">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Remove_processor</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ToAdd _Scheduler_strong_APA_Remove_processor</td>
+          <td class="memname">ToAdd **************************** _Scheduler_strong_APA_Remove_processor</td>
         </tr>
       </table>
 </div><div class="memdoc">

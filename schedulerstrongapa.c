@@ -17,7 +17,7 @@ ToAdd:
     _Scheduler_strong_APA_Ask_for_help, \
     _Scheduler_strong_APA_Reconsider_help_request, \
     _Scheduler_strong_APA_Withdraw_node, \
-    _Scheduler_strong_APA_Add_processor, \  ****************************
+    _Scheduler_strong_APA_Add_processor, \  	****************************
     _Scheduler_strong_APA_Remove_processor, \
     _Scheduler_strong_APA_Node_initialize, \      ****************************
     _Scheduler_strong_APA_Set_affinity \	********************************
@@ -446,5 +446,23 @@ static inline void _Scheduler_strong_APA_Set_scheduled(
 )
 {
   self->CPU[ _Per_CPU_Get_index( cpu ) ].scheduled = scheduled;
+}
+
+void _Scheduler_strong_APA_Yield(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  _Scheduler_SMP_Yield(
+    context,
+    thread,
+    node,
+    _Scheduler_strong_APA_Extract_from_ready,
+    _Scheduler_strong_APA_Enqueue,
+    _Scheduler_strong_APA_Enqueue_scheduled
+  );
 }
 

@@ -54,6 +54,8 @@ static bool \hyperlink{schedulerstrongapa_8c_ab9e66cbf8ed4e98cf4a6c11fb309673f}{
 static void \hyperlink{schedulerstrongapa_8c_a94dbe1ee9ef6afd61ef8b773486f50bc}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Register\+\_\+idle} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$idle\+\_\+base, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
 \item 
 static void \hyperlink{schedulerstrongapa_8c_af84aab458fa8146f74cec54fe4c0d2ab}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+scheduled} (\hyperlink{structScheduler__strong__APA__Context}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context} $\ast$self, \hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node} $\ast$scheduled, const Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
+\item 
+void \hyperlink{schedulerstrongapa_8c_ad6d1206459f21c74882cd2fb3ddd4aae}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -76,7 +78,7 @@ To\+Add \hyperlink{schedulerstrongapa_8c_a51496fdfb596c6b2eb2c3beafa7d39d8}{\+\_
 \item 
 To\+Add \hyperlink{schedulerstrongapa_8c_a4fd003aab858ebba4664fa5934368385}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor}
 \item 
-To\+Add \hyperlink{schedulerstrongapa_8c_a6d189bb139fa6f6c1f65a9244178412b}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}
+To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{schedulerstrongapa_8c_ac1ba2aa8f9d0f55340760ac49858f583}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}
 \item 
 To\+Add \hyperlink{schedulerstrongapa_8c_ac6ed869799a85c0f29252a85d9ef3541}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize}
 \item 
@@ -289,6 +291,16 @@ Definition at line 428 of file schedulerstrongapa.\+c.
 
 
 Definition at line 442 of file schedulerstrongapa.\+c.
+
+\mbox{\Hypertarget{schedulerstrongapa_8c_ad6d1206459f21c74882cd2fb3ddd4aae}\label{schedulerstrongapa_8c_ad6d1206459f21c74882cd2fb3ddd4aae}} 
+\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}}
+\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield()}{\_Scheduler\_strong\_APA\_Yield()}}
+{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Definition at line 451 of file schedulerstrongapa.\+c.
 
 
 
@@ -563,11 +575,11 @@ Definition at line 11 of file schedulerstrongapa.\+c.
 
 Definition at line 11 of file schedulerstrongapa.\+c.
 
-\mbox{\Hypertarget{schedulerstrongapa_8c_a6d189bb139fa6f6c1f65a9244178412b}\label{schedulerstrongapa_8c_a6d189bb139fa6f6c1f65a9244178412b}} 
+\mbox{\Hypertarget{schedulerstrongapa_8c_ac1ba2aa8f9d0f55340760ac49858f583}\label{schedulerstrongapa_8c_ac1ba2aa8f9d0f55340760ac49858f583}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}}
 \index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
 \subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}{\_Scheduler\_strong\_APA\_Remove\_processor}}
-{\footnotesize\ttfamily To\+Add \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}
+{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}
 
 
 
