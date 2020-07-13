@@ -512,3 +512,33 @@ void _Scheduler_strong_APA_Update_priority(
     _Scheduler_strong_APA_Do_ask_for_help
   );
 }
+
+bool _Scheduler_strong_APA_Ask_for_help(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *the_thread,
+  Scheduler_Node          *node
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  return _Scheduler_strong_APA_Do_ask_for_help( context, the_thread, node );
+}
+
+static inline bool _Scheduler_strong_APA_Do_ask_for_help(
+  Scheduler_Context *context,
+  Thread_Control    *the_thread,
+  Scheduler_Node    *node
+)
+{
+  return _Scheduler_SMP_Ask_for_help(
+    context,
+    the_thread,
+    node,
+    _Scheduler_SMP_Priority_less_equal,
+    _Scheduler_strong_APA_Insert_ready,
+    _Scheduler_SMP_Insert_scheduled,
+    _Scheduler_strong_APA_Move_from_scheduled_to_ready,
+    _Scheduler_strong_APA_Get_lowest_scheduled,
+    _Scheduler_strong_APA_Allocate_processor
+  );
+}

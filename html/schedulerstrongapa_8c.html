@@ -136,6 +136,10 @@ Functions</h2></td></tr>
 <tr class="separator:afb6b87df52cea4341e73667f00dce0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd1bbcb35f99dd53b4ffe2fe52030cdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#afd1bbcb35f99dd53b4ffe2fe52030cdc">_Scheduler_strong_APA_Update_priority</a> (const Scheduler_Control *scheduler, Thread_Control *thread, Scheduler_Node *node)</td></tr>
 <tr class="separator:afd1bbcb35f99dd53b4ffe2fe52030cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad863eddc3fa4e2d785fb64af6505e90b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ad863eddc3fa4e2d785fb64af6505e90b">_Scheduler_strong_APA_Ask_for_help</a> (const Scheduler_Control *scheduler, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
+<tr class="separator:ad863eddc3fa4e2d785fb64af6505e90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af252e902b533a9f44844bdcc22399318"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#af252e902b533a9f44844bdcc22399318">_Scheduler_strong_APA_Do_ask_for_help</a> (Scheduler_Context *context, Thread_Control *the_thread, Scheduler_Node *node)</td></tr>
+<tr class="separator:af252e902b533a9f44844bdcc22399318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -231,6 +235,42 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ad863eddc3fa4e2d785fb64af6505e90b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad863eddc3fa4e2d785fb64af6505e90b">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Ask_for_help()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool _Scheduler_strong_APA_Ask_for_help </td>
+          <td>(</td>
+          <td class="paramtype">const Scheduler_Control *&#160;</td>
+          <td class="paramname"><em>scheduler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Thread_Control *&#160;</td>
+          <td class="paramname"><em>the_thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Scheduler_Node *&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00516">516</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+
+</div>
+</div>
 <a id="ae7875a7e75f2615c6603155126d437db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae7875a7e75f2615c6603155126d437db">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Block()</h2>
 
@@ -264,6 +304,50 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00413">413</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+
+</div>
+</div>
+<a id="af252e902b533a9f44844bdcc22399318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af252e902b533a9f44844bdcc22399318">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Do_ask_for_help()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool _Scheduler_strong_APA_Do_ask_for_help </td>
+          <td>(</td>
+          <td class="paramtype">Scheduler_Context *&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Thread_Control *&#160;</td>
+          <td class="paramname"><em>the_thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Scheduler_Node *&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00527">527</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
