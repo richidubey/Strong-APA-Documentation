@@ -15,5 +15,4 @@ var menudata={children:[
 {text:"s",url:"globals.html#index_s"}]},
 {text:"Functions",url:"globals_func.html",children:[
 {text:"_",url:"globals_func.html#index__"}]},
-{text:"Variables",url:"globals_vars.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

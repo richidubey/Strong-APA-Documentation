@@ -6,17 +6,9 @@
  * @brief Strong APA Scheduler Implementation
  */
 
------------------------------------------------------------------------------------
-ToAdd:
-    _Scheduler_strong_APA_Ask_for_help, \
-    _Scheduler_strong_APA_Reconsider_help_request, \
-    _Scheduler_strong_APA_Withdraw_node, \
--------------------------------------------
-  
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-
 
 #include <rtems/score/schedulerstrongapa.h>
 #include <rtems/score/schedulersmpimpl.h>
@@ -193,7 +185,7 @@ static inline Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
   Scheduler_Node    *filter_base
 )
 {	
-	//PSEUDO CODE Required : Code 1
+	//PSEUDO CODE Required : Code 1 Modified by me.
 }
 
 static inline void _Scheduler_strong_APA_Insert_ready(
@@ -542,3 +534,43 @@ static inline bool _Scheduler_strong_APA_Do_ask_for_help(
     _Scheduler_strong_APA_Allocate_processor
   );
 }
+
+
+void _Scheduler_strong_APA_Reconsider_help_request(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *the_thread,
+  Scheduler_Node          *node
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  _Scheduler_SMP_Reconsider_help_request(
+    context,
+    the_thread,
+    node,
+    _Scheduler_strong_APA_Extract_from_ready
+  );
+}
+
+
+void _Scheduler_strong_APA_Withdraw_node(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *the_thread,
+  Scheduler_Node          *node,
+  Thread_Scheduler_state   next_state
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  _Scheduler_SMP_Withdraw_node(
+    context,
+    the_thread,
+    node,
+    next_state,
+    _Scheduler_strong_APA_Extract_from_ready,
+    _Scheduler_strong_APA_Get_highest_ready,
+    _Scheduler_strong_APA_Move_from_ready_to_scheduled,
+    _Scheduler_strong_APA_Allocate_processor
+  );
+}
+
