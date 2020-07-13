@@ -31,25 +31,6 @@ extern "C" {
  *
  * @{
  */
- 
-  /**
- * @brief CPU Structure for Strong APA
- * scheduler.
- *
- * This structure stores nodes associated
- * with a CPU and the currently scheduled node.
- */
- typedef struct {
-  /**
-   * @brief Chain of nodes that have affinity to this CPU.
-   */
-  Chain_Control affineNode;
-
-  /**
-   * @brief The scheduled thread of the corresponding processor.
-   */
-  Scheduler_strong_APA_Node *scheduled;
-} Scheduler_strong_APA_CPU;
 
  /**
  * @brief Scheduler context for Strong APA
@@ -66,12 +47,10 @@ extern "C" {
   Scheduler_SMP_Context Base;
   
   /**
-   * @brief A table with structure for each CPU.
-   *
-   * The index correspond to the CPU index, 
-   * so index 0 points to CPU 0 and so on. 
+   * @brief Chain of all the nodes present in
+   * the system. Accounts for ready and scheduled nodes.
    */
-  Scheduler_strong_APA_CPU CPU[ RTEMS_ZERO_LENGTH_ARRAY ];
+  Chain_Control allNodes;
 
 } Scheduler_strong_APA_Context;
 
@@ -87,9 +66,8 @@ typedef struct {
   
  /**
    * @brief Chain node for 
-   * Scheduler_strong_APA_Context::
-   * Scheduler_strong_APA_CPU::
-   * affineNode.
+   * Scheduler_strong_APA_Context::allNodes
+   *
    */
   Chain_Node Node;
 

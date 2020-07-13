@@ -13,18 +13,23 @@
 #include <rtems/score/schedulerstrongapa.h>
 #include <rtems/score/schedulersmpimpl.h>
 
-static inline Scheduler_strong_APA_Node *
-_Scheduler_strong_APA_Node_downcast( Scheduler_Node *node )
-{
-  return (Scheduler_strong_APA_Node *) node;
-}
-
 static inline _Scheduler_strong_APA_Context *
 _Scheduler_strong_APA_Get_context( const Scheduler_Control *scheduler )
 {
   return (_Scheduler_strong_APA_Context *) _Scheduler_Get_context( scheduler );
 }
 
+static inline _Scheduler_strong_APA_Context *
+_Scheduler_strong_APA_Get_self( Scheduler_Context *context )
+{
+  return (_Scheduler_strong_APA_Context *) context;
+}
+
+static inline Scheduler_strong_APA_Node *
+_Scheduler_strong_APA_Node_downcast( Scheduler_Node *node )
+{
+  return (Scheduler_strong_APA_Node *) node;
+}
 
 void _Scheduler_strong_APA_Initialize( const Scheduler_Control *scheduler )
 {
@@ -32,8 +37,6 @@ void _Scheduler_strong_APA_Initialize( const Scheduler_Control *scheduler )
     _Scheduler_strong_APA_Get_context( scheduler );
 
   _Scheduler_SMP_Initialize( &self->Base );
-  _Chain_Initialize_empty( &self->readyNodes );
-  _Chain_Initialize_empty( &self->scheduledNodes );
 }
 
 void _Scheduler_strong_APA_Node_initialize(
@@ -43,19 +46,146 @@ void _Scheduler_strong_APA_Node_initialize(
   Priority_Control         priority
 )
 {
- Scheduler_strong_APA_Context *self =
-    _Scheduler_strong_APA_Get_context( scheduler );
-
   Scheduler_SMP_Node *smp_node;
-  Scheduler_strong_APA_Node *self_node;
-
-  self_node=_Scheduler_strong_APA_Node_downcast(node);
-
+  
   smp_node = _Scheduler_SMP_Node_downcast( node );
   _Scheduler_SMP_Node_initialize( scheduler, smp_node, the_thread, priority );
-
-   _Chain_Append_unprotected( &self->readyNodes, &self_node->Node );	//Is it right to put it in the ready chain right away?
 }
+
+static inline void _Scheduler_strong_APA_Do_update(
+  Scheduler_Context *context,
+  Scheduler_Node    *node,
+  Priority_Control   new_priority
+)
+{
+  Scheduler_SMP_Node *smp_node;
+
+  (void) context;
+
+  smp_node = _Scheduler_SMP_Node_downcast( node );
+  _Scheduler_SMP_Node_update_priority( smp_node, new_priority );
+}
+
+static inline bool _Scheduler_strong_APA_Has_ready( Scheduler_Context *context )
+{
+  Scheduler_EDF_SMP_Context *self = _Scheduler_strong_APA_Get_self( context );
+	
+  bool 			ret;
+  const Chain_Node      *tail;
+  Chain_Node 		*next;
+  
+  tail = _Chain_Immutable_tail( &self->allNodes );
+  next = _Chain_First( &self->allNodes );
+  
+  ret=false;
+  
+  while ( next != tail ) {
+     Scheduler_strong_APA_Node *node;
+       
+     node = (Scheduler_strong_APA_Node *) next;
+     
+     if(Scheduler_SMP_Node_state( &node->Base.Base ) 
+     == SCHEDULER_SMP_NODE_READY) {
+     
+       ret=true;
+       break;
+     }
+  
+  }
+  
+  return ret;
+}
+
+/**
+ * @brief Checks the next highest node ready on run
+ * on the CPU on which @filter node was running on 
+ *
+ */
+static inline Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
+  Scheduler_Context *context,
+  Scheduler_Node    *filter
+) //TODO
+{
+  //Plan for this function: (Pseudo Code):
+  self=_Scheduler_strong_APA_Get_self( context );
+	
+  Thread_Control 	thread;
+  Per_CPU_Control 	thread_cpu;
+  Per_CPU_Control	assigned_cpu;
+  Scheduler_Node	*ret;
+  Priority_Control	max_prio;
+  Priority_Control	curr_prio;
+	
+  thread=filter->Base.Base.user;	
+  thread_cpu = _Thread_Get_CPU( thread );
+	
+  //Implement the BFS Algorithm for task departure
+  //to get the highest ready task for a particular CPU
+  
+  
+  max_priority = _Scheduler_Node_get_priority( filter );
+  max_priority = SCHEDULER_PRIORITY_PURIFY( priority );
+
+  ret=filter;
+
+  const Chain_Node          *tail;
+  Chain_Node                *next;
+  
+  FiFoQueue.insert(thread_CPU);	//Help: How to implement a FifoQueue efficiently?
+  visited[thread_CPU]=true;	
+  
+  
+   while(!FiFoQueue.isEmpty) {
+     tail = _Chain_Immutable_tail( &self->allNodes );
+     next = _Chain_First( &self->allNodes );
+  
+     while ( next != tail ) {
+       Scheduler_strong_APA_Node *node;
+       
+       node = (Scheduler_strong_APA_Node *) next;
+    
+       if(hasCPUinSet(	//Checks if the CPU is in the affinity set of the node
+         node.affinity,
+         _Per_CPU_Get_index(thread_CPU)) ) {
+           
+         if(Scheduler_SMP_Node_state( &node->Base.Base ) 
+            == SCHEDULER_SMP_NODE_SCHEDULED) {
+             
+            assigned_cpu = _Thread_Get_CPU( node->Base.Base.user );
+            if(visited[ assigned_cpu ] == false) {
+              FifoQueue.insert( assigned_cpu );
+              visited[ assigned_cpu ] = true;
+            } 
+          }
+          else if(Scheduler_SMP_Node_state( &node->Base.Base ) 
+           == SCHEDULER_SMP_NODE_READY) {
+            curr_priority = _Scheduler_Node_get_priority( filter );
+  	    curr_priority = SCHEDULER_PRIORITY_PURIFY( priority );
+  		
+            if(curr_priority>max_priority) {
+              max_priority=curr_priority;
+  	      ret=node->Base.Base;
+  	    }
+          }
+    	}
+       next = _Chain_Next( next );
+     }
+     
+     FifoQueue.pop();  
+  }
+  
+  if( ret != filter)
+  {
+  	//Backtrack on the path from
+  	//thread_cpu to ret, shifting along every task.
+  	
+  	//After this, thread_cpu receives the ret task
+  	// and the ready task ret gets scheduled. 
+  }
+  
+  return ret;
+  
+ }
 
 static inline void  _Scheduler_strong_APA_Do_set_affinity(
   Scheduler_Context *context,
@@ -89,47 +219,8 @@ static inline void _Scheduler_strong_APA_Extract_from_ready(
    
    _Chain_Extract_unprotected( &node->Node );
    _Chain_Set_off_chain( &node->Node );
- }
-
-
-
-static inline Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
-  Scheduler_Context *context,
-  Scheduler_Node    *filter
-)	//TODO
-{
-/*  _Scheduler_strong_APA_Context *self;*/
-/*  _Scheduler_strong_APA_Node    *highest_ready;*/
-/*  _Scheduler_strong_APA_Node    *node;*/
-/*  const Chain_Node          *tail;*/
-/*  Chain_Node                *next;*/
-
-/*  self = _Scheduler_EDF_SMP_Get_self( context );*/
-/*  highest_ready = (Scheduler_EDF_SMP_Node *)*/
-/*    _RBTree_Minimum( &self->Ready[ 0 ].Queue );*/
-/*  _Assert( highest_ready != NULL );*/
-
-/*  tail = _Chain_Immutable_tail( &self->Affine_queues );*/
-/*  next = _Chain_First( &self->Affine_queues );*/
-
-/*  while ( next != tail ) {*/
-/*    Scheduler_EDF_SMP_Ready_queue *ready_queue;*/
-
-/*    ready_queue = (Scheduler_EDF_SMP_Ready_queue *) next;*/
-/*    highest_ready = _Scheduler_EDF_SMP_Challenge_highest_ready(*/
-/*      self,*/
-/*      highest_ready,*/
-/*      &ready_queue->Queue*/
-/*    );*/
-
-/*    next = _Chain_Next( next );*/
-/*  }*/
-
-/*  return &highest_ready->Base.Base;*/
 }
 
-
- 
 static inline void  _Scheduler_strong_APA_Move_from_ready_to_scheduled(
   Scheduler_Context *context,
   Scheduler_Node    *ready_to_scheduled
@@ -334,13 +425,6 @@ void _Scheduler_strong_APA_Add_processor(
   );
 }
 
-static inline bool _Scheduler_strong_APA_Has_ready( Scheduler_Context *context )
-{
-  Scheduler_EDF_SMP_Context *self = _Scheduler_strong_APA_Get_self( context );
-
-  return !_Chain_Is_empty(self->readyNodes);
-}
-
 static inline bool _Scheduler_strong_APA_Enqueue_scheduled(
   Scheduler_Context *context,
   Scheduler_Node    *node,
@@ -471,19 +555,6 @@ void _Scheduler_strong_APA_Unblock(
 }
 
 
-static inline void _Scheduler_strong_APA_Do_update(
-  Scheduler_Context *context,
-  Scheduler_Node    *node,
-  Priority_Control   new_priority
-)
-{
-  Scheduler_SMP_Node *smp_node;
-
-  (void) context;
-
-  smp_node = _Scheduler_SMP_Node_downcast( node );
-  _Scheduler_SMP_Node_update_priority( smp_node, new_priority );
-}
 
 void _Scheduler_strong_APA_Update_priority(
   const Scheduler_Control *scheduler,
