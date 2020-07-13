@@ -124,6 +124,8 @@ Functions</h2></td></tr>
 <tr class="separator:af84aab458fa8146f74cec54fe4c0d2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6d1206459f21c74882cd2fb3ddd4aae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ad6d1206459f21c74882cd2fb3ddd4aae">_Scheduler_strong_APA_Yield</a> (const Scheduler_Control *scheduler, Thread_Control *thread, Scheduler_Node *node)</td></tr>
 <tr class="separator:ad6d1206459f21c74882cd2fb3ddd4aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7875a7e75f2615c6603155126d437db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ae7875a7e75f2615c6603155126d437db">_Scheduler_strong_APA_Block</a> (const Scheduler_Control *scheduler, Thread_Control *thread, Scheduler_Node *node)</td></tr>
+<tr class="separator:ae7875a7e75f2615c6603155126d437db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -131,8 +133,8 @@ Variables</h2></td></tr>
 <tr class="separator:a72fea2084c662e7ee54c4ec79afa6cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dfa90c5aa89e60c75c1c23695fbd857"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a0dfa90c5aa89e60c75c1c23695fbd857">_Scheduler_strong_APA_Yield</a></td></tr>
 <tr class="separator:a0dfa90c5aa89e60c75c1c23695fbd857"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77b4dcee45205dd5e72addfa921af4cc"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a77b4dcee45205dd5e72addfa921af4cc">_Scheduler_strong_APA_Block</a></td></tr>
-<tr class="separator:a77b4dcee45205dd5e72addfa921af4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a033883b773fbda032637832f3b7a408f"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a033883b773fbda032637832f3b7a408f">_Scheduler_strong_APA_Block</a></td></tr>
+<tr class="separator:a033883b773fbda032637832f3b7a408f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81baa0f3613f9b9d8cc2cbf937cf57cd"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a81baa0f3613f9b9d8cc2cbf937cf57cd">_Scheduler_strong_APA_Unblock</a></td></tr>
 <tr class="separator:a81baa0f3613f9b9d8cc2cbf937cf57cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c87b05d6ee253bf3dbc583c17654456"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a9c87b05d6ee253bf3dbc583c17654456">_Scheduler_strong_APA_Update_priority</a></td></tr>
@@ -274,6 +276,42 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00273">273</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+
+</div>
+</div>
+<a id="ae7875a7e75f2615c6603155126d437db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7875a7e75f2615c6603155126d437db">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Block()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _Scheduler_strong_APA_Block </td>
+          <td>(</td>
+          <td class="paramtype">const Scheduler_Control *&#160;</td>
+          <td class="paramname"><em>scheduler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Thread_Control *&#160;</td>
+          <td class="paramname"><em>thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Scheduler_Node *&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00469">469</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -1236,14 +1274,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a77b4dcee45205dd5e72addfa921af4cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77b4dcee45205dd5e72addfa921af4cc">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Block</h2>
+<a id="a033883b773fbda032637832f3b7a408f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a033883b773fbda032637832f3b7a408f">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Block</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ToAdd _Scheduler_strong_APA_Block</td>
+          <td class="memname">ToAdd **************************** _Scheduler_strong_APA_Block</td>
         </tr>
       </table>
 </div><div class="memdoc">

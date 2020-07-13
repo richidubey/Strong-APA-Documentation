@@ -2,6 +2,7 @@ var searchData=
 [
   ['_5fscheduler_5fstrong_5fapa_5fadd_5fprocessor',['_Scheduler_strong_APA_Add_processor',['../schedulerstrongapa_8c.html#a6ac09dac24785561fd7c5ee5bbd8f5ca',1,'schedulerstrongapa.c']]],
   ['_5fscheduler_5fstrong_5fapa_5fallocate_5fprocessor',['_Scheduler_strong_APA_Allocate_processor',['../schedulerstrongapa_8c.html#a970d0f587d69ebe4088cfeb0f8019033',1,'schedulerstrongapa.c']]],
+  ['_5fscheduler_5fstrong_5fapa_5fblock',['_Scheduler_strong_APA_Block',['../schedulerstrongapa_8c.html#ae7875a7e75f2615c6603155126d437db',1,'schedulerstrongapa.c']]],
   ['_5fscheduler_5fstrong_5fapa_5fdo_5fset_5faffinity',['_Scheduler_strong_APA_Do_set_affinity',['../schedulerstrongapa_8c.html#ac9a5de4acab29440ea33ab4ef3bd34c1',1,'schedulerstrongapa.c']]],
   ['_5fscheduler_5fstrong_5fapa_5fenqueue',['_Scheduler_strong_APA_Enqueue',['../schedulerstrongapa_8c.html#a072ea7b584005d0ff44e13cf2684ba09',1,'schedulerstrongapa.c']]],
   ['_5fscheduler_5fstrong_5fapa_5fenqueue_5fscheduled',['_Scheduler_strong_APA_Enqueue_scheduled',['../schedulerstrongapa_8c.html#ab9e66cbf8ed4e98cf4a6c11fb309673f',1,'schedulerstrongapa.c']]],

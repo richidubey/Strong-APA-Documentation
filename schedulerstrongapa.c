@@ -10,7 +10,7 @@
 ToAdd:
     _Scheduler_strong_APA_Initialize, \  ****************************
     
-    _Scheduler_strong_APA_Yield, \
+    _Scheduler_strong_APA_Yield, \  ****************************
     _Scheduler_strong_APA_Block, \
     _Scheduler_strong_APA_Unblock, \
     _Scheduler_strong_APA_Update_priority, \
@@ -465,4 +465,25 @@ void _Scheduler_strong_APA_Yield(
     _Scheduler_strong_APA_Enqueue_scheduled
   );
 }
+
+void _Scheduler_strong_APA_Block(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  _Scheduler_SMP_Block(
+    context,
+    thread,
+    node,
+    _Scheduler_strong_APA_Extract_from_scheduled,
+    _Scheduler_strong_APA_Extract_from_ready,
+    _Scheduler_strong_APA_Get_highest_ready,
+    _Scheduler_strong_APA_Move_from_ready_to_scheduled,
+    _Scheduler_strong_APA_Allocate_processor
+  );
+}
+
 

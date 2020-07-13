@@ -56,6 +56,8 @@ static void \hyperlink{schedulerstrongapa_8c_a94dbe1ee9ef6afd61ef8b773486f50bc}{
 static void \hyperlink{schedulerstrongapa_8c_af84aab458fa8146f74cec54fe4c0d2ab}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+scheduled} (\hyperlink{structScheduler__strong__APA__Context}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context} $\ast$self, \hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node} $\ast$scheduled, const Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
 \item 
 void \hyperlink{schedulerstrongapa_8c_ad6d1206459f21c74882cd2fb3ddd4aae}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
+\item 
+void \hyperlink{schedulerstrongapa_8c_ae7875a7e75f2615c6603155126d437db}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -64,7 +66,7 @@ To\+Add \hyperlink{schedulerstrongapa_8c_a72fea2084c662e7ee54c4ec79afa6cb1}{\+\_
 \item 
 To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{schedulerstrongapa_8c_a0dfa90c5aa89e60c75c1c23695fbd857}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}
 \item 
-To\+Add \hyperlink{schedulerstrongapa_8c_a77b4dcee45205dd5e72addfa921af4cc}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}
+To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{schedulerstrongapa_8c_a033883b773fbda032637832f3b7a408f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}
 \item 
 To\+Add \hyperlink{schedulerstrongapa_8c_a81baa0f3613f9b9d8cc2cbf937cf57cd}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock}
 \item 
@@ -151,6 +153,16 @@ Definition at line 385 of file schedulerstrongapa.\+c.
 
 
 Definition at line 273 of file schedulerstrongapa.\+c.
+
+\mbox{\Hypertarget{schedulerstrongapa_8c_ae7875a7e75f2615c6603155126d437db}\label{schedulerstrongapa_8c_ae7875a7e75f2615c6603155126d437db}} 
+\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}}
+\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block()}{\_Scheduler\_strong\_APA\_Block()}}
+{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Definition at line 469 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_ac9a5de4acab29440ea33ab4ef3bd34c1}\label{schedulerstrongapa_8c_ac9a5de4acab29440ea33ab4ef3bd34c1}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity}}
@@ -545,11 +557,11 @@ Definition at line 11 of file schedulerstrongapa.\+c.
 
 Definition at line 11 of file schedulerstrongapa.\+c.
 
-\mbox{\Hypertarget{schedulerstrongapa_8c_a77b4dcee45205dd5e72addfa921af4cc}\label{schedulerstrongapa_8c_a77b4dcee45205dd5e72addfa921af4cc}} 
+\mbox{\Hypertarget{schedulerstrongapa_8c_a033883b773fbda032637832f3b7a408f}\label{schedulerstrongapa_8c_a033883b773fbda032637832f3b7a408f}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}}
 \index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
 \subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}{\_Scheduler\_strong\_APA\_Block}}
-{\footnotesize\ttfamily To\+Add \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}
+{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}
 
 
 
