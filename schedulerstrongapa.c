@@ -8,47 +8,13 @@
 
 -----------------------------------------------------------------------------------
 ToAdd:
-    _Scheduler_strong_APA_Initialize, \  ****************************
-    
-    _Scheduler_strong_APA_Yield, \  ****************************
-    _Scheduler_strong_APA_Block, \
+
     _Scheduler_strong_APA_Unblock, \
     _Scheduler_strong_APA_Update_priority, \
     _Scheduler_strong_APA_Ask_for_help, \
     _Scheduler_strong_APA_Reconsider_help_request, \
     _Scheduler_strong_APA_Withdraw_node, \
-    _Scheduler_strong_APA_Add_processor, \  	****************************
-    _Scheduler_strong_APA_Remove_processor, \
-    _Scheduler_strong_APA_Node_initialize, \      ****************************
-    _Scheduler_strong_APA_Set_affinity \	********************************
-  
-    SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY \
-    
-    
-    Refer from
-    _Scheduler_EDF_SMP_Initialize, \
-    _Scheduler_default_Schedule, \
-    _Scheduler_EDF_SMP_Yield, \
-    _Scheduler_EDF_SMP_Block, \
-    _Scheduler_EDF_SMP_Unblock, \
-    _Scheduler_EDF_SMP_Update_priority, \
-    _Scheduler_EDF_Map_priority, \
-    _Scheduler_EDF_Unmap_priority, \
-    _Scheduler_EDF_SMP_Ask_for_help, \
-    _Scheduler_EDF_SMP_Reconsider_help_request, \
-    _Scheduler_EDF_SMP_Withdraw_node, \
-    _Scheduler_EDF_SMP_Pin, \
-    _Scheduler_EDF_SMP_Unpin, \
-    _Scheduler_EDF_SMP_Add_processor, \
-    _Scheduler_EDF_SMP_Remove_processor, \
-    _Scheduler_EDF_SMP_Node_initialize, \
-    _Scheduler_default_Node_destroy, \
-    _Scheduler_EDF_Release_job, \
-    _Scheduler_EDF_Cancel_job, \
-    _Scheduler_default_Tick, \
-    _Scheduler_EDF_SMP_Start_idle, \
-    _Scheduler_EDF_SMP_Set_affinity \
-  -------------------------------------------------------------------------------------------
+-------------------------------------------
   
 #ifdef HAVE_CONFIG_H
 #include "config.h"
@@ -229,27 +195,8 @@ static inline Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
   Scheduler_Context *context,
   Scheduler_Node    *filter_base
 )
-{	//Checkout about this function.
-/*  Scheduler_EDF_SMP_Node *filter;*/
-/*  uint8_t                 rqi;*/
-
-/*  filter = _Scheduler_EDF_SMP_Node_downcast( filter_base );*/
-/*  rqi = filter->ready_queue_index;*/
-
-/*  if ( rqi != 0 ) {*/
-/*    Scheduler_EDF_SMP_Context *self;*/
-/*    Scheduler_EDF_SMP_Node    *node;*/
-
-/*    self = _Scheduler_EDF_SMP_Get_self( context );*/
-/*    node = _Scheduler_EDF_SMP_Get_scheduled( self, rqi );*/
-
-/*    if ( node->ready_queue_index > 0 ) {*/
-/*      _Assert( node->ready_queue_index == rqi );*/
-/*      return &node->Base.Base;*/
-/*    }*/
-/*  }*/
-
-/*  return _Scheduler_SMP_Get_lowest_scheduled( context, filter_base );*/
+{	
+	//PSEUDO CODE Required : Code 1
 }
 
 static inline void _Scheduler_strong_APA_Insert_ready(
@@ -517,3 +464,34 @@ Thread_Control *_Scheduler_strong_APA_Remove_processor(
   );
 }
 
+void _Scheduler_strong_APA_Unblock(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  _Scheduler_SMP_Unblock(
+    context,
+    thread,
+    node,
+    _Scheduler_strong_APA_Do_update,
+    _Scheduler_strong_APA_Enqueue
+  );
+}
+
+
+static inline void _Scheduler_strong_APA_Do_update(
+  Scheduler_Context *context,
+  Scheduler_Node    *node,
+  Priority_Control   new_priority
+)
+{
+  Scheduler_SMP_Node *smp_node;
+
+  (void) context;
+
+  smp_node = _Scheduler_SMP_Node_downcast( node );
+  _Scheduler_SMP_Node_update_priority( smp_node, new_priority );
+}

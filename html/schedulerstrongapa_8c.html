@@ -81,8 +81,8 @@ Include dependency graph for schedulerstrongapa.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a09c0b3a1ee9f3bc912c17a6b9cf05029"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from static _Scheduler_EDF_SMP_Set_affinity <a class="el" href="structScheduler__strong__APA__Node.html">Scheduler_strong_APA_Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a09c0b3a1ee9f3bc912c17a6b9cf05029">_Scheduler_strong_APA_Node_downcast</a> (Scheduler_Node *node)</td></tr>
-<tr class="separator:a09c0b3a1ee9f3bc912c17a6b9cf05029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ff05203a2202c7d14f2a09e251878f"><td class="memItemLeft" align="right" valign="top">ToAdd static <a class="el" href="structScheduler__strong__APA__Node.html">Scheduler_strong_APA_Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a63ff05203a2202c7d14f2a09e251878f">_Scheduler_strong_APA_Node_downcast</a> (Scheduler_Node *node)</td></tr>
+<tr class="separator:a63ff05203a2202c7d14f2a09e251878f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c6a0cbfb38651e3698501a1eca038db"><td class="memItemLeft" align="right" valign="top">static _Scheduler_strong_APA_Context *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a3c6a0cbfb38651e3698501a1eca038db">_Scheduler_strong_APA_Get_context</a> (const Scheduler_Control *scheduler)</td></tr>
 <tr class="separator:a3c6a0cbfb38651e3698501a1eca038db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafcd6fde337d7542784698219322b6365"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#gafcd6fde337d7542784698219322b6365">_Scheduler_strong_APA_Initialize</a> (const Scheduler_Control *scheduler)</td></tr>
@@ -130,17 +130,15 @@ Functions</h2></td></tr>
 <tr class="separator:a3375cf50bcc8efca42c63b4fa7e7b971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91dc29dcdeea35e3329623be7a798e39"><td class="memItemLeft" align="right" valign="top">Thread_Control *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a91dc29dcdeea35e3329623be7a798e39">_Scheduler_strong_APA_Remove_processor</a> (const Scheduler_Control *scheduler, Per_CPU_Control *cpu)</td></tr>
 <tr class="separator:a91dc29dcdeea35e3329623be7a798e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e6ee051e6a359186fd6964051db69e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a8e6ee051e6a359186fd6964051db69e2">_Scheduler_strong_APA_Unblock</a> (const Scheduler_Control *scheduler, Thread_Control *thread, Scheduler_Node *node)</td></tr>
+<tr class="separator:a8e6ee051e6a359186fd6964051db69e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb6b87df52cea4341e73667f00dce0d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#afb6b87df52cea4341e73667f00dce0d5">_Scheduler_strong_APA_Do_update</a> (Scheduler_Context *context, Scheduler_Node *node, Priority_Control new_priority)</td></tr>
+<tr class="separator:afb6b87df52cea4341e73667f00dce0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a72fea2084c662e7ee54c4ec79afa6cb1"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a72fea2084c662e7ee54c4ec79afa6cb1">__pad0__</a></td></tr>
 <tr class="separator:a72fea2084c662e7ee54c4ec79afa6cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dfa90c5aa89e60c75c1c23695fbd857"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a0dfa90c5aa89e60c75c1c23695fbd857">_Scheduler_strong_APA_Yield</a></td></tr>
-<tr class="separator:a0dfa90c5aa89e60c75c1c23695fbd857"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a033883b773fbda032637832f3b7a408f"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a033883b773fbda032637832f3b7a408f">_Scheduler_strong_APA_Block</a></td></tr>
-<tr class="separator:a033883b773fbda032637832f3b7a408f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81baa0f3613f9b9d8cc2cbf937cf57cd"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a81baa0f3613f9b9d8cc2cbf937cf57cd">_Scheduler_strong_APA_Unblock</a></td></tr>
-<tr class="separator:a81baa0f3613f9b9d8cc2cbf937cf57cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c87b05d6ee253bf3dbc583c17654456"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a9c87b05d6ee253bf3dbc583c17654456">_Scheduler_strong_APA_Update_priority</a></td></tr>
 <tr class="separator:a9c87b05d6ee253bf3dbc583c17654456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae918381ccf0f7d0c5d88e7603a7a1aea"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ae918381ccf0f7d0c5d88e7603a7a1aea">_Scheduler_strong_APA_Ask_for_help</a></td></tr>
@@ -149,54 +147,6 @@ Variables</h2></td></tr>
 <tr class="separator:a27be05a567ea574c74a30f5baf8b1a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51496fdfb596c6b2eb2c3beafa7d39d8"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a51496fdfb596c6b2eb2c3beafa7d39d8">_Scheduler_strong_APA_Withdraw_node</a></td></tr>
 <tr class="separator:a51496fdfb596c6b2eb2c3beafa7d39d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fd003aab858ebba4664fa5934368385"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a4fd003aab858ebba4664fa5934368385">_Scheduler_strong_APA_Add_processor</a></td></tr>
-<tr class="separator:a4fd003aab858ebba4664fa5934368385"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1ba2aa8f9d0f55340760ac49858f583"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ac1ba2aa8f9d0f55340760ac49858f583">_Scheduler_strong_APA_Remove_processor</a></td></tr>
-<tr class="separator:ac1ba2aa8f9d0f55340760ac49858f583"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6ed869799a85c0f29252a85d9ef3541"><td class="memItemLeft" align="right" valign="top">ToAdd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ac6ed869799a85c0f29252a85d9ef3541">_Scheduler_strong_APA_Node_initialize</a></td></tr>
-<tr class="separator:ac6ed869799a85c0f29252a85d9ef3541"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57664a96af3293675377841ed089e5d4"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a57664a96af3293675377841ed089e5d4">_Scheduler_EDF_SMP_Initialize</a></td></tr>
-<tr class="separator:a57664a96af3293675377841ed089e5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bfeb4b104e70555a52f27356b5d8e1e"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a2bfeb4b104e70555a52f27356b5d8e1e">_Scheduler_default_Schedule</a></td></tr>
-<tr class="separator:a2bfeb4b104e70555a52f27356b5d8e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab687988f7fbd85e723b7e1ba076d258"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#aab687988f7fbd85e723b7e1ba076d258">_Scheduler_EDF_SMP_Yield</a></td></tr>
-<tr class="separator:aab687988f7fbd85e723b7e1ba076d258"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad77f3b66f0efac4c9fd87abe6dc7eed5"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ad77f3b66f0efac4c9fd87abe6dc7eed5">_Scheduler_EDF_SMP_Block</a></td></tr>
-<tr class="separator:ad77f3b66f0efac4c9fd87abe6dc7eed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b42277580b543970c5583cb510e9391"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a1b42277580b543970c5583cb510e9391">_Scheduler_EDF_SMP_Unblock</a></td></tr>
-<tr class="separator:a1b42277580b543970c5583cb510e9391"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dc57af0209912bf00d3515dfb414c30"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a8dc57af0209912bf00d3515dfb414c30">_Scheduler_EDF_SMP_Update_priority</a></td></tr>
-<tr class="separator:a8dc57af0209912bf00d3515dfb414c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cf720e413a594b54637b11d27fcd743"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a5cf720e413a594b54637b11d27fcd743">_Scheduler_EDF_Map_priority</a></td></tr>
-<tr class="separator:a5cf720e413a594b54637b11d27fcd743"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f474ffa9a3563e69744161ed70b0fb4"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a6f474ffa9a3563e69744161ed70b0fb4">_Scheduler_EDF_Unmap_priority</a></td></tr>
-<tr class="separator:a6f474ffa9a3563e69744161ed70b0fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a034921053f05cf79e7032e2b6240d6be"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a034921053f05cf79e7032e2b6240d6be">_Scheduler_EDF_SMP_Ask_for_help</a></td></tr>
-<tr class="separator:a034921053f05cf79e7032e2b6240d6be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4b3420d29727adf18eb7bf9d5111939"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#af4b3420d29727adf18eb7bf9d5111939">_Scheduler_EDF_SMP_Reconsider_help_request</a></td></tr>
-<tr class="separator:af4b3420d29727adf18eb7bf9d5111939"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac420520ab5a83e418f941beec49db83d"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ac420520ab5a83e418f941beec49db83d">_Scheduler_EDF_SMP_Withdraw_node</a></td></tr>
-<tr class="separator:ac420520ab5a83e418f941beec49db83d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ec77b49ee2f085ef6c1e1bfe5a81136"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a3ec77b49ee2f085ef6c1e1bfe5a81136">_Scheduler_EDF_SMP_Pin</a></td></tr>
-<tr class="separator:a3ec77b49ee2f085ef6c1e1bfe5a81136"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a906e2cd547ccaec766fac4af9dc0a4"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a7a906e2cd547ccaec766fac4af9dc0a4">_Scheduler_EDF_SMP_Unpin</a></td></tr>
-<tr class="separator:a7a906e2cd547ccaec766fac4af9dc0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d5e129c77e39f6f645ac09e451014fd"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a3d5e129c77e39f6f645ac09e451014fd">_Scheduler_EDF_SMP_Add_processor</a></td></tr>
-<tr class="separator:a3d5e129c77e39f6f645ac09e451014fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab433156ba61ea946f3417788832f632a"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ab433156ba61ea946f3417788832f632a">_Scheduler_EDF_SMP_Remove_processor</a></td></tr>
-<tr class="separator:ab433156ba61ea946f3417788832f632a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e71bc9d74d2476c9b67d93d603964cc"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a2e71bc9d74d2476c9b67d93d603964cc">_Scheduler_EDF_SMP_Node_initialize</a></td></tr>
-<tr class="separator:a2e71bc9d74d2476c9b67d93d603964cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3a2b3c0d44969de5e8c70e2d91c6305"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#af3a2b3c0d44969de5e8c70e2d91c6305">_Scheduler_default_Node_destroy</a></td></tr>
-<tr class="separator:af3a2b3c0d44969de5e8c70e2d91c6305"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ed52f6df165b75a99c81cde580ceee8"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a1ed52f6df165b75a99c81cde580ceee8">_Scheduler_EDF_Release_job</a></td></tr>
-<tr class="separator:a1ed52f6df165b75a99c81cde580ceee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6705d1c10a4329076cdb024e3f2ed9a8"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a6705d1c10a4329076cdb024e3f2ed9a8">_Scheduler_EDF_Cancel_job</a></td></tr>
-<tr class="separator:a6705d1c10a4329076cdb024e3f2ed9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4d9581918cbf86be6c5d3b803c90362"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ac4d9581918cbf86be6c5d3b803c90362">_Scheduler_default_Tick</a></td></tr>
-<tr class="separator:ac4d9581918cbf86be6c5d3b803c90362"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9156b87810ece994d0227e893a2810d7"><td class="memItemLeft" align="right" valign="top">ToAdd ****************************<a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a> ********************************SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a9156b87810ece994d0227e893a2810d7">_Scheduler_EDF_SMP_Start_idle</a></td></tr>
-<tr class="separator:a9156b87810ece994d0227e893a2810d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Strong APA Scheduler Implementation. </p>
@@ -229,7 +179,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00385">385</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00332">332</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -279,7 +229,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00273">273</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00220">220</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -315,7 +265,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00469">469</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00416">416</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -359,7 +309,51 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00105">105</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00071">71</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+
+</div>
+</div>
+<a id="afb6b87df52cea4341e73667f00dce0d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb6b87df52cea4341e73667f00dce0d5">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Do_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void _Scheduler_strong_APA_Do_update </td>
+          <td>(</td>
+          <td class="paramtype">Scheduler_Context *&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Scheduler_Node *&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Priority_Control&#160;</td>
+          <td class="paramname"><em>new_priority</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00485">485</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -403,7 +397,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00327">327</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00274">274</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -447,7 +441,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00408">408</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00355">355</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -485,7 +479,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00120">120</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00086">86</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -523,7 +517,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00489">489</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00436">436</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -551,7 +545,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00068">68</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00034">34</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -589,7 +583,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00141">141</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00107">107</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -627,7 +621,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00228">228</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00194">194</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -655,7 +649,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00401">401</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00348">348</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -699,7 +693,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00255">255</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00202">202</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -737,7 +731,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00178">178</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00144">144</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -775,12 +769,12 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00201">201</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00167">167</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
-<a id="a09c0b3a1ee9f3bc912c17a6b9cf05029"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09c0b3a1ee9f3bc912c17a6b9cf05029">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Node_downcast()</h2>
+<a id="a63ff05203a2202c7d14f2a09e251878f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ff05203a2202c7d14f2a09e251878f">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Node_downcast()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -789,7 +783,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from static _Scheduler_EDF_SMP_Set_affinity <a class="el" href="structScheduler__strong__APA__Node.html">Scheduler_strong_APA_Node</a>* _Scheduler_strong_APA_Node_downcast </td>
+          <td class="memname">ToAdd static <a class="el" href="structScheduler__strong__APA__Node.html">Scheduler_strong_APA_Node</a>* _Scheduler_strong_APA_Node_downcast </td>
           <td>(</td>
           <td class="paramtype">Scheduler_Node *&#160;</td>
           <td class="paramname"><em>node</em></td><td>)</td>
@@ -803,7 +797,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00062">62</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00028">28</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -847,7 +841,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00428">428</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00375">375</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -877,7 +871,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00505">505</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00452">452</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -921,7 +915,43 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00442">442</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00389">389</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+
+</div>
+</div>
+<a id="a8e6ee051e6a359186fd6964051db69e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e6ee051e6a359186fd6964051db69e2">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Unblock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _Scheduler_strong_APA_Unblock </td>
+          <td>(</td>
+          <td class="paramtype">const Scheduler_Control *&#160;</td>
+          <td class="paramname"><em>scheduler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Thread_Control *&#160;</td>
+          <td class="paramname"><em>thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Scheduler_Node *&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00467">467</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -957,7 +987,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00451">451</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00398">398</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -974,359 +1004,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="af3a2b3c0d44969de5e8c70e2d91c6305"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3a2b3c0d44969de5e8c70e2d91c6305">&#9670;&nbsp;</a></span>_Scheduler_default_Node_destroy</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_default_Node_destroy</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a2bfeb4b104e70555a52f27356b5d8e1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bfeb4b104e70555a52f27356b5d8e1e">&#9670;&nbsp;</a></span>_Scheduler_default_Schedule</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_default_Schedule</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="ac4d9581918cbf86be6c5d3b803c90362"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4d9581918cbf86be6c5d3b803c90362">&#9670;&nbsp;</a></span>_Scheduler_default_Tick</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_default_Tick</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a6705d1c10a4329076cdb024e3f2ed9a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6705d1c10a4329076cdb024e3f2ed9a8">&#9670;&nbsp;</a></span>_Scheduler_EDF_Cancel_job</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_Cancel_job</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a5cf720e413a594b54637b11d27fcd743"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cf720e413a594b54637b11d27fcd743">&#9670;&nbsp;</a></span>_Scheduler_EDF_Map_priority</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_Map_priority</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a1ed52f6df165b75a99c81cde580ceee8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ed52f6df165b75a99c81cde580ceee8">&#9670;&nbsp;</a></span>_Scheduler_EDF_Release_job</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_Release_job</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a3d5e129c77e39f6f645ac09e451014fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d5e129c77e39f6f645ac09e451014fd">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Add_processor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Add_processor</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a034921053f05cf79e7032e2b6240d6be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a034921053f05cf79e7032e2b6240d6be">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Ask_for_help</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Ask_for_help</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="ad77f3b66f0efac4c9fd87abe6dc7eed5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad77f3b66f0efac4c9fd87abe6dc7eed5">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Block</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Block</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a57664a96af3293675377841ed089e5d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57664a96af3293675377841ed089e5d4">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Initialize</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Initialize</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a2e71bc9d74d2476c9b67d93d603964cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e71bc9d74d2476c9b67d93d603964cc">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Node_initialize</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Node_initialize</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a3ec77b49ee2f085ef6c1e1bfe5a81136"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ec77b49ee2f085ef6c1e1bfe5a81136">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Pin</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Pin</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="af4b3420d29727adf18eb7bf9d5111939"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4b3420d29727adf18eb7bf9d5111939">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Reconsider_help_request</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Reconsider_help_request</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="ab433156ba61ea946f3417788832f632a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab433156ba61ea946f3417788832f632a">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Remove_processor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Remove_processor</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a9156b87810ece994d0227e893a2810d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9156b87810ece994d0227e893a2810d7">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Start_idle</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Start_idle</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a1b42277580b543970c5583cb510e9391"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b42277580b543970c5583cb510e9391">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Unblock</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Unblock</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a7a906e2cd547ccaec766fac4af9dc0a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a906e2cd547ccaec766fac4af9dc0a4">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Unpin</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Unpin</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a8dc57af0209912bf00d3515dfb414c30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dc57af0209912bf00d3515dfb414c30">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Update_priority</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Update_priority</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="ac420520ab5a83e418f941beec49db83d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac420520ab5a83e418f941beec49db83d">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Withdraw_node</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Withdraw_node</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="aab687988f7fbd85e723b7e1ba076d258"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab687988f7fbd85e723b7e1ba076d258">&#9670;&nbsp;</a></span>_Scheduler_EDF_SMP_Yield</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_SMP_Yield</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a6f474ffa9a3563e69744161ed70b0fb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f474ffa9a3563e69744161ed70b0fb4">&#9670;&nbsp;</a></span>_Scheduler_EDF_Unmap_priority</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** <a class="el" href="group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223">_Scheduler_strong_APA_Set_affinity</a>******************************** SCHEDULER_OPERATION_DEFAULT_GET_SET_AFFINITY Refer from _Scheduler_EDF_Unmap_priority</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a4fd003aab858ebba4664fa5934368385"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fd003aab858ebba4664fa5934368385">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Add_processor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd _Scheduler_strong_APA_Add_processor</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00012">12</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -1342,39 +1020,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a033883b773fbda032637832f3b7a408f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a033883b773fbda032637832f3b7a408f">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Block</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** _Scheduler_strong_APA_Block</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="ac6ed869799a85c0f29252a85d9ef3541"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6ed869799a85c0f29252a85d9ef3541">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Node_initialize</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd _Scheduler_strong_APA_Node_initialize</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00012">12</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -1390,39 +1036,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="ac1ba2aa8f9d0f55340760ac49858f583"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1ba2aa8f9d0f55340760ac49858f583">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Remove_processor</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** _Scheduler_strong_APA_Remove_processor</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a81baa0f3613f9b9d8cc2cbf937cf57cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81baa0f3613f9b9d8cc2cbf937cf57cd">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Unblock</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd _Scheduler_strong_APA_Unblock</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00012">12</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -1438,7 +1052,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00012">12</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>
@@ -1454,23 +1068,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
-
-</div>
-</div>
-<a id="a0dfa90c5aa89e60c75c1c23695fbd857"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dfa90c5aa89e60c75c1c23695fbd857">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Yield</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ToAdd **************************** _Scheduler_strong_APA_Yield</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00011">11</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00012">12</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>

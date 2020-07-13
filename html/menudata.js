@@ -13,7 +13,7 @@ var menudata={children:[
 {text:"All",url:"globals.html",children:[
 {text:"_",url:"globals.html#index__"},
 {text:"s",url:"globals.html#index_s"}]},
-{text:"Functions",url:"globals_func.html"},
-{text:"Variables",url:"globals_vars.html",children:[
-{text:"_",url:"globals_vars.html#index__"}]},
+{text:"Functions",url:"globals_func.html",children:[
+{text:"_",url:"globals_func.html#index__"}]},
+{text:"Variables",url:"globals_vars.html"},
 {text:"Macros",url:"globals_defs.html"}]}]}]}

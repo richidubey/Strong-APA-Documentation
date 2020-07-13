@@ -17,7 +17,7 @@ Include dependency graph for schedulerstrongapa.\+c\+:\nopagebreak
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from static \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Set\+\_\+affinity \hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node} $\ast$ \hyperlink{schedulerstrongapa_8c_a09c0b3a1ee9f3bc912c17a6b9cf05029}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast} (Scheduler\+\_\+\+Node $\ast$node)
+To\+Add static \hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node} $\ast$ \hyperlink{schedulerstrongapa_8c_a63ff05203a2202c7d14f2a09e251878f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast} (Scheduler\+\_\+\+Node $\ast$node)
 \item 
 static \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context $\ast$ \hyperlink{schedulerstrongapa_8c_a3c6a0cbfb38651e3698501a1eca038db}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+context} (const Scheduler\+\_\+\+Control $\ast$scheduler)
 \item 
@@ -62,17 +62,15 @@ void \hyperlink{schedulerstrongapa_8c_ae7875a7e75f2615c6603155126d437db}{\+\_\+\
 static void \hyperlink{schedulerstrongapa_8c_a3375cf50bcc8efca42c63b4fa7e7b971}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+to\+\_\+extract)
 \item 
 Thread\+\_\+\+Control $\ast$ \hyperlink{schedulerstrongapa_8c_a91dc29dcdeea35e3329623be7a798e39}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor} (const Scheduler\+\_\+\+Control $\ast$scheduler, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
+\item 
+void \hyperlink{schedulerstrongapa_8c_a8e6ee051e6a359186fd6964051db69e2}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
+\item 
+static void \hyperlink{schedulerstrongapa_8c_afb6b87df52cea4341e73667f00dce0d5}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node, Priority\+\_\+\+Control new\+\_\+priority)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 To\+Add \hyperlink{schedulerstrongapa_8c_a72fea2084c662e7ee54c4ec79afa6cb1}{\+\_\+\+\_\+pad0\+\_\+\+\_\+}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{schedulerstrongapa_8c_a0dfa90c5aa89e60c75c1c23695fbd857}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{schedulerstrongapa_8c_a033883b773fbda032637832f3b7a408f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}
-\item 
-To\+Add \hyperlink{schedulerstrongapa_8c_a81baa0f3613f9b9d8cc2cbf937cf57cd}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock}
 \item 
 To\+Add \hyperlink{schedulerstrongapa_8c_a9c87b05d6ee253bf3dbc583c17654456}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority}
 \item 
@@ -81,54 +79,6 @@ To\+Add \hyperlink{schedulerstrongapa_8c_ae918381ccf0f7d0c5d88e7603a7a1aea}{\+\_
 To\+Add \hyperlink{schedulerstrongapa_8c_a27be05a567ea574c74a30f5baf8b1a28}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request}
 \item 
 To\+Add \hyperlink{schedulerstrongapa_8c_a51496fdfb596c6b2eb2c3beafa7d39d8}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node}
-\item 
-To\+Add \hyperlink{schedulerstrongapa_8c_a4fd003aab858ebba4664fa5934368385}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{schedulerstrongapa_8c_ac1ba2aa8f9d0f55340760ac49858f583}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}
-\item 
-To\+Add \hyperlink{schedulerstrongapa_8c_ac6ed869799a85c0f29252a85d9ef3541}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a57664a96af3293675377841ed089e5d4}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Initialize}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a2bfeb4b104e70555a52f27356b5d8e1e}{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Schedule}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_aab687988f7fbd85e723b7e1ba076d258}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Yield}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_ad77f3b66f0efac4c9fd87abe6dc7eed5}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Block}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a1b42277580b543970c5583cb510e9391}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unblock}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a8dc57af0209912bf00d3515dfb414c30}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Update\+\_\+priority}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a5cf720e413a594b54637b11d27fcd743}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Map\+\_\+priority}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a6f474ffa9a3563e69744161ed70b0fb4}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Unmap\+\_\+priority}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a034921053f05cf79e7032e2b6240d6be}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Ask\+\_\+for\+\_\+help}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_af4b3420d29727adf18eb7bf9d5111939}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Reconsider\+\_\+help\+\_\+request}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_ac420520ab5a83e418f941beec49db83d}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Withdraw\+\_\+node}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a3ec77b49ee2f085ef6c1e1bfe5a81136}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Pin}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a7a906e2cd547ccaec766fac4af9dc0a4}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unpin}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a3d5e129c77e39f6f645ac09e451014fd}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Add\+\_\+processor}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_ab433156ba61ea946f3417788832f632a}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Remove\+\_\+processor}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a2e71bc9d74d2476c9b67d93d603964cc}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Node\+\_\+initialize}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_af3a2b3c0d44969de5e8c70e2d91c6305}{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Node\+\_\+destroy}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a1ed52f6df165b75a99c81cde580ceee8}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Release\+\_\+job}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a6705d1c10a4329076cdb024e3f2ed9a8}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Cancel\+\_\+job}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_ac4d9581918cbf86be6c5d3b803c90362}{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Tick}
-\item 
-To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \hyperlink{schedulerstrongapa_8c_a9156b87810ece994d0227e893a2810d7}{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Start\+\_\+idle}
 \end{DoxyCompactItemize}
 
 
@@ -146,7 +96,7 @@ Strong A\+PA Scheduler Implementation.
 
 
 
-Definition at line 385 of file schedulerstrongapa.\+c.
+Definition at line 332 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a970d0f587d69ebe4088cfeb0f8019033}\label{schedulerstrongapa_8c_a970d0f587d69ebe4088cfeb0f8019033}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Allocate\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Allocate\+\_\+processor}}
@@ -156,7 +106,7 @@ Definition at line 385 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 273 of file schedulerstrongapa.\+c.
+Definition at line 220 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_ae7875a7e75f2615c6603155126d437db}\label{schedulerstrongapa_8c_ae7875a7e75f2615c6603155126d437db}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}}
@@ -166,7 +116,7 @@ Definition at line 273 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 469 of file schedulerstrongapa.\+c.
+Definition at line 416 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_ac9a5de4acab29440ea33ab4ef3bd34c1}\label{schedulerstrongapa_8c_ac9a5de4acab29440ea33ab4ef3bd34c1}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity}}
@@ -176,7 +126,17 @@ Definition at line 469 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 105 of file schedulerstrongapa.\+c.
+Definition at line 71 of file schedulerstrongapa.\+c.
+
+\mbox{\Hypertarget{schedulerstrongapa_8c_afb6b87df52cea4341e73667f00dce0d5}\label{schedulerstrongapa_8c_afb6b87df52cea4341e73667f00dce0d5}} 
+\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update}}
+\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update()}{\_Scheduler\_strong\_APA\_Do\_update()}}
+{\footnotesize\ttfamily static void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node,  }\item[{Priority\+\_\+\+Control}]{new\+\_\+priority }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 485 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a072ea7b584005d0ff44e13cf2684ba09}\label{schedulerstrongapa_8c_a072ea7b584005d0ff44e13cf2684ba09}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue}}
@@ -186,7 +146,7 @@ Definition at line 105 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 327 of file schedulerstrongapa.\+c.
+Definition at line 274 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_ab9e66cbf8ed4e98cf4a6c11fb309673f}\label{schedulerstrongapa_8c_ab9e66cbf8ed4e98cf4a6c11fb309673f}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue\+\_\+scheduled}}
@@ -196,7 +156,7 @@ Definition at line 327 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 408 of file schedulerstrongapa.\+c.
+Definition at line 355 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a60129e44fa73e5241abc2f5f9f78bb1d}\label{schedulerstrongapa_8c_a60129e44fa73e5241abc2f5f9f78bb1d}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready}}
@@ -206,7 +166,7 @@ Definition at line 408 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 120 of file schedulerstrongapa.\+c.
+Definition at line 86 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a3375cf50bcc8efca42c63b4fa7e7b971}\label{schedulerstrongapa_8c_a3375cf50bcc8efca42c63b4fa7e7b971}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+scheduled}}
@@ -216,7 +176,7 @@ Definition at line 120 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 489 of file schedulerstrongapa.\+c.
+Definition at line 436 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a3c6a0cbfb38651e3698501a1eca038db}\label{schedulerstrongapa_8c_a3c6a0cbfb38651e3698501a1eca038db}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+context@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+context}}
@@ -226,7 +186,7 @@ Definition at line 489 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 68 of file schedulerstrongapa.\+c.
+Definition at line 34 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_aeca59d69f6f261d5af4b17e73186ed98}\label{schedulerstrongapa_8c_aeca59d69f6f261d5af4b17e73186ed98}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready}}
@@ -236,7 +196,7 @@ Definition at line 68 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 141 of file schedulerstrongapa.\+c.
+Definition at line 107 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a2697080204d867803db3e4ed7a5c4b81}\label{schedulerstrongapa_8c_a2697080204d867803db3e4ed7a5c4b81}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+lowest\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+lowest\+\_\+scheduled}}
@@ -246,7 +206,7 @@ Definition at line 141 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 228 of file schedulerstrongapa.\+c.
+Definition at line 194 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a62c553216bd05f6e382334f08431cbd3}\label{schedulerstrongapa_8c_a62c553216bd05f6e382334f08431cbd3}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Has\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Has\+\_\+ready}}
@@ -256,7 +216,7 @@ Definition at line 228 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 401 of file schedulerstrongapa.\+c.
+Definition at line 348 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a74822bb885194be893943b121601eba7}\label{schedulerstrongapa_8c_a74822bb885194be893943b121601eba7}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Insert\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Insert\+\_\+ready}}
@@ -266,7 +226,7 @@ Definition at line 401 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 255 of file schedulerstrongapa.\+c.
+Definition at line 202 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_aaf649166522c7d7b2e9cca719d61e371}\label{schedulerstrongapa_8c_aaf649166522c7d7b2e9cca719d61e371}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+ready\+\_\+to\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+ready\+\_\+to\+\_\+scheduled}}
@@ -276,7 +236,7 @@ Definition at line 255 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 178 of file schedulerstrongapa.\+c.
+Definition at line 144 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a0834423e32bb300a5a52fe53636df96d}\label{schedulerstrongapa_8c_a0834423e32bb300a5a52fe53636df96d}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+scheduled\+\_\+to\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+scheduled\+\_\+to\+\_\+ready}}
@@ -286,17 +246,17 @@ Definition at line 178 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 201 of file schedulerstrongapa.\+c.
+Definition at line 167 of file schedulerstrongapa.\+c.
 
-\mbox{\Hypertarget{schedulerstrongapa_8c_a09c0b3a1ee9f3bc912c17a6b9cf05029}\label{schedulerstrongapa_8c_a09c0b3a1ee9f3bc912c17a6b9cf05029}} 
+\mbox{\Hypertarget{schedulerstrongapa_8c_a63ff05203a2202c7d14f2a09e251878f}\label{schedulerstrongapa_8c_a63ff05203a2202c7d14f2a09e251878f}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast}}
 \index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
 \subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast()}{\_Scheduler\_strong\_APA\_Node\_downcast()}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from static \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Set\+\_\+affinity \hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}$\ast$ \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily To\+Add static \hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}$\ast$ \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
-Definition at line 62 of file schedulerstrongapa.\+c.
+Definition at line 28 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a94dbe1ee9ef6afd61ef8b773486f50bc}\label{schedulerstrongapa_8c_a94dbe1ee9ef6afd61ef8b773486f50bc}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Register\+\_\+idle@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Register\+\_\+idle}}
@@ -306,7 +266,7 @@ Definition at line 62 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 428 of file schedulerstrongapa.\+c.
+Definition at line 375 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a91dc29dcdeea35e3329623be7a798e39}\label{schedulerstrongapa_8c_a91dc29dcdeea35e3329623be7a798e39}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}}
@@ -316,7 +276,7 @@ Definition at line 428 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 505 of file schedulerstrongapa.\+c.
+Definition at line 452 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_af84aab458fa8146f74cec54fe4c0d2ab}\label{schedulerstrongapa_8c_af84aab458fa8146f74cec54fe4c0d2ab}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+scheduled}}
@@ -326,7 +286,17 @@ Definition at line 505 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 442 of file schedulerstrongapa.\+c.
+Definition at line 389 of file schedulerstrongapa.\+c.
+
+\mbox{\Hypertarget{schedulerstrongapa_8c_a8e6ee051e6a359186fd6964051db69e2}\label{schedulerstrongapa_8c_a8e6ee051e6a359186fd6964051db69e2}} 
+\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock}}
+\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock()}{\_Scheduler\_strong\_APA\_Unblock()}}
+{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Definition at line 467 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_ad6d1206459f21c74882cd2fb3ddd4aae}\label{schedulerstrongapa_8c_ad6d1206459f21c74882cd2fb3ddd4aae}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}}
@@ -336,7 +306,7 @@ Definition at line 442 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 451 of file schedulerstrongapa.\+c.
+Definition at line 398 of file schedulerstrongapa.\+c.
 
 
 
@@ -349,227 +319,7 @@ Definition at line 451 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_af3a2b3c0d44969de5e8c70e2d91c6305}\label{schedulerstrongapa_8c_af3a2b3c0d44969de5e8c70e2d91c6305}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+default\+\_\+\+Node\+\_\+destroy@{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Node\+\_\+destroy}}
-\index{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Node\+\_\+destroy@{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Node\+\_\+destroy}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Node\+\_\+destroy}{\_Scheduler\_default\_Node\_destroy}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+default\+\_\+\+Node\+\_\+destroy}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a2bfeb4b104e70555a52f27356b5d8e1e}\label{schedulerstrongapa_8c_a2bfeb4b104e70555a52f27356b5d8e1e}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+default\+\_\+\+Schedule@{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Schedule}}
-\index{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Schedule@{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Schedule}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Schedule}{\_Scheduler\_default\_Schedule}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+default\+\_\+\+Schedule}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_ac4d9581918cbf86be6c5d3b803c90362}\label{schedulerstrongapa_8c_ac4d9581918cbf86be6c5d3b803c90362}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+default\+\_\+\+Tick@{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Tick}}
-\index{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Tick@{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Tick}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+default\+\_\+\+Tick}{\_Scheduler\_default\_Tick}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+default\+\_\+\+Tick}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a6705d1c10a4329076cdb024e3f2ed9a8}\label{schedulerstrongapa_8c_a6705d1c10a4329076cdb024e3f2ed9a8}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Cancel\+\_\+job@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Cancel\+\_\+job}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Cancel\+\_\+job@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Cancel\+\_\+job}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Cancel\+\_\+job}{\_Scheduler\_EDF\_Cancel\_job}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Cancel\+\_\+job}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a5cf720e413a594b54637b11d27fcd743}\label{schedulerstrongapa_8c_a5cf720e413a594b54637b11d27fcd743}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Map\+\_\+priority@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Map\+\_\+priority}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Map\+\_\+priority@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Map\+\_\+priority}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Map\+\_\+priority}{\_Scheduler\_EDF\_Map\_priority}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Map\+\_\+priority}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a1ed52f6df165b75a99c81cde580ceee8}\label{schedulerstrongapa_8c_a1ed52f6df165b75a99c81cde580ceee8}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Release\+\_\+job@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Release\+\_\+job}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Release\+\_\+job@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Release\+\_\+job}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Release\+\_\+job}{\_Scheduler\_EDF\_Release\_job}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Release\+\_\+job}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a3d5e129c77e39f6f645ac09e451014fd}\label{schedulerstrongapa_8c_a3d5e129c77e39f6f645ac09e451014fd}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Add\+\_\+processor@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Add\+\_\+processor}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Add\+\_\+processor@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Add\+\_\+processor}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Add\+\_\+processor}{\_Scheduler\_EDF\_SMP\_Add\_processor}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Add\+\_\+processor}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a034921053f05cf79e7032e2b6240d6be}\label{schedulerstrongapa_8c_a034921053f05cf79e7032e2b6240d6be}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Ask\+\_\+for\+\_\+help@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Ask\+\_\+for\+\_\+help}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Ask\+\_\+for\+\_\+help@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Ask\+\_\+for\+\_\+help}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Ask\+\_\+for\+\_\+help}{\_Scheduler\_EDF\_SMP\_Ask\_for\_help}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Ask\+\_\+for\+\_\+help}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_ad77f3b66f0efac4c9fd87abe6dc7eed5}\label{schedulerstrongapa_8c_ad77f3b66f0efac4c9fd87abe6dc7eed5}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Block}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Block}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Block}{\_Scheduler\_EDF\_SMP\_Block}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Block}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a57664a96af3293675377841ed089e5d4}\label{schedulerstrongapa_8c_a57664a96af3293675377841ed089e5d4}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Initialize@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Initialize}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Initialize@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Initialize}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Initialize}{\_Scheduler\_EDF\_SMP\_Initialize}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Initialize}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a2e71bc9d74d2476c9b67d93d603964cc}\label{schedulerstrongapa_8c_a2e71bc9d74d2476c9b67d93d603964cc}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Node\+\_\+initialize@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Node\+\_\+initialize}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Node\+\_\+initialize@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Node\+\_\+initialize}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Node\+\_\+initialize}{\_Scheduler\_EDF\_SMP\_Node\_initialize}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Node\+\_\+initialize}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a3ec77b49ee2f085ef6c1e1bfe5a81136}\label{schedulerstrongapa_8c_a3ec77b49ee2f085ef6c1e1bfe5a81136}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Pin@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Pin}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Pin@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Pin}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Pin}{\_Scheduler\_EDF\_SMP\_Pin}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Pin}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_af4b3420d29727adf18eb7bf9d5111939}\label{schedulerstrongapa_8c_af4b3420d29727adf18eb7bf9d5111939}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Reconsider\+\_\+help\+\_\+request@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Reconsider\+\_\+help\+\_\+request}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Reconsider\+\_\+help\+\_\+request@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Reconsider\+\_\+help\+\_\+request}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Reconsider\+\_\+help\+\_\+request}{\_Scheduler\_EDF\_SMP\_Reconsider\_help\_request}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Reconsider\+\_\+help\+\_\+request}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_ab433156ba61ea946f3417788832f632a}\label{schedulerstrongapa_8c_ab433156ba61ea946f3417788832f632a}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Remove\+\_\+processor@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Remove\+\_\+processor}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Remove\+\_\+processor@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Remove\+\_\+processor}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Remove\+\_\+processor}{\_Scheduler\_EDF\_SMP\_Remove\_processor}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Remove\+\_\+processor}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a9156b87810ece994d0227e893a2810d7}\label{schedulerstrongapa_8c_a9156b87810ece994d0227e893a2810d7}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Start\+\_\+idle@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Start\+\_\+idle}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Start\+\_\+idle@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Start\+\_\+idle}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Start\+\_\+idle}{\_Scheduler\_EDF\_SMP\_Start\_idle}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Start\+\_\+idle}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a1b42277580b543970c5583cb510e9391}\label{schedulerstrongapa_8c_a1b42277580b543970c5583cb510e9391}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unblock@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unblock}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unblock@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unblock}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unblock}{\_Scheduler\_EDF\_SMP\_Unblock}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unblock}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a7a906e2cd547ccaec766fac4af9dc0a4}\label{schedulerstrongapa_8c_a7a906e2cd547ccaec766fac4af9dc0a4}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unpin@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unpin}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unpin@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unpin}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unpin}{\_Scheduler\_EDF\_SMP\_Unpin}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Unpin}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a8dc57af0209912bf00d3515dfb414c30}\label{schedulerstrongapa_8c_a8dc57af0209912bf00d3515dfb414c30}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Update\+\_\+priority@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Update\+\_\+priority}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Update\+\_\+priority@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Update\+\_\+priority}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Update\+\_\+priority}{\_Scheduler\_EDF\_SMP\_Update\_priority}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Update\+\_\+priority}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_ac420520ab5a83e418f941beec49db83d}\label{schedulerstrongapa_8c_ac420520ab5a83e418f941beec49db83d}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Withdraw\+\_\+node@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Withdraw\+\_\+node}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Withdraw\+\_\+node@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Withdraw\+\_\+node}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Withdraw\+\_\+node}{\_Scheduler\_EDF\_SMP\_Withdraw\_node}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Withdraw\+\_\+node}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_aab687988f7fbd85e723b7e1ba076d258}\label{schedulerstrongapa_8c_aab687988f7fbd85e723b7e1ba076d258}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Yield@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Yield}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Yield@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Yield}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Yield}{\_Scheduler\_EDF\_SMP\_Yield}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+S\+M\+P\+\_\+\+Yield}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a6f474ffa9a3563e69744161ed70b0fb4}\label{schedulerstrongapa_8c_a6f474ffa9a3563e69744161ed70b0fb4}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Unmap\+\_\+priority@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Unmap\+\_\+priority}}
-\index{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Unmap\+\_\+priority@{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Unmap\+\_\+priority}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Unmap\+\_\+priority}{\_Scheduler\_EDF\_Unmap\_priority}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+G\+E\+T\+\_\+\+S\+E\+T\+\_\+\+A\+F\+F\+I\+N\+I\+TY Refer from \+\_\+\+Scheduler\+\_\+\+E\+D\+F\+\_\+\+Unmap\+\_\+priority}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a4fd003aab858ebba4664fa5934368385}\label{schedulerstrongapa_8c_a4fd003aab858ebba4664fa5934368385}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor}{\_Scheduler\_strong\_APA\_Add\_processor}}
-{\footnotesize\ttfamily To\+Add \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
+Definition at line 12 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_ae918381ccf0f7d0c5d88e7603a7a1aea}\label{schedulerstrongapa_8c_ae918381ccf0f7d0c5d88e7603a7a1aea}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help}}
@@ -579,27 +329,7 @@ Definition at line 11 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a033883b773fbda032637832f3b7a408f}\label{schedulerstrongapa_8c_a033883b773fbda032637832f3b7a408f}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}{\_Scheduler\_strong\_APA\_Block}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_ac6ed869799a85c0f29252a85d9ef3541}\label{schedulerstrongapa_8c_ac6ed869799a85c0f29252a85d9ef3541}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize}{\_Scheduler\_strong\_APA\_Node\_initialize}}
-{\footnotesize\ttfamily To\+Add \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
+Definition at line 12 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a27be05a567ea574c74a30f5baf8b1a28}\label{schedulerstrongapa_8c_a27be05a567ea574c74a30f5baf8b1a28}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request}}
@@ -609,27 +339,7 @@ Definition at line 11 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_ac1ba2aa8f9d0f55340760ac49858f583}\label{schedulerstrongapa_8c_ac1ba2aa8f9d0f55340760ac49858f583}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}{\_Scheduler\_strong\_APA\_Remove\_processor}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a81baa0f3613f9b9d8cc2cbf937cf57cd}\label{schedulerstrongapa_8c_a81baa0f3613f9b9d8cc2cbf937cf57cd}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock}{\_Scheduler\_strong\_APA\_Unblock}}
-{\footnotesize\ttfamily To\+Add \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
+Definition at line 12 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a9c87b05d6ee253bf3dbc583c17654456}\label{schedulerstrongapa_8c_a9c87b05d6ee253bf3dbc583c17654456}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority}}
@@ -639,7 +349,7 @@ Definition at line 11 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 11 of file schedulerstrongapa.\+c.
+Definition at line 12 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a51496fdfb596c6b2eb2c3beafa7d39d8}\label{schedulerstrongapa_8c_a51496fdfb596c6b2eb2c3beafa7d39d8}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node}}
@@ -649,15 +359,5 @@ Definition at line 11 of file schedulerstrongapa.\+c.
 
 
 
-Definition at line 11 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a0dfa90c5aa89e60c75c1c23695fbd857}\label{schedulerstrongapa_8c_a0dfa90c5aa89e60c75c1c23695fbd857}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}{\_Scheduler\_strong\_APA\_Yield}}
-{\footnotesize\ttfamily To\+Add $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}
-
-
-
-Definition at line 11 of file schedulerstrongapa.\+c.
+Definition at line 12 of file schedulerstrongapa.\+c.
 
