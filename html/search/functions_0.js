@@ -24,5 +24,6 @@ var searchData=
   ['_5fscheduler_5fstrong_5fapa_5fset_5faffinity',['_Scheduler_strong_APA_Set_affinity',['../group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223',1,'_Scheduler_strong_APA_Set_affinity(const Scheduler_Control *scheduler, Thread_Control *thread, Scheduler_Node *node_base, const Processor_mask *affinity):&#160;schedulerstrongapa.c'],['../group__RTEMSScoreSchedulerStrongAPA.html#ga63ef624a9881cf77a2b1eef2c6f05223',1,'_Scheduler_strong_APA_Set_affinity(const Scheduler_Control *scheduler, Thread_Control *thread, Scheduler_Node *node_base, const Processor_mask *affinity):&#160;schedulerstrongapa.c']]],
   ['_5fscheduler_5fstrong_5fapa_5fset_5fscheduled',['_Scheduler_strong_APA_Set_scheduled',['../schedulerstrongapa_8c.html#af84aab458fa8146f74cec54fe4c0d2ab',1,'schedulerstrongapa.c']]],
   ['_5fscheduler_5fstrong_5fapa_5funblock',['_Scheduler_strong_APA_Unblock',['../schedulerstrongapa_8c.html#a8e6ee051e6a359186fd6964051db69e2',1,'schedulerstrongapa.c']]],
+  ['_5fscheduler_5fstrong_5fapa_5fupdate_5fpriority',['_Scheduler_strong_APA_Update_priority',['../schedulerstrongapa_8c.html#afd1bbcb35f99dd53b4ffe2fe52030cdc',1,'schedulerstrongapa.c']]],
   ['_5fscheduler_5fstrong_5fapa_5fyield',['_Scheduler_strong_APA_Yield',['../schedulerstrongapa_8c.html#ad6d1206459f21c74882cd2fb3ddd4aae',1,'schedulerstrongapa.c']]]
 ];

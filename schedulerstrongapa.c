@@ -8,9 +8,6 @@
 
 -----------------------------------------------------------------------------------
 ToAdd:
-
-    _Scheduler_strong_APA_Unblock, \
-    _Scheduler_strong_APA_Update_priority, \
     _Scheduler_strong_APA_Ask_for_help, \
     _Scheduler_strong_APA_Reconsider_help_request, \
     _Scheduler_strong_APA_Withdraw_node, \
@@ -494,4 +491,24 @@ static inline void _Scheduler_strong_APA_Do_update(
 
   smp_node = _Scheduler_SMP_Node_downcast( node );
   _Scheduler_SMP_Node_update_priority( smp_node, new_priority );
+}
+
+void _Scheduler_strong_APA_Update_priority(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  _Scheduler_SMP_Update_priority(
+    context,
+    thread,
+    node,
+    _Scheduler_strong_APA_Extract_from_ready,
+    _Scheduler_strong_APA_Do_update,
+    _Scheduler_strong_APA_Enqueue,
+    _Scheduler_strong_APA_Enqueue_scheduled,
+    _Scheduler_strong_APA_Do_ask_for_help
+  );
 }
