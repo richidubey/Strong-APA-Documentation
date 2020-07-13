@@ -126,6 +126,10 @@ Functions</h2></td></tr>
 <tr class="separator:ad6d1206459f21c74882cd2fb3ddd4aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7875a7e75f2615c6603155126d437db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#ae7875a7e75f2615c6603155126d437db">_Scheduler_strong_APA_Block</a> (const Scheduler_Control *scheduler, Thread_Control *thread, Scheduler_Node *node)</td></tr>
 <tr class="separator:ae7875a7e75f2615c6603155126d437db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3375cf50bcc8efca42c63b4fa7e7b971"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a3375cf50bcc8efca42c63b4fa7e7b971">_Scheduler_strong_APA_Extract_from_scheduled</a> (Scheduler_Context *context, Scheduler_Node *node_to_extract)</td></tr>
+<tr class="separator:a3375cf50bcc8efca42c63b4fa7e7b971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91dc29dcdeea35e3329623be7a798e39"><td class="memItemLeft" align="right" valign="top">Thread_Control *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="schedulerstrongapa_8c.html#a91dc29dcdeea35e3329623be7a798e39">_Scheduler_strong_APA_Remove_processor</a> (const Scheduler_Control *scheduler, Per_CPU_Control *cpu)</td></tr>
+<tr class="separator:a91dc29dcdeea35e3329623be7a798e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -485,6 +489,44 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a3375cf50bcc8efca42c63b4fa7e7b971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3375cf50bcc8efca42c63b4fa7e7b971">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Extract_from_scheduled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void _Scheduler_strong_APA_Extract_from_scheduled </td>
+          <td>(</td>
+          <td class="paramtype">Scheduler_Context *&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Scheduler_Node *&#160;</td>
+          <td class="paramname"><em>node_to_extract</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00489">489</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+
+</div>
+</div>
 <a id="a3c6a0cbfb38651e3698501a1eca038db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c6a0cbfb38651e3698501a1eca038db">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Get_context()</h2>
 
@@ -806,6 +848,36 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00428">428</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
+
+</div>
+</div>
+<a id="a91dc29dcdeea35e3329623be7a798e39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91dc29dcdeea35e3329623be7a798e39">&#9670;&nbsp;</a></span>_Scheduler_strong_APA_Remove_processor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Thread_Control* _Scheduler_strong_APA_Remove_processor </td>
+          <td>(</td>
+          <td class="paramtype">const Scheduler_Control *&#160;</td>
+          <td class="paramname"><em>scheduler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Per_CPU_Control *&#160;</td>
+          <td class="paramname"><em>cpu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8c_source.html#l00505">505</a> of file <a class="el" href="schedulerstrongapa_8c_source.html">schedulerstrongapa.c</a>.</p>
 
 </div>
 </div>

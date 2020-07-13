@@ -486,4 +486,34 @@ void _Scheduler_strong_APA_Block(
   );
 }
 
+static inline void _Scheduler_strong_APA_Extract_from_scheduled(
+  Scheduler_Context *context,
+  Scheduler_Node    *node_to_extract
+)
+{
+  _Scheduler_strong_APA_Context     	*self;
+  _Scheduler_strong_APA_Node        	*node;
+  uint8_t                        	 rqi;
+  _Scheduler_strong_APA_Ready_queue 	*ready_queue;
+
+  self = _Scheduler_strong_APA_Get_self( context );
+  node = _Scheduler_strong_APA_Node_downcast( node_to_extract );
+
+  _Scheduler_SMP_Extract_from_scheduled( &self->Base.Base, &node->Base.Base ); 
+}
+
+Thread_Control *_Scheduler_strong_APA_Remove_processor(
+  const Scheduler_Control *scheduler,
+  Per_CPU_Control         *cpu
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  return _Scheduler_SMP_Remove_processor(
+    context,
+    cpu,
+    _Scheduler_strong_APA_Extract_from_ready,
+    _Scheduler_strong_APA_Enqueue
+  );
+}
 
