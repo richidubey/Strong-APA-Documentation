@@ -341,7 +341,26 @@ static inline void _Scheduler_strong_APA_Insert_ready(
   _Assert( _Chain_Is_node_off_chain( &node->Node ) == true );
      
   _Chain_Append_unprotected( &self->allNodes, node->Node );
+}
+
+static inline void _Scheduler_strong_APA_Allocate_processor(
+  Scheduler_Context *context,
+  Scheduler_Node    *scheduled_base,
+  Scheduler_Node    *victim_base,
+  Per_CPU_Control   *victim_cpu
+)
+{
+  _Scheduler_strong_APA_Node        *scheduled;
  
+  (void) victim_base;
+  scheduled = _Scheduler_strong_APA_Node_downcast( scheduled_base );
+
+  _Scheduler_SMP_Allocate_processor_exact(
+    context,
+    &scheduled->Base.Base,
+    NULL,
+    victim_cpu
+  );
 }
 
 static inline void  _Scheduler_strong_APA_Do_set_affinity(
@@ -356,59 +375,6 @@ static inline void  _Scheduler_strong_APA_Do_set_affinity(
   node = _Scheduler_strong_APA_Node_downcast( node_base );
   affinity = arg;
   node->affinity = *affinity;
-}
-
-static inline void _Scheduler_strong_APA_Allocate_processor(
-  Scheduler_Context *context,
-  Scheduler_Node    *scheduled_base,
-  Scheduler_Node    *victim_base,
-  Per_CPU_Control   *victim_cpu
-)
-{
-  _Scheduler_strong_APA_Context     *self;
-  _Scheduler_strong_APA_Node        *scheduled;
-  
-
-  (void) victim_base;
-  self = _Scheduler_strong_APA_Get_self( context );
-  scheduled = _Scheduler_strong_APA_Node_downcast( scheduled_base );
-  rqi = scheduled->ready_queue_index;
-
-  if ( rqi != 0 ) {
-    Scheduler_EDF_SMP_Ready_queue *ready_queue;
-    Per_CPU_Control               *desired_cpu;
-
-    ready_queue = &self->Ready[ rqi ];
-
-    if ( !_Chain_Is_node_off_chain( &ready_queue->Node ) ) {
-      _Chain_Extract_unprotected( &ready_queue->Node );
-      _Chain_Set_off_chain( &ready_queue->Node );
-    }
-
-    desired_cpu = _Per_CPU_Get_by_index( rqi - 1 );
-
-    if ( victim_cpu != desired_cpu ) {
-      Scheduler_EDF_SMP_Node *node;
-
-      node = _Scheduler_EDF_SMP_Get_scheduled( self, rqi );
-      _Assert( node->ready_queue_index == 0 );
-      
-      _Scheduler_SMP_Allocate_processor_exact(
-        context,
-        &node->Base.Base,
-        NULL,
-        victim_cpu
-      );
-      victim_cpu = desired_cpu;
-    }
-  }
-  
-  _Scheduler_SMP_Allocate_processor_exact(
-    context,
-    &scheduled->Base.Base,
-    NULL,
-    victim_cpu
-  );
 }
 
 static inline bool _Scheduler_strong_APA_Enqueue(
