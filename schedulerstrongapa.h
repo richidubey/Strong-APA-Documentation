@@ -75,6 +75,14 @@ typedef struct {
    * @brief The associated affinity set of this node.
    */
   Processor_mask affinity;
+  
+  /**
+   * @brief The associated affinity set of this node
+   * to be used while unpinning the node.
+   */
+  Processor_mask unpin_affinity;
+  
+  
 } Scheduler_strong_APA_Node;
 
 /**
@@ -93,8 +101,8 @@ typedef struct {
     _Scheduler_strong_APA_Ask_for_help, \
     _Scheduler_strong_APA_Reconsider_help_request, \
     _Scheduler_strong_APA_Withdraw_node, \
-    _Scheduler_default_Pin_or_unpin, \
-    _Scheduler_default_Pin_or_unpin, \
+    _Scheduler_strong_APA_Pin, \
+    _Scheduler_strong_APA_Unpin, \
     _Scheduler_strong_APA_Add_processor, \
     _Scheduler_strong_APA_Remove_processor, \
     _Scheduler_strong_APA_Node_initialize, \
@@ -102,7 +110,7 @@ typedef struct {
     _Scheduler_default_Release_job, \
     _Scheduler_default_Cancel_job, \
     _Scheduler_default_Tick, \
-    _Scheduler_SMP_Start_idle \
+    _Scheduler_strong_APA_Start_idle \
     _Scheduler_strong_APA_Set_affinity \
   }
   

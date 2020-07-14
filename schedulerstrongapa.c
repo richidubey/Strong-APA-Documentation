@@ -460,121 +460,6 @@ bool _Scheduler_strong_APA_Ask_for_help(
   );
 }
 
-static inline void  _Scheduler_strong_APA_Do_set_affinity(
-  Scheduler_Context *context,
-  Scheduler_Node    *node_base,
-  void              *arg
-)
-{
-  _Scheduler_strong_APA_Node *node;
-  const Processor_mask       *affinity;
-
-  node = _Scheduler_strong_APA_Node_downcast( node_base );
-  affinity = arg;
-  node->affinity = *affinity;
-}
-
-bool _Scheduler_strong_APA_Set_affinity(
-  const Scheduler_Control *scheduler,
-  Thread_Control          *thread,
-  Scheduler_Node          *node_base,
-  const Processor_mask    *affinity
-)
-{
-  Scheduler_Context     	*context;
-  Scheduler_strong_APA_Node 	*node;
-  Processor_mask          	local_affinity;
- 
-  context = _Scheduler_Get_context( scheduler );
-  _Processor_mask_And( &local_affinity, &context->Processors, affinity );
-
-  if ( _Processor_mask_Is_zero( &local_affinity ) ) {
-    return false;
-  }
-
-  node = Scheduler_strong_APA_Node_downcast( node_base );
-
-  if ( _Processor_mask_Is_equal( &node->affinity, affinity ) )
-    return true;	//Nothing to do. Return true.
-
-    _Scheduler_SMP_Set_affinity(
-      context,
-      thread,
-      node_base,
-      &local_affinity,
-      _Scheduler_strong_APA_Do_set_affinity,
-      _Scheduler_strong_APA_Extract_from_ready,		
-      _Scheduler_strong_APA_Get_highest_ready,	
-      _Scheduler_strong_APA_Move_from_ready_to_scheduled,
-      _Scheduler_strong_APA_Enqueue,
-      _Scheduler_strong_APA_Allocate_processor
-    );
-
-  return true;
-}
-
-void _Scheduler_strong_APA_Add_processor(
-  const Scheduler_Control *scheduler,
-  Thread_Control          *idle
-)
-{
-  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
-
-  _Scheduler_SMP_Add_processor(
-    context,
-    idle,
-    _Scheduler_strong_APA_Has_ready,
-    _Scheduler_strong_APA_Enqueue_scheduled,
-    _Scheduler_strong_APA_Register_idle
-  );
-}
-
-static inline void _Scheduler_strong_APA_Register_idle(
-  Scheduler_Context *context,
-  Scheduler_Node    *idle_base,
-  Per_CPU_Control   *cpu
-)
-{
-  _Scheduler_strong_APA_Context *self;
-  _Scheduler_strong_APA_Node    *idle;
-
-  self = _Scheduler_strong_APA_Get_self( context );
-  idle = _Scheduler_strong_APA_Node_downcast( idle_base );
-}
-
-void _Scheduler_strong_APA_Yield(
-  const Scheduler_Control *scheduler,
-  Thread_Control          *thread,
-  Scheduler_Node          *node
-)
-{
-  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
-
-  _Scheduler_SMP_Yield(
-    context,
-    thread,
-    node,
-    _Scheduler_strong_APA_Extract_from_ready,
-    _Scheduler_strong_APA_Enqueue,
-    _Scheduler_strong_APA_Enqueue_scheduled
-  );
-}
-
-Thread_Control *_Scheduler_strong_APA_Remove_processor(
-  const Scheduler_Control *scheduler,
-  Per_CPU_Control         *cpu
-)
-{
-  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
-
-  return _Scheduler_SMP_Remove_processor(
-    context,
-    cpu,
-    _Scheduler_strong_APA_Extract_from_ready,
-    _Scheduler_strong_APA_Enqueue
-  );
-}
-
 void _Scheduler_strong_APA_Update_priority(
   const Scheduler_Control *scheduler,
   Thread_Control          *thread,
@@ -611,7 +496,6 @@ void _Scheduler_strong_APA_Reconsider_help_request(
   );
 }
 
-
 void _Scheduler_strong_APA_Withdraw_node(
   const Scheduler_Control *scheduler,
   Thread_Control          *the_thread,
@@ -633,3 +517,186 @@ void _Scheduler_strong_APA_Withdraw_node(
   );
 }
 
+static inline void _Scheduler_strong_APA_Register_idle(
+  Scheduler_Context *context,
+  Scheduler_Node    *idle_base,
+  Per_CPU_Control   *cpu
+)
+{
+  (void) context;
+  (void) idle_base;
+  (void) cpu;
+  //We do not maintain a variable to access the scheduled
+  //node for a CPU. So this function does nothing.
+}
+
+void _Scheduler_strong_APA_Add_processor(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *idle
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  _Scheduler_SMP_Add_processor(
+    context,
+    idle,
+    _Scheduler_strong_APA_Has_ready,
+    _Scheduler_strong_APA_Enqueue_scheduled,
+    _Scheduler_strong_APA_Register_idle
+  );
+}
+
+Thread_Control *_Scheduler_strong_APA_Remove_processor(
+  const Scheduler_Control *scheduler,
+  Per_CPU_Control         *cpu
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  return _Scheduler_SMP_Remove_processor(
+    context,
+    cpu,
+    _Scheduler_strong_APA_Extract_from_ready,
+    _Scheduler_strong_APA_Enqueue
+  );
+}
+
+void _Scheduler_strong_APA_Yield(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  _Scheduler_SMP_Yield(
+    context,
+    thread,
+    node,
+    _Scheduler_strong_APA_Extract_from_ready,
+    _Scheduler_strong_APA_Enqueue,
+    _Scheduler_strong_APA_Enqueue_scheduled
+  );
+}
+
+static inline void  _Scheduler_strong_APA_Do_set_affinity(
+  Scheduler_Context *context,
+  Scheduler_Node    *node_base,
+  void              *arg
+)
+{
+  _Scheduler_strong_APA_Node *node;
+  const Processor_mask       *affinity;
+
+  node = _Scheduler_strong_APA_Node_downcast( node_base );
+  affinity = arg;
+  node->affinity = *affinity;
+}
+
+void _Scheduler_strong_APA_Start_idle(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *idle,
+  Per_CPU_Control         *cpu
+)
+{
+  Scheduler_Context *context;
+
+  context = _Scheduler_Get_context( scheduler );
+
+  _Scheduler_SMP_Do_start_idle(
+    context,
+    idle,
+    cpu,
+    _Scheduler_strong_APA_Register_idle
+  );
+}
+
+void _Scheduler_strong_APA_Pin(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node_base,
+  struct Per_CPU_Control  *cpu
+)
+{
+  Scheduler_strong_APA_Node 	*node;
+  uint8_t                 	pin_cpu;
+
+  (void) scheduler;
+  node = _Scheduler_strong_APA_downcast( node_base );
+  pin_cpu = (uint8_t) _Per_CPU_Get_index( cpu );
+
+  _Assert(
+    _Scheduler_SMP_Node_state( &node->Base.Base ) == SCHEDULER_SMP_NODE_BLOCKED
+  );
+
+  node = _Scheduler_strong_APA_Node_downcast( node_base );
+  
+  _Processor_mask_Zero( node->affinity );
+  _Processor_mask_Set( node->affinity, pin_cpu );
+}
+
+void _Scheduler_strong_APA_Unpin(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node_base,
+  struct Per_CPU_Control  *cpu
+)
+{
+  Scheduler_strong_APA_Node *node;
+
+  (void) scheduler;
+  (void) cpu;
+  node = _Scheduler_strong_APA_Node_downcast( node_base );
+
+  _Assert(
+    _Scheduler_SMP_Node_state( &node->Base.Base ) == SCHEDULER_SMP_NODE_BLOCKED
+  );
+
+  _Processor_mask_Zero( node->affinity );
+  _Processor_mask_Assign( node->affinity, node->unpin_affinity );
+}
+
+bool _Scheduler_strong_APA_Set_affinity(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node_base,
+  const Processor_mask    *affinity
+)
+{
+  Scheduler_Context     	*context;
+  Scheduler_strong_APA_Node 	*node;
+  Processor_mask          	local_affinity;
+ 
+  context = _Scheduler_Get_context( scheduler );
+  _Processor_mask_And( &local_affinity, &context->Processors, affinity );
+
+  if ( _Processor_mask_Is_zero( &local_affinity ) ) {
+    return false;
+  }
+
+  node = Scheduler_strong_APA_Node_downcast( node_base );
+
+  if ( _Processor_mask_Is_equal( &node->affinity, affinity ) )
+    return true;	//Nothing to do. Return true.
+    
+ _Processor_mask_Zero( node->affinity );
+ _Processor_mask_Zero( node->unpin_affinity ); 
+ 
+ _Processor_mask_Assign( node->affinity, local_affinity );
+ _Processor_mask_Assign( node->unpin_affinity, local_affinity );
+
+ _Scheduler_SMP_Set_affinity(
+   context,
+   thread,
+   node_base,
+   &local_affinity,
+   _Scheduler_strong_APA_Do_set_affinity,
+   _Scheduler_strong_APA_Extract_from_ready,		
+   _Scheduler_strong_APA_Get_highest_ready,	
+   _Scheduler_strong_APA_Move_from_ready_to_scheduled,
+   _Scheduler_strong_APA_Enqueue,
+   _Scheduler_strong_APA_Allocate_processor
+ );
+
+  return true;
+}
