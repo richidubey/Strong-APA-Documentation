@@ -1,0 +1,2892 @@
+cscope 15 $HOME/Strong-APA-Documentation               0000018420
+	@schedulerstrongapa.c
+
+9 #ifdeà
+HAVE_CONFIG_H
+
+
+10 
+	~"cÚfig.h
+"
+
+13 
+	~<¹ems/scÜe/scheduËr¡rÚg­a.h
+>
+
+14 
+	~<¹ems/scÜe/scheduËrsmpim¶.h
+>
+
+16 
+šlše
+ 
+_ScheduËr_¡rÚg_APA_CÚ‹xt
+ *
+
+17 
+	$_ScheduËr_¡rÚg_APA_G‘_cÚ‹xt
+ĞcÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+ )
+
+19  (
+_ScheduËr_¡rÚg_APA_CÚ‹xt
+ *è
+	`_ScheduËr_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+20 
+	}
+}
+
+22 
+šlše
+ 
+_ScheduËr_¡rÚg_APA_CÚ‹xt
+ *
+
+23 
+	$_ScheduËr_¡rÚg_APA_G‘_£lf
+Ğ
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+ )
+
+25  (
+_ScheduËr_¡rÚg_APA_CÚ‹xt
+ *è
+cÚ‹xt
+;
+
+26 
+	}
+}
+
+28 
+šlše
+ 
+ScheduËr_¡rÚg_APA_Node
+ *
+
+29 
+	$_ScheduËr_¡rÚg_APA_Node_downÿ¡
+Ğ
+ScheduËr_Node
+ *
+node
+ )
+
+31  (
+ScheduËr_¡rÚg_APA_Node
+ *è
+node
+;
+
+32 
+	}
+}
+
+34 
+	$_ScheduËr_¡rÚg_APA_In™Ÿlize
+ĞcÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+ )
+
+36 
+ScheduËr_¡rÚg_APA_CÚ‹xt
+ *
+£lf
+ =
+
+37 
+	`_ScheduËr_¡rÚg_APA_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+39 
+	`_ScheduËr_SMP_In™Ÿlize
+Ğ&
+£lf
+->
+Ba£
+ );
+
+40 
+	`_Chaš_In™Ÿlize_em±y
+Ğ&
+£lf
+->
+®lNodes
+ );
+
+41 
+	}
+}
+
+43 
+	$_ScheduËr_¡rÚg_APA_Node_š™Ÿlize
+(
+
+44 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+45 
+ScheduËr_Node
+ *
+node
+,
+
+46 
+Th»ad_CÚŒŞ
+ *
+the_th»ad
+,
+
+47 
+PriÜ™y_CÚŒŞ
+ 
+´iÜ™y
+
+
+50 
+ScheduËr_SMP_Node
+ *
+smp_node
+;
+
+52 
+smp_node
+ = 
+	`_ScheduËr_SMP_Node_downÿ¡
+Ğ
+node
+ );
+
+53 
+	`_ScheduËr_SMP_Node_š™Ÿlize
+Ğ
+scheduËr
+, 
+smp_node
+, 
+the_th»ad
+, 
+´iÜ™y
+ );
+
+54 
+	}
+}
+
+56 
+šlše
+ 
+	$_ScheduËr_¡rÚg_APA_Do_upd©e
+(
+
+57 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+58 
+ScheduËr_Node
+ *
+node
+,
+
+59 
+PriÜ™y_CÚŒŞ
+ 
+Ãw_´iÜ™y
+
+
+62 
+ScheduËr_SMP_Node
+ *
+smp_node
+;
+
+64 (è
+cÚ‹xt
+;
+
+66 
+smp_node
+ = 
+	`_ScheduËr_SMP_Node_downÿ¡
+Ğ
+node
+ );
+
+67 
+	`_ScheduËr_SMP_Node_upd©e_´iÜ™y
+Ğ
+smp_node
+, 
+Ãw_´iÜ™y
+ );
+
+68 
+	}
+}
+
+70 
+šlše
+ 
+boŞ
+ 
+	$_ScheduËr_¡rÚg_APA_Has_»ady
+Ğ
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+ )
+
+72 
+ScheduËr_EDF_SMP_CÚ‹xt
+ *
+£lf
+ = 
+	`_ScheduËr_¡rÚg_APA_G‘_£lf
+Ğ
+cÚ‹xt
+ );
+
+74 
+boŞ
+ 
+»t
+;
+
+75 cÚ¡ 
+Chaš_Node
+ *
+
+;
+
+76 
+Chaš_Node
+ *
+Ãxt
+;
+
+78 
+
+ = 
+	`_Chaš_ImmubË_
+Ğ&
+£lf
+->
+®lNodes
+ );
+
+79 
+Ãxt
+ = 
+	`_Chaš_Fœ¡
+Ğ&
+£lf
+->
+®lNodes
+ );
+
+81 
+»t
+=
+çl£
+;
+
+83  
+Ãxt
+ !ğ
+
+ ) {
+
+84 
+ScheduËr_¡rÚg_APA_Node
+ *
+node
+;
+
+86 
+node
+ = (
+ScheduËr_¡rÚg_APA_Node
+ *è
+Ãxt
+;
+
+88 if(
+	`ScheduËr_SMP_Node_¡©e
+Ğ&
+node
+->
+Ba£
+.Base )
+
+89 =ğ
+SCHEDULER_SMP_NODE_READY
+) {
+
+91 
+»t
+=
+Œue
+;
+
+97  
+»t
+;
+
+98 
+	}
+}
+
+105 
+šlše
+ 
+ScheduËr_Node
+ *
+	$_ScheduËr_¡rÚg_APA_G‘_highe¡_»ady
+(
+
+106 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+107 
+ScheduËr_Node
+ *
+f‹r
+
+
+111 
+£lf
+=
+	`_ScheduËr_¡rÚg_APA_G‘_£lf
+Ğ
+cÚ‹xt
+ );
+
+113 
+Th»ad_CÚŒŞ
+ 
+th»ad
+;
+
+114 
+P”_CPU_CÚŒŞ
+ 
+th»ad_ıu
+;
+
+115 
+P”_CPU_CÚŒŞ
+ 
+assigÃd_ıu
+;
+
+116 
+ScheduËr_Node
+ *
+»t
+;
+
+117 
+PriÜ™y_CÚŒŞ
+ 
+max_´io
+;
+
+118 
+PriÜ™y_CÚŒŞ
+ 
+cu¼_´io
+;
+
+120 
+th»ad
+=
+f‹r
+->
+Ba£
+.Ba£.
+u£r
+;
+
+121 
+th»ad_ıu
+ = 
+	`_Th»ad_G‘_CPU
+Ğ
+th»ad
+ );
+
+127 
+max_´iÜ™y
+ = 
+	`_ScheduËr_Node_g‘_´iÜ™y
+Ğ
+f‹r
+ );
+
+128 
+max_´iÜ™y
+ = 
+	`SCHEDULER_PRIORITY_PURIFY
+Ğ
+´iÜ™y
+ );
+
+130 
+»t
+=
+f‹r
+;
+
+132 cÚ¡ 
+Chaš_Node
+ *
+
+;
+
+133 
+Chaš_Node
+ *
+Ãxt
+;
+
+135 
+FiFoQueue
+.
+	`š£¹
+(
+th»ad_CPU
+);
+
+136 
+vis™ed
+[
+th»ad_CPU
+]=
+Œue
+;
+
+139 !
+FiFoQueue
+.
+isEm±y
+) {
+
+140 
+
+ = 
+	`_Chaš_ImmubË_
+Ğ&
+£lf
+->
+®lNodes
+ );
+
+141 
+Ãxt
+ = 
+	`_Chaš_Fœ¡
+Ğ&
+£lf
+->
+®lNodes
+ );
+
+143  
+Ãxt
+ !ğ
+
+ ) {
+
+144 
+ScheduËr_¡rÚg_APA_Node
+ *
+node
+;
+
+146 
+node
+ = (
+ScheduËr_¡rÚg_APA_Node
+ *è
+Ãxt
+;
+
+148 if(
+	`hasCPUšS‘
+(
+
+149 
+node
+->
+affš™y
+,
+
+150 
+	`_P”_CPU_G‘_šdex
+(
+th»ad_CPU
+)) ) {
+
+152 if(
+	`ScheduËr_SMP_Node_¡©e
+Ğ&
+node
+->
+Ba£
+.Base )
+
+153 =ğ
+SCHEDULER_SMP_NODE_SCHEDULED
+) {
+
+155 
+assigÃd_ıu
+ = 
+	`_Th»ad_G‘_CPU
+Ğ
+node
+->
+Ba£
+.Ba£.
+u£r
+ );
+
+156 if(
+vis™ed
+[ 
+assigÃd_ıu
+ ] =ğ
+çl£
+) {
+
+157 
+FifoQueue
+.
+	`š£¹
+Ğ
+assigÃd_ıu
+ );
+
+158 
+vis™ed
+[ 
+assigÃd_ıu
+ ] = 
+Œue
+;
+
+161 if(
+	`ScheduËr_SMP_Node_¡©e
+Ğ&
+node
+->
+Ba£
+.Base )
+
+162 =ğ
+SCHEDULER_SMP_NODE_READY
+) {
+
+163 
+cu¼_´iÜ™y
+ = 
+	`_ScheduËr_Node_g‘_´iÜ™y
+Ğ
+node
+ );
+
+164 
+cu¼_´iÜ™y
+ = 
+	`SCHEDULER_PRIORITY_PURIFY
+( curr_priority );
+
+166 if(
+cu¼_´iÜ™y
+>
+max_´iÜ™y
+) {
+
+167 
+max_´iÜ™y
+=
+cu¼_´iÜ™y
+;
+
+168 
+»t
+=
+node
+->
+Ba£
+.Base;
+
+172 
+Ãxt
+ = 
+	`_Chaš_Next
+(‚ext );
+
+175 
+FifoQueue
+.
+	`pİ
+();
+
+178 ifĞ
+»t
+ !ğ
+f‹r
+)
+
+187  
+»t
+;
+
+188 
+	}
+}
+
+199 
+šlše
+ 
+ScheduËr_Node
+ *
+	$_ScheduËr_¡rÚg_APA_G‘_lowe¡_scheduËd
+(
+
+200 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+201 
+ScheduËr_Node
+ *
+f‹r_ba£
+
+
+209 
+ScheduËr_Node
+ *
+»t
+;
+
+210 cÚ¡ 
+Chaš_Node
+ *
+
+;
+
+211 
+Chaš_Node
+ *
+Ãxt
+;
+
+212 
+P”_CPU_CÚŒŞ
+ 
+cu¼_ıu
+;
+
+213 
+_ScheduËr_¡rÚg_APA_Node
+ *
+f‹r_node
+;
+
+214 
+PriÜ™y_CÚŒŞ
+ 
+mš_´io
+;
+
+215 
+PriÜ™y_CÚŒŞ
+ 
+cu¼_´io
+;
+
+218 
+f‹r_node
+ = 
+	`_ScheduËr_¡rÚg_APA_Node_downÿ¡
+Ğ
+f‹r_ba£
+ );
+
+220 
+»t
+=
+NULL
+;
+
+222 
+
+ = 
+	`_Chaš_ImmubË_
+Ğ&
+£lf
+->
+®lNodes
+ );
+
+223 
+Ãxt
+ = 
+	`_Chaš_Fœ¡
+Ğ&
+£lf
+->
+®lNodes
+ );
+
+225  
+Ãxt
+ !ğ
+
+ ) {
+
+226 
+ScheduËr_¡rÚg_APA_Node
+ *
+node
+;
+
+228 
+node
+ = (
+ScheduËr_¡rÚg_APA_Node
+ *è
+Ãxt
+;
+
+230 ifĞ
+	`ScheduËr_SMP_Node_¡©e
+Ğ&
+node
+->
+Ba£
+.Base )
+
+231 =ğ
+SCHEDULER_SMP_NODE_SCHEDULED
+ ) {
+
+233 
+cu¼_ıu
+=
+	`_Th»ad_G‘_CPU
+Ğ
+node
+->
+Ba£
+.Ba£.
+u£r
+ );
+
+236 ifĞ
+	`hasCPUšS‘
+Ğ
+f‹r_node
+->
+affš™y
+,
+
+237 
+	`_P”_CPU_G‘_šdex
+(
+cu¼_ıu
+) ) ) {
+
+239 
+cu¼_´iÜ™y
+ = 
+	`_ScheduËr_Node_g‘_´iÜ™y
+Ğ
+node
+ );
+
+240 
+cu¼_´iÜ™y
+ = 
+	`SCHEDULER_PRIORITY_PURIFY
+( curr_priority );
+
+242 ifĞ
+»t
+ =ğ
+NULL
+ ) {
+
+243 
+»t
+=
+node
+->
+Ba£
+.Base;
+
+245 
+mš_´io
+=
+cu¼_´iÜ™y
+;
+
+248 ifĞ
+cu¼_´iÜ™y
+ < 
+mš_´io
+ ) {
+
+249 
+»t
+=
+node
+;
+
+250 
+mš_´io
+=
+cu¼_´iÜ™y
+;
+
+255 
+Ãxt
+ = 
+	`_Chaš_Next
+(‚ext );
+
+258  
+»t
+;
+
+259 
+	}
+}
+
+261 
+šlše
+ 
+	$_ScheduËr_¡rÚg_APA_ExŒaù_äom_scheduËd
+(
+
+262 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+263 
+ScheduËr_Node
+ *
+node_to_exŒaù
+
+
+266 
+_ScheduËr_¡rÚg_APA_CÚ‹xt
+ *
+£lf
+;
+
+267 
+_ScheduËr_¡rÚg_APA_Node
+ *
+node
+;
+
+269 
+£lf
+ = 
+	`_ScheduËr_¡rÚg_APA_G‘_£lf
+Ğ
+cÚ‹xt
+ );
+
+270 
+node
+ = 
+	`_ScheduËr_¡rÚg_APA_Node_downÿ¡
+Ğ
+node_to_exŒaù
+ );
+
+272 
+	`_ScheduËr_SMP_ExŒaù_äom_scheduËd
+Ğ&
+£lf
+->
+Ba£
+.Ba£, &
+node
+->Base.Base );
+
+274 
+	}
+}
+
+276 
+šlše
+ 
+	$_ScheduËr_¡rÚg_APA_ExŒaù_äom_»ady
+(
+
+277 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+278 
+ScheduËr_Node
+ *
+node_to_exŒaù
+
+
+281 
+_ScheduËr_¡rÚg_APA_CÚ‹xt
+ *
+£lf
+;
+
+282 
+_ScheduËr_¡rÚg_APA_Node
+ *
+node
+;
+
+284 
+£lf
+ = 
+	`_ScheduËr_¡rÚg_APA_G‘_£lf
+Ğ
+cÚ‹xt
+ );
+
+285 
+node
+ = 
+	`_ScheduËr_¡rÚg_APA_Node_downÿ¡
+Ğ
+node_to_exŒaù
+ );
+
+287 
+	`_As£¹
+Ğ
+	`_Chaš_Is_em±y
+(
+£lf
+->
+®lNodes
+è=ğ
+çl£
+ );
+
+288 
+	`_As£¹
+Ğ
+	`_Chaš_Is_node_off_chaš
+Ğ&
+node
+->
+Node
+ ) =ğ
+çl£
+ );
+
+290 
+	`_Chaš_ExŒaù_uÅrÙeùed
+Ğ&
+node
+->
+Node
+ );
+
+291 
+	`_Chaš_S‘_off_chaš
+Ğ&
+node
+->
+Node
+ );
+
+292 
+	}
+}
+
+294 
+šlše
+ 
+	$_ScheduËr_¡rÚg_APA_Move_äom_scheduËd_to_»ady
+(
+
+295 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+296 
+ScheduËr_Node
+ *
+scheduËd_to_»ady
+
+
+299 
+PriÜ™y_CÚŒŞ
+ 
+š£¹_´iÜ™y
+;
+
+301 
+	`_ScheduËr_SMP_ExŒaù_äom_scheduËd
+Ğ
+cÚ‹xt
+, 
+scheduËd_to_»ady
+ );
+
+302 
+š£¹_´iÜ™y
+ = 
+	`_ScheduËr_SMP_Node_´iÜ™y
+Ğ
+scheduËd_to_»ady
+ );
+
+304 
+	`_ScheduËr_¡rÚg_APA_In£¹_»ady
+(
+
+305 
+cÚ‹xt
+,
+
+306 
+scheduËd_to_»ady
+,
+
+307 
+š£¹_´iÜ™y
+
+
+309 
+	}
+}
+
+311 
+šlše
+ 
+	$_ScheduËr_¡rÚg_APA_Move_äom_»ady_to_scheduËd
+(
+
+312 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+313 
+ScheduËr_Node
+ *
+»ady_to_scheduËd
+
+
+316 
+PriÜ™y_CÚŒŞ
+ 
+š£¹_´iÜ™y
+;
+
+318 
+	`_ScheduËr_¡rÚg_APA_ExŒaù_äom_»ady
+Ğ
+cÚ‹xt
+, 
+»ady_to_scheduËd
+ );
+
+319 
+š£¹_´iÜ™y
+ = 
+	`_ScheduËr_SMP_Node_´iÜ™y
+Ğ
+»ady_to_scheduËd
+ );
+
+320 
+š£¹_´iÜ™y
+ = 
+	`SCHEDULER_PRIORITY_APPEND
+( insert_priority );
+
+321 
+	`_ScheduËr_SMP_In£¹_scheduËd
+(
+
+322 
+cÚ‹xt
+,
+
+323 
+»ady_to_scheduËd
+,
+
+324 
+š£¹_´iÜ™y
+
+
+327 
+	}
+}
+
+329 
+šlše
+ 
+	$_ScheduËr_¡rÚg_APA_In£¹_»ady
+(
+
+330 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+331 
+ScheduËr_Node
+ *
+node_ba£
+,
+
+332 
+PriÜ™y_CÚŒŞ
+ 
+š£¹_´iÜ™y
+
+
+335 
+_ScheduËr_¡rÚg_APA_CÚ‹xt
+ *
+£lf
+;
+
+336 
+_ScheduËr_¡rÚg_APA_Node
+ *
+node
+;
+
+338 
+£lf
+ = 
+	`_ScheduËr_¡rÚg_APA_G‘_£lf
+Ğ
+cÚ‹xt
+ );
+
+339 
+node
+ = 
+	`_ScheduËr_¡rÚg_APA_Node_downÿ¡
+Ğ
+node_ba£
+ );
+
+341 
+	`_As£¹
+Ğ
+	`_Chaš_Is_node_off_chaš
+Ğ&
+node
+->
+Node
+ ) =ğ
+Œue
+ );
+
+343 
+	`_Chaš_Aµ’d_uÅrÙeùed
+Ğ&
+£lf
+->
+®lNodes
+, 
+node
+->
+Node
+ );
+
+344 
+	}
+}
+
+346 
+šlše
+ 
+	$_ScheduËr_¡rÚg_APA_AÎoÿ‹_´oûssÜ
+(
+
+347 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+348 
+ScheduËr_Node
+ *
+scheduËd_ba£
+,
+
+349 
+ScheduËr_Node
+ *
+viùim_ba£
+,
+
+350 
+P”_CPU_CÚŒŞ
+ *
+viùim_ıu
+
+
+353 
+_ScheduËr_¡rÚg_APA_Node
+ *
+scheduËd
+;
+
+355 (è
+viùim_ba£
+;
+
+356 
+scheduËd
+ = 
+	`_ScheduËr_¡rÚg_APA_Node_downÿ¡
+Ğ
+scheduËd_ba£
+ );
+
+358 
+	`_ScheduËr_SMP_AÎoÿ‹_´oûssÜ_exaù
+(
+
+359 
+cÚ‹xt
+,
+
+360 &
+scheduËd
+->
+Ba£
+.Base,
+
+361 
+NULL
+,
+
+362 
+viùim_ıu
+
+
+364 
+	}
+}
+
+366 
+	$_ScheduËr_¡rÚg_APA_Block
+(
+
+367 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+368 
+Th»ad_CÚŒŞ
+ *
+th»ad
+,
+
+369 
+ScheduËr_Node
+ *
+node
+
+
+372 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+ = 
+	`_ScheduËr_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+374 
+	`_ScheduËr_SMP_Block
+(
+
+375 
+cÚ‹xt
+,
+
+376 
+th»ad
+,
+
+377 
+node
+,
+
+378 
+_ScheduËr_¡rÚg_APA_ExŒaù_äom_scheduËd
+,
+
+379 
+_ScheduËr_¡rÚg_APA_ExŒaù_äom_»ady
+,
+
+380 
+_ScheduËr_¡rÚg_APA_G‘_highe¡_»ady
+,
+
+381 
+_ScheduËr_¡rÚg_APA_Move_äom_»ady_to_scheduËd
+,
+
+382 
+_ScheduËr_¡rÚg_APA_AÎoÿ‹_´oûssÜ
+
+
+384 
+	}
+}
+
+386 
+šlše
+ 
+boŞ
+ 
+	$_ScheduËr_¡rÚg_APA_Enqueue
+(
+
+387 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+388 
+ScheduËr_Node
+ *
+node
+,
+
+389 
+PriÜ™y_CÚŒŞ
+ 
+š£¹_´iÜ™y
+
+
+392  
+	`_ScheduËr_SMP_Enqueue
+(
+
+393 
+cÚ‹xt
+,
+
+394 
+node
+,
+
+395 
+š£¹_´iÜ™y
+,
+
+396 
+_ScheduËr_SMP_PriÜ™y_Ëss_equ®
+,
+
+397 
+_ScheduËr_¡rÚg_APA_In£¹_»ady
+,
+
+398 
+_ScheduËr_SMP_In£¹_scheduËd
+,
+
+399 
+_ScheduËr_¡rÚg_APA_Move_äom_scheduËd_to_»ady
+,
+
+400 
+_ScheduËr_¡rÚg_APA_G‘_lowe¡_scheduËd
+,
+
+401 
+_ScheduËr_¡rÚg_APA_AÎoÿ‹_´oûssÜ
+
+
+403 
+	}
+}
+
+405 
+šlše
+ 
+boŞ
+ 
+	$_ScheduËr_¡rÚg_APA_Enqueue_scheduËd
+(
+
+406 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+407 
+ScheduËr_Node
+ *
+node
+,
+
+408 
+PriÜ™y_CÚŒŞ
+ 
+š£¹_´iÜ™y
+
+
+411  
+	`_ScheduËr_SMP_Enqueue_scheduËd
+(
+
+412 
+cÚ‹xt
+,
+
+413 
+node
+,
+
+414 
+š£¹_´iÜ™y
+,
+
+415 
+_ScheduËr_SMP_PriÜ™y_Ëss_equ®
+,
+
+416 
+_ScheduËr_¡rÚg_APA_ExŒaù_äom_»ady
+,
+
+417 
+_ScheduËr_¡rÚg_APA_G‘_highe¡_»ady
+,
+
+418 
+_ScheduËr_¡rÚg_APA_In£¹_»ady
+,
+
+419 
+_ScheduËr_SMP_In£¹_scheduËd
+,
+
+420 
+_ScheduËr_¡rÚg_APA_Move_äom_»ady_to_scheduËd
+,
+
+421 
+_ScheduËr_¡rÚg_APA_AÎoÿ‹_´oûssÜ
+
+
+423 
+	}
+}
+
+425 
+	$_ScheduËr_¡rÚg_APA_Unblock
+(
+
+426 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+427 
+Th»ad_CÚŒŞ
+ *
+th»ad
+,
+
+428 
+ScheduËr_Node
+ *
+node
+
+
+431 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+ = 
+	`_ScheduËr_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+433 
+	`_ScheduËr_SMP_Unblock
+(
+
+434 
+cÚ‹xt
+,
+
+435 
+th»ad
+,
+
+436 
+node
+,
+
+437 
+_ScheduËr_¡rÚg_APA_Do_upd©e
+,
+
+438 
+_ScheduËr_¡rÚg_APA_Enqueue
+
+
+440 
+	}
+}
+
+442 
+boŞ
+ 
+	$_ScheduËr_¡rÚg_APA_Ask_fÜ_h–p
+(
+
+443 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+444 
+Th»ad_CÚŒŞ
+ *
+the_th»ad
+,
+
+445 
+ScheduËr_Node
+ *
+node
+
+
+448 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+ = 
+	`_ScheduËr_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+450  
+	`_ScheduËr_SMP_Ask_fÜ_h–p
+(
+
+451 
+cÚ‹xt
+,
+
+452 
+the_th»ad
+,
+
+453 
+node
+,
+
+454 
+_ScheduËr_SMP_PriÜ™y_Ëss_equ®
+,
+
+455 
+_ScheduËr_¡rÚg_APA_In£¹_»ady
+,
+
+456 
+_ScheduËr_SMP_In£¹_scheduËd
+,
+
+457 
+_ScheduËr_¡rÚg_APA_Move_äom_scheduËd_to_»ady
+,
+
+458 
+_ScheduËr_¡rÚg_APA_G‘_lowe¡_scheduËd
+,
+
+459 
+_ScheduËr_¡rÚg_APA_AÎoÿ‹_´oûssÜ
+
+
+461 
+	}
+}
+
+463 
+	$_ScheduËr_¡rÚg_APA_Upd©e_´iÜ™y
+(
+
+464 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+465 
+Th»ad_CÚŒŞ
+ *
+th»ad
+,
+
+466 
+ScheduËr_Node
+ *
+node
+
+
+469 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+ = 
+	`_ScheduËr_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+471 
+	`_ScheduËr_SMP_Upd©e_´iÜ™y
+(
+
+472 
+cÚ‹xt
+,
+
+473 
+th»ad
+,
+
+474 
+node
+,
+
+475 
+_ScheduËr_¡rÚg_APA_ExŒaù_äom_»ady
+,
+
+476 
+_ScheduËr_¡rÚg_APA_Do_upd©e
+,
+
+477 
+_ScheduËr_¡rÚg_APA_Enqueue
+,
+
+478 
+_ScheduËr_¡rÚg_APA_Enqueue_scheduËd
+,
+
+479 
+_ScheduËr_¡rÚg_APA_Do_ask_fÜ_h–p
+
+
+481 
+	}
+}
+
+483 
+	$_ScheduËr_¡rÚg_APA_RecÚsid”_h–p_»que¡
+(
+
+484 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+485 
+Th»ad_CÚŒŞ
+ *
+the_th»ad
+,
+
+486 
+ScheduËr_Node
+ *
+node
+
+
+489 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+ = 
+	`_ScheduËr_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+491 
+	`_ScheduËr_SMP_RecÚsid”_h–p_»que¡
+(
+
+492 
+cÚ‹xt
+,
+
+493 
+the_th»ad
+,
+
+494 
+node
+,
+
+495 
+_ScheduËr_¡rÚg_APA_ExŒaù_äom_»ady
+
+
+497 
+	}
+}
+
+499 
+	$_ScheduËr_¡rÚg_APA_W™hd¿w_node
+(
+
+500 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+501 
+Th»ad_CÚŒŞ
+ *
+the_th»ad
+,
+
+502 
+ScheduËr_Node
+ *
+node
+,
+
+503 
+Th»ad_ScheduËr_¡©e
+ 
+Ãxt_¡©e
+
+
+506 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+ = 
+	`_ScheduËr_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+508 
+	`_ScheduËr_SMP_W™hd¿w_node
+(
+
+509 
+cÚ‹xt
+,
+
+510 
+the_th»ad
+,
+
+511 
+node
+,
+
+512 
+Ãxt_¡©e
+,
+
+513 
+_ScheduËr_¡rÚg_APA_ExŒaù_äom_»ady
+,
+
+514 
+_ScheduËr_¡rÚg_APA_G‘_highe¡_»ady
+,
+
+515 
+_ScheduËr_¡rÚg_APA_Move_äom_»ady_to_scheduËd
+,
+
+516 
+_ScheduËr_¡rÚg_APA_AÎoÿ‹_´oûssÜ
+
+
+518 
+	}
+}
+
+520 
+šlše
+ 
+	$_ScheduËr_¡rÚg_APA_Regi¡”_idË
+(
+
+521 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+522 
+ScheduËr_Node
+ *
+idË_ba£
+,
+
+523 
+P”_CPU_CÚŒŞ
+ *
+ıu
+
+
+526 (è
+cÚ‹xt
+;
+
+527 (è
+idË_ba£
+;
+
+528 (è
+ıu
+;
+
+531 
+	}
+}
+
+533 
+	$_ScheduËr_¡rÚg_APA_Add_´oûssÜ
+(
+
+534 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+535 
+Th»ad_CÚŒŞ
+ *
+idË
+
+
+538 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+ = 
+	`_ScheduËr_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+540 
+	`_ScheduËr_SMP_Add_´oûssÜ
+(
+
+541 
+cÚ‹xt
+,
+
+542 
+idË
+,
+
+543 
+_ScheduËr_¡rÚg_APA_Has_»ady
+,
+
+544 
+_ScheduËr_¡rÚg_APA_Enqueue_scheduËd
+,
+
+545 
+_ScheduËr_¡rÚg_APA_Regi¡”_idË
+
+
+547 
+	}
+}
+
+549 
+Th»ad_CÚŒŞ
+ *
+	$_ScheduËr_¡rÚg_APA_Remove_´oûssÜ
+(
+
+550 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+551 
+P”_CPU_CÚŒŞ
+ *
+ıu
+
+
+554 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+ = 
+	`_ScheduËr_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+556  
+	`_ScheduËr_SMP_Remove_´oûssÜ
+(
+
+557 
+cÚ‹xt
+,
+
+558 
+ıu
+,
+
+559 
+_ScheduËr_¡rÚg_APA_ExŒaù_äom_»ady
+,
+
+560 
+_ScheduËr_¡rÚg_APA_Enqueue
+
+
+562 
+	}
+}
+
+564 
+	$_ScheduËr_¡rÚg_APA_Y›ld
+(
+
+565 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+566 
+Th»ad_CÚŒŞ
+ *
+th»ad
+,
+
+567 
+ScheduËr_Node
+ *
+node
+
+
+570 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+ = 
+	`_ScheduËr_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+572 
+	`_ScheduËr_SMP_Y›ld
+(
+
+573 
+cÚ‹xt
+,
+
+574 
+th»ad
+,
+
+575 
+node
+,
+
+576 
+_ScheduËr_¡rÚg_APA_ExŒaù_äom_»ady
+,
+
+577 
+_ScheduËr_¡rÚg_APA_Enqueue
+,
+
+578 
+_ScheduËr_¡rÚg_APA_Enqueue_scheduËd
+
+
+580 
+	}
+}
+
+582 
+šlše
+ 
+	$_ScheduËr_¡rÚg_APA_Do_£t_affš™y
+(
+
+583 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+584 
+ScheduËr_Node
+ *
+node_ba£
+,
+
+585 *
+¬g
+
+
+588 
+_ScheduËr_¡rÚg_APA_Node
+ *
+node
+;
+
+589 cÚ¡ 
+ProûssÜ_mask
+ *
+affš™y
+;
+
+591 
+node
+ = 
+	`_ScheduËr_¡rÚg_APA_Node_downÿ¡
+Ğ
+node_ba£
+ );
+
+592 
+affš™y
+ = 
+¬g
+;
+
+593 
+node
+->
+affš™y
+ = *affinity;
+
+594 
+	}
+}
+
+596 
+	$_ScheduËr_¡rÚg_APA_S¹_idË
+(
+
+597 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+598 
+Th»ad_CÚŒŞ
+ *
+idË
+,
+
+599 
+P”_CPU_CÚŒŞ
+ *
+ıu
+
+
+602 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+;
+
+604 
+cÚ‹xt
+ = 
+	`_ScheduËr_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+606 
+	`_ScheduËr_SMP_Do_¡¬t_idË
+(
+
+607 
+cÚ‹xt
+,
+
+608 
+idË
+,
+
+609 
+ıu
+,
+
+610 
+_ScheduËr_¡rÚg_APA_Regi¡”_idË
+
+
+612 
+	}
+}
+
+614 
+	$_ScheduËr_¡rÚg_APA_Pš
+(
+
+615 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+616 
+Th»ad_CÚŒŞ
+ *
+th»ad
+,
+
+617 
+ScheduËr_Node
+ *
+node_ba£
+,
+
+618 
+P”_CPU_CÚŒŞ
+ *
+ıu
+
+
+621 
+ScheduËr_¡rÚg_APA_Node
+ *
+node
+;
+
+622 
+ušt8_t
+ 
+pš_ıu
+;
+
+624 (è
+scheduËr
+;
+
+625 
+node
+ = 
+	`_ScheduËr_¡rÚg_APA_downÿ¡
+Ğ
+node_ba£
+ );
+
+626 
+pš_ıu
+ = (
+ušt8_t
+è
+	`_P”_CPU_G‘_šdex
+Ğ
+ıu
+ );
+
+628 
+	`_As£¹
+(
+
+629 
+	`_ScheduËr_SMP_Node_¡©e
+Ğ&
+node
+->
+Ba£
+.Ba£ ) =ğ
+SCHEDULER_SMP_NODE_BLOCKED
+
+
+632 
+node
+ = 
+	`_ScheduËr_¡rÚg_APA_Node_downÿ¡
+Ğ
+node_ba£
+ );
+
+634 
+	`_ProûssÜ_mask_Z”o
+Ğ
+node
+->
+affš™y
+ );
+
+635 
+	`_ProûssÜ_mask_S‘
+Ğ
+node
+->
+affš™y
+, 
+pš_ıu
+ );
+
+636 
+	}
+}
+
+638 
+	$_ScheduËr_¡rÚg_APA_UÅš
+(
+
+639 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+640 
+Th»ad_CÚŒŞ
+ *
+th»ad
+,
+
+641 
+ScheduËr_Node
+ *
+node_ba£
+,
+
+642 
+P”_CPU_CÚŒŞ
+ *
+ıu
+
+
+645 
+ScheduËr_¡rÚg_APA_Node
+ *
+node
+;
+
+647 (è
+scheduËr
+;
+
+648 (è
+ıu
+;
+
+649 
+node
+ = 
+	`_ScheduËr_¡rÚg_APA_Node_downÿ¡
+Ğ
+node_ba£
+ );
+
+651 
+	`_As£¹
+(
+
+652 
+	`_ScheduËr_SMP_Node_¡©e
+Ğ&
+node
+->
+Ba£
+.Ba£ ) =ğ
+SCHEDULER_SMP_NODE_BLOCKED
+
+
+655 
+	`_ProûssÜ_mask_Z”o
+Ğ
+node
+->
+affš™y
+ );
+
+656 
+	`_ProûssÜ_mask_Assign
+Ğ
+node
+->
+affš™y
+,‚ode->
+uÅš_affš™y
+ );
+
+657 
+	}
+}
+
+659 
+boŞ
+ 
+	$_ScheduËr_¡rÚg_APA_S‘_affš™y
+(
+
+660 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+661 
+Th»ad_CÚŒŞ
+ *
+th»ad
+,
+
+662 
+ScheduËr_Node
+ *
+node_ba£
+,
+
+663 cÚ¡ 
+ProûssÜ_mask
+ *
+affš™y
+
+
+666 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+;
+
+667 
+ScheduËr_¡rÚg_APA_Node
+ *
+node
+;
+
+668 
+ProûssÜ_mask
+ 
+loÿl_affš™y
+;
+
+670 
+cÚ‹xt
+ = 
+	`_ScheduËr_G‘_cÚ‹xt
+Ğ
+scheduËr
+ );
+
+671 
+	`_ProûssÜ_mask_And
+Ğ&
+loÿl_affš™y
+, &
+cÚ‹xt
+->
+ProûssÜs
+, 
+affš™y
+ );
+
+673 iàĞ
+	`_ProûssÜ_mask_Is_z”o
+Ğ&
+loÿl_affš™y
+ ) ) {
+
+674  
+çl£
+;
+
+677 
+node
+ = 
+	`ScheduËr_¡rÚg_APA_Node_downÿ¡
+Ğ
+node_ba£
+ );
+
+679 iàĞ
+	`_ProûssÜ_mask_Is_equ®
+Ğ&
+node
+->
+affš™y
+,‡ffinity ) )
+
+680  
+Œue
+;
+
+682 
+	`_ProûssÜ_mask_Z”o
+Ğ
+node
+->
+affš™y
+ );
+
+683 
+	`_ProûssÜ_mask_Z”o
+Ğ
+node
+->
+uÅš_affš™y
+ );
+
+685 
+	`_ProûssÜ_mask_Assign
+Ğ
+node
+->
+affš™y
+, 
+loÿl_affš™y
+ );
+
+686 
+	`_ProûssÜ_mask_Assign
+Ğ
+node
+->
+uÅš_affš™y
+, 
+loÿl_affš™y
+ );
+
+688 
+	`_ScheduËr_SMP_S‘_affš™y
+(
+
+689 
+cÚ‹xt
+,
+
+690 
+th»ad
+,
+
+691 
+node_ba£
+,
+
+692 &
+loÿl_affš™y
+,
+
+693 
+_ScheduËr_¡rÚg_APA_Do_£t_affš™y
+,
+
+694 
+_ScheduËr_¡rÚg_APA_ExŒaù_äom_»ady
+,
+
+695 
+_ScheduËr_¡rÚg_APA_G‘_highe¡_»ady
+,
+
+696 
+_ScheduËr_¡rÚg_APA_Move_äom_»ady_to_scheduËd
+,
+
+697 
+_ScheduËr_¡rÚg_APA_Enqueue
+,
+
+698 
+_ScheduËr_¡rÚg_APA_AÎoÿ‹_´oûssÜ
+
+
+701  
+Œue
+;
+
+702 
+	}
+}
+
+	@schedulerstrongapa.h
+
+10 #iâdeà
+_RTEMS_SCORE_SCHEDULERSTRONGAPA_H
+
+
+11 
+	#_RTEMS_SCORE_SCHEDULERSTRONGAPA_H
+
+
+	)
+
+13 
+	~<¹ems/scÜe/scheduËr.h
+>
+
+14 
+	~<¹ems/scÜe/scheduË½riÜ™y.h
+>
+
+15 
+	~<¹ems/scÜe/scheduËrsmp.h
+>
+
+17 #ifdeà
+__ılu¥lus
+
+
+46 
+ScheduËr_SMP_CÚ‹xt
+ 
+Ba£
+;
+
+52 
+Chaš_CÚŒŞ
+ 
+®lNodes
+;
+
+54 } 
+	tScheduËr_¡rÚg_APA_CÚ‹xt
+;
+
+64 
+ScheduËr_SMP_Node
+ 
+Ba£
+;
+
+71 
+Chaš_Node
+ 
+Node
+;
+
+76 
+ProûssÜ_mask
+ 
+affš™y
+;
+
+82 
+ProûssÜ_mask
+ 
+uÅš_affš™y
+;
+
+85 } 
+	tScheduËr_¡rÚg_APA_Node
+;
+
+90 
+	#SCHEDULER_STRONG_APA_ENTRY_POINTS
+ \
+
+92 
+_ScheduËr_¡rÚg_APA_In™Ÿlize
+, \
+
+93 
+_ScheduËr_deçuÉ_ScheduË
+, \
+
+94 
+_ScheduËr_¡rÚg_APA_Y›ld
+, \
+
+95 
+_ScheduËr_¡rÚg_APA_Block
+, \
+
+96 
+_ScheduËr_¡rÚg_APA_Unblock
+, \
+
+97 
+_ScheduËr_¡rÚg_APA_Upd©e_´iÜ™y
+, \
+
+98 
+_ScheduËr_deçuÉ_M­_´iÜ™y
+, \
+
+99 
+_ScheduËr_deçuÉ_Unm­_´iÜ™y
+, \
+
+100 
+_ScheduËr_¡rÚg_APA_Ask_fÜ_h–p
+, \
+
+101 
+_ScheduËr_¡rÚg_APA_RecÚsid”_h–p_»que¡
+, \
+
+102 
+_ScheduËr_¡rÚg_APA_W™hd¿w_node
+, \
+
+103 
+_ScheduËr_¡rÚg_APA_Pš
+, \
+
+104 
+_ScheduËr_¡rÚg_APA_UÅš
+, \
+
+105 
+_ScheduËr_¡rÚg_APA_Add_´oûssÜ
+, \
+
+106 
+_ScheduËr_¡rÚg_APA_Remove_´oûssÜ
+, \
+
+107 
+_ScheduËr_¡rÚg_APA_Node_š™Ÿlize
+, \
+
+108 
+_ScheduËr_deçuÉ_Node_de¡roy
+, \
+
+109 
+_ScheduËr_deçuÉ_R–—£_job
+, \
+
+110 
+_ScheduËr_deçuÉ_Cªûl_job
+, \
+
+111 
+_ScheduËr_deçuÉ_Tick
+, \
+
+112 
+_ScheduËr_¡rÚg_APA_S¹_idË
+ \
+
+113 
+_ScheduËr_¡rÚg_APA_S‘_affš™y
+ \
+
+114 }
+
+	)
+
+128 
+_ScheduËr_¡rÚg_APA_In™Ÿlize
+(
+
+129 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+
+
+140 
+_ScheduËr_¡rÚg_APA_Node_š™Ÿlize
+(
+
+141 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+142 
+ScheduËr_Node
+ *
+node
+,
+
+143 
+Th»ad_CÚŒŞ
+ *
+the_th»ad
+,
+
+144 
+PriÜ™y_CÚŒŞ
+ 
+´iÜ™y
+
+
+153 
+šlše
+ 
+_ScheduËr_¡rÚg_APA_ExŒaù_äom_»ady
+(
+
+154 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+155 
+ScheduËr_Node
+ *
+node_to_exŒaù
+
+
+173 
+boŞ
+ 
+_ScheduËr_¡rÚg_APA_S‘_affš™y
+(
+
+174 cÚ¡ 
+ScheduËr_CÚŒŞ
+ *
+scheduËr
+,
+
+175 
+Th»ad_CÚŒŞ
+ *
+th»ad
+,
+
+176 
+ScheduËr_Node
+ *
+node_ba£
+,
+
+177 cÚ¡ 
+ProûssÜ_mask
+ *
+affš™y
+
+
+180 
+šlše
+ 
+ScheduËr_Node
+ *
+_ScheduËr_¡rÚg_APA_G‘_highe¡_»ady
+(
+
+181 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+182 
+ScheduËr_Node
+ *
+f‹r
+
+
+185 
+šlše
+ 
+_ScheduËr_¡rÚg_APA_Move_äom_»ady_to_scheduËd
+(
+
+186 
+ScheduËr_CÚ‹xt
+ *
+cÚ‹xt
+,
+
+187 
+ScheduËr_Node
+ *
+»ady_to_scheduËd
+
+
+192 #ifdeà
+__ılu¥lus
+
+
+	@
+1
+.
+1
+/usr/include
+2
+42
+schedulerstrongapa.c
+schedulerstrongapa.h

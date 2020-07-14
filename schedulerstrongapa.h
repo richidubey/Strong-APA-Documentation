@@ -25,9 +25,8 @@ extern "C" {
  *
  * @brief Strong APA Scheduler
  *
- * This is an implementation of the Whahahahahaha
- *
- * WhahahahahHHHAAAAHHHAA
+ * This is an implementation of the Strong APA scheduler defined by
+ * Bradenbug et. al in Linux's Processor Affinity API, Refined: Shifting Real-Time Tasks Towards Higher Schedulability.
  *
  * @{
  */
@@ -113,31 +112,12 @@ typedef struct {
     _Scheduler_strong_APA_Start_idle \
     _Scheduler_strong_APA_Set_affinity \
   }
-  
-/**
- * @brief Initializes the Strong_APA scheduler.
- *
- * Sets the chain containing all the nodes to empty 
- * and initializes the SMP scheduler.
- *
- * @param scheduler used to get 
- * reference to Strong APA scheduler context 
- * @return void
- * @see _Scheduler_strong_APA_Node_initialize()
- *
- */
+
 void _Scheduler_strong_APA_Initialize( 
    const Scheduler_Control *scheduler 
    );
+   
 
-/**
- * @brief Initializes the node with the given priority.
- *
- * @param scheduler The scheduler control instance.
- * @param[out] node The node to initialize.
- * @param the_thread The thread of the node to initialize.
- * @param priority The priority for @a node.
- */
 void _Scheduler_strong_APA_Node_initialize(
   const Scheduler_Control *scheduler,
   Scheduler_Node          *node,
@@ -145,47 +125,161 @@ void _Scheduler_strong_APA_Node_initialize(
   Priority_Control         priority
 );
 
-/**
- * @brief Removes the ready node from the Chain of nodes
- *
- * @param context The scheduler context instance.
- * @param node_to_extract The node to remove from the chain.
- */
-static inline void _Scheduler_strong_APA_Extract_from_ready(
+void _Scheduler_strong_APA_Do_update(
+  Scheduler_Context *context,
+  Scheduler_Node    *node,
+  Priority_Control   new_priority
+);
+
+bool _Scheduler_strong_APA_Has_ready(
+ Scheduler_Context *context 
+ );
+ 
+Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
+  Scheduler_Context *context,
+  Scheduler_Node    *filter
+);
+
+static inline Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
+  Scheduler_Context *context,
+  Scheduler_Node    *filter_base
+);
+
+void _Scheduler_strong_APA_Extract_from_scheduled(
   Scheduler_Context *context,
   Scheduler_Node    *node_to_extract
 );
 
-/**
- * @brief Checks if the processor set of the scheduler is the subset of the affinity set.
- *
- * Default implementation of the set affinity scheduler operation.
- *
- * @param scheduler This parameter is unused.
- * @param thread This parameter is unused.
- * @param node This parameter is unused.
- * @param affinity The new processor affinity set for the thread.
- *
- * @see _Scheduler_strong_APA_Do_set_affinity()
- *
- * @retval true The processor set of the scheduler is a subset of the affinity set.
- * @retval false The processor set of the scheduler is not a subset of the affinity set.
- */
+void _Scheduler_strong_APA_Extract_from_ready(
+  Scheduler_Context *context,
+  Scheduler_Node    *node_to_extract
+);
+
+void _Scheduler_strong_APA_Move_from_scheduled_to_ready(
+  Scheduler_Context *context,
+  Scheduler_Node    *scheduled_to_ready
+);
+
+void  _Scheduler_strong_APA_Move_from_ready_to_scheduled(
+  Scheduler_Context *context,
+  Scheduler_Node    *ready_to_scheduled
+);
+
+void _Scheduler_strong_APA_Insert_ready(
+  Scheduler_Context *context,
+  Scheduler_Node    *node_base,
+  Priority_Control   insert_priority
+);
+
+void _Scheduler_strong_APA_Allocate_processor(
+  Scheduler_Context *context,
+  Scheduler_Node    *scheduled_base,
+  Scheduler_Node    *victim_base,
+  Per_CPU_Control   *victim_cpu
+);
+
+void _Scheduler_strong_APA_Block(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node
+);
+
+bool _Scheduler_strong_APA_Enqueue(
+  Scheduler_Context *context,
+  Scheduler_Node    *node,
+  Priority_Control   insert_priority
+);
+
+bool _Scheduler_strong_APA_Enqueue_scheduled(
+  Scheduler_Context *context,
+  Scheduler_Node    *node,
+  Priority_Control   insert_priority
+);
+
+void _Scheduler_strong_APA_Unblock(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node
+);
+
+bool _Scheduler_strong_APA_Ask_for_help(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *the_thread,
+  Scheduler_Node          *node
+);
+
+void _Scheduler_strong_APA_Update_priority(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node
+);
+
+void _Scheduler_strong_APA_Reconsider_help_request(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *the_thread,
+  Scheduler_Node          *node
+);
+
+void _Scheduler_strong_APA_Withdraw_node(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *the_thread,
+  Scheduler_Node          *node,
+  Thread_Scheduler_state   next_state
+);
+
+void _Scheduler_strong_APA_Register_idle(
+  Scheduler_Context *context,
+  Scheduler_Node    *idle_base,
+  Per_CPU_Control   *cpu
+);
+
+void _Scheduler_strong_APA_Add_processor(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *idle
+)
+
+Thread_Control *_Scheduler_strong_APA_Remove_processor(
+  const Scheduler_Control *scheduler,
+  Per_CPU_Control         *cpu
+);
+
+void _Scheduler_strong_APA_Yield(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node
+);
+
+void  _Scheduler_strong_APA_Do_set_affinity(
+  Scheduler_Context *context,
+  Scheduler_Node    *node_base,
+  void              *arg
+);
+
+void _Scheduler_strong_APA_Start_idle(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *idle,
+  Per_CPU_Control         *cpu
+);
+
+void _Scheduler_strong_APA_Pin(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node_base,
+  struct Per_CPU_Control  *cpu
+);
+
+void _Scheduler_strong_APA_Unpin(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node_base,
+  struct Per_CPU_Control  *cpu
+);
+
 bool _Scheduler_strong_APA_Set_affinity(
   const Scheduler_Control *scheduler,
   Thread_Control          *thread,
   Scheduler_Node          *node_base,
   const Processor_mask    *affinity
-);
-
-static inline Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
-  Scheduler_Context *context,
-  Scheduler_Node    *filter
-);
-
-static inline void  _Scheduler_strong_APA_Move_from_ready_to_scheduled(
-  Scheduler_Context *context,
-  Scheduler_Node    *ready_to_scheduled
 );
 
 /** @} */

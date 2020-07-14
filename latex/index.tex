@@ -1,2 +1,10 @@
 \hypertarget{index_Introduction}{}\section{Introduction}\label{index_Introduction}
+This project aims to add the Arbitrary Processor Affinity (A\+PA) scheduler to R\+T\+E\+MS. A\+PA scheduler would allow higher-\/priority tasks to be ”dislodged” or moved among processors in order to make space for lower priority tasks that are limited by affinity constraints.
+
+We model the task to processor mapping as a bi-\/partite graph. An edge denotes a task being assigned a C\+PU.
+
+When a processor A gets free, it looks for all the possible tasks that it can run. This includes the ready waiting task which have the processor A in their affinity set as well as the ready waiting task which has a processor B in its affinity set, but the processor B is executing a task which can be shifted to prcessor A and therefore the ready-\/waiting task being executed.
+
+This algorithm runs recursively to find any possible task to processor mapping that does not violate the priority ordering and generates a mapping with the highest total priority of tasks begin executed.
+
 Learn more about the project from the link \+: \href{https://summerofcode.withgoogle.com/projects/#5074448194994176}{\tt https\+://summerofcode.\+withgoogle.\+com/projects/\#5074448194994176} 

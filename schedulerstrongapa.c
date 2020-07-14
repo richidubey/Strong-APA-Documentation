@@ -30,7 +30,18 @@ _Scheduler_strong_APA_Node_downcast( Scheduler_Node *node )
 {
   return (Scheduler_strong_APA_Node *) node;
 }
-
+/**
+ * @brief Initializes the Strong_APA scheduler.
+ *
+ * Sets the chain containing all the nodes to empty 
+ * and initializes the SMP scheduler.
+ *
+ * @param scheduler used to get 
+ * reference to Strong APA scheduler context 
+ * @return void
+ * @see _Scheduler_strong_APA_Node_initialize()
+ *
+ */  
 void _Scheduler_strong_APA_Initialize( const Scheduler_Control *scheduler )
 {
   Scheduler_strong_APA_Context *self =
@@ -40,6 +51,14 @@ void _Scheduler_strong_APA_Initialize( const Scheduler_Control *scheduler )
   _Chain_Initialize_empty( &self->allNodes );
 }
 
+/**
+ * @brief Initializes the node with the given priority.
+ *
+ * @param scheduler The scheduler control instance.
+ * @param[out] node The node to initialize.
+ * @param the_thread The thread of the node to initialize.
+ * @param priority The priority for @a node.
+ */
 void _Scheduler_strong_APA_Node_initialize(
   const Scheduler_Control *scheduler,
   Scheduler_Node          *node,
@@ -53,7 +72,17 @@ void _Scheduler_strong_APA_Node_initialize(
   _Scheduler_SMP_Node_initialize( scheduler, smp_node, the_thread, priority );
 }
 
-static inline void _Scheduler_strong_APA_Do_update(
+/**
+ * @brief Helper function for /a update entry function
+ * 
+ * Calls _Scheduler_SMP_Node_update_priority()
+ *
+ * @param scheduler The scheduler context.
+ * @param[out] node The node to update the priority of.
+ * @param new_priority Node's new priority.
+ * @see _Scheduler_strong_APA_Do_update()
+ */
+void _Scheduler_strong_APA_Do_update(
   Scheduler_Context *context,
   Scheduler_Node    *node,
   Priority_Control   new_priority
@@ -67,7 +96,17 @@ static inline void _Scheduler_strong_APA_Do_update(
   _Scheduler_SMP_Node_update_priority( smp_node, new_priority );
 }
 
-static inline bool _Scheduler_strong_APA_Has_ready( Scheduler_Context *context )
+/**
+ * @brief Checks if scheduler has a ready node
+ * 
+ * Iterates through all the nodes in /a allNodes to 
+ * look for a ready node
+ *
+ * @param scheduler The scheduler context.
+ * @return true if scheduler has a ready node available
+ */
+
+bool _Scheduler_strong_APA_Has_ready( Scheduler_Context *context )
 {
   Scheduler_EDF_SMP_Context *self = _Scheduler_strong_APA_Get_self( context );
 	
@@ -258,7 +297,15 @@ static inline Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
   return ret;
 }
 
-static inline void _Scheduler_strong_APA_Extract_from_scheduled(
+/**
+ * @brief Extracts a node from the scheduled node's list
+ *
+ * Calls _Scheduler_SMP_Extract_from_scheduled()
+ *
+ * @param scheduler The scheduler context
+ * @param[in] node_to_extract The node to extract.
+ */
+void _Scheduler_strong_APA_Extract_from_scheduled(
   Scheduler_Context *context,
   Scheduler_Node    *node_to_extract
 )
@@ -273,6 +320,14 @@ static inline void _Scheduler_strong_APA_Extract_from_scheduled(
   //Not removing it from allNodes since the node could go in the ready state.
 }
 
+/**
+ * @brief Extracts a node from the ready queue
+ *
+ * Removes the node from /a allNodes chain.
+ *
+ * @param scheduler The scheduler context
+ * @param[in] node_to_extract The node to extract.
+ */
 static inline void _Scheduler_strong_APA_Extract_from_ready(
   Scheduler_Context *context,
   Scheduler_Node    *node_to_extract
@@ -291,7 +346,18 @@ static inline void _Scheduler_strong_APA_Extract_from_ready(
    _Chain_Set_off_chain( &node->Node );
 }
 
-static inline void _Scheduler_strong_APA_Move_from_scheduled_to_ready(
+/**
+ * @brief Moves a node from scheduled to ready state 
+ *
+ * Calls _Scheduler_SMP_Extract_from_scheduled() to remove it from
+ * scheduled nodes list
+ *
+ * @param scheduler The scheduler context
+ * @param[in] scheduled_to_ready The node to move.
+ * @see _Scheduler_strong_APA_Insert_ready()
+ *
+ */
+void _Scheduler_strong_APA_Move_from_scheduled_to_ready(
   Scheduler_Context *context,
   Scheduler_Node    *scheduled_to_ready
 )
@@ -308,7 +374,16 @@ static inline void _Scheduler_strong_APA_Move_from_scheduled_to_ready(
   );
 }
 
-static inline void  _Scheduler_strong_APA_Move_from_ready_to_scheduled(
+/**
+ * @brief Moves a node from ready to scheduled state.
+ *
+ * Calls the corresponding SMP function \a _Scheduler_SMP_Insert_scheduled()
+ * with append insert_priority
+ *
+ * @param context The scheduler context.
+ * @param ready_to_scheduled Node which moves from ready state.
+ */ 
+void  _Scheduler_strong_APA_Move_from_ready_to_scheduled(
   Scheduler_Context *context,
   Scheduler_Node    *ready_to_scheduled
 )
@@ -326,7 +401,17 @@ static inline void  _Scheduler_strong_APA_Move_from_ready_to_scheduled(
   //Note: The node still stays in the allNodes chain
 }
 
-static inline void _Scheduler_strong_APA_Insert_ready(
+/**
+ * @brief Inserts a node in the ready queue.
+ *
+ * Adds it into the /a allNodes chain.
+ *
+ * @param context The scheduler context.
+ * @param node_base Node which is inserted into the queue.
+ * @param insert_priority priority at which the node is inserted
+ */ 
+
+void _Scheduler_strong_APA_Insert_ready(
   Scheduler_Context *context,
   Scheduler_Node    *node_base,
   Priority_Control   insert_priority
@@ -343,7 +428,17 @@ static inline void _Scheduler_strong_APA_Insert_ready(
   _Chain_Append_unprotected( &self->allNodes, node->Node );
 }
 
-static inline void _Scheduler_strong_APA_Allocate_processor(
+/**
+ * @brief Allocates a processor for the node.
+ *
+ * Calls _Scheduler_SMP_Allocate_processor_exact()
+ *
+ * @param context The scheduler context.
+ * @param scheduled_base Node which is to be allocated the @victim_cpu.
+ * @param victim_base Node which was executing earlier on @victim_cpu
+ * @victim_cpu CPU on which the @scheduled_base would be allocated on
+ */ 
+void _Scheduler_strong_APA_Allocate_processor(
   Scheduler_Context *context,
   Scheduler_Node    *scheduled_base,
   Scheduler_Node    *victim_base,
@@ -363,6 +458,16 @@ static inline void _Scheduler_strong_APA_Allocate_processor(
   );
 }
 
+/**
+ * @brief Blocks a node
+ *
+ * Changes the state of the node and extracts it from the queue
+ * calls _Scheduler_SMP_Block().
+ *
+ * @param context The scheduler control instance.
+ * @param thread Thread correspoding to the @node.
+ * @param node node which is to be blocked
+ */ 
 void _Scheduler_strong_APA_Block(
   const Scheduler_Control *scheduler,
   Thread_Control          *thread,
@@ -383,6 +488,14 @@ void _Scheduler_strong_APA_Block(
   );
 }
 
+/**
+ * @brief Enqueues a node
+ *
+ * 
+ * @param context The scheduler context.
+ * @param node node which is to be enqueued
+ * @param insert_priority priority at which the node should be enqueued.
+ */ 
 static inline bool _Scheduler_strong_APA_Enqueue(
   Scheduler_Context *context,
   Scheduler_Node    *node,
@@ -402,7 +515,15 @@ static inline bool _Scheduler_strong_APA_Enqueue(
   );
 }
 
-static inline bool _Scheduler_strong_APA_Enqueue_scheduled(
+/**
+ * @brief Enqueues a node in the scheduled queue
+ *
+ * 
+ * @param context The scheduler context.
+ * @param node node which is to be enqueued
+ * @param insert_priority priority at which the node should be enqueued.
+ */ 
+bool _Scheduler_strong_APA_Enqueue_scheduled(
   Scheduler_Context *context,
   Scheduler_Node    *node,
   Priority_Control   insert_priority
@@ -422,6 +543,17 @@ static inline bool _Scheduler_strong_APA_Enqueue_scheduled(
   );
 }
 
+/**
+ * @brief Unblocks a node
+ *
+ * Changes the state of the node and calls _Scheduler_SMP_Unblock().
+ *
+ * @param scheduler The scheduler control instance.
+ * @param thread Thread correspoding to the @node.
+ * @param node node which is to be unblocked
+ * @see _Scheduler_strong_APA_Enqueue() 
+ * @see _Scheduler_strong_APA_Do_update()
+ */ 
 void _Scheduler_strong_APA_Unblock(
   const Scheduler_Control *scheduler,
   Thread_Control          *thread,
@@ -439,6 +571,14 @@ void _Scheduler_strong_APA_Unblock(
   );
 }
 
+/**
+ * @brief Calls the smp Ask_for_help
+ *
+ *
+ * @param scheduler The scheduler control instance.
+ * @param thread Thread correspoding to the @node that asks for help.
+ * @param node node associated with @thread
+ */ 
 bool _Scheduler_strong_APA_Ask_for_help(
   const Scheduler_Control *scheduler,
   Thread_Control          *the_thread,
@@ -460,6 +600,13 @@ bool _Scheduler_strong_APA_Ask_for_help(
   );
 }
 
+/**
+ * @brief Updates the priority of the node
+ *
+ * @param scheduler The scheduler control instance.
+ * @param thread Thread correspoding to the @node.
+ * @param node Node whose priority has to be updated 
+ */ 
 void _Scheduler_strong_APA_Update_priority(
   const Scheduler_Control *scheduler,
   Thread_Control          *thread,
@@ -479,7 +626,14 @@ void _Scheduler_strong_APA_Update_priority(
     _Scheduler_strong_APA_Do_ask_for_help
   );
 }
-
+/**
+ * @brief To Reconsider the help request
+ *
+ * @param scheduler The scheduler control instance.
+ * @param thread Thread correspoding to the @node.
+ * @param node Node corresponding to @thread which asks for 
+ * reconsideration
+ */ 
 void _Scheduler_strong_APA_Reconsider_help_request(
   const Scheduler_Control *scheduler,
   Thread_Control          *the_thread,
@@ -496,6 +650,14 @@ void _Scheduler_strong_APA_Reconsider_help_request(
   );
 }
 
+/**
+ * @brief Withdraws a node 
+ *
+ * @param scheduler The scheduler control instance.
+ * @param thread Thread correspoding to the @node.
+ * @param node Node that has to be withdrawn
+ * @param next_state the state that the node goes to
+ */ 
 void _Scheduler_strong_APA_Withdraw_node(
   const Scheduler_Control *scheduler,
   Thread_Control          *the_thread,
@@ -517,7 +679,13 @@ void _Scheduler_strong_APA_Withdraw_node(
   );
 }
 
-static inline void _Scheduler_strong_APA_Register_idle(
+/**
+ * @brief To register an idle thread on a cpu
+ *
+ * For compatibility with SMP functions,
+ * does nothing in our implementation
+ */ 
+void _Scheduler_strong_APA_Register_idle(
   Scheduler_Context *context,
   Scheduler_Node    *idle_base,
   Per_CPU_Control   *cpu
@@ -530,6 +698,15 @@ static inline void _Scheduler_strong_APA_Register_idle(
   //node for a CPU. So this function does nothing.
 }
 
+/**
+ * @brief Adds a processor to the scheduler instance
+ *
+ * and allocates an idle thread to the processor.
+ *
+ * @param scheduler The scheduler control instance.
+ * @param idle Idle thread to be allocated to the processor
+ *
+ */ 
 void _Scheduler_strong_APA_Add_processor(
   const Scheduler_Control *scheduler,
   Thread_Control          *idle
@@ -546,6 +723,14 @@ void _Scheduler_strong_APA_Add_processor(
   );
 }
 
+
+/**
+ * @brief Removes a processor from the scheduler instance
+ *
+ * @param scheduler The scheduler control instance.
+ * @param cpu processor that is removed
+ *
+ */ 
 Thread_Control *_Scheduler_strong_APA_Remove_processor(
   const Scheduler_Control *scheduler,
   Per_CPU_Control         *cpu
@@ -561,6 +746,15 @@ Thread_Control *_Scheduler_strong_APA_Remove_processor(
   );
 }
 
+
+/**
+ * @brief Called when a node yields the processor
+ *
+ * @param scheduler The scheduler control instance.
+ * @param thread Thread corresponding to @node
+ * @param node Node that yield the processor
+ *
+ */ 
 void _Scheduler_strong_APA_Yield(
   const Scheduler_Control *scheduler,
   Thread_Control          *thread,
@@ -579,7 +773,11 @@ void _Scheduler_strong_APA_Yield(
   );
 }
 
-static inline void  _Scheduler_strong_APA_Do_set_affinity(
+/**
+ * @brief Called by _Scheduler_strong_APA_Set_affinity()
+ *
+ */ 
+void  _Scheduler_strong_APA_Do_set_affinity(
   Scheduler_Context *context,
   Scheduler_Node    *node_base,
   void              *arg
@@ -593,6 +791,14 @@ static inline void  _Scheduler_strong_APA_Do_set_affinity(
   node->affinity = *affinity;
 }
 
+/**
+ * @brief Starts an idle thread on a CPU
+ *
+ * @param scheduler The scheduler control instance.
+ * @param idle Idle Thread
+ * @param cpu processor that gets the idle thread
+ *
+ */ 
 void _Scheduler_strong_APA_Start_idle(
   const Scheduler_Control *scheduler,
   Thread_Control          *idle,
@@ -611,6 +817,15 @@ void _Scheduler_strong_APA_Start_idle(
   );
 }
 
+/**
+ * @brief Pins a node to a cpu
+ *
+ * @param scheduler The scheduler control instance.
+ * @param thread Thread corresponding to @node
+ * @param node_base node which gets pinned
+ * @param cpu processor that the node gets pinned to
+ *
+ */ 
 void _Scheduler_strong_APA_Pin(
   const Scheduler_Control *scheduler,
   Thread_Control          *thread,
@@ -635,6 +850,17 @@ void _Scheduler_strong_APA_Pin(
   _Processor_mask_Set( node->affinity, pin_cpu );
 }
 
+/**
+ * @brief Unpins a node
+ *
+ * and sets it affinity back to normal.
+ *
+ * @param scheduler The scheduler control instance.
+ * @param thread Thread corresponding to @node
+ * @param node_base node which gets unpinned
+ * @param cpu processor that the node gets unpinned from : UNUSED
+ *
+ */ 
 void _Scheduler_strong_APA_Unpin(
   const Scheduler_Control *scheduler,
   Thread_Control          *thread,
@@ -656,6 +882,21 @@ void _Scheduler_strong_APA_Unpin(
   _Processor_mask_Assign( node->affinity, node->unpin_affinity );
 }
 
+/**
+ * @brief Checks if the processor set of the scheduler is the subset of the affinity set.
+ *
+ * Default implementation of the set affinity scheduler operation.
+ *
+ * @param scheduler This parameter is unused.
+ * @param thread This parameter is unused.
+ * @param node This parameter is unused.
+ * @param affinity The new processor affinity set for the thread.
+ *
+ * @see _Scheduler_strong_APA_Do_set_affinity()
+ *
+ * @retval true The processor set of the scheduler is a subset of the affinity set.
+ * @retval false The processor set of the scheduler is not a subset of the affinity set.
+ */
 bool _Scheduler_strong_APA_Set_affinity(
   const Scheduler_Control *scheduler,
   Thread_Control          *thread,

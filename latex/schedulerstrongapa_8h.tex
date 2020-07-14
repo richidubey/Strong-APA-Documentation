@@ -35,13 +35,13 @@ void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gafcd6fde337d754278469821932
 void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga1cde4345d4dc0b5a37a696fa446bb47e}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize} (const Scheduler\+\_\+\+Control $\ast$scheduler, Scheduler\+\_\+\+Node $\ast$node, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Priority\+\_\+\+Control priority)
 \begin{DoxyCompactList}\small\item\em Initializes the node with the given priority. \end{DoxyCompactList}\item 
 static void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga60129e44fa73e5241abc2f5f9f78bb1d}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+to\+\_\+extract)
-\begin{DoxyCompactList}\small\item\em Removes the ready node from the Chain of nodes. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Extracts a node from the ready queue. \end{DoxyCompactList}\item 
 bool \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, const Processor\+\_\+mask $\ast$affinity)
 \begin{DoxyCompactList}\small\item\em Checks if the processor set of the scheduler is the subset of the affinity set. \end{DoxyCompactList}\item 
 static Scheduler\+\_\+\+Node $\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gaeca59d69f6f261d5af4b17e73186ed98}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$filter)
-\item 
-static void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gaaf649166522c7d7b2e9cca719d61e371}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+ready\+\_\+to\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$ready\+\_\+to\+\_\+scheduled)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks the next highest node ready on run on the C\+PU on which  node was running on. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga070d66ff37f268ddbbff1b7e6ac27ee3}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+ready\+\_\+to\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$ready\+\_\+to\+\_\+scheduled)
+\begin{DoxyCompactList}\small\item\em Moves a node from ready to scheduled state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
