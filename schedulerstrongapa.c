@@ -370,8 +370,7 @@ void _Scheduler_strong_APA_Block(
 )
 {
   Scheduler_Context *context = _Scheduler_Get_context( scheduler );
-	//The extract from ready automatically removes the 
-	//node from allNodes chain.
+//The extract from ready automatically removes the node from allNodes chain.
   _Scheduler_SMP_Block(
     context,
     thread,
@@ -380,6 +379,83 @@ void _Scheduler_strong_APA_Block(
     _Scheduler_strong_APA_Extract_from_ready,
     _Scheduler_strong_APA_Get_highest_ready,
     _Scheduler_strong_APA_Move_from_ready_to_scheduled,
+    _Scheduler_strong_APA_Allocate_processor
+  );
+}
+
+static inline bool _Scheduler_strong_APA_Enqueue(
+  Scheduler_Context *context,
+  Scheduler_Node    *node,
+  Priority_Control   insert_priority
+)
+{//I'm hoping all this works on its own.
+  return _Scheduler_SMP_Enqueue(
+    context,
+    node,
+    insert_priority,
+    _Scheduler_SMP_Priority_less_equal,
+    _Scheduler_strong_APA_Insert_ready,
+    _Scheduler_SMP_Insert_scheduled,
+    _Scheduler_strong_APA_Move_from_scheduled_to_ready,
+    _Scheduler_strong_APA_Get_lowest_scheduled,
+    _Scheduler_strong_APA_Allocate_processor
+  );
+}
+
+static inline bool _Scheduler_strong_APA_Enqueue_scheduled(
+  Scheduler_Context *context,
+  Scheduler_Node    *node,
+  Priority_Control   insert_priority
+)
+{	
+  return _Scheduler_SMP_Enqueue_scheduled(
+    context,
+    node,
+    insert_priority,
+    _Scheduler_SMP_Priority_less_equal,
+    _Scheduler_strong_APA_Extract_from_ready,
+    _Scheduler_strong_APA_Get_highest_ready,
+    _Scheduler_strong_APA_Insert_ready,
+    _Scheduler_SMP_Insert_scheduled,
+    _Scheduler_strong_APA_Move_from_ready_to_scheduled,
+    _Scheduler_strong_APA_Allocate_processor
+  );
+}
+
+void _Scheduler_strong_APA_Unblock(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  _Scheduler_SMP_Unblock(
+    context,
+    thread,
+    node,
+    _Scheduler_strong_APA_Do_update,
+    _Scheduler_strong_APA_Enqueue
+  );
+}
+
+bool _Scheduler_strong_APA_Ask_for_help(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *the_thread,
+  Scheduler_Node          *node
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+
+  return _Scheduler_SMP_Ask_for_help(
+    context,
+    the_thread,
+    node,
+    _Scheduler_SMP_Priority_less_equal,
+    _Scheduler_strong_APA_Insert_ready,
+    _Scheduler_SMP_Insert_scheduled,
+    _Scheduler_strong_APA_Move_from_scheduled_to_ready,
+    _Scheduler_strong_APA_Get_lowest_scheduled,
     _Scheduler_strong_APA_Allocate_processor
   );
 }
@@ -396,25 +472,6 @@ static inline void  _Scheduler_strong_APA_Do_set_affinity(
   node = _Scheduler_strong_APA_Node_downcast( node_base );
   affinity = arg;
   node->affinity = *affinity;
-}
-
-static inline bool _Scheduler_strong_APA_Enqueue(
-  Scheduler_Context *context,
-  Scheduler_Node    *node,
-  Priority_Control   insert_priority
-)
-{//TODO: Checkout what this is supposed to do
-  return _Scheduler_SMP_Enqueue(
-    context,
-    node,
-    insert_priority,
-    _Scheduler_SMP_Priority_less_equal,
-    _Scheduler_strong_APA_Insert_ready,
-    _Scheduler_SMP_Insert_scheduled,
-    _Scheduler_strong_APA_Move_from_scheduled_to_ready,
-    _Scheduler_strong_APA_Get_lowest_scheduled,
-    _Scheduler_strong_APA_Allocate_processor
-  );
 }
 
 bool _Scheduler_strong_APA_Set_affinity(
@@ -472,26 +529,6 @@ void _Scheduler_strong_APA_Add_processor(
   );
 }
 
-static inline bool _Scheduler_strong_APA_Enqueue_scheduled(
-  Scheduler_Context *context,
-  Scheduler_Node    *node,
-  Priority_Control   insert_priority
-)
-{	//TODO: Check if you need to add the node to the scheduled node's chain list
-  return _Scheduler_SMP_Enqueue_scheduled(
-    context,
-    node,
-    insert_priority,
-    _Scheduler_SMP_Priority_less_equal,
-    _Scheduler_strong_APA_Extract_from_ready,
-    _Scheduler_strong_APA_Get_highest_ready,
-    _Scheduler_strong_APA_Insert_ready,
-    _Scheduler_SMP_Insert_scheduled,
-    _Scheduler_strong_APA_Move_from_ready_to_scheduled,
-    _Scheduler_strong_APA_Allocate_processor
-  );
-}
-
 static inline void _Scheduler_strong_APA_Register_idle(
   Scheduler_Context *context,
   Scheduler_Node    *idle_base,
@@ -538,25 +575,6 @@ Thread_Control *_Scheduler_strong_APA_Remove_processor(
   );
 }
 
-void _Scheduler_strong_APA_Unblock(
-  const Scheduler_Control *scheduler,
-  Thread_Control          *thread,
-  Scheduler_Node          *node
-)
-{
-  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
-
-  _Scheduler_SMP_Unblock(
-    context,
-    thread,
-    node,
-    _Scheduler_strong_APA_Do_update,
-    _Scheduler_strong_APA_Enqueue
-  );
-}
-
-
-
 void _Scheduler_strong_APA_Update_priority(
   const Scheduler_Control *scheduler,
   Thread_Control          *thread,
@@ -576,37 +594,6 @@ void _Scheduler_strong_APA_Update_priority(
     _Scheduler_strong_APA_Do_ask_for_help
   );
 }
-
-bool _Scheduler_strong_APA_Ask_for_help(
-  const Scheduler_Control *scheduler,
-  Thread_Control          *the_thread,
-  Scheduler_Node          *node
-)
-{
-  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
-
-  return _Scheduler_strong_APA_Do_ask_for_help( context, the_thread, node );
-}
-
-static inline bool _Scheduler_strong_APA_Do_ask_for_help(
-  Scheduler_Context *context,
-  Thread_Control    *the_thread,
-  Scheduler_Node    *node
-)
-{
-  return _Scheduler_SMP_Ask_for_help(
-    context,
-    the_thread,
-    node,
-    _Scheduler_SMP_Priority_less_equal,
-    _Scheduler_strong_APA_Insert_ready,
-    _Scheduler_SMP_Insert_scheduled,
-    _Scheduler_strong_APA_Move_from_scheduled_to_ready,
-    _Scheduler_strong_APA_Get_lowest_scheduled,
-    _Scheduler_strong_APA_Allocate_processor
-  );
-}
-
 
 void _Scheduler_strong_APA_Reconsider_help_request(
   const Scheduler_Control *scheduler,
