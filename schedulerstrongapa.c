@@ -37,6 +37,7 @@ void _Scheduler_strong_APA_Initialize( const Scheduler_Control *scheduler )
     _Scheduler_strong_APA_Get_context( scheduler );
 
   _Scheduler_SMP_Initialize( &self->Base );
+  _Chain_Initialize_empty( &self->allNodes );
 }
 
 void _Scheduler_strong_APA_Node_initialize(
@@ -144,8 +145,8 @@ static inline Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
        
        node = (Scheduler_strong_APA_Node *) next;
     
-       if(hasCPUinSet(	//Checks if the CPU is in the affinity set of the node
-         node.affinity,
+       if(hasCPUinSet(	//Checks if the thread_CPU is in the affinity set of the node
+         node->affinity,
          _Per_CPU_Get_index(thread_CPU)) ) {
            
          if(Scheduler_SMP_Node_state( &node->Base.Base ) 
@@ -159,8 +160,8 @@ static inline Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
           }
           else if(Scheduler_SMP_Node_state( &node->Base.Base ) 
            == SCHEDULER_SMP_NODE_READY) {
-            curr_priority = _Scheduler_Node_get_priority( filter );
-  	    curr_priority = SCHEDULER_PRIORITY_PURIFY( priority );
+            curr_priority = _Scheduler_Node_get_priority( node );
+  	    curr_priority = SCHEDULER_PRIORITY_PURIFY( curr_priority );
   		
             if(curr_priority>max_priority) {
               max_priority=curr_priority;
@@ -180,27 +181,97 @@ static inline Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
   	//thread_cpu to ret, shifting along every task.
   	
   	//After this, thread_cpu receives the ret task
-  	// and the ready task ret gets scheduled. 
+  	// So the ready task ret gets scheduled as well.  
+  }
+  
+  return ret; 
+}
+/**
+ * @brief Checks the lowest scheduled node 
+ * running on a processor on which the 
+ * @filter_base node could be running on
+ *
+ * @param context The scheduler context instance.
+ * @param filter_base The node which wants to get scheduled.
+ *
+ * @return The lowest scheduled node on an eligible processor.
+ */
+static inline Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
+  Scheduler_Context *context,
+  Scheduler_Node    *filter_base
+)
+{	
+  //Idea: Go through all the scheduled nodes
+  //and find the lowest scheduled node
+  //running on a processor which is in the
+  //affinity set of filter_base
+
+  Scheduler_Node 	*ret;
+  const Chain_Node      *tail;
+  Chain_Node 		*next;
+  Per_CPU_Control 	curr_cpu;
+  _Scheduler_strong_APA_Node *filter_node;
+  Priority_Control	min_prio;
+  Priority_Control	curr_prio;
+  
+
+  filter_node = _Scheduler_strong_APA_Node_downcast( filter_base );
+   
+  ret=NULL;
+	 
+  tail = _Chain_Immutable_tail( &self->allNodes );
+  next = _Chain_First( &self->allNodes );
+  
+  while ( next != tail ) {
+    Scheduler_strong_APA_Node *node;
+       
+    node = (Scheduler_strong_APA_Node *) next;	 
+    
+    if( Scheduler_SMP_Node_state( &node->Base.Base ) 
+            == SCHEDULER_SMP_NODE_SCHEDULED ) {
+            
+      curr_cpu=_Thread_Get_CPU( node->Base.Base.user );
+      
+      
+      if( hasCPUinSet( filter_node->affinity, //Checks if the curr_cpu is in the affinity set 
+          _Per_CPU_Get_index(curr_cpu) ) ) { //of filter_node
+     
+        curr_priority = _Scheduler_Node_get_priority( node );
+  	curr_priority = SCHEDULER_PRIORITY_PURIFY( curr_priority );
+         
+        if( ret == NULL ) {
+          ret=node->Base.Base;		//To return atleast one ret value, this is the starting node to compare 
+            			//all the nodes against.
+          min_prio=curr_priority;
+        }
+         
+        else if( curr_priority < min_prio ) {
+          ret=node;
+          min_prio=curr_priority;
+        }
+    
+      }
+    }
+    next = _Chain_Next( next );
   }
   
   return ret;
-  
- }
-
-static inline void  _Scheduler_strong_APA_Do_set_affinity(
-  Scheduler_Context *context,
-  Scheduler_Node    *node_base,
-  void              *arg
-)
-{
-  _Scheduler_strong_APA_Node *node;
-  const Processor_mask       *affinity;
-
-  node = _Scheduler_strong_APA_Node_downcast( node_base );
-  affinity = arg;
-  node->affinity = *affinity;
 }
 
+static inline void _Scheduler_strong_APA_Extract_from_scheduled(
+  Scheduler_Context *context,
+  Scheduler_Node    *node_to_extract
+)
+{
+  _Scheduler_strong_APA_Context     	*self;
+  _Scheduler_strong_APA_Node        	*node;
+
+  self = _Scheduler_strong_APA_Get_self( context );
+  node = _Scheduler_strong_APA_Node_downcast( node_to_extract );
+
+  _Scheduler_SMP_Extract_from_scheduled( &self->Base.Base, &node->Base.Base );
+  //Not removing it from allNodes since the node could go in the ready state.
+}
 
 static inline void _Scheduler_strong_APA_Extract_from_ready(
   Scheduler_Context *context,
@@ -210,15 +281,31 @@ static inline void _Scheduler_strong_APA_Extract_from_ready(
   _Scheduler_strong_APA_Context     *self;
   _Scheduler_strong_APA_Node        *node;
 
-
   self = _Scheduler_strong_APA_Get_self( context );
   node = _Scheduler_strong_APA_Node_downcast( node_to_extract );
  
-  _Assert( _Chain_Is_empty(self->readyNodes) == false );
+  _Assert( _Chain_Is_empty(self->allNodes) == false );
   _Assert( _Chain_Is_node_off_chain( &node->Node ) == false );
    
-   _Chain_Extract_unprotected( &node->Node );
+   _Chain_Extract_unprotected( &node->Node );	//Removed from allNodes
    _Chain_Set_off_chain( &node->Node );
+}
+
+static inline void _Scheduler_strong_APA_Move_from_scheduled_to_ready(
+  Scheduler_Context *context,
+  Scheduler_Node    *scheduled_to_ready
+)
+{
+  Priority_Control insert_priority;
+
+  _Scheduler_SMP_Extract_from_scheduled( context, scheduled_to_ready );
+  insert_priority = _Scheduler_SMP_Node_priority( scheduled_to_ready );
+  
+  _Scheduler_strong_APA_Insert_ready(
+    context,
+    scheduled_to_ready,
+    insert_priority
+  );
 }
 
 static inline void  _Scheduler_strong_APA_Move_from_ready_to_scheduled(
@@ -236,47 +323,7 @@ static inline void  _Scheduler_strong_APA_Move_from_ready_to_scheduled(
     ready_to_scheduled,
     insert_priority
   );
-  
-  self = _Scheduler_strong_APA_Get_self( context );
-  node = _Scheduler_strong_APA_Node_downcast( node_base );
-  _Chain_Append_unprotected( &self->scheduledNodes, node->Node );  
-}
-
-
-
-static inline void _Scheduler_strong_APA_Move_from_scheduled_to_ready(
-  Scheduler_Context *context,
-  Scheduler_Node    *scheduled_to_ready
-)
-{
-  Priority_Control insert_priority;
-
-  _Scheduler_SMP_Extract_from_scheduled( context, scheduled_to_ready );
-  insert_priority = _Scheduler_SMP_Node_priority( scheduled_to_ready );
- 
-  self = _Scheduler_strong_APA_Get_self( context );
-  node = _Scheduler_strong_APA_Node_downcast( scheduled_to_ready );
- 
-  _Assert( _Chain_Is_empty(self->scheduledNodes) == false );
-  _Assert( _Chain_Is_node_off_chain( &node->Node ) == false );
-   
-  _Chain_Extract_unprotected( &node->Node );
-  _Chain_Set_off_chain( &node->Node ); 
-  
-  _Scheduler_strong_APA_Insert_ready(
-    context,
-    scheduled_to_ready,
-    insert_priority
-  );
- 
-}
-
-static inline Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
-  Scheduler_Context *context,
-  Scheduler_Node    *filter_base
-)
-{	
-	//PSEUDO CODE Required : Code 1 Modified by me.
+  //Note: The node still stays in the allNodes chain
 }
 
 static inline void _Scheduler_strong_APA_Insert_ready(
@@ -293,8 +340,22 @@ static inline void _Scheduler_strong_APA_Insert_ready(
   
   _Assert( _Chain_Is_node_off_chain( &node->Node ) == true );
      
-  _Chain_Append_unprotected( &self->readyNodes, node->Node );
+  _Chain_Append_unprotected( &self->allNodes, node->Node );
  
+}
+
+static inline void  _Scheduler_strong_APA_Do_set_affinity(
+  Scheduler_Context *context,
+  Scheduler_Node    *node_base,
+  void              *arg
+)
+{
+  _Scheduler_strong_APA_Node *node;
+  const Processor_mask       *affinity;
+
+  node = _Scheduler_strong_APA_Node_downcast( node_base );
+  affinity = arg;
+  node->affinity = *affinity;
 }
 
 static inline void _Scheduler_strong_APA_Allocate_processor(
@@ -331,7 +392,7 @@ static inline void _Scheduler_strong_APA_Allocate_processor(
 
       node = _Scheduler_EDF_SMP_Get_scheduled( self, rqi );
       _Assert( node->ready_queue_index == 0 );
-      _Scheduler_strong_APA_Set_scheduled( self, node, victim_cpu );
+      
       _Scheduler_SMP_Allocate_processor_exact(
         context,
         &node->Base.Base,
@@ -341,8 +402,7 @@ static inline void _Scheduler_strong_APA_Allocate_processor(
       victim_cpu = desired_cpu;
     }
   }
-
-  _Scheduler_EDF_SMP_Set_scheduled( self, scheduled, victim_cpu );
+  
   _Scheduler_SMP_Allocate_processor_exact(
     context,
     &scheduled->Base.Base,
@@ -456,16 +516,6 @@ static inline void _Scheduler_strong_APA_Register_idle(
 
   self = _Scheduler_strong_APA_Get_self( context );
   idle = _Scheduler_strong_APA_Node_downcast( idle_base );
-  _Scheduler_strong_APA_Set_scheduled( self, idle, cpu );
-}
-
-static inline void _Scheduler_strong_APA_Set_scheduled(
-  Scheduler_strong_APA_Context 	*self,
-  Scheduler_strong_APA_Node   	*scheduled,
-  const Per_CPU_Control     	*cpu
-)
-{
-  self->CPU[ _Per_CPU_Get_index( cpu ) ].scheduled = scheduled;
 }
 
 void _Scheduler_strong_APA_Yield(
@@ -504,22 +554,6 @@ void _Scheduler_strong_APA_Block(
     _Scheduler_strong_APA_Move_from_ready_to_scheduled,
     _Scheduler_strong_APA_Allocate_processor
   );
-}
-
-static inline void _Scheduler_strong_APA_Extract_from_scheduled(
-  Scheduler_Context *context,
-  Scheduler_Node    *node_to_extract
-)
-{
-  _Scheduler_strong_APA_Context     	*self;
-  _Scheduler_strong_APA_Node        	*node;
-  uint8_t                        	 rqi;
-  _Scheduler_strong_APA_Ready_queue 	*ready_queue;
-
-  self = _Scheduler_strong_APA_Get_self( context );
-  node = _Scheduler_strong_APA_Node_downcast( node_to_extract );
-
-  _Scheduler_SMP_Extract_from_scheduled( &self->Base.Base, &node->Base.Base ); 
 }
 
 Thread_Control *_Scheduler_strong_APA_Remove_processor(
