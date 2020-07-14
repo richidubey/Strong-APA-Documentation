@@ -363,6 +363,27 @@ static inline void _Scheduler_strong_APA_Allocate_processor(
   );
 }
 
+void _Scheduler_strong_APA_Block(
+  const Scheduler_Control *scheduler,
+  Thread_Control          *thread,
+  Scheduler_Node          *node
+)
+{
+  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
+	//The extract from ready automatically removes the 
+	//node from allNodes chain.
+  _Scheduler_SMP_Block(
+    context,
+    thread,
+    node,
+    _Scheduler_strong_APA_Extract_from_scheduled,
+    _Scheduler_strong_APA_Extract_from_ready,
+    _Scheduler_strong_APA_Get_highest_ready,
+    _Scheduler_strong_APA_Move_from_ready_to_scheduled,
+    _Scheduler_strong_APA_Allocate_processor
+  );
+}
+
 static inline void  _Scheduler_strong_APA_Do_set_affinity(
   Scheduler_Context *context,
   Scheduler_Node    *node_base,
@@ -499,26 +520,6 @@ void _Scheduler_strong_APA_Yield(
     _Scheduler_strong_APA_Extract_from_ready,
     _Scheduler_strong_APA_Enqueue,
     _Scheduler_strong_APA_Enqueue_scheduled
-  );
-}
-
-void _Scheduler_strong_APA_Block(
-  const Scheduler_Control *scheduler,
-  Thread_Control          *thread,
-  Scheduler_Node          *node
-)
-{
-  Scheduler_Context *context = _Scheduler_Get_context( scheduler );
-
-  _Scheduler_SMP_Block(
-    context,
-    thread,
-    node,
-    _Scheduler_strong_APA_Extract_from_scheduled,
-    _Scheduler_strong_APA_Extract_from_ready,
-    _Scheduler_strong_APA_Get_highest_ready,
-    _Scheduler_strong_APA_Move_from_ready_to_scheduled,
-    _Scheduler_strong_APA_Allocate_processor
   );
 }
 
