@@ -140,7 +140,7 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
   Scheduler_Node    *filter
 );
 
-static inline Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
+Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
   Scheduler_Context *context,
   Scheduler_Node    *filter_base
 );
@@ -236,7 +236,7 @@ void _Scheduler_strong_APA_Register_idle(
 void _Scheduler_strong_APA_Add_processor(
   const Scheduler_Control *scheduler,
   Thread_Control          *idle
-)
+);
 
 Thread_Control *_Scheduler_strong_APA_Remove_processor(
   const Scheduler_Control *scheduler,

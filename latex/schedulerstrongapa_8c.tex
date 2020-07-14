@@ -27,58 +27,58 @@ void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gafcd6fde337d754278469821932
 \begin{DoxyCompactList}\small\item\em Initializes the Strong\+\_\+\+A\+PA scheduler. \end{DoxyCompactList}\item 
 void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga1cde4345d4dc0b5a37a696fa446bb47e}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize} (const Scheduler\+\_\+\+Control $\ast$scheduler, Scheduler\+\_\+\+Node $\ast$node, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Priority\+\_\+\+Control priority)
 \begin{DoxyCompactList}\small\item\em Initializes the node with the given priority. \end{DoxyCompactList}\item 
-static void \hyperlink{schedulerstrongapa_8c_afb6b87df52cea4341e73667f00dce0d5}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node, Priority\+\_\+\+Control new\+\_\+priority)
-\item 
-static bool \hyperlink{schedulerstrongapa_8c_a62c553216bd05f6e382334f08431cbd3}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Has\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context)
-\item 
-static Scheduler\+\_\+\+Node $\ast$ \hyperlink{schedulerstrongapa_8c_aeca59d69f6f261d5af4b17e73186ed98}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$filter)
-\item 
-static Scheduler\+\_\+\+Node $\ast$ \hyperlink{schedulerstrongapa_8c_a2697080204d867803db3e4ed7a5c4b81}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+lowest\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$filter\+\_\+base)
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga093f8f4d503edc228e9819353be72dbc}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node, Priority\+\_\+\+Control new\+\_\+priority)
+\begin{DoxyCompactList}\small\item\em Helper function for /a update entry function. \end{DoxyCompactList}\item 
+bool \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga1eb39ec8e5e7663e5696db912ddf01ba}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Has\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context)
+\begin{DoxyCompactList}\small\item\em Checks if scheduler has a ready node. \end{DoxyCompactList}\item 
+Scheduler\+\_\+\+Node $\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga8f182f1109d27d916452f6ae77c63d24}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$filter)
+\begin{DoxyCompactList}\small\item\em Checks the next highest node ready on run on the C\+PU on which  node was running on. \end{DoxyCompactList}\item 
+Scheduler\+\_\+\+Node $\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga26fb2df74c34c204d6f682ddae6b854d}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+lowest\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$filter\+\_\+base)
 \begin{DoxyCompactList}\small\item\em Checks the lowest scheduled node running on a processor on which the  node could be running on. \end{DoxyCompactList}\item 
-static void \hyperlink{schedulerstrongapa_8c_a3375cf50bcc8efca42c63b4fa7e7b971}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+to\+\_\+extract)
-\item 
-static void \hyperlink{schedulerstrongapa_8c_a60129e44fa73e5241abc2f5f9f78bb1d}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+to\+\_\+extract)
-\begin{DoxyCompactList}\small\item\em Removes the ready node from the Chain of nodes. \end{DoxyCompactList}\item 
-static void \hyperlink{schedulerstrongapa_8c_a0834423e32bb300a5a52fe53636df96d}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+scheduled\+\_\+to\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$scheduled\+\_\+to\+\_\+ready)
-\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga1a1e006053c3a9d1ad1d85c591b0aed7}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+to\+\_\+extract)
+\begin{DoxyCompactList}\small\item\em Extracts a node from the scheduled node\textquotesingle{}s list. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63c55c0e7bf77912bce6a91a6c1e09bf}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+to\+\_\+extract)
+\begin{DoxyCompactList}\small\item\em Extracts a node from the ready queue. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga9589d6542faf83879288d437ca84c907}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+scheduled\+\_\+to\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$scheduled\+\_\+to\+\_\+ready)
+\begin{DoxyCompactList}\small\item\em Moves a node from scheduled to ready state. \end{DoxyCompactList}\item 
 void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga070d66ff37f268ddbbff1b7e6ac27ee3}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+ready\+\_\+to\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$ready\+\_\+to\+\_\+scheduled)
 \begin{DoxyCompactList}\small\item\em Moves a node from ready to scheduled state. \end{DoxyCompactList}\item 
-void \hyperlink{schedulerstrongapa_8c_a5a79348c507857c0a09abdace0fb6998}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Insert\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, Priority\+\_\+\+Control insert\+\_\+priority)
-\item 
-void \hyperlink{schedulerstrongapa_8c_ae011d69d2355e74ed27d606f79a3a954}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Allocate\+\_\+processor} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$scheduled\+\_\+base, Scheduler\+\_\+\+Node $\ast$victim\+\_\+base, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$victim\+\_\+cpu)
-\item 
-void \hyperlink{schedulerstrongapa_8c_ae7875a7e75f2615c6603155126d437db}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
-\item 
-static bool \hyperlink{schedulerstrongapa_8c_a072ea7b584005d0ff44e13cf2684ba09}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node, Priority\+\_\+\+Control insert\+\_\+priority)
-\item 
-bool \hyperlink{schedulerstrongapa_8c_aaed11d4bb8de23df31deed2551fb7034}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node, Priority\+\_\+\+Control insert\+\_\+priority)
-\item 
-void \hyperlink{schedulerstrongapa_8c_a8e6ee051e6a359186fd6964051db69e2}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
-\item 
-bool \hyperlink{schedulerstrongapa_8c_ad863eddc3fa4e2d785fb64af6505e90b}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
-\item 
-void \hyperlink{schedulerstrongapa_8c_afd1bbcb35f99dd53b4ffe2fe52030cdc}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
-\item 
-void \hyperlink{schedulerstrongapa_8c_a7809e64065ec5d291f3dc82220a68d3f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
-\item 
-void \hyperlink{schedulerstrongapa_8c_af43eb65a6fbbe2826ca4cec68a930cb5}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node, Thread\+\_\+\+Scheduler\+\_\+state next\+\_\+state)
-\item 
-void \hyperlink{schedulerstrongapa_8c_ad0d503dce329bd77203ea47397bb7e9d}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Register\+\_\+idle} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$idle\+\_\+base, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
-\item 
-void \hyperlink{schedulerstrongapa_8c_a6ac09dac24785561fd7c5ee5bbd8f5ca}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$idle)
-\item 
-Thread\+\_\+\+Control $\ast$ \hyperlink{schedulerstrongapa_8c_a91dc29dcdeea35e3329623be7a798e39}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor} (const Scheduler\+\_\+\+Control $\ast$scheduler, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
-\item 
-void \hyperlink{schedulerstrongapa_8c_ad6d1206459f21c74882cd2fb3ddd4aae}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
-\item 
-void \hyperlink{schedulerstrongapa_8c_a5a91c9d6e7fbc55bda26161294fb8b6f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, void $\ast$arg)
-\item 
-void \hyperlink{schedulerstrongapa_8c_a218140a63c8168bd7a031ecd1622ac70}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$idle, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
-\item 
-void \hyperlink{schedulerstrongapa_8c_ab58b35b304568f654b0159782d7101b0}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Pin} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
-\item 
-void \hyperlink{schedulerstrongapa_8c_a14316e4743f9418a6fba4de3d982418a}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unpin} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
-\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga5a79348c507857c0a09abdace0fb6998}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Insert\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, Priority\+\_\+\+Control insert\+\_\+priority)
+\begin{DoxyCompactList}\small\item\em Inserts a node in the ready queue. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gae011d69d2355e74ed27d606f79a3a954}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Allocate\+\_\+processor} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$scheduled\+\_\+base, Scheduler\+\_\+\+Node $\ast$victim\+\_\+base, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$victim\+\_\+cpu)
+\begin{DoxyCompactList}\small\item\em Allocates a processor for the node. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gae7875a7e75f2615c6603155126d437db}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em Blocks a node. \end{DoxyCompactList}\item 
+bool \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga1cf4d5dd4a1c9ccec8f78e5d6880c0d0}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node, Priority\+\_\+\+Control insert\+\_\+priority)
+\begin{DoxyCompactList}\small\item\em Enqueues a node. \end{DoxyCompactList}\item 
+bool \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gaaed11d4bb8de23df31deed2551fb7034}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node, Priority\+\_\+\+Control insert\+\_\+priority)
+\begin{DoxyCompactList}\small\item\em Enqueues a node in the scheduled queue. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga8e6ee051e6a359186fd6964051db69e2}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em Unblocks a node. \end{DoxyCompactList}\item 
+bool \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gad863eddc3fa4e2d785fb64af6505e90b}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em Calls the smp Ask\+\_\+for\+\_\+help. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gafd1bbcb35f99dd53b4ffe2fe52030cdc}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em Updates the priority of the node. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga7809e64065ec5d291f3dc82220a68d3f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em To Reconsider the help request. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gaf43eb65a6fbbe2826ca4cec68a930cb5}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node, Thread\+\_\+\+Scheduler\+\_\+state next\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Withdraws a node. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gad0d503dce329bd77203ea47397bb7e9d}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Register\+\_\+idle} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$idle\+\_\+base, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
+\begin{DoxyCompactList}\small\item\em To register an idle thread on a cpu. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga6ac09dac24785561fd7c5ee5bbd8f5ca}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$idle)
+\begin{DoxyCompactList}\small\item\em Adds a processor to the scheduler instance. \end{DoxyCompactList}\item 
+Thread\+\_\+\+Control $\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga91dc29dcdeea35e3329623be7a798e39}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor} (const Scheduler\+\_\+\+Control $\ast$scheduler, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
+\begin{DoxyCompactList}\small\item\em Removes a processor from the scheduler instance. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gad6d1206459f21c74882cd2fb3ddd4aae}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em Called when a node yields the processor. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga5a91c9d6e7fbc55bda26161294fb8b6f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity()} \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga218140a63c8168bd7a031ecd1622ac70}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$idle, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
+\begin{DoxyCompactList}\small\item\em Starts an idle thread on a C\+PU. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gab58b35b304568f654b0159782d7101b0}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Pin} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
+\begin{DoxyCompactList}\small\item\em Pins a node to a cpu. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga14316e4743f9418a6fba4de3d982418a}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unpin} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
+\begin{DoxyCompactList}\small\item\em Unpins a node. \end{DoxyCompactList}\item 
 bool \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, const Processor\+\_\+mask $\ast$affinity)
 \begin{DoxyCompactList}\small\item\em Checks if the processor set of the scheduler is the subset of the affinity set. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -89,117 +89,6 @@ Strong A\+PA Scheduler Implementation.
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{schedulerstrongapa_8c_a6ac09dac24785561fd7c5ee5bbd8f5ca}\label{schedulerstrongapa_8c_a6ac09dac24785561fd7c5ee5bbd8f5ca}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor()}{\_Scheduler\_strong\_APA\_Add\_processor()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{idle }\end{DoxyParamCaption})}
-
-
-
-Definition at line 542 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_ae011d69d2355e74ed27d606f79a3a954}\label{schedulerstrongapa_8c_ae011d69d2355e74ed27d606f79a3a954}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Allocate\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Allocate\+\_\+processor}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Allocate\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Allocate\+\_\+processor}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Allocate\+\_\+processor()}{\_Scheduler\_strong\_APA\_Allocate\_processor()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Allocate\+\_\+processor (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{scheduled\+\_\+base,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{victim\+\_\+base,  }\item[{Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$}]{victim\+\_\+cpu }\end{DoxyParamCaption})}
-
-
-
-Definition at line 355 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_ad863eddc3fa4e2d785fb64af6505e90b}\label{schedulerstrongapa_8c_ad863eddc3fa4e2d785fb64af6505e90b}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help()}{\_Scheduler\_strong\_APA\_Ask\_for\_help()}}
-{\footnotesize\ttfamily bool \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{the\+\_\+thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
-
-
-
-Definition at line 451 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_ae7875a7e75f2615c6603155126d437db}\label{schedulerstrongapa_8c_ae7875a7e75f2615c6603155126d437db}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block()}{\_Scheduler\_strong\_APA\_Block()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
-
-
-
-Definition at line 375 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a5a91c9d6e7fbc55bda26161294fb8b6f}\label{schedulerstrongapa_8c_a5a91c9d6e7fbc55bda26161294fb8b6f}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity()}{\_Scheduler\_strong\_APA\_Do\_set\_affinity()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node\+\_\+base,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
-
-
-
-Definition at line 591 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_afb6b87df52cea4341e73667f00dce0d5}\label{schedulerstrongapa_8c_afb6b87df52cea4341e73667f00dce0d5}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update()}{\_Scheduler\_strong\_APA\_Do\_update()}}
-{\footnotesize\ttfamily static void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node,  }\item[{Priority\+\_\+\+Control}]{new\+\_\+priority }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 56 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a072ea7b584005d0ff44e13cf2684ba09}\label{schedulerstrongapa_8c_a072ea7b584005d0ff44e13cf2684ba09}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue()}{\_Scheduler\_strong\_APA\_Enqueue()}}
-{\footnotesize\ttfamily static bool \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node,  }\item[{Priority\+\_\+\+Control}]{insert\+\_\+priority }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 395 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_aaed11d4bb8de23df31deed2551fb7034}\label{schedulerstrongapa_8c_aaed11d4bb8de23df31deed2551fb7034}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue\+\_\+scheduled}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue\+\_\+scheduled}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue\+\_\+scheduled()}{\_Scheduler\_strong\_APA\_Enqueue\_scheduled()}}
-{\footnotesize\ttfamily bool \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue\+\_\+scheduled (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node,  }\item[{Priority\+\_\+\+Control}]{insert\+\_\+priority }\end{DoxyParamCaption})}
-
-
-
-Definition at line 414 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a60129e44fa73e5241abc2f5f9f78bb1d}\label{schedulerstrongapa_8c_a60129e44fa73e5241abc2f5f9f78bb1d}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready()}{\_Scheduler\_strong\_APA\_Extract\_from\_ready()}}
-{\footnotesize\ttfamily static void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+ready (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node\+\_\+to\+\_\+extract }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Removes the ready node from the Chain of nodes. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em context} & The scheduler context instance. \\
-\hline
-{\em node\+\_\+to\+\_\+extract} & The node to remove from the chain. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 277 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a3375cf50bcc8efca42c63b4fa7e7b971}\label{schedulerstrongapa_8c_a3375cf50bcc8efca42c63b4fa7e7b971}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+scheduled}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+scheduled}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+scheduled()}{\_Scheduler\_strong\_APA\_Extract\_from\_scheduled()}}
-{\footnotesize\ttfamily static void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+scheduled (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node\+\_\+to\+\_\+extract }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 256 of file schedulerstrongapa.\+c.
-
 \mbox{\Hypertarget{schedulerstrongapa_8c_a3c6a0cbfb38651e3698501a1eca038db}\label{schedulerstrongapa_8c_a3c6a0cbfb38651e3698501a1eca038db}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+context@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+context}}
 \index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+context@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+context}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
@@ -209,40 +98,6 @@ Definition at line 256 of file schedulerstrongapa.\+c.
 
 
 Definition at line 17 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_aeca59d69f6f261d5af4b17e73186ed98}\label{schedulerstrongapa_8c_aeca59d69f6f261d5af4b17e73186ed98}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready()}{\_Scheduler\_strong\_APA\_Get\_highest\_ready()}}
-{\footnotesize\ttfamily static Scheduler\+\_\+\+Node$\ast$ \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 100 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a2697080204d867803db3e4ed7a5c4b81}\label{schedulerstrongapa_8c_a2697080204d867803db3e4ed7a5c4b81}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+lowest\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+lowest\+\_\+scheduled}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+lowest\+\_\+scheduled@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+lowest\+\_\+scheduled}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+lowest\+\_\+scheduled()}{\_Scheduler\_strong\_APA\_Get\_lowest\_scheduled()}}
-{\footnotesize\ttfamily static Scheduler\+\_\+\+Node$\ast$ \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+lowest\+\_\+scheduled (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{filter\+\_\+base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Checks the lowest scheduled node running on a processor on which the  node could be running on. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em context} & The scheduler context instance. \\
-\hline
-{\em filter\+\_\+base} & The node which wants to get scheduled.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The lowest scheduled node on an eligible processor. 
-\end{DoxyReturn}
-
-
-Definition at line 194 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{schedulerstrongapa_8c_a82b78bc26365ff79e6570cc1df857c54}\label{schedulerstrongapa_8c_a82b78bc26365ff79e6570cc1df857c54}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+self@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+self}}
@@ -254,36 +109,6 @@ Definition at line 194 of file schedulerstrongapa.\+c.
 
 Definition at line 23 of file schedulerstrongapa.\+c.
 
-\mbox{\Hypertarget{schedulerstrongapa_8c_a62c553216bd05f6e382334f08431cbd3}\label{schedulerstrongapa_8c_a62c553216bd05f6e382334f08431cbd3}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Has\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Has\+\_\+ready}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Has\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Has\+\_\+ready}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Has\+\_\+ready()}{\_Scheduler\_strong\_APA\_Has\_ready()}}
-{\footnotesize\ttfamily static bool \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Has\+\_\+ready (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 70 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a5a79348c507857c0a09abdace0fb6998}\label{schedulerstrongapa_8c_a5a79348c507857c0a09abdace0fb6998}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Insert\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Insert\+\_\+ready}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Insert\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Insert\+\_\+ready}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Insert\+\_\+ready()}{\_Scheduler\_strong\_APA\_Insert\_ready()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Insert\+\_\+ready (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node\+\_\+base,  }\item[{Priority\+\_\+\+Control}]{insert\+\_\+priority }\end{DoxyParamCaption})}
-
-
-
-Definition at line 338 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a0834423e32bb300a5a52fe53636df96d}\label{schedulerstrongapa_8c_a0834423e32bb300a5a52fe53636df96d}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+scheduled\+\_\+to\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+scheduled\+\_\+to\+\_\+ready}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+scheduled\+\_\+to\+\_\+ready@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+scheduled\+\_\+to\+\_\+ready}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+scheduled\+\_\+to\+\_\+ready()}{\_Scheduler\_strong\_APA\_Move\_from\_scheduled\_to\_ready()}}
-{\footnotesize\ttfamily static void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Move\+\_\+from\+\_\+scheduled\+\_\+to\+\_\+ready (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{scheduled\+\_\+to\+\_\+ready }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 295 of file schedulerstrongapa.\+c.
-
 \mbox{\Hypertarget{schedulerstrongapa_8c_a1292bf94e89d38dc295f558e91d3527a}\label{schedulerstrongapa_8c_a1292bf94e89d38dc295f558e91d3527a}} 
 \index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast}}
 \index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+downcast}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
@@ -293,104 +118,4 @@ Definition at line 295 of file schedulerstrongapa.\+c.
 
 
 Definition at line 29 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_ab58b35b304568f654b0159782d7101b0}\label{schedulerstrongapa_8c_ab58b35b304568f654b0159782d7101b0}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Pin@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Pin}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Pin@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Pin}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Pin()}{\_Scheduler\_strong\_APA\_Pin()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Pin (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node\+\_\+base,  }\item[{struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$}]{cpu }\end{DoxyParamCaption})}
-
-
-
-Definition at line 623 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a7809e64065ec5d291f3dc82220a68d3f}\label{schedulerstrongapa_8c_a7809e64065ec5d291f3dc82220a68d3f}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request()}{\_Scheduler\_strong\_APA\_Reconsider\_help\_request()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{the\+\_\+thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
-
-
-
-Definition at line 492 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_ad0d503dce329bd77203ea47397bb7e9d}\label{schedulerstrongapa_8c_ad0d503dce329bd77203ea47397bb7e9d}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Register\+\_\+idle@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Register\+\_\+idle}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Register\+\_\+idle@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Register\+\_\+idle}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Register\+\_\+idle()}{\_Scheduler\_strong\_APA\_Register\_idle()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Register\+\_\+idle (\begin{DoxyParamCaption}\item[{Scheduler\+\_\+\+Context $\ast$}]{context,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{idle\+\_\+base,  }\item[{Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$}]{cpu }\end{DoxyParamCaption})}
-
-
-
-Definition at line 529 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a91dc29dcdeea35e3329623be7a798e39}\label{schedulerstrongapa_8c_a91dc29dcdeea35e3329623be7a798e39}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor()}{\_Scheduler\_strong\_APA\_Remove\_processor()}}
-{\footnotesize\ttfamily Thread\+\_\+\+Control$\ast$ \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$}]{cpu }\end{DoxyParamCaption})}
-
-
-
-Definition at line 558 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a218140a63c8168bd7a031ecd1622ac70}\label{schedulerstrongapa_8c_a218140a63c8168bd7a031ecd1622ac70}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle()}{\_Scheduler\_strong\_APA\_Start\_idle()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{idle,  }\item[{Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$}]{cpu }\end{DoxyParamCaption})}
-
-
-
-Definition at line 605 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a8e6ee051e6a359186fd6964051db69e2}\label{schedulerstrongapa_8c_a8e6ee051e6a359186fd6964051db69e2}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock()}{\_Scheduler\_strong\_APA\_Unblock()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
-
-
-
-Definition at line 434 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_a14316e4743f9418a6fba4de3d982418a}\label{schedulerstrongapa_8c_a14316e4743f9418a6fba4de3d982418a}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unpin@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unpin}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unpin@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unpin}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unpin()}{\_Scheduler\_strong\_APA\_Unpin()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unpin (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node\+\_\+base,  }\item[{struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$}]{cpu }\end{DoxyParamCaption})}
-
-
-
-Definition at line 647 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_afd1bbcb35f99dd53b4ffe2fe52030cdc}\label{schedulerstrongapa_8c_afd1bbcb35f99dd53b4ffe2fe52030cdc}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority()}{\_Scheduler\_strong\_APA\_Update\_priority()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
-
-
-
-Definition at line 472 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_af43eb65a6fbbe2826ca4cec68a930cb5}\label{schedulerstrongapa_8c_af43eb65a6fbbe2826ca4cec68a930cb5}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node()}{\_Scheduler\_strong\_APA\_Withdraw\_node()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{the\+\_\+thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node,  }\item[{Thread\+\_\+\+Scheduler\+\_\+state}]{next\+\_\+state }\end{DoxyParamCaption})}
-
-
-
-Definition at line 508 of file schedulerstrongapa.\+c.
-
-\mbox{\Hypertarget{schedulerstrongapa_8c_ad6d1206459f21c74882cd2fb3ddd4aae}\label{schedulerstrongapa_8c_ad6d1206459f21c74882cd2fb3ddd4aae}} 
-\index{schedulerstrongapa.\+c@{schedulerstrongapa.\+c}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}}
-\index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}!schedulerstrongapa.\+c@{schedulerstrongapa.\+c}}
-\subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield()}{\_Scheduler\_strong\_APA\_Yield()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
-
-
-
-Definition at line 573 of file schedulerstrongapa.\+c.
 

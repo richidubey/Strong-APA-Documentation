@@ -38,7 +38,7 @@ _Scheduler_strong_APA_Node_downcast( Scheduler_Node *node )
  *
  * @param scheduler used to get 
  * reference to Strong APA scheduler context 
- * @return void
+ * @retval void
  * @see _Scheduler_strong_APA_Node_initialize()
  *
  */  
@@ -103,7 +103,8 @@ void _Scheduler_strong_APA_Do_update(
  * look for a ready node
  *
  * @param scheduler The scheduler context.
- * @return true if scheduler has a ready node available
+ * @retval true if scheduler has a ready node available
+ * @retval false if scheduler has no ready nodes available
  */
 
 bool _Scheduler_strong_APA_Has_ready( Scheduler_Context *context )
@@ -141,7 +142,7 @@ bool _Scheduler_strong_APA_Has_ready( Scheduler_Context *context )
  * on the CPU on which @filter node was running on 
  *
  */
-static inline Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
+Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
   Scheduler_Context *context,
   Scheduler_Node    *filter
 ) //TODO
@@ -233,9 +234,9 @@ static inline Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
  * @param context The scheduler context instance.
  * @param filter_base The node which wants to get scheduled.
  *
- * @return The lowest scheduled node on an eligible processor.
+ * @retval node The lowest scheduled node on an eligible processor.
  */
-static inline Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
+Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
   Scheduler_Context *context,
   Scheduler_Node    *filter_base
 )
@@ -328,7 +329,7 @@ void _Scheduler_strong_APA_Extract_from_scheduled(
  * @param scheduler The scheduler context
  * @param[in] node_to_extract The node to extract.
  */
-static inline void _Scheduler_strong_APA_Extract_from_ready(
+void _Scheduler_strong_APA_Extract_from_ready(
   Scheduler_Context *context,
   Scheduler_Node    *node_to_extract
 )
@@ -496,7 +497,7 @@ void _Scheduler_strong_APA_Block(
  * @param node node which is to be enqueued
  * @param insert_priority priority at which the node should be enqueued.
  */ 
-static inline bool _Scheduler_strong_APA_Enqueue(
+bool _Scheduler_strong_APA_Enqueue(
   Scheduler_Context *context,
   Scheduler_Node    *node,
   Priority_Control   insert_priority
