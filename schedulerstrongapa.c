@@ -241,61 +241,8 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
   Scheduler_Node    *filter_base
 )
 {	
-  //Idea: Go through all the scheduled nodes
-  //and find the lowest scheduled node
-  //running on a processor which is in the
-  //affinity set of filter_base
+  //Idea: BFS Algorithm for task arrival
 
-  Scheduler_Node 	*ret;
-  const Chain_Node      *tail;
-  Chain_Node 		*next;
-  Per_CPU_Control 	curr_cpu;
-  _Scheduler_strong_APA_Node *filter_node;
-  Priority_Control	min_prio;
-  Priority_Control	curr_prio;
-  
-
-  filter_node = _Scheduler_strong_APA_Node_downcast( filter_base );
-   
-  ret=NULL;
-	 
-  tail = _Chain_Immutable_tail( &self->allNodes );
-  next = _Chain_First( &self->allNodes );
-  
-  while ( next != tail ) {
-    Scheduler_strong_APA_Node *node;
-       
-    node = (Scheduler_strong_APA_Node *) next;	 
-    
-    if( Scheduler_SMP_Node_state( &node->Base.Base ) 
-            == SCHEDULER_SMP_NODE_SCHEDULED ) {
-            
-      curr_cpu=_Thread_Get_CPU( node->Base.Base.user );
-      
-      
-      if( hasCPUinSet( filter_node->affinity, //Checks if the curr_cpu is in the affinity set 
-          _Per_CPU_Get_index(curr_cpu) ) ) { //of filter_node
-     
-        curr_priority = _Scheduler_Node_get_priority( node );
-  	curr_priority = SCHEDULER_PRIORITY_PURIFY( curr_priority );
-         
-        if( ret == NULL ) {
-          ret=node->Base.Base;		//To return atleast one ret value, this is the starting node to compare 
-            			//all the nodes against.
-          min_prio=curr_priority;
-        }
-         
-        else if( curr_priority < min_prio ) {
-          ret=node;
-          min_prio=curr_priority;
-        }
-    
-      }
-    }
-    next = _Chain_Next( next );
-  }
-  
-  return ret;
 }
 
 /**
