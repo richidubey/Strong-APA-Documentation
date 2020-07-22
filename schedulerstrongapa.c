@@ -185,9 +185,8 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
        
        node = (Scheduler_strong_APA_Node *) next;
     
-       if(hasCPUinSet(	//Checks if the thread_CPU is in the affinity set of the node
-         node->affinity,
-         _Per_CPU_Get_index(thread_CPU)) ) {
+       if( node->affinity & (1 << _Per_CPU_Get_index( thread_CPU ) ) ) {
+       //Checks if the thread_CPU is in the affinity set of the node
            
          if(Scheduler_SMP_Node_state( &node->Base.Base ) 
             == SCHEDULER_SMP_NODE_SCHEDULED) {
@@ -242,6 +241,28 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
 )
 {	
   //Idea: BFS Algorithm for task arrival
+	
+  uint32_t cpu_max;
+  uint32_t cpu_index;
+  Scheduler_strong_APA_Node *filter_node;
+       
+  filter_node = _Scheduler_strong_APA_Node_downcast( filter_base );
+  
+  cpu_max = _SMP_Get_processor_maximum();
+
+  for ( cpu_index = 0 ; cpu_index < cpu_max ; ++cpu_index ) {
+  
+    if( ( node->affinity & (1<<cpu_index) ) ) { //Checks if the thread_CPU is in the affinity set of the node
+      Per_CPU_Control *cpu = _Per_CPU_Get_by_index( cpu_index );
+  
+      if( _Per_CPU_Is_processor_online( cpu ) ) {
+      	
+        FiFoQueue.insert(thread_CPU);
+        
+      }   
+    }
+  }
+
 
 }
 
