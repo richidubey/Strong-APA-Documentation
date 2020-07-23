@@ -289,7 +289,7 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
     assert( curr_thread->Scheduler->state 
       == THREAD_SCHEDULER_SCHEDULED );
     
-    curr_node=Chain_First( curr_thread->Scheduler.nodes );
+    curr_node = _Chain_First( curr_thread->Scheduler.nodes );
     
     //How to check if the thread is not participating
     //in helping on this processor?
