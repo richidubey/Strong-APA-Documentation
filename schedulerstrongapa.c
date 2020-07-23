@@ -319,9 +319,7 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
   
   Priority_Control  filter_priority;
   filter_priority= _Scheduler_Node_get_priority( filter_base );
-  curr_priority = SCHEDULER_PRIORITY_PURIFY( filter_priority );   
-  
-  
+  filter_priority = SCHEDULER_PRIORITY_PURIFY( filter_priority );   
  
   if( ret->Priority.value < filter_priority ) {
     //Lowest priority task found has higher priority 
