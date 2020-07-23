@@ -248,11 +248,9 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
 	
   uint32_t	cpu_max;
   uint32_t	cpu_index;
-  bool		shift; //Indicates if threads have to be shifted
-  			//from their CPU.
+
   
   Per_CPU_Control	*curr_CPU;
-  Per_CPU_Control	*preempt_CPU=NULL;
   Thread_Control	*curr_thread;
   Scheduler_Node    	*curr_node;
   Scheduler_Node    	*ret;
@@ -267,11 +265,11 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
   max_priority = SCHEDULER_PRIORITY_PURIFY( max_priority );
  
   cpu_max = _SMP_Get_processor_maximum();
-  shift=true;
+  ret=NULL;
 
   for ( cpu_index = 0 ; cpu_index < cpu_max ; ++cpu_index ) {
   
-    if( ( node->affinity & (1<<cpu_index) ) ) { 
+    if( ( node->affinity & (1<<cpu_index) && visited[cpu] == false ) ) { 
     //Checks if the thread_CPU is in the affinity set of the node
       Per_CPU_Control *cpu = _Per_CPU_Get_by_index( cpu_index );
   
@@ -282,7 +280,7 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
     }
   }
   
-  while( !FiFoQueue.isEmpty() && shift) {
+  while( !FiFoQueue.isEmpty() ) {
     curr_CPU = FiFoQueue.top();
     curr_thread = curr_CPU->executing;
     
@@ -293,30 +291,45 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
     
     //How to check if the thread is not participating
     //in helping on this processor?
-    if( !curr_thread->is_idle ) {
+  
       curr_priority = _Scheduler_Node_get_priority( curr_node );
       curr_priority = SCHEDULER_PRIORITY_PURIFY( curr_priority );   
       
       if(curr_priority < max_priority) {
         ret = curr_node;
-        max_priority = curr_priority;      
+        max_priority = curr_priority;
       }
-    }
-    else {
-    	
-    	shift=false; //This CPU can be directly allocated to this thread
-    	ret=curr_node;
-    }
+    
+     if( !curr_thread->is_idle ) {
+       for ( cpu_index = 0 ; cpu_index < cpu_max ; ++cpu_index ) {
+         if( ( curr_node->affinity & (1<<cpu_index) ) ) { 
+           //Checks if the thread_CPU is in the affinity set of the node
+           Per_CPU_Control *cpu = _Per_CPU_Get_by_index( cpu_index );
+           if( _Per_CPU_Is_processor_online( cpu ) && visited[cpu] == false ) {
+             FiFoQueue.insert(cpu);
+             visited[cpu]=true;
+           }
+         }  
+       }
+     }
+     
+     
     FifoQueue.pop();
   }
   
-  if( shift == false ) {
-    return ret;
-  }
   
+  
+ 
+  if( ret == NULL ) {
+    //filter_base remains unassigned
+    //No task shifting. 
+  }  
+ 
   else {
     //Backtrack on the path from
     //_Thread_Get_CPU(ret->user) to ret, shifting along every task
+    
+    return ret;
   }
 
 }
