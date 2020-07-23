@@ -81,7 +81,6 @@ typedef struct {
    */
   Processor_mask unpin_affinity;
   
-  
 } Scheduler_strong_APA_Node;
 
 /**

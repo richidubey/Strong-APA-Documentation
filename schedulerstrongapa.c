@@ -157,7 +157,8 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
   Scheduler_Node	*ret;
   Priority_Control	max_prio;
   Priority_Control	curr_prio;
-	
+  Chain_Control 	Queue;
+  
   thread = filter->Base.Base.user;	
   thread_cpu = _Thread_Get_CPU( thread );
 	
@@ -305,7 +306,8 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
     	
     	shift=false; //This CPU can be directly allocated to this thread
     	ret=curr_node;
-    }      
+    }
+    FifoQueue.pop();
   }
   
   if( shift == false ) {
