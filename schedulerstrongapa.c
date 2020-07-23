@@ -152,12 +152,13 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
 	
   Thread_Control 	thread;
   Per_CPU_Control 	thread_cpu;
+  Per_CPU_Control 	curr_CPU;
   Per_CPU_Control	assigned_cpu;
   Scheduler_Node	*ret;
   Priority_Control	max_prio;
   Priority_Control	curr_prio;
 	
-  thread=filter->Base.Base.user;	
+  thread = filter->Base.Base.user;	
   thread_cpu = _Thread_Get_CPU( thread );
 	
   //Implement the BFS Algorithm for task departure
@@ -165,7 +166,7 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
   
   
   max_priority = _Scheduler_Node_get_priority( filter );
-  max_priority = SCHEDULER_PRIORITY_PURIFY( priority );
+  max_priority = SCHEDULER_PRIORITY_PURIFY( max_priority );
 
   ret=filter;
 
@@ -176,7 +177,8 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
   visited[thread_CPU]=true;	
   
   
-   while(!FiFoQueue.isEmpty) {
+   while( !FiFoQueue.isEmpty() ) {
+     curr_CPU = FiFoQueue.top();
      tail = _Chain_Immutable_tail( &self->allNodes );
      next = _Chain_First( &self->allNodes );
   
@@ -185,7 +187,7 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
        
        node = (Scheduler_strong_APA_Node *) next;
     
-       if( node->affinity & (1 << _Per_CPU_Get_index( thread_CPU ) ) ) {
+       if( node->affinity & (1 << _Per_CPU_Get_index( curr_CPU ) ) ) {
        //Checks if the thread_CPU is in the affinity set of the node
            
          if(Scheduler_SMP_Node_state( &node->Base.Base ) 
@@ -202,7 +204,7 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
             curr_priority = _Scheduler_Node_get_priority( node );
   	    curr_priority = SCHEDULER_PRIORITY_PURIFY( curr_priority );
   		
-            if(curr_priority>max_priority) {
+            if(curr_priority<max_priority) {
               max_priority=curr_priority;
   	      ret=node->Base.Base;
   	    }
@@ -233,7 +235,8 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
  * @param context The scheduler context instance.
  * @param filter_base The node which wants to get scheduled.
  *
- * @retval node The lowest scheduled node on an eligible processor.
+ * @retval node The lowest scheduled node that can be 
+ * replaced by @filter_base
  */
 Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
   Scheduler_Context *context,
@@ -242,27 +245,77 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
 {	
   //Idea: BFS Algorithm for task arrival
 	
-  uint32_t cpu_max;
-  uint32_t cpu_index;
-  Scheduler_strong_APA_Node *filter_node;
+  uint32_t	cpu_max;
+  uint32_t	cpu_index;
+  bool		shift; //Indicates if threads have to be shifted
+  			//from their CPU.
+  
+  Per_CPU_Control	*curr_CPU;
+  Per_CPU_Control	*preempt_CPU=NULL;
+  Thread_Control	*curr_thread;
+  Scheduler_Node    	*curr_node;
+  Scheduler_Node    	*ret;
+  
+  Priority_Control	max_prio;
+  Priority_Control	curr_prio;
+  
+  Scheduler_strong_APA_Node	*filter_node;
        
   filter_node = _Scheduler_strong_APA_Node_downcast( filter_base );
-  
+  max_priority = _Scheduler_Node_get_priority( filter_base );
+  max_priority = SCHEDULER_PRIORITY_PURIFY( max_priority );
+ 
   cpu_max = _SMP_Get_processor_maximum();
+  shift=true;
 
   for ( cpu_index = 0 ; cpu_index < cpu_max ; ++cpu_index ) {
   
-    if( ( node->affinity & (1<<cpu_index) ) ) { //Checks if the thread_CPU is in the affinity set of the node
+    if( ( node->affinity & (1<<cpu_index) ) ) { 
+    //Checks if the thread_CPU is in the affinity set of the node
       Per_CPU_Control *cpu = _Per_CPU_Get_by_index( cpu_index );
   
       if( _Per_CPU_Is_processor_online( cpu ) ) {
-      	
-        FiFoQueue.insert(thread_CPU);
-        
-      }   
+        FiFoQueue.insert(cpu);
+        visited[cpu]=true;
+      }
     }
   }
-
+  
+  while( !FiFoQueue.isEmpty() && shift) {
+    curr_CPU = FiFoQueue.top();
+    curr_thread = curr_CPU->executing;
+    
+    assert( curr_thread->Scheduler->state 
+      == THREAD_SCHEDULER_SCHEDULED );
+    
+    curr_node=Chain_First( curr_thread->Scheduler.nodes );
+    
+    //How to check if the thread is not participating
+    //in helping on this processor?
+    if( !curr_thread->is_idle ) {
+      curr_priority = _Scheduler_Node_get_priority( curr_node );
+      curr_priority = SCHEDULER_PRIORITY_PURIFY( curr_priority );   
+      
+      if(curr_priority < max_priority) {
+        ret = curr_node;
+        max_priority = curr_priority;      
+      }
+    }
+    else {
+    	
+    	shift=false; //This CPU can be directly allocated to this thread
+    	ret=curr_node;
+    }      
+  }
+  
+  if( shift == false ) {
+    return ret;
+  }
+  
+  else {
+    //Backtrack on the path from
+    //_Thread_Get_CPU(ret->user) to ret, shifting along every task
+  }
 
 }
 
