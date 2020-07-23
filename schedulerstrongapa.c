@@ -261,9 +261,9 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
   Scheduler_strong_APA_Node	*filter_node;
        
   filter_node = _Scheduler_strong_APA_Node_downcast( filter_base );
-  max_priority = _Scheduler_Node_get_priority( filter_base );
-  max_priority = SCHEDULER_PRIORITY_PURIFY( max_priority );
- 
+  
+  max_priority = 300;//Max (Highest) priority encountered so far.
+  
   cpu_max = _SMP_Get_processor_maximum();
   ret=NULL;
 
@@ -317,21 +317,26 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
     FifoQueue.pop();
   }
   
+  Priority_Control  filter_priority;
+  filter_priority= _Scheduler_Node_get_priority( filter_base );
+  curr_priority = SCHEDULER_PRIORITY_PURIFY( filter_priority );   
   
   
  
-  if( ret == NULL ) {
-    //filter_base remains unassigned
+  if( ret->Priority.value < filter_priority ) {
+    //Lowest priority task found has higher priority 
+    // than filter_base.
+    //So, filter_base remains unassigned
     //No task shifting. 
   }  
  
   else {
     //Backtrack on the path from
     //_Thread_Get_CPU(ret->user) to ret, shifting along every task
-    
-    return ret;
+ 
   }
 
+  return ret;
 }
 
 /**
