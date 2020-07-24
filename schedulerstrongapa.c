@@ -150,6 +150,7 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
   //Plan for this function: (Pseudo Code):
   self=_Scheduler_strong_APA_Get_self( context );
 	
+  CPU			*Qcpu;
   Thread_Control 	thread;
   Per_CPU_Control 	thread_cpu;
   Per_CPU_Control 	curr_CPU;
@@ -158,6 +159,7 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
   Priority_Control	max_prio;
   Priority_Control	curr_prio;
   Chain_Control 	Queue;
+  
   
   thread = filter->Base.Base.user;	
   thread_cpu = _Thread_Get_CPU( thread );
@@ -174,18 +176,25 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
   const Chain_Node          *tail;
   Chain_Node                *next;
   
-  FiFoQueue.insert(thread_CPU);	//Help: How to implement a FifoQueue efficiently?
+  _Chain_Initialize_empty(&Queue);
+  
+  Qcpu = malloc( sizeof(CPU) );
+  assert (Qcpu != -1);
+  Qcpu->cpu=thread_CPU;
+  
+  _Chain_Initialize_node( Qcpu->node );
+  _Chain_Append_unprotected( &Queue, &Qcpu->node ); //Insert thread_CPU in the Queue 
   visited[thread_CPU]=true;	
   
   
-   while( !FiFoQueue.isEmpty() ) {
-     curr_CPU = FiFoQueue.top();
+   while( !_Chain_Is_empty( &Queue) ) {
+     Qcpu = (CPU*) _Chain_Get_first_unprotected( &Queue );
+     curr_CPU = Qcpu->cpu;
      tail = _Chain_Immutable_tail( &self->allNodes );
      next = _Chain_First( &self->allNodes );
   
      while ( next != tail ) {
        Scheduler_strong_APA_Node *node;
-       
        node = (Scheduler_strong_APA_Node *) next;
     
        if( node->affinity & (1 << _Per_CPU_Get_index( curr_CPU ) ) ) {
@@ -196,8 +205,15 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
              
             assigned_cpu = _Thread_Get_CPU( node->Base.Base.user );
             if(visited[ assigned_cpu ] == false) {
-              FifoQueue.insert( assigned_cpu );
-              visited[ assigned_cpu ] = true;
+            
+              Qcpu = malloc( sizeof(CPU) );
+	      assert (Qcpu != -1);
+	      Qcpu->cpu=assigned_cpu;
+	      
+	      _Chain_Initialize_node( Qcpu->node );
+	      _Chain_Append_unprotected( &Queue, &Qcpu->node ); 
+	      //Insert thread_CPU in the Queue 
+	      visited[assigned_cpu]=true;
             } 
           }
           else if(Scheduler_SMP_Node_state( &node->Base.Base ) 
@@ -213,8 +229,6 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
     	}
        next = _Chain_Next( next );
      }
-     
-     FifoQueue.pop();  
   }
   
   if( ret != filter)
@@ -312,13 +326,12 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
          }  
        }
      }
-     
-     
+       
     FifoQueue.pop();
   }
   
   Priority_Control  filter_priority;
-  filter_priority= _Scheduler_Node_get_priority( filter_base );
+  filter_priority = _Scheduler_Node_get_priority( filter_base );
   filter_priority = SCHEDULER_PRIORITY_PURIFY( filter_priority );   
  
   if( ret->Priority.value < filter_priority ) {
@@ -331,7 +344,6 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
   else {
     //Backtrack on the path from
     //_Thread_Get_CPU(ret->user) to ret, shifting along every task
- 
   }
 
   return ret;
