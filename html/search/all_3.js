@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['documentation_20for_20strong_20apa_20scheduler_20to_20be_20added_20to_20rtems',['Documentation for Strong APA Scheduler to be added to RTEMS',['../index.html',1,'']]]
+  ['cpu',['CPU',['../structCPU.html',1,'CPU'],['../structCPU.html#afd8a0102a88a2213b4cfa3c88526b6ca',1,'CPU::cpu()'],['../group__RTEMSScoreSchedulerStrongAPA.html#gaddffe010d6ab143ff5692b890137dbfd',1,'CPU():&#160;schedulerstrongapa.h']]]
 ];

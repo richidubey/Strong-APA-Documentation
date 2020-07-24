@@ -21,12 +21,19 @@ Include dependency graph for schedulerstrongapa.\+h\+:\nopagebreak
 struct \hyperlink{structScheduler__strong__APA__Context}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}
 \begin{DoxyCompactList}\small\item\em Scheduler context for Strong A\+PA scheduler. \end{DoxyCompactList}\item 
 struct \hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}
-\begin{DoxyCompactList}\small\item\em Scheduler node specialization for Strong A\+PA schedulers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Scheduler node specialization for Strong A\+PA schedulers. \end{DoxyCompactList}\item 
+struct \hyperlink{structCPU}{C\+PU}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structCPU}{C\+PU} structure to be used while traversing in the F\+I\+FO Queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga98b37281082c0be47dc489eed554c5cc}{S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+A\+P\+A\+\_\+\+E\+N\+T\+R\+Y\+\_\+\+P\+O\+I\+N\+TS}
 \begin{DoxyCompactList}\small\item\em Entry points for the Strong A\+PA Scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structCPU}{C\+PU} \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gaddffe010d6ab143ff5692b890137dbfd}{C\+PU}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structCPU}{C\+PU} structure to be used while traversing in the F\+I\+FO Queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,7 +46,7 @@ void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga093f8f4d503edc228e9819353b
 bool \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga1eb39ec8e5e7663e5696db912ddf01ba}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Has\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context)
 \begin{DoxyCompactList}\small\item\em Checks if scheduler has a ready node. \end{DoxyCompactList}\item 
 Scheduler\+\_\+\+Node $\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga8f182f1109d27d916452f6ae77c63d24}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$filter)
-\begin{DoxyCompactList}\small\item\em Checks the next highest node ready on run on the C\+PU on which  node was running on. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Checks the next highest node ready on run on the \hyperlink{structCPU}{C\+PU} on which  node was running on. \end{DoxyCompactList}\item 
 Scheduler\+\_\+\+Node $\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga26fb2df74c34c204d6f682ddae6b854d}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+lowest\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$filter\+\_\+base)
 \begin{DoxyCompactList}\small\item\em Checks the lowest scheduled node running on a processor on which the  node could be running on. \end{DoxyCompactList}\item 
 void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga1a1e006053c3a9d1ad1d85c591b0aed7}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Extract\+\_\+from\+\_\+scheduled} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+to\+\_\+extract)
@@ -81,7 +88,7 @@ void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gad6d1206459f21c74882cd2fb3d
 void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga5a91c9d6e7fbc55bda26161294fb8b6f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+set\+\_\+affinity} (Scheduler\+\_\+\+Context $\ast$context, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, void $\ast$arg)
 \begin{DoxyCompactList}\small\item\em Called by \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity()} \end{DoxyCompactList}\item 
 void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga218140a63c8168bd7a031ecd1622ac70}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$idle, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
-\begin{DoxyCompactList}\small\item\em Starts an idle thread on a C\+PU. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Starts an idle thread on a \hyperlink{structCPU}{C\+PU}. \end{DoxyCompactList}\item 
 void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gab58b35b304568f654b0159782d7101b0}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Pin} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
 \begin{DoxyCompactList}\small\item\em Pins a node to a cpu. \end{DoxyCompactList}\item 
 void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga14316e4743f9418a6fba4de3d982418a}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unpin} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
