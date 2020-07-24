@@ -38,7 +38,7 @@ extern "C" {
  * Has the structure for scheduler context
  * and Node defintion for Strong APA scheduler
  */
- typedef struct {
+typedef struct {
  /**
    * @brief SMP Context to refer to SMP implementation
    * code.  
@@ -58,17 +58,17 @@ extern "C" {
  * schedulers.
  */
 typedef struct {
-  /**
-   * @brief SMP scheduler node.
-   */
-  Scheduler_SMP_Node Base;
-  
  /**
    * @brief Chain node for 
    * Scheduler_strong_APA_Context::allNodes
    *
    */
   Chain_Node Node;
+  
+  /**
+   * @brief SMP scheduler node.
+   */
+  Scheduler_SMP_Node Base;
 
   /**
    * @brief The associated affinity set of this node.
@@ -82,6 +82,26 @@ typedef struct {
   Processor_mask unpin_affinity;
   
 } Scheduler_strong_APA_Node;
+
+/**
+ * @brief CPU structure to be used
+ * while traversing in the FIFO Queue
+ */
+typedef struct CPU
+{
+  /**
+   * @brief Chain node for 
+   * _Scheduler_strong_APA_Get_highest_ready::Queue
+   * and _Scheduler_strong_APA_Get_lowest_scheduled::Queue
+   */
+  Chain_Node node;
+
+  /**
+   * @brief cpu associated with the node
+   */	
+  Per_CPU_Control cpu;
+  
+}CPU;
 
 /**
  * @brief Entry points for the Strong APA Scheduler.
