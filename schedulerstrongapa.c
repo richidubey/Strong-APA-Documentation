@@ -125,13 +125,11 @@ bool _Scheduler_strong_APA_Has_ready( Scheduler_Context *context )
        
      node = (Scheduler_strong_APA_Node *) next;
      
-     if(Scheduler_SMP_Node_state( &node->Base.Base ) 
-     == SCHEDULER_SMP_NODE_READY) {
-     
+     if( Scheduler_SMP_Node_state( &node->Base.Base ) 
+     == SCHEDULER_SMP_NODE_READY ) {
        ret=true;
        break;
      }
-  
   }
   
   return ret;
@@ -205,7 +203,6 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
              
             assigned_cpu = _Thread_Get_CPU( node->Base.Base.user );
             if(visited[ assigned_cpu ] == false) {
-            
               Qcpu = malloc( sizeof(CPU) );
 	      assert (Qcpu != -1);
 	      Qcpu->cpu=assigned_cpu;
@@ -233,11 +230,11 @@ Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
   
   if( ret != filter)
   {
-  	//Backtrack on the path from
-  	//thread_cpu to ret, shifting along every task.
-  	
-  	//After this, thread_cpu receives the ret task
-  	// So the ready task ret gets scheduled as well.  
+    //Backtrack on the path from
+    //thread_cpu to ret, shifting along every task.
+
+    //After this, thread_cpu receives the ret task
+    // So the ready task ret gets scheduled as well.  
   }
   
   return ret; 
@@ -262,13 +259,14 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
 	
   uint32_t	cpu_max;
   uint32_t	cpu_index;
-
+  CPU		*Qcpu;
   
   Per_CPU_Control	*curr_CPU;
   Thread_Control	*curr_thread;
   Scheduler_Node    	*curr_node;
   Scheduler_Node    	*ret;
   
+  Chain_Control		Queue;
   Priority_Control	max_prio;
   Priority_Control	curr_prio;
   
@@ -276,58 +274,65 @@ Scheduler_Node *_Scheduler_strong_APA_Get_lowest_scheduled(
        
   filter_node = _Scheduler_strong_APA_Node_downcast( filter_base );
   
-  max_priority = 300;//Max (Highest) priority encountered so far.
+  max_priority = 300;//Max (Lowest) priority encountered so far.
   
   cpu_max = _SMP_Get_processor_maximum();
-  ret=NULL;
-
-  for ( cpu_index = 0 ; cpu_index < cpu_max ; ++cpu_index ) {
+  _Chain_Initialize_empty(&Queue);
   
+  for ( cpu_index = 0 ; cpu_index < cpu_max ; ++cpu_index ) { 
     if( ( node->affinity & (1<<cpu_index) && visited[cpu] == false ) ) { 
-    //Checks if the thread_CPU is in the affinity set of the node
+          //Checks if the thread_CPU is in the affinity set of the node
       Per_CPU_Control *cpu = _Per_CPU_Get_by_index( cpu_index );
-  
       if( _Per_CPU_Is_processor_online( cpu ) ) {
-        FiFoQueue.insert(cpu);
+        Qcpu = malloc( sizeof(CPU) );
+        assert (Qcpu != -1);
+        Qcpu->cpu=cpu;
+  
+        _Chain_Initialize_node( Qcpu->node );
+        _Chain_Append_unprotected( &Queue, &Qcpu->node );
+         //Insert cpu in the Queue
         visited[cpu]=true;
       }
     }
   }
   
-  while( !FiFoQueue.isEmpty() ) {
-    curr_CPU = FiFoQueue.top();
+  while( !_Chain_Is_empty( &Queue) ) {
+    Qcpu = (CPU*) _Chain_Get_first_unprotected( &Queue );
+    curr_CPU = Qcpu->cpu;
     curr_thread = curr_CPU->executing;
-    
-    assert( curr_thread->Scheduler->state 
-      == THREAD_SCHEDULER_SCHEDULED );
-    
+
     curr_node = _Chain_First( curr_thread->Scheduler.nodes );
     
     //How to check if the thread is not participating
     //in helping on this processor?
   
-      curr_priority = _Scheduler_Node_get_priority( curr_node );
-      curr_priority = SCHEDULER_PRIORITY_PURIFY( curr_priority );   
+    curr_priority = _Scheduler_Node_get_priority( curr_node );
+    curr_priority = SCHEDULER_PRIORITY_PURIFY( curr_priority );   
       
-      if(curr_priority < max_priority) {
-        ret = curr_node;
-        max_priority = curr_priority;
-      }
+    if(curr_priority < max_priority) {
+      ret = curr_node;
+      max_priority = curr_priority;
+    }
     
-     if( !curr_thread->is_idle ) {
-       for ( cpu_index = 0 ; cpu_index < cpu_max ; ++cpu_index ) {
-         if( ( curr_node->affinity & (1<<cpu_index) ) ) { 
-           //Checks if the thread_CPU is in the affinity set of the node
-           Per_CPU_Control *cpu = _Per_CPU_Get_by_index( cpu_index );
-           if( _Per_CPU_Is_processor_online( cpu ) && visited[cpu] == false ) {
-             FiFoQueue.insert(cpu);
-             visited[cpu]=true;
-           }
-         }  
-       }
-     }
-       
-    FifoQueue.pop();
+    if( !curr_thread->is_idle ) {
+      for ( cpu_index = 0 ; cpu_index < cpu_max ; ++cpu_index ) {
+        if( ( curr_node->affinity & (1<<cpu_index) ) ) { 
+          //Checks if the thread_CPU is in the affinity set of the node
+          Per_CPU_Control *cpu = _Per_CPU_Get_by_index( cpu_index );
+          if( _Per_CPU_Is_processor_online( cpu ) && visited[cpu] == false ) {
+          
+            Qcpu = malloc( sizeof(CPU) );
+	    assert (Qcpu != -1);
+	    Qcpu->cpu=cpu;
+	      
+	    _Chain_Initialize_node( Qcpu->node );
+	    _Chain_Append_unprotected( &Queue, &Qcpu->node ); 
+	    //Insert the cpu in the affinty set of curr_thread in the Queue
+            visited[cpu]=true;
+          }
+        }  
+      }
+    }
   }
   
   Priority_Control  filter_priority;
