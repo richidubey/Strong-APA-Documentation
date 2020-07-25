@@ -11,7 +11,6 @@
 #define _RTEMS_SCORE_SCHEDULERSTRONGAPA_H
 
 #include <rtems/score/scheduler.h>
-#include <rtems/score/schedulerpriority.h>
 #include <rtems/score/schedulersmp.h>
 
 #ifdef __cplusplus
