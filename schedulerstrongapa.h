@@ -12,6 +12,7 @@
 
 #include <rtems/score/scheduler.h>
 #include <rtems/score/schedulersmp.h>
+#include <rtems/score/percpu.h>
 
 #ifdef __cplusplus
 extern "C" {
