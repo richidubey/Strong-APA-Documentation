@@ -246,8 +246,20 @@ static inline Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
     if( node->invoker != filter_cpu ) {
       // Highest ready is not just directly reachable from the victim cpu
       // So there is need of task shifting 
+      
+      curr_node = &node->Base.Base;
+      next_node = _Thread_Scheduler_get_home_node( node->invoker->heir );
     
-      do {
+      _Scheduler_SMP_Preempt(
+        context,
+        curr_node,
+        _Thread_Scheduler_get_home_node( node->invoker->heir ),
+        _Scheduler_strong_APA_Allocate_processor
+      );
+     
+      node = _Scheduler_strong_APA_Node_downcast( next_node ); 
+    
+      while( node->invoker !=  filter_cpu ){
         curr_node = &node->Base.Base;
         next_node = _Thread_Scheduler_get_home_node( node->invoker->heir );
     
@@ -256,10 +268,10 @@ static inline Scheduler_Node *_Scheduler_strong_APA_Get_highest_ready(
           curr_node,
           _Thread_Scheduler_get_home_node( node->invoker->heir ),
           _Scheduler_strong_APA_Allocate_processor
-        );
+      );
      
-       node = _Scheduler_strong_APA_Node_downcast( next_node );      
-     }while( node->invoker !=  filter_cpu );
+      node = _Scheduler_strong_APA_Node_downcast( next_node );      
+      }
       //To save the last node so that the caller SMP_* function 
       //can do the allocation
     
@@ -506,9 +518,27 @@ static inline bool _Scheduler_strong_APA_Do_enqueue(
       curr_strong_node = _Scheduler_strong_APA_Node_downcast( curr_node );
       curr_strong_node->invoker =  curr_CPU;
      }
+   
+    next_thread = curr_strong_node->invoker->heir;
+    next_node = _Thread_Scheduler_get_home_node( next_thread );
+      
+    node_priority = _Scheduler_Node_get_priority( curr_node );
+    node_priority = SCHEDULER_PRIORITY_PURIFY( node_priority ); 
+  
+    _Scheduler_SMP_Enqueue_to_scheduled(
+      context,
+      curr_node,
+      node_priority,
+      next_node,
+      _Scheduler_SMP_Insert_scheduled,
+      _Scheduler_strong_APA_Move_from_scheduled_to_ready,
+      _Scheduler_strong_APA_Allocate_processor
+    );
     
-    //Stop just before the last preemption
-    while( curr_node !=  Struct[ _Per_CPU_Get_index(cpu_to_preempt) ].caller) {
+    curr_node = next_node;
+    curr_strong_node = _Scheduler_strong_APA_Node_downcast( curr_node );
+      
+    while( curr_node !=  lowest_reachable) {
       next_thread = curr_strong_node->invoker->heir;
       next_node = _Thread_Scheduler_get_home_node( next_thread );	
       //curr_node preempts the next_node;
@@ -523,18 +553,7 @@ static inline bool _Scheduler_strong_APA_Do_enqueue(
       curr_strong_node = _Scheduler_strong_APA_Node_downcast( curr_node );
     }
     
-    node_priority = _Scheduler_Node_get_priority( curr_node );
-    node_priority = SCHEDULER_PRIORITY_PURIFY( node_priority ); 
-  
-    _Scheduler_SMP_Enqueue_to_scheduled(
-      context,
-      curr_node,
-      node_priority,
-      lowest_reachable,
-      _Scheduler_SMP_Insert_scheduled,
-      _Scheduler_strong_APA_Move_from_scheduled_to_ready,
-      _Scheduler_strong_APA_Allocate_processor
-    );
+    _Scheduler_strong_APA_Move_from_scheduled_to_ready(context, lowest_reachable);
     
     needs_help = false;
   } else {
