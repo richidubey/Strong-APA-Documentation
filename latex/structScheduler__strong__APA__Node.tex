@@ -12,29 +12,29 @@ Scheduler node specialization for Strong A\+PA schedulers.
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-Chain\+\_\+\+Node \hyperlink{structScheduler__strong__APA__Node_aed93ad80a3757ffbbe0a0d1b5426b3cc}{Node}
-\begin{DoxyCompactList}\small\item\em Chain node for \hyperlink{structScheduler__strong__APA__Context_ad850b98c29b7ab48bb7aff1a941fb331}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::all\+Nodes}. \end{DoxyCompactList}\item 
 Scheduler\+\_\+\+S\+M\+P\+\_\+\+Node \hyperlink{structScheduler__strong__APA__Node_ae86cbf5fd8743267abe33bed6d8b0fe6}{Base}
 \begin{DoxyCompactList}\small\item\em S\+MP scheduler node. \end{DoxyCompactList}\item 
-Processor\+\_\+mask \hyperlink{structScheduler__strong__APA__Node_a2e8928b11f1738a11c228780eb849989}{affinity}
-\begin{DoxyCompactList}\small\item\em The associated affinity set of this node. \end{DoxyCompactList}\item 
-Processor\+\_\+mask \hyperlink{structScheduler__strong__APA__Node_a4ce1b844eefd015d98332df3695c4867}{unpin\+\_\+affinity}
-\begin{DoxyCompactList}\small\item\em The associated affinity set of this node to be used while unpinning the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+Chain\+\_\+\+Node \hyperlink{structScheduler__strong__APA__Node_a9008e9546186a6b294f41151bc5a0a38}{Chain}
+\begin{DoxyCompactList}\small\item\em Chain node for \hyperlink{structScheduler__strong__APA__Context_a9bf510496d095d8bca275f35030bb993}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+All\+\_\+nodes}. \end{DoxyCompactList}\item 
+Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$ \hyperlink{structScheduler__strong__APA__Node_a62a0611c52210e493da7d2f55dfd28ff}{invoker}
+\begin{DoxyCompactList}\small\item\em C\+PU that this node would preempt in the backtracking part of \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready and \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+\+Enqueue. \end{DoxyCompactList}\item 
+Processor\+\_\+mask \hyperlink{structScheduler__strong__APA__Node_a7672e477658785808b0069f11bc4d24e}{Affinity}
+\begin{DoxyCompactList}\small\item\em The associated affinity set of this node. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Scheduler node specialization for Strong A\+PA schedulers. 
 
-Definition at line 60 of file schedulerstrongapa.\+h.
+Definition at line 62 of file schedulerstrongapa.\+h.
 
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{structScheduler__strong__APA__Node_a2e8928b11f1738a11c228780eb849989}\label{structScheduler__strong__APA__Node_a2e8928b11f1738a11c228780eb849989}} 
-\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}!affinity@{affinity}}
-\index{affinity@{affinity}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}}
-\subsubsection{\texorpdfstring{affinity}{affinity}}
-{\footnotesize\ttfamily Processor\+\_\+mask Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+::affinity}
+\mbox{\Hypertarget{structScheduler__strong__APA__Node_a7672e477658785808b0069f11bc4d24e}\label{structScheduler__strong__APA__Node_a7672e477658785808b0069f11bc4d24e}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}!Affinity@{Affinity}}
+\index{Affinity@{Affinity}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}}
+\subsubsection{\texorpdfstring{Affinity}{Affinity}}
+{\footnotesize\ttfamily Processor\+\_\+mask Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+::\+Affinity}
 
 
 
@@ -42,7 +42,7 @@ The associated affinity set of this node.
 
 
 
-Definition at line 76 of file schedulerstrongapa.\+h.
+Definition at line 83 of file schedulerstrongapa.\+h.
 
 \mbox{\Hypertarget{structScheduler__strong__APA__Node_ae86cbf5fd8743267abe33bed6d8b0fe6}\label{structScheduler__strong__APA__Node_ae86cbf5fd8743267abe33bed6d8b0fe6}} 
 \index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}!Base@{Base}}
@@ -56,35 +56,35 @@ S\+MP scheduler node.
 
 
 
-Definition at line 71 of file schedulerstrongapa.\+h.
-
-\mbox{\Hypertarget{structScheduler__strong__APA__Node_aed93ad80a3757ffbbe0a0d1b5426b3cc}\label{structScheduler__strong__APA__Node_aed93ad80a3757ffbbe0a0d1b5426b3cc}} 
-\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}!Node@{Node}}
-\index{Node@{Node}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}}
-\subsubsection{\texorpdfstring{Node}{Node}}
-{\footnotesize\ttfamily Chain\+\_\+\+Node Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+::\+Node}
-
-
-
-Chain node for \hyperlink{structScheduler__strong__APA__Context_ad850b98c29b7ab48bb7aff1a941fb331}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::all\+Nodes}. 
-
-
-
 Definition at line 66 of file schedulerstrongapa.\+h.
 
-\mbox{\Hypertarget{structScheduler__strong__APA__Node_a4ce1b844eefd015d98332df3695c4867}\label{structScheduler__strong__APA__Node_a4ce1b844eefd015d98332df3695c4867}} 
-\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}!unpin\+\_\+affinity@{unpin\+\_\+affinity}}
-\index{unpin\+\_\+affinity@{unpin\+\_\+affinity}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}}
-\subsubsection{\texorpdfstring{unpin\+\_\+affinity}{unpin\_affinity}}
-{\footnotesize\ttfamily Processor\+\_\+mask Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+::unpin\+\_\+affinity}
+\mbox{\Hypertarget{structScheduler__strong__APA__Node_a9008e9546186a6b294f41151bc5a0a38}\label{structScheduler__strong__APA__Node_a9008e9546186a6b294f41151bc5a0a38}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}!Chain@{Chain}}
+\index{Chain@{Chain}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}}
+\subsubsection{\texorpdfstring{Chain}{Chain}}
+{\footnotesize\ttfamily Chain\+\_\+\+Node Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+::\+Chain}
 
 
 
-The associated affinity set of this node to be used while unpinning the node. 
+Chain node for \hyperlink{structScheduler__strong__APA__Context_a9bf510496d095d8bca275f35030bb993}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+All\+\_\+nodes}. 
 
 
 
-Definition at line 82 of file schedulerstrongapa.\+h.
+Definition at line 71 of file schedulerstrongapa.\+h.
+
+\mbox{\Hypertarget{structScheduler__strong__APA__Node_a62a0611c52210e493da7d2f55dfd28ff}\label{structScheduler__strong__APA__Node_a62a0611c52210e493da7d2f55dfd28ff}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}!invoker@{invoker}}
+\index{invoker@{invoker}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}}
+\subsubsection{\texorpdfstring{invoker}{invoker}}
+{\footnotesize\ttfamily Per\+\_\+\+C\+P\+U\+\_\+\+Control$\ast$ Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+::invoker}
+
+
+
+C\+PU that this node would preempt in the backtracking part of \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready and \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+\+Enqueue. 
+
+
+
+Definition at line 78 of file schedulerstrongapa.\+h.
 
 
 

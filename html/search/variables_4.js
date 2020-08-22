@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unpin_5faffinity',['unpin_affinity',['../structScheduler__strong__APA__Node.html#a4ce1b844eefd015d98332df3695c4867',1,'Scheduler_strong_APA_Node']]]
+  ['struct',['Struct',['../structScheduler__strong__APA__Context.html#ac25debff84510636df8e42c5750ace15',1,'Scheduler_strong_APA_Context']]]
 ];

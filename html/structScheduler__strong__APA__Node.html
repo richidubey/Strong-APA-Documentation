@@ -74,39 +74,39 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aed93ad80a3757ffbbe0a0d1b5426b3cc"><td class="memItemLeft" align="right" valign="top">Chain_Node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Node.html#aed93ad80a3757ffbbe0a0d1b5426b3cc">Node</a></td></tr>
-<tr class="memdesc:aed93ad80a3757ffbbe0a0d1b5426b3cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chain node for <a class="el" href="structScheduler__strong__APA__Context.html#ad850b98c29b7ab48bb7aff1a941fb331" title="Chain of all the nodes present in the system. ">Scheduler_strong_APA_Context::allNodes</a>.  <a href="#aed93ad80a3757ffbbe0a0d1b5426b3cc">More...</a><br /></td></tr>
-<tr class="separator:aed93ad80a3757ffbbe0a0d1b5426b3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae86cbf5fd8743267abe33bed6d8b0fe6"><td class="memItemLeft" align="right" valign="top">Scheduler_SMP_Node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Node.html#ae86cbf5fd8743267abe33bed6d8b0fe6">Base</a></td></tr>
 <tr class="memdesc:ae86cbf5fd8743267abe33bed6d8b0fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">SMP scheduler node.  <a href="#ae86cbf5fd8743267abe33bed6d8b0fe6">More...</a><br /></td></tr>
 <tr class="separator:ae86cbf5fd8743267abe33bed6d8b0fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e8928b11f1738a11c228780eb849989"><td class="memItemLeft" align="right" valign="top">Processor_mask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Node.html#a2e8928b11f1738a11c228780eb849989">affinity</a></td></tr>
-<tr class="memdesc:a2e8928b11f1738a11c228780eb849989"><td class="mdescLeft">&#160;</td><td class="mdescRight">The associated affinity set of this node.  <a href="#a2e8928b11f1738a11c228780eb849989">More...</a><br /></td></tr>
-<tr class="separator:a2e8928b11f1738a11c228780eb849989"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ce1b844eefd015d98332df3695c4867"><td class="memItemLeft" align="right" valign="top">Processor_mask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Node.html#a4ce1b844eefd015d98332df3695c4867">unpin_affinity</a></td></tr>
-<tr class="memdesc:a4ce1b844eefd015d98332df3695c4867"><td class="mdescLeft">&#160;</td><td class="mdescRight">The associated affinity set of this node to be used while unpinning the node.  <a href="#a4ce1b844eefd015d98332df3695c4867">More...</a><br /></td></tr>
-<tr class="separator:a4ce1b844eefd015d98332df3695c4867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9008e9546186a6b294f41151bc5a0a38"><td class="memItemLeft" align="right" valign="top">Chain_Node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Node.html#a9008e9546186a6b294f41151bc5a0a38">Chain</a></td></tr>
+<tr class="memdesc:a9008e9546186a6b294f41151bc5a0a38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chain node for <a class="el" href="structScheduler__strong__APA__Context.html#a9bf510496d095d8bca275f35030bb993" title="Chain of all the nodes present in the system. ">Scheduler_strong_APA_Context::All_nodes</a>.  <a href="#a9008e9546186a6b294f41151bc5a0a38">More...</a><br /></td></tr>
+<tr class="separator:a9008e9546186a6b294f41151bc5a0a38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a0611c52210e493da7d2f55dfd28ff"><td class="memItemLeft" align="right" valign="top">Per_CPU_Control *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Node.html#a62a0611c52210e493da7d2f55dfd28ff">invoker</a></td></tr>
+<tr class="memdesc:a62a0611c52210e493da7d2f55dfd28ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU that this node would preempt in the backtracking part of _Scheduler_strong_APA_Get_highest_ready and _Scheduler_strong_APA_Do_Enqueue.  <a href="#a62a0611c52210e493da7d2f55dfd28ff">More...</a><br /></td></tr>
+<tr class="separator:a62a0611c52210e493da7d2f55dfd28ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7672e477658785808b0069f11bc4d24e"><td class="memItemLeft" align="right" valign="top">Processor_mask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Node.html#a7672e477658785808b0069f11bc4d24e">Affinity</a></td></tr>
+<tr class="memdesc:a7672e477658785808b0069f11bc4d24e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The associated affinity set of this node.  <a href="#a7672e477658785808b0069f11bc4d24e">More...</a><br /></td></tr>
+<tr class="separator:a7672e477658785808b0069f11bc4d24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Scheduler node specialization for Strong APA schedulers. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00060">60</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00062">62</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a2e8928b11f1738a11c228780eb849989"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e8928b11f1738a11c228780eb849989">&#9670;&nbsp;</a></span>affinity</h2>
+<a id="a7672e477658785808b0069f11bc4d24e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7672e477658785808b0069f11bc4d24e">&#9670;&nbsp;</a></span>Affinity</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Processor_mask Scheduler_strong_APA_Node::affinity</td>
+          <td class="memname">Processor_mask Scheduler_strong_APA_Node::Affinity</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>The associated affinity set of this node. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00076">76</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00083">83</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 
 </div>
 </div>
@@ -124,43 +124,43 @@ Public Attributes</h2></td></tr>
 
 <p>SMP scheduler node. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00071">71</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
-
-</div>
-</div>
-<a id="aed93ad80a3757ffbbe0a0d1b5426b3cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed93ad80a3757ffbbe0a0d1b5426b3cc">&#9670;&nbsp;</a></span>Node</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Chain_Node Scheduler_strong_APA_Node::Node</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Chain node for <a class="el" href="structScheduler__strong__APA__Context.html#ad850b98c29b7ab48bb7aff1a941fb331" title="Chain of all the nodes present in the system. ">Scheduler_strong_APA_Context::allNodes</a>. </p>
-
 <p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00066">66</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 
 </div>
 </div>
-<a id="a4ce1b844eefd015d98332df3695c4867"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ce1b844eefd015d98332df3695c4867">&#9670;&nbsp;</a></span>unpin_affinity</h2>
+<a id="a9008e9546186a6b294f41151bc5a0a38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9008e9546186a6b294f41151bc5a0a38">&#9670;&nbsp;</a></span>Chain</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Processor_mask Scheduler_strong_APA_Node::unpin_affinity</td>
+          <td class="memname">Chain_Node Scheduler_strong_APA_Node::Chain</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The associated affinity set of this node to be used while unpinning the node. </p>
+<p>Chain node for <a class="el" href="structScheduler__strong__APA__Context.html#a9bf510496d095d8bca275f35030bb993" title="Chain of all the nodes present in the system. ">Scheduler_strong_APA_Context::All_nodes</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00082">82</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00071">71</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+
+</div>
+</div>
+<a id="a62a0611c52210e493da7d2f55dfd28ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62a0611c52210e493da7d2f55dfd28ff">&#9670;&nbsp;</a></span>invoker</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Per_CPU_Control* Scheduler_strong_APA_Node::invoker</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CPU that this node would preempt in the backtracking part of _Scheduler_strong_APA_Get_highest_ready and _Scheduler_strong_APA_Do_Enqueue. </p>
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00078">78</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 
 </div>
 </div>

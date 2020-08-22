@@ -1,0 +1,77 @@
+\hypertarget{structScheduler__strong__APA__Struct}{}\section{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct Struct Reference}
+\label{structScheduler__strong__APA__Struct}\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct}}
+
+
+Struct for each index of the variable size arrays.  
+
+
+
+
+{\ttfamily \#include $<$schedulerstrongapa.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Scheduler\+\_\+\+Node $\ast$ \hyperlink{structScheduler__strong__APA__Struct_a9ab1e221dcee9eaebb131158da9a338e}{caller}
+\begin{DoxyCompactList}\small\item\em The node that called this C\+PU, i.\+e. \end{DoxyCompactList}\item 
+Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$ \hyperlink{structScheduler__strong__APA__Struct_a83534c31f08a040a5a24b48007f17a09}{cpu}
+\begin{DoxyCompactList}\small\item\em Cpu at the index of \hyperlink{structScheduler__strong__APA__Context_ac25debff84510636df8e42c5750ace15}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+Struct} in Queue implementation. \end{DoxyCompactList}\item 
+bool \hyperlink{structScheduler__strong__APA__Struct_ab611e883dcef8c5226f00c734876b132}{visited}
+\begin{DoxyCompactList}\small\item\em Indicates if the C\+PU at the index of \hyperlink{structScheduler__strong__APA__Context_ac25debff84510636df8e42c5750ace15}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+Struct} is already added to the Queue or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Struct for each index of the variable size arrays. 
+
+Definition at line 90 of file schedulerstrongapa.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structScheduler__strong__APA__Struct_a9ab1e221dcee9eaebb131158da9a338e}\label{structScheduler__strong__APA__Struct_a9ab1e221dcee9eaebb131158da9a338e}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct}!caller@{caller}}
+\index{caller@{caller}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct}}
+\subsubsection{\texorpdfstring{caller}{caller}}
+{\footnotesize\ttfamily Scheduler\+\_\+\+Node$\ast$ Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct\+::caller}
+
+
+
+The node that called this C\+PU, i.\+e. 
+
+a node which has the cpu at the index of \hyperlink{structScheduler__strong__APA__Context_ac25debff84510636df8e42c5750ace15}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+Struct} in its affinity set. 
+
+Definition at line 97 of file schedulerstrongapa.\+h.
+
+\mbox{\Hypertarget{structScheduler__strong__APA__Struct_a83534c31f08a040a5a24b48007f17a09}\label{structScheduler__strong__APA__Struct_a83534c31f08a040a5a24b48007f17a09}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct}!cpu@{cpu}}
+\index{cpu@{cpu}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct}}
+\subsubsection{\texorpdfstring{cpu}{cpu}}
+{\footnotesize\ttfamily Per\+\_\+\+C\+P\+U\+\_\+\+Control$\ast$ Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct\+::cpu}
+
+
+
+Cpu at the index of \hyperlink{structScheduler__strong__APA__Context_ac25debff84510636df8e42c5750ace15}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+Struct} in Queue implementation. 
+
+
+
+Definition at line 103 of file schedulerstrongapa.\+h.
+
+\mbox{\Hypertarget{structScheduler__strong__APA__Struct_ab611e883dcef8c5226f00c734876b132}\label{structScheduler__strong__APA__Struct_ab611e883dcef8c5226f00c734876b132}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct}!visited@{visited}}
+\index{visited@{visited}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct}}
+\subsubsection{\texorpdfstring{visited}{visited}}
+{\footnotesize\ttfamily bool Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct\+::visited}
+
+
+
+Indicates if the C\+PU at the index of \hyperlink{structScheduler__strong__APA__Context_ac25debff84510636df8e42c5750ace15}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+Struct} is already added to the Queue or not. 
+
+
+
+Definition at line 110 of file schedulerstrongapa.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{schedulerstrongapa_8h}{schedulerstrongapa.\+h}\end{DoxyCompactItemize}

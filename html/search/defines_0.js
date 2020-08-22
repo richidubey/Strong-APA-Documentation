@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scheduler_5fstrong_5fapa_5fentry_5fpoints',['SCHEDULER_STRONG_APA_ENTRY_POINTS',['../schedulerstrongapa_8h.html#a98b37281082c0be47dc489eed554c5cc',1,'schedulerstrongapa.h']]]
+  ['strong_5fscheduler_5fnode_5fof_5fchain',['STRONG_SCHEDULER_NODE_OF_CHAIN',['../schedulerstrongapa_8h.html#a28314dd6eabc5f70f3dc43a85a1609ee',1,'schedulerstrongapa.h']]]
 ];
