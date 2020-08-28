@@ -2,68 +2,89 @@
 \label{structScheduler__strong__APA__CPU}\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}}
 
 
-C\+PU Structure for Strong A\+PA scheduler.  
+C\+PU related variables and a C\+P\+U\+\_\+\+Control to implement B\+FS.  
 
 
 
 
 {\ttfamily \#include $<$schedulerstrongapa.\+h$>$}
 
-
-
-Collaboration diagram for Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=226pt]{structScheduler__strong__APA__CPU__coll__graph}
-\end{center}
-\end{figure}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-Chain\+\_\+\+Control \hyperlink{structScheduler__strong__APA__CPU_adf4eebd8db4f5b52fdfe7b352c8bddc7}{affine\+Node}
-\begin{DoxyCompactList}\small\item\em Chain of nodes that have affinity to this C\+PU. \end{DoxyCompactList}\item 
-\hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node} $\ast$ \hyperlink{structScheduler__strong__APA__CPU_aa2f3c81477c08ef4188e5e24f054dffb}{scheduled}
-\begin{DoxyCompactList}\small\item\em The scheduled thread of the corresponding processor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$ \hyperlink{structScheduler__strong__APA__CPU_ad8faf7fed335de658d1e37061c4cabe1}{cpu}
+\begin{DoxyCompactList}\small\item\em C\+PU in a queue. \end{DoxyCompactList}\item 
+Scheduler\+\_\+\+Node $\ast$ \hyperlink{structScheduler__strong__APA__CPU_a0fbe6687ca055b673515e2e3b1f023ac}{preempting\+\_\+node}
+\begin{DoxyCompactList}\small\item\em The node that would preempt this C\+PU. \end{DoxyCompactList}\item 
+bool \hyperlink{structScheduler__strong__APA__CPU_a02c57f2d305f2b6e2a63a38842bb0b6c}{visited}
+\begin{DoxyCompactList}\small\item\em Whether or not this cpu has been added to the queue (visited in B\+FS). \end{DoxyCompactList}\item 
+Scheduler\+\_\+\+Node $\ast$ \hyperlink{structScheduler__strong__APA__CPU_aecd8c97ce737bc7ad42bd8b77e84ad8b}{executing}
+\begin{DoxyCompactList}\small\item\em The node currently executing on this cpu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-C\+PU Structure for Strong A\+PA scheduler. 
+C\+PU related variables and a C\+P\+U\+\_\+\+Control to implement B\+FS. 
 
-This structure stores nodes associated with a C\+PU and the currently scheduled node. 
-
-Definition at line 42 of file schedulerstrongapa.\+h.
+Definition at line 101 of file schedulerstrongapa.\+h.
 
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{structScheduler__strong__APA__CPU_adf4eebd8db4f5b52fdfe7b352c8bddc7}\label{structScheduler__strong__APA__CPU_adf4eebd8db4f5b52fdfe7b352c8bddc7}} 
-\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}!affine\+Node@{affine\+Node}}
-\index{affine\+Node@{affine\+Node}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}}
-\subsubsection{\texorpdfstring{affine\+Node}{affineNode}}
-{\footnotesize\ttfamily Chain\+\_\+\+Control Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+P\+U\+::affine\+Node}
+\mbox{\Hypertarget{structScheduler__strong__APA__CPU_ad8faf7fed335de658d1e37061c4cabe1}\label{structScheduler__strong__APA__CPU_ad8faf7fed335de658d1e37061c4cabe1}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}!cpu@{cpu}}
+\index{cpu@{cpu}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}}
+\subsubsection{\texorpdfstring{cpu}{cpu}}
+{\footnotesize\ttfamily Per\+\_\+\+C\+P\+U\+\_\+\+Control$\ast$ Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+P\+U\+::cpu}
 
 
 
-Chain of nodes that have affinity to this C\+PU. 
+C\+PU in a queue. 
 
 
 
-Definition at line 46 of file schedulerstrongapa.\+h.
+Definition at line 106 of file schedulerstrongapa.\+h.
 
-\mbox{\Hypertarget{structScheduler__strong__APA__CPU_aa2f3c81477c08ef4188e5e24f054dffb}\label{structScheduler__strong__APA__CPU_aa2f3c81477c08ef4188e5e24f054dffb}} 
-\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}!scheduled@{scheduled}}
-\index{scheduled@{scheduled}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}}
-\subsubsection{\texorpdfstring{scheduled}{scheduled}}
-{\footnotesize\ttfamily \hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}$\ast$ Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+P\+U\+::scheduled}
-
-
-
-The scheduled thread of the corresponding processor. 
+\mbox{\Hypertarget{structScheduler__strong__APA__CPU_aecd8c97ce737bc7ad42bd8b77e84ad8b}\label{structScheduler__strong__APA__CPU_aecd8c97ce737bc7ad42bd8b77e84ad8b}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}!executing@{executing}}
+\index{executing@{executing}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}}
+\subsubsection{\texorpdfstring{executing}{executing}}
+{\footnotesize\ttfamily Scheduler\+\_\+\+Node$\ast$ Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+P\+U\+::executing}
 
 
 
-Definition at line 51 of file schedulerstrongapa.\+h.
+The node currently executing on this cpu. 
+
+
+
+Definition at line 122 of file schedulerstrongapa.\+h.
+
+\mbox{\Hypertarget{structScheduler__strong__APA__CPU_a0fbe6687ca055b673515e2e3b1f023ac}\label{structScheduler__strong__APA__CPU_a0fbe6687ca055b673515e2e3b1f023ac}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}!preempting\+\_\+node@{preempting\+\_\+node}}
+\index{preempting\+\_\+node@{preempting\+\_\+node}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}}
+\subsubsection{\texorpdfstring{preempting\+\_\+node}{preempting\_node}}
+{\footnotesize\ttfamily Scheduler\+\_\+\+Node$\ast$ Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+P\+U\+::preempting\+\_\+node}
+
+
+
+The node that would preempt this C\+PU. 
+
+
+
+Definition at line 111 of file schedulerstrongapa.\+h.
+
+\mbox{\Hypertarget{structScheduler__strong__APA__CPU_a02c57f2d305f2b6e2a63a38842bb0b6c}\label{structScheduler__strong__APA__CPU_a02c57f2d305f2b6e2a63a38842bb0b6c}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}!visited@{visited}}
+\index{visited@{visited}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}}
+\subsubsection{\texorpdfstring{visited}{visited}}
+{\footnotesize\ttfamily bool Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+P\+U\+::visited}
+
+
+
+Whether or not this cpu has been added to the queue (visited in B\+FS). 
+
+
+
+Definition at line 117 of file schedulerstrongapa.\+h.
 
 
 

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['caller',['caller',['../structScheduler__strong__APA__Struct.html#a9ab1e221dcee9eaebb131158da9a338e',1,'Scheduler_strong_APA_Struct']]],
-  ['chain',['Chain',['../structScheduler__strong__APA__Node.html#a9008e9546186a6b294f41151bc5a0a38',1,'Scheduler_strong_APA_Node']]],
-  ['cpu',['cpu',['../structScheduler__strong__APA__Struct.html#a83534c31f08a040a5a24b48007f17a09',1,'Scheduler_strong_APA_Struct']]]
+  ['cpu',['CPU',['../structScheduler__strong__APA__Context.html#afdc7dcc1fef07a07130a8ddde0895e9c',1,'Scheduler_strong_APA_Context::CPU()'],['../structScheduler__strong__APA__CPU.html#ad8faf7fed335de658d1e37061c4cabe1',1,'Scheduler_strong_APA_CPU::cpu()']]],
+  ['cpu_5fto_5fpreempt',['cpu_to_preempt',['../structScheduler__strong__APA__Node.html#af88ba145a84fd95d104f2bb48e462ed2',1,'Scheduler_strong_APA_Node']]]
 ];

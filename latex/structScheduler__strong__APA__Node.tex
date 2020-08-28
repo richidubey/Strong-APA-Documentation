@@ -14,9 +14,9 @@ Scheduler node specialization for Strong A\+PA schedulers.
 \item 
 Scheduler\+\_\+\+S\+M\+P\+\_\+\+Node \hyperlink{structScheduler__strong__APA__Node_ae86cbf5fd8743267abe33bed6d8b0fe6}{Base}
 \begin{DoxyCompactList}\small\item\em S\+MP scheduler node. \end{DoxyCompactList}\item 
-Chain\+\_\+\+Node \hyperlink{structScheduler__strong__APA__Node_a9008e9546186a6b294f41151bc5a0a38}{Chain}
-\begin{DoxyCompactList}\small\item\em Chain node for \hyperlink{structScheduler__strong__APA__Context_a9bf510496d095d8bca275f35030bb993}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+All\+\_\+nodes}. \end{DoxyCompactList}\item 
-Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$ \hyperlink{structScheduler__strong__APA__Node_a62a0611c52210e493da7d2f55dfd28ff}{invoker}
+Chain\+\_\+\+Node \hyperlink{structScheduler__strong__APA__Node_a275ee9d3d456dcfd308e2eab306bf581}{Ready\+\_\+node}
+\begin{DoxyCompactList}\small\item\em Chain node for \hyperlink{structScheduler__strong__APA__Context_a0c445c35a07b8aa14f9d76c6dfb4916c}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+Ready}. \end{DoxyCompactList}\item 
+Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$ \hyperlink{structScheduler__strong__APA__Node_af88ba145a84fd95d104f2bb48e462ed2}{cpu\+\_\+to\+\_\+preempt}
 \begin{DoxyCompactList}\small\item\em C\+PU that this node would preempt in the backtracking part of \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Get\+\_\+highest\+\_\+ready and \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+\+Enqueue. \end{DoxyCompactList}\item 
 Processor\+\_\+mask \hyperlink{structScheduler__strong__APA__Node_a7672e477658785808b0069f11bc4d24e}{Affinity}
 \begin{DoxyCompactList}\small\item\em The associated affinity set of this node. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -25,7 +25,7 @@ Processor\+\_\+mask \hyperlink{structScheduler__strong__APA__Node_a7672e47765878
 \subsection{Detailed Description}
 Scheduler node specialization for Strong A\+PA schedulers. 
 
-Definition at line 62 of file schedulerstrongapa.\+h.
+Definition at line 73 of file schedulerstrongapa.\+h.
 
 
 
@@ -42,7 +42,7 @@ The associated affinity set of this node.
 
 
 
-Definition at line 83 of file schedulerstrongapa.\+h.
+Definition at line 94 of file schedulerstrongapa.\+h.
 
 \mbox{\Hypertarget{structScheduler__strong__APA__Node_ae86cbf5fd8743267abe33bed6d8b0fe6}\label{structScheduler__strong__APA__Node_ae86cbf5fd8743267abe33bed6d8b0fe6}} 
 \index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}!Base@{Base}}
@@ -56,27 +56,13 @@ S\+MP scheduler node.
 
 
 
-Definition at line 66 of file schedulerstrongapa.\+h.
+Definition at line 77 of file schedulerstrongapa.\+h.
 
-\mbox{\Hypertarget{structScheduler__strong__APA__Node_a9008e9546186a6b294f41151bc5a0a38}\label{structScheduler__strong__APA__Node_a9008e9546186a6b294f41151bc5a0a38}} 
-\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}!Chain@{Chain}}
-\index{Chain@{Chain}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}}
-\subsubsection{\texorpdfstring{Chain}{Chain}}
-{\footnotesize\ttfamily Chain\+\_\+\+Node Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+::\+Chain}
-
-
-
-Chain node for \hyperlink{structScheduler__strong__APA__Context_a9bf510496d095d8bca275f35030bb993}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+All\+\_\+nodes}. 
-
-
-
-Definition at line 71 of file schedulerstrongapa.\+h.
-
-\mbox{\Hypertarget{structScheduler__strong__APA__Node_a62a0611c52210e493da7d2f55dfd28ff}\label{structScheduler__strong__APA__Node_a62a0611c52210e493da7d2f55dfd28ff}} 
-\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}!invoker@{invoker}}
-\index{invoker@{invoker}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}}
-\subsubsection{\texorpdfstring{invoker}{invoker}}
-{\footnotesize\ttfamily Per\+\_\+\+C\+P\+U\+\_\+\+Control$\ast$ Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+::invoker}
+\mbox{\Hypertarget{structScheduler__strong__APA__Node_af88ba145a84fd95d104f2bb48e462ed2}\label{structScheduler__strong__APA__Node_af88ba145a84fd95d104f2bb48e462ed2}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}!cpu\+\_\+to\+\_\+preempt@{cpu\+\_\+to\+\_\+preempt}}
+\index{cpu\+\_\+to\+\_\+preempt@{cpu\+\_\+to\+\_\+preempt}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}}
+\subsubsection{\texorpdfstring{cpu\+\_\+to\+\_\+preempt}{cpu\_to\_preempt}}
+{\footnotesize\ttfamily Per\+\_\+\+C\+P\+U\+\_\+\+Control$\ast$ Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+::cpu\+\_\+to\+\_\+preempt}
 
 
 
@@ -84,7 +70,21 @@ C\+PU that this node would preempt in the backtracking part of \+\_\+\+Scheduler
 
 
 
-Definition at line 78 of file schedulerstrongapa.\+h.
+Definition at line 89 of file schedulerstrongapa.\+h.
+
+\mbox{\Hypertarget{structScheduler__strong__APA__Node_a275ee9d3d456dcfd308e2eab306bf581}\label{structScheduler__strong__APA__Node_a275ee9d3d456dcfd308e2eab306bf581}} 
+\index{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}!Ready\+\_\+node@{Ready\+\_\+node}}
+\index{Ready\+\_\+node@{Ready\+\_\+node}!Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node@{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}}
+\subsubsection{\texorpdfstring{Ready\+\_\+node}{Ready\_node}}
+{\footnotesize\ttfamily Chain\+\_\+\+Node Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+::\+Ready\+\_\+node}
+
+
+
+Chain node for \hyperlink{structScheduler__strong__APA__Context_a0c445c35a07b8aa14f9d76c6dfb4916c}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+Ready}. 
+
+
+
+Definition at line 82 of file schedulerstrongapa.\+h.
 
 
 

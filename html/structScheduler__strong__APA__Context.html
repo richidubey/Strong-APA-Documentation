@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Scheduler Strong APA
-   &#160;<span id="projectnumber">Pre-Release</span>
+   &#160;<span id="projectnumber">Release</span>
    </div>
   </td>
  </tr>
@@ -67,7 +67,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Scheduler context for Strong APA scheduler.  
+<p>Scheduler context and node definition for Strong APA scheduler.  
  <a href="structScheduler__strong__APA__Context.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>&gt;</code></p>
@@ -76,47 +76,26 @@ Collaboration diagram for Scheduler_strong_APA_Context:</div>
 <div class="dyncontent">
 <div class="center"><img src="structScheduler__strong__APA__Context__coll__graph.png" border="0" usemap="#Scheduler__strong__APA__Context_coll__map" alt="Collaboration graph"/></div>
 <map name="Scheduler__strong__APA__Context_coll__map" id="Scheduler__strong__APA__Context_coll__map">
-<area shape="rect" id="node2" href="structScheduler__strong__APA__Struct.html" title="Struct for each index of the variable size arrays. " alt="" coords="5,5,163,47"/>
+<area shape="rect" id="node2" href="structScheduler__strong__APA__CPU.html" title="CPU related variables and a CPU_Control to implement BFS. " alt="" coords="5,5,199,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a55755b445b7e7beaf1b87b178521e615"><td class="memItemLeft" align="right" valign="top">Scheduler_SMP_Context&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Context.html#a55755b445b7e7beaf1b87b178521e615">Base</a></td></tr>
-<tr class="memdesc:a55755b445b7e7beaf1b87b178521e615"><td class="mdescLeft">&#160;</td><td class="mdescRight">SMP Context to refer to SMP implementation code.  <a href="#a55755b445b7e7beaf1b87b178521e615">More...</a><br /></td></tr>
 <tr class="separator:a55755b445b7e7beaf1b87b178521e615"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bf510496d095d8bca275f35030bb993"><td class="memItemLeft" align="right" valign="top">Chain_Control&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Context.html#a9bf510496d095d8bca275f35030bb993">All_nodes</a></td></tr>
-<tr class="memdesc:a9bf510496d095d8bca275f35030bb993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chain of all the nodes present in the system.  <a href="#a9bf510496d095d8bca275f35030bb993">More...</a><br /></td></tr>
-<tr class="separator:a9bf510496d095d8bca275f35030bb993"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac25debff84510636df8e42c5750ace15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structScheduler__strong__APA__Struct.html">Scheduler_strong_APA_Struct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Context.html#ac25debff84510636df8e42c5750ace15">Struct</a> [RTEMS_ZERO_LENGTH_ARRAY]</td></tr>
-<tr class="memdesc:ac25debff84510636df8e42c5750ace15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct with important variables for each cpu.  <a href="#ac25debff84510636df8e42c5750ace15">More...</a><br /></td></tr>
-<tr class="separator:ac25debff84510636df8e42c5750ace15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c445c35a07b8aa14f9d76c6dfb4916c"><td class="memItemLeft" align="right" valign="top">Chain_Control&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Context.html#a0c445c35a07b8aa14f9d76c6dfb4916c">Ready</a></td></tr>
+<tr class="memdesc:a0c445c35a07b8aa14f9d76c6dfb4916c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chain of all the ready and scheduled nodes present in the Strong APA scheduler.  <a href="#a0c445c35a07b8aa14f9d76c6dfb4916c">More...</a><br /></td></tr>
+<tr class="separator:a0c445c35a07b8aa14f9d76c6dfb4916c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdc7dcc1fef07a07130a8ddde0895e9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structScheduler__strong__APA__CPU.html">Scheduler_strong_APA_CPU</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__Context.html#afdc7dcc1fef07a07130a8ddde0895e9c">CPU</a> [RTEMS_ZERO_LENGTH_ARRAY]</td></tr>
+<tr class="memdesc:afdc7dcc1fef07a07130a8ddde0895e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct with important variables for each cpu.  <a href="#afdc7dcc1fef07a07130a8ddde0895e9c">More...</a><br /></td></tr>
+<tr class="separator:afdc7dcc1fef07a07130a8ddde0895e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Scheduler context for Strong APA scheduler. </p>
-<p>Has the structure for scheduler context and Node defintion for Strong APA scheduler </p>
+<div class="textblock"><p>Scheduler context and node definition for Strong APA scheduler. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00119">119</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00128">128</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a9bf510496d095d8bca275f35030bb993"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bf510496d095d8bca275f35030bb993">&#9670;&nbsp;</a></span>All_nodes</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Chain_Control Scheduler_strong_APA_Context::All_nodes</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Chain of all the nodes present in the system. </p>
-<p>Accounts for ready and scheduled nodes. </p>
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00130">130</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
-
-</div>
-</div>
 <a id="a55755b445b7e7beaf1b87b178521e615"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55755b445b7e7beaf1b87b178521e615">&#9670;&nbsp;</a></span>Base</h2>
 
@@ -128,28 +107,45 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section see"><dt>See also</dt><dd>Scheduler_SMP_Context. </dd></dl>
 
-<p>SMP Context to refer to SMP implementation code. </p>
-
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00124">124</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00132">132</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 
 </div>
 </div>
-<a id="ac25debff84510636df8e42c5750ace15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac25debff84510636df8e42c5750ace15">&#9670;&nbsp;</a></span>Struct</h2>
+<a id="afdc7dcc1fef07a07130a8ddde0895e9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdc7dcc1fef07a07130a8ddde0895e9c">&#9670;&nbsp;</a></span>CPU</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structScheduler__strong__APA__Struct.html">Scheduler_strong_APA_Struct</a> Scheduler_strong_APA_Context::Struct[RTEMS_ZERO_LENGTH_ARRAY]</td>
+          <td class="memname"><a class="el" href="structScheduler__strong__APA__CPU.html">Scheduler_strong_APA_CPU</a> Scheduler_strong_APA_Context::CPU[RTEMS_ZERO_LENGTH_ARRAY]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Struct with important variables for each cpu. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00135">135</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00143">143</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+
+</div>
+</div>
+<a id="a0c445c35a07b8aa14f9d76c6dfb4916c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c445c35a07b8aa14f9d76c6dfb4916c">&#9670;&nbsp;</a></span>Ready</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Chain_Control Scheduler_strong_APA_Context::Ready</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Chain of all the ready and scheduled nodes present in the Strong APA scheduler. </p>
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00138">138</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 
 </div>
 </div>

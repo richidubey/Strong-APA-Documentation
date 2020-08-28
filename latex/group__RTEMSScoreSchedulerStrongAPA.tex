@@ -17,10 +17,10 @@ file \hyperlink{schedulerstrongapa_8h}{schedulerstrongapa.\+h}
 \item 
 struct \hyperlink{structScheduler__strong__APA__Node}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node}
 \begin{DoxyCompactList}\small\item\em Scheduler node specialization for Strong A\+PA schedulers. \end{DoxyCompactList}\item 
-struct \hyperlink{structScheduler__strong__APA__Struct}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Struct}
-\begin{DoxyCompactList}\small\item\em Struct for each index of the variable size arrays. \end{DoxyCompactList}\item 
+struct \hyperlink{structScheduler__strong__APA__CPU}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+C\+PU}
+\begin{DoxyCompactList}\small\item\em C\+PU related variables and a C\+P\+U\+\_\+\+Control to implement B\+FS. \end{DoxyCompactList}\item 
 struct \hyperlink{structScheduler__strong__APA__Context}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context}
-\begin{DoxyCompactList}\small\item\em Scheduler context for Strong A\+PA scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Scheduler context and node definition for Strong A\+PA scheduler. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,31 +32,31 @@ struct \hyperlink{structScheduler__strong__APA__Context}{Scheduler\+\_\+strong\+
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gafcd6fde337d7542784698219322b6365}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Initialize} (const Scheduler\+\_\+\+Control $\ast$scheduler)
-\begin{DoxyCompactList}\small\item\em Initializes the Strong\+\_\+\+A\+PA scheduler. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gad6d1206459f21c74882cd2fb3ddd4aae}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
-\begin{DoxyCompactList}\small\item\em Called when a node yields the processor. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gae7875a7e75f2615c6603155126d437db}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
-\begin{DoxyCompactList}\small\item\em Blocks a node. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga8e6ee051e6a359186fd6964051db69e2}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
-\begin{DoxyCompactList}\small\item\em Unblocks a node. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gafd1bbcb35f99dd53b4ffe2fe52030cdc}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node)
-\begin{DoxyCompactList}\small\item\em Updates the priority of the node. \end{DoxyCompactList}\item 
-bool \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gad863eddc3fa4e2d785fb64af6505e90b}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
-\begin{DoxyCompactList}\small\item\em Calls the S\+MP Ask\+\_\+for\+\_\+help. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga7809e64065ec5d291f3dc82220a68d3f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
-\begin{DoxyCompactList}\small\item\em To Reconsider the help request. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gaf43eb65a6fbbe2826ca4cec68a930cb5}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node, Thread\+\_\+\+Scheduler\+\_\+state next\+\_\+state)
-\begin{DoxyCompactList}\small\item\em Withdraws a node. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga6ac09dac24785561fd7c5ee5bbd8f5ca}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$idle)
-\begin{DoxyCompactList}\small\item\em Adds a processor to the scheduler instance. \end{DoxyCompactList}\item 
-Thread\+\_\+\+Control $\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga91dc29dcdeea35e3329623be7a798e39}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor} (const Scheduler\+\_\+\+Control $\ast$scheduler, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
-\begin{DoxyCompactList}\small\item\em Removes a processor from the scheduler instance. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initializes the scheduler. \end{DoxyCompactList}\item 
 void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga1cde4345d4dc0b5a37a696fa446bb47e}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize} (const Scheduler\+\_\+\+Control $\ast$scheduler, Scheduler\+\_\+\+Node $\ast$node, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Priority\+\_\+\+Control priority)
 \begin{DoxyCompactList}\small\item\em Initializes the node with the given priority. \end{DoxyCompactList}\item 
-void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga218140a63c8168bd7a031ecd1622ac70}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$idle, Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
-\begin{DoxyCompactList}\small\item\em Starts an idle thread on a C\+PU. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga0f3ca9f9dcaff88a5df871622caf5e3f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em Blocks the thread. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga6b96ab0939d82ee5813092159265840e}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em Unblocks the thread. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga3cdc0079d2d16a392834bd03b5115ad9}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em Updates the priority of the node. \end{DoxyCompactList}\item 
+bool \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gad863eddc3fa4e2d785fb64af6505e90b}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em Asks for help. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga7809e64065ec5d291f3dc82220a68d3f}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em Reconsiders help request. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gaf43eb65a6fbbe2826ca4cec68a930cb5}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node, Thread\+\_\+\+Scheduler\+\_\+state next\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Withdraws the node. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga6ac09dac24785561fd7c5ee5bbd8f5ca}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Add\+\_\+processor} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$idle)
+\begin{DoxyCompactList}\small\item\em Adds the idle thread to a processor. \end{DoxyCompactList}\item 
+Thread\+\_\+\+Control $\ast$ \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gac83f4ab63b404cdfea31e572fa9590a5}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor} (const Scheduler\+\_\+\+Control $\ast$scheduler, struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
+\begin{DoxyCompactList}\small\item\em Removes an idle thread from the given cpu. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga0720c2d79f2b6dd8e91d19879f72b8c7}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$the\+\_\+thread, Scheduler\+\_\+\+Node $\ast$node)
+\begin{DoxyCompactList}\small\item\em Performs a yield operation. \end{DoxyCompactList}\item 
+void \hyperlink{group__RTEMSScoreSchedulerStrongAPA_gaaf3d646f61984f8a69ff1850a020fa1b}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$idle, struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$cpu)
+\begin{DoxyCompactList}\small\item\em Starts an idle thread. \end{DoxyCompactList}\item 
 bool \hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity} (const Scheduler\+\_\+\+Control $\ast$scheduler, Thread\+\_\+\+Control $\ast$thread, Scheduler\+\_\+\+Node $\ast$node\+\_\+base, const Processor\+\_\+mask $\ast$affinity)
-\begin{DoxyCompactList}\small\item\em Sets the affinity of the  to . \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the affinity . \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -64,7 +64,7 @@ Strong A\+PA Scheduler.
 
 This is an implementation of the Strong A\+PA scheduler defined by Cerqueira et al. in Linux\textquotesingle{}s Processor Affinity A\+PI, Refined\+: Shifting Real-\/\+Time Tasks Towards Higher Schedulability.
 
-This is an implementation of the Strong A\+PA scheduler defined by Cerqueira et al. in Linux\textquotesingle{}s Processor Affinity A\+PI, Refined\+: Shifting Real-\/\+Time Tasks Towards Higher Schedulability. 
+The scheduled and ready nodes are accessed via the \hyperlink{structScheduler__strong__APA__Context_a0c445c35a07b8aa14f9d76c6dfb4916c}{Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Context\+::\+Ready} which helps in backtracking when a node which is executing on a C\+PU gets blocked. New node is allocated to the cpu by checking all the executing nodes in the affinity set of the node and the subsequent nodes executing on the processors in its affinity set. 
 
 \subsection{Macro Definition Documentation}
 \mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_ga98b37281082c0be47dc489eed554c5cc}\label{group__RTEMSScoreSchedulerStrongAPA_ga98b37281082c0be47dc489eed554c5cc}} 
@@ -106,7 +106,7 @@ Entry points for the Strong A\+PA Scheduler.
 
 
 
-Definition at line 143 of file schedulerstrongapa.\+h.
+Definition at line 151 of file schedulerstrongapa.\+h.
 
 \mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_gab917bac4c45882604043daa2f4fafcfb}\label{group__RTEMSScoreSchedulerStrongAPA_gab917bac4c45882604043daa2f4fafcfb}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+A\+P\+A\+\_\+\+M\+A\+X\+I\+M\+U\+M\+\_\+\+P\+R\+I\+O\+R\+I\+TY@{S\+C\+H\+E\+D\+U\+L\+E\+R\+\_\+\+S\+T\+R\+O\+N\+G\+\_\+\+A\+P\+A\+\_\+\+M\+A\+X\+I\+M\+U\+M\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
@@ -116,7 +116,7 @@ Definition at line 143 of file schedulerstrongapa.\+h.
 
 
 
-Definition at line 138 of file schedulerstrongapa.\+h.
+Definition at line 146 of file schedulerstrongapa.\+h.
 
 
 
@@ -129,20 +129,18 @@ Definition at line 138 of file schedulerstrongapa.\+h.
 
 
 
-Adds a processor to the scheduler instance. 
-
-and allocates an idle thread to the processor.
+Adds the idle thread to a processor. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em scheduler} & The scheduler control instance. \\
+\begin{DoxyParams}[1]{Parameters}
+ & {\em scheduler} & The scheduler control instance. \\
 \hline
-{\em idle} & Idle thread to be allocated to the processor \\
+\mbox{\tt in,out}  & {\em The} & idle thread to add to the processor. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 837 of file schedulerstrongapa.\+c.
+Definition at line 880 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_gad863eddc3fa4e2d785fb64af6505e90b}\label{group__RTEMSScoreSchedulerStrongAPA_gad863eddc3fa4e2d785fb64af6505e90b}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Ask\+\_\+for\+\_\+help}}
@@ -152,45 +150,50 @@ Definition at line 837 of file schedulerstrongapa.\+c.
 
 
 
-Calls the S\+MP Ask\+\_\+for\+\_\+help. 
+Asks for help. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em scheduler} & The scheduler control instance. \\
 \hline
-{\em thread} & Thread correspoding to the  that asks for help. \\
+{\em the\+\_\+thread} & The thread that asks for help. \\
 \hline
-{\em node} & node associated with  \\
+{\em node} & The node of {\itshape the\+\_\+thread}.\\
 \hline
 \end{DoxyParams}
 
+\begin{DoxyRetVals}{Return values}
+{\em true} & The request for help was successful. \\
+\hline
+{\em false} & The request for help was not successful. \\
+\hline
+\end{DoxyRetVals}
 
-Definition at line 785 of file schedulerstrongapa.\+c.
 
-\mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_gae7875a7e75f2615c6603155126d437db}\label{group__RTEMSScoreSchedulerStrongAPA_gae7875a7e75f2615c6603155126d437db}} 
+Definition at line 816 of file schedulerstrongapa.\+c.
+
+\mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_ga0f3ca9f9dcaff88a5df871622caf5e3f}\label{group__RTEMSScoreSchedulerStrongAPA_ga0f3ca9f9dcaff88a5df871622caf5e3f}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}}
 \index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block}!Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}}
 \subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block()}{\_Scheduler\_strong\_APA\_Block()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Block (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{the\+\_\+thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
 
 
 
-Blocks a node. 
-
-Changes the state of the node and extracts it from the queue calls \+\_\+\+Scheduler\+\_\+\+S\+M\+P\+\_\+\+Block().
+Blocks the thread. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em context} & The scheduler control instance. \\
+\begin{DoxyParams}[1]{Parameters}
+ & {\em scheduler} & The scheduler control instance. \\
 \hline
-{\em thread} & Thread correspoding to the . \\
+\mbox{\tt in,out}  & {\em the\+\_\+thread} & The thread to block. \\
 \hline
-{\em node} & node which is to be blocked \\
+\mbox{\tt in,out}  & {\em node} & The node of the thread to block. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 728 of file schedulerstrongapa.\+c.
+Definition at line 759 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_gafcd6fde337d7542784698219322b6365}\label{group__RTEMSScoreSchedulerStrongAPA_gafcd6fde337d7542784698219322b6365}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Initialize@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Initialize}}
@@ -200,26 +203,16 @@ Definition at line 728 of file schedulerstrongapa.\+c.
 
 
 
-Initializes the Strong\+\_\+\+A\+PA scheduler. 
-
-Sets the chain containing all the nodes to empty and initializes the S\+MP scheduler.
+Initializes the scheduler. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em scheduler} & used to get reference to Strong A\+PA scheduler context \\
+{\em scheduler} & The scheduler to initialize. \\
 \hline
 \end{DoxyParams}
 
-\begin{DoxyRetVals}{Return values}
-{\em void} & \\
-\hline
-\end{DoxyRetVals}
-\begin{DoxySeeAlso}{See also}
-\hyperlink{group__RTEMSScoreSchedulerStrongAPA_ga1cde4345d4dc0b5a37a696fa446bb47e}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize()} 
-\end{DoxySeeAlso}
 
-
-Definition at line 701 of file schedulerstrongapa.\+c.
+Definition at line 732 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_ga1cde4345d4dc0b5a37a696fa446bb47e}\label{group__RTEMSScoreSchedulerStrongAPA_ga1cde4345d4dc0b5a37a696fa446bb47e}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Node\+\_\+initialize}}
@@ -244,7 +237,7 @@ Initializes the node with the given priority.
 \end{DoxyParams}
 
 
-Definition at line 868 of file schedulerstrongapa.\+c.
+Definition at line 929 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_ga7809e64065ec5d291f3dc82220a68d3f}\label{group__RTEMSScoreSchedulerStrongAPA_ga7809e64065ec5d291f3dc82220a68d3f}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Reconsider\+\_\+help\+\_\+request}}
@@ -254,41 +247,44 @@ Definition at line 868 of file schedulerstrongapa.\+c.
 
 
 
-To Reconsider the help request. 
+Reconsiders help request. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em scheduler} & The scheduler control instance. \\
+\begin{DoxyParams}[1]{Parameters}
+ & {\em scheduler} & The scheduler control instance. \\
 \hline
-{\em thread} & Thread correspoding to the . \\
+ & {\em the\+\_\+thread} & The thread to reconsider the help request of. \\
 \hline
-{\em node} & Node corresponding to  which asks for reconsideration \\
+\mbox{\tt in,out}  & {\em node} & The node of {\itshape the\+\_\+thread} \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 800 of file schedulerstrongapa.\+c.
+Definition at line 831 of file schedulerstrongapa.\+c.
 
-\mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_ga91dc29dcdeea35e3329623be7a798e39}\label{group__RTEMSScoreSchedulerStrongAPA_ga91dc29dcdeea35e3329623be7a798e39}} 
+\mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_gac83f4ab63b404cdfea31e572fa9590a5}\label{group__RTEMSScoreSchedulerStrongAPA_gac83f4ab63b404cdfea31e572fa9590a5}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}}
 \index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor}!Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}}
 \subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor()}{\_Scheduler\_strong\_APA\_Remove\_processor()}}
-{\footnotesize\ttfamily Thread\+\_\+\+Control$\ast$ \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$}]{cpu }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Thread\+\_\+\+Control$\ast$ \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Remove\+\_\+processor (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$}]{cpu }\end{DoxyParamCaption})}
 
 
 
-Removes a processor from the scheduler instance. 
+Removes an idle thread from the given cpu. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em scheduler} & The scheduler control instance. \\
+{\em scheduler} & The scheduler instance. \\
 \hline
-{\em cpu} & processor that is removed \\
+{\em cpu} & The cpu control to remove from {\itshape scheduler}.\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The idle thread of the processor. 
+\end{DoxyReturn}
 
 
-Definition at line 853 of file schedulerstrongapa.\+c.
+Definition at line 914 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}\label{group__RTEMSScoreSchedulerStrongAPA_ga63ef624a9881cf77a2b1eef2c6f05223}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Set\+\_\+affinity}}
@@ -298,87 +294,89 @@ Definition at line 853 of file schedulerstrongapa.\+c.
 
 
 
-Sets the affinity of the  to . 
+Sets the affinity . 
 
 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em scheduler} & The scheduler control instance. \\
+\hline
+ & {\em the\+\_\+thread} & The thread to yield. \\
+\hline
+\mbox{\tt in,out}  & {\em node} & The node of {\itshape the\+\_\+thread}. \\
+\hline
+\end{DoxyParams}
 
-Definition at line 907 of file schedulerstrongapa.\+c.
 
-\mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_ga218140a63c8168bd7a031ecd1622ac70}\label{group__RTEMSScoreSchedulerStrongAPA_ga218140a63c8168bd7a031ecd1622ac70}} 
+Definition at line 950 of file schedulerstrongapa.\+c.
+
+\mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_gaaf3d646f61984f8a69ff1850a020fa1b}\label{group__RTEMSScoreSchedulerStrongAPA_gaaf3d646f61984f8a69ff1850a020fa1b}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle}}
 \index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle}!Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}}
 \subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle()}{\_Scheduler\_strong\_APA\_Start\_idle()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{idle,  }\item[{Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$}]{cpu }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Start\+\_\+idle (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{idle,  }\item[{struct Per\+\_\+\+C\+P\+U\+\_\+\+Control $\ast$}]{cpu }\end{DoxyParamCaption})}
 
 
 
-Starts an idle thread on a C\+PU. 
+Starts an idle thread. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em scheduler} & The scheduler control instance. \\
+\begin{DoxyParams}[1]{Parameters}
+ & {\em scheduler} & The scheduler instance. \\
 \hline
-{\em idle} & Idle Thread \\
+\mbox{\tt in,out}  & {\em the\+\_\+thread} & An idle thread. \\
 \hline
-{\em cpu} & processor that gets the idle thread \\
+ & {\em cpu} & The cpu for the operation. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 889 of file schedulerstrongapa.\+c.
+Definition at line 896 of file schedulerstrongapa.\+c.
 
-\mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_ga8e6ee051e6a359186fd6964051db69e2}\label{group__RTEMSScoreSchedulerStrongAPA_ga8e6ee051e6a359186fd6964051db69e2}} 
+\mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_ga6b96ab0939d82ee5813092159265840e}\label{group__RTEMSScoreSchedulerStrongAPA_ga6b96ab0939d82ee5813092159265840e}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock}}
 \index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock}!Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}}
 \subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock()}{\_Scheduler\_strong\_APA\_Unblock()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Unblock (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{the\+\_\+thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
 
 
 
-Unblocks a node. 
-
-Changes the state of the node and calls \+\_\+\+Scheduler\+\_\+\+S\+M\+P\+\_\+\+Unblock().
+Unblocks the thread. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em scheduler} & The scheduler control instance. \\
+\begin{DoxyParams}[1]{Parameters}
+ & {\em scheduler} & The scheduler control instance. \\
 \hline
-{\em thread} & Thread correspoding to the . \\
+\mbox{\tt in,out}  & {\em the\+\_\+thread} & The thread to unblock. \\
 \hline
-{\em node} & node which is to be unblocked \\
+\mbox{\tt in,out}  & {\em node} & The node of the thread to unblock. \\
 \hline
 \end{DoxyParams}
-\begin{DoxySeeAlso}{See also}
-\hyperlink{schedulerstrongapa_8c_a072ea7b584005d0ff44e13cf2684ba09}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Enqueue()} 
-
-\hyperlink{schedulerstrongapa_8c_afb6b87df52cea4341e73667f00dce0d5}{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Do\+\_\+update()} 
-\end{DoxySeeAlso}
 
 
-Definition at line 748 of file schedulerstrongapa.\+c.
+Definition at line 779 of file schedulerstrongapa.\+c.
 
-\mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_gafd1bbcb35f99dd53b4ffe2fe52030cdc}\label{group__RTEMSScoreSchedulerStrongAPA_gafd1bbcb35f99dd53b4ffe2fe52030cdc}} 
+\mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_ga3cdc0079d2d16a392834bd03b5115ad9}\label{group__RTEMSScoreSchedulerStrongAPA_ga3cdc0079d2d16a392834bd03b5115ad9}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority}}
 \index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority}!Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}}
 \subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority()}{\_Scheduler\_strong\_APA\_Update\_priority()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Update\+\_\+priority (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{the\+\_\+thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
 
 
 
 Updates the priority of the node. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em scheduler} & The scheduler control instance. \\
+\begin{DoxyParams}[1]{Parameters}
+ & {\em scheduler} & The scheduler control instance. \\
 \hline
-{\em thread} & Thread correspoding to the . \\
+ & {\em the\+\_\+thread} & The thread for the operation. \\
 \hline
-{\em node} & Node whose priority has to be updated \\
+\mbox{\tt in,out}  & {\em node} & The node to update the priority of. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 765 of file schedulerstrongapa.\+c.
+Definition at line 796 of file schedulerstrongapa.\+c.
 
 \mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_gaf43eb65a6fbbe2826ca4cec68a930cb5}\label{group__RTEMSScoreSchedulerStrongAPA_gaf43eb65a6fbbe2826ca4cec68a930cb5}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Withdraw\+\_\+node}}
@@ -388,43 +386,43 @@ Definition at line 765 of file schedulerstrongapa.\+c.
 
 
 
-Withdraws a node. 
+Withdraws the node. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em scheduler} & The scheduler control instance. \\
+\begin{DoxyParams}[1]{Parameters}
+ & {\em scheduler} & The scheduler control instance. \\
 \hline
-{\em thread} & Thread correspoding to the . \\
+\mbox{\tt in,out}  & {\em the\+\_\+thread} & The thread to change the state to {\itshape next\+\_\+state}. \\
 \hline
-{\em node} & Node that has to be withdrawn \\
+\mbox{\tt in,out}  & {\em node} & The node to withdraw. \\
 \hline
-{\em next\+\_\+state} & the state that the node goes to \\
+ & {\em next\+\_\+state} & The next state for {\itshape the\+\_\+thread}. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 816 of file schedulerstrongapa.\+c.
+Definition at line 847 of file schedulerstrongapa.\+c.
 
-\mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_gad6d1206459f21c74882cd2fb3ddd4aae}\label{group__RTEMSScoreSchedulerStrongAPA_gad6d1206459f21c74882cd2fb3ddd4aae}} 
+\mbox{\Hypertarget{group__RTEMSScoreSchedulerStrongAPA_ga0720c2d79f2b6dd8e91d19879f72b8c7}\label{group__RTEMSScoreSchedulerStrongAPA_ga0720c2d79f2b6dd8e91d19879f72b8c7}} 
 \index{Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}!\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}}
 \index{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield@{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield}!Strong A\+P\+A Scheduler@{Strong A\+P\+A Scheduler}}
 \subsubsection{\texorpdfstring{\+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield()}{\_Scheduler\_strong\_APA\_Yield()}}
-{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void \+\_\+\+Scheduler\+\_\+strong\+\_\+\+A\+P\+A\+\_\+\+Yield (\begin{DoxyParamCaption}\item[{const Scheduler\+\_\+\+Control $\ast$}]{scheduler,  }\item[{Thread\+\_\+\+Control $\ast$}]{the\+\_\+thread,  }\item[{Scheduler\+\_\+\+Node $\ast$}]{node }\end{DoxyParamCaption})}
 
 
 
-Called when a node yields the processor. 
+Performs a yield operation. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em scheduler} & The scheduler control instance. \\
+\begin{DoxyParams}[1]{Parameters}
+ & {\em scheduler} & The scheduler control instance. \\
 \hline
-{\em thread} & Thread corresponding to  \\
+ & {\em the\+\_\+thread} & The thread to yield. \\
 \hline
-{\em node} & Node that yield the processor \\
+\mbox{\tt in,out}  & {\em node} & The node of {\itshape the\+\_\+thread}. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 710 of file schedulerstrongapa.\+c.
+Definition at line 741 of file schedulerstrongapa.\+c.
 

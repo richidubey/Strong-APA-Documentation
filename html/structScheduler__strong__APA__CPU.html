@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Scheduler Strong APA
-   &#160;<span id="projectnumber">1</span>
+   &#160;<span id="projectnumber">Release</span>
    </div>
   </td>
  </tr>
@@ -67,67 +67,100 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>CPU Structure for Strong APA scheduler.  
+<p>CPU related variables and a CPU_Control to implement BFS.  
  <a href="structScheduler__strong__APA__CPU.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for Scheduler_strong_APA_CPU:</div>
-<div class="dyncontent">
-<div class="center"><img src="structScheduler__strong__APA__CPU__coll__graph.png" border="0" usemap="#Scheduler__strong__APA__CPU_coll__map" alt="Collaboration graph"/></div>
-<map name="Scheduler__strong__APA__CPU_coll__map" id="Scheduler__strong__APA__CPU_coll__map">
-<area shape="rect" id="node2" href="structScheduler__strong__APA__Node.html" title="Scheduler node specialization for Strong APA schedulers. " alt="" coords="5,5,200,32"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:adf4eebd8db4f5b52fdfe7b352c8bddc7"><td class="memItemLeft" align="right" valign="top">Chain_Control&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__CPU.html#adf4eebd8db4f5b52fdfe7b352c8bddc7">affineNode</a></td></tr>
-<tr class="memdesc:adf4eebd8db4f5b52fdfe7b352c8bddc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chain of nodes that have affinity to this CPU.  <a href="#adf4eebd8db4f5b52fdfe7b352c8bddc7">More...</a><br /></td></tr>
-<tr class="separator:adf4eebd8db4f5b52fdfe7b352c8bddc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2f3c81477c08ef4188e5e24f054dffb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structScheduler__strong__APA__Node.html">Scheduler_strong_APA_Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__CPU.html#aa2f3c81477c08ef4188e5e24f054dffb">scheduled</a></td></tr>
-<tr class="memdesc:aa2f3c81477c08ef4188e5e24f054dffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The scheduled thread of the corresponding processor.  <a href="#aa2f3c81477c08ef4188e5e24f054dffb">More...</a><br /></td></tr>
-<tr class="separator:aa2f3c81477c08ef4188e5e24f054dffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8faf7fed335de658d1e37061c4cabe1"><td class="memItemLeft" align="right" valign="top">Per_CPU_Control *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__CPU.html#ad8faf7fed335de658d1e37061c4cabe1">cpu</a></td></tr>
+<tr class="memdesc:ad8faf7fed335de658d1e37061c4cabe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU in a queue.  <a href="#ad8faf7fed335de658d1e37061c4cabe1">More...</a><br /></td></tr>
+<tr class="separator:ad8faf7fed335de658d1e37061c4cabe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fbe6687ca055b673515e2e3b1f023ac"><td class="memItemLeft" align="right" valign="top">Scheduler_Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__CPU.html#a0fbe6687ca055b673515e2e3b1f023ac">preempting_node</a></td></tr>
+<tr class="memdesc:a0fbe6687ca055b673515e2e3b1f023ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The node that would preempt this CPU.  <a href="#a0fbe6687ca055b673515e2e3b1f023ac">More...</a><br /></td></tr>
+<tr class="separator:a0fbe6687ca055b673515e2e3b1f023ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02c57f2d305f2b6e2a63a38842bb0b6c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__CPU.html#a02c57f2d305f2b6e2a63a38842bb0b6c">visited</a></td></tr>
+<tr class="memdesc:a02c57f2d305f2b6e2a63a38842bb0b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not this cpu has been added to the queue (visited in BFS).  <a href="#a02c57f2d305f2b6e2a63a38842bb0b6c">More...</a><br /></td></tr>
+<tr class="separator:a02c57f2d305f2b6e2a63a38842bb0b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecd8c97ce737bc7ad42bd8b77e84ad8b"><td class="memItemLeft" align="right" valign="top">Scheduler_Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structScheduler__strong__APA__CPU.html#aecd8c97ce737bc7ad42bd8b77e84ad8b">executing</a></td></tr>
+<tr class="memdesc:aecd8c97ce737bc7ad42bd8b77e84ad8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The node currently executing on this cpu.  <a href="#aecd8c97ce737bc7ad42bd8b77e84ad8b">More...</a><br /></td></tr>
+<tr class="separator:aecd8c97ce737bc7ad42bd8b77e84ad8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>CPU Structure for Strong APA scheduler. </p>
-<p>This structure stores nodes associated with a CPU and the currently scheduled node. </p>
+<div class="textblock"><p>CPU related variables and a CPU_Control to implement BFS. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00042">42</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00101">101</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="adf4eebd8db4f5b52fdfe7b352c8bddc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf4eebd8db4f5b52fdfe7b352c8bddc7">&#9670;&nbsp;</a></span>affineNode</h2>
+<a id="ad8faf7fed335de658d1e37061c4cabe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8faf7fed335de658d1e37061c4cabe1">&#9670;&nbsp;</a></span>cpu</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Chain_Control Scheduler_strong_APA_CPU::affineNode</td>
+          <td class="memname">Per_CPU_Control* Scheduler_strong_APA_CPU::cpu</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Chain of nodes that have affinity to this CPU. </p>
+<p>CPU in a queue. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00046">46</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00106">106</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 
 </div>
 </div>
-<a id="aa2f3c81477c08ef4188e5e24f054dffb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2f3c81477c08ef4188e5e24f054dffb">&#9670;&nbsp;</a></span>scheduled</h2>
+<a id="aecd8c97ce737bc7ad42bd8b77e84ad8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecd8c97ce737bc7ad42bd8b77e84ad8b">&#9670;&nbsp;</a></span>executing</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structScheduler__strong__APA__Node.html">Scheduler_strong_APA_Node</a>* Scheduler_strong_APA_CPU::scheduled</td>
+          <td class="memname">Scheduler_Node* Scheduler_strong_APA_CPU::executing</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>The scheduled thread of the corresponding processor. </p>
+<p>The node currently executing on this cpu. </p>
 
-<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00051">51</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00122">122</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+
+</div>
+</div>
+<a id="a0fbe6687ca055b673515e2e3b1f023ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fbe6687ca055b673515e2e3b1f023ac">&#9670;&nbsp;</a></span>preempting_node</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Scheduler_Node* Scheduler_strong_APA_CPU::preempting_node</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The node that would preempt this CPU. </p>
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00111">111</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
+
+</div>
+</div>
+<a id="a02c57f2d305f2b6e2a63a38842bb0b6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02c57f2d305f2b6e2a63a38842bb0b6c">&#9670;&nbsp;</a></span>visited</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Scheduler_strong_APA_CPU::visited</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether or not this cpu has been added to the queue (visited in BFS). </p>
+
+<p class="definition">Definition at line <a class="el" href="schedulerstrongapa_8h_source.html#l00117">117</a> of file <a class="el" href="schedulerstrongapa_8h_source.html">schedulerstrongapa.h</a>.</p>
 
 </div>
 </div>
