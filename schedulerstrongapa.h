@@ -138,7 +138,7 @@ typedef struct {
   Chain_Control Ready;
 
   /**
-   * @brief Struct with important variables for each cpu.
+   * @brief Stores cpu-specific variables.
    */
   Scheduler_strong_APA_CPU CPU[ RTEMS_ZERO_LENGTH_ARRAY ];
 } Scheduler_strong_APA_Context;
