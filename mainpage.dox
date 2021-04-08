@@ -38,24 +38,24 @@
  * @enddot
  *
  * Numbers in bracket indicate's the task's priority. A higher number means that the task 
- * has a lower priority. (Since we always allocate priority 0 to the most important or 
- * the highest priority tasks in RTOSes). 
+ * has a lower priority (Since we always allocate priority 0 to the most important or 
+ * the highest priority tasks in an RTOS). 
  *
  * System Description:
  *
- * There are three processors (CPUs), CPU 0,1 and 2. The system has 4 tasks.
+ * There are three processors (CPUs), CPU 0, 1 and 2. The system has 4 tasks.
  *
- * Task A has priority 1 and has affinities to CPU 1 and CPU 2.
- * Task B has priority 2 and has affinity only to CPU 1.
- * Task C has priority 3 and has affinities to only CPU 2.
- * Task D has priority 4 and has affinity to only CPU 3.
+ * Task A has priority 1 and has affinities to CPU 0 and CPU 1.
+ * Task B has priority 2 and has affinity only to CPU 0.
+ * Task C has priority 3 and has affinities to only CPU 1.
+ * Task D has priority 4 and has affinity to only CPU 2.
  *
- * Task A, Task C and Task D are present in the system at time t=0. Task B arrives at time t=2.
+ * Task A, Task C and Task D are present in the system at time t = 0. Task B arrives at time t = 2.
  *
  * System at runtime:
  *
- * At time t=0 oursystem looks like this: (Here dotted edges represent affinity, 
- * while a plain edge indicates task scheduled on the CPU ) 
+ * At time t = 0 our system looks like this: (Here dotted edges represent affinity, 
+ * while a plain edge indicates task scheduled on the CPU) 
  *
  * @dot
  * digraph {
@@ -85,7 +85,7 @@
  * }
  * @enddot
  *
- * At time t=2, Task B arrives and for an operating system that does not
+ * At time t = 2, Task B arrives and for an operating system that does not
  * implement the Strong APA scheduler (like Linux), the system looks like the
  * following: (Since Task B has only CPU 0 in its affinity, it cannot displace Task A
  * from CPU 0 because Task A has higher priority than Task B:
@@ -129,7 +129,7 @@
  * executing on it, which has a lower priority ( 3 > 2) than Task B,
  * preempting Task C to schedule Task A on CPU 1 and Task B on CPU 0 would result in 
  * the system executing tasks with total priority: 1 + 2 + 4 = 7 which is better than
- * the previous case. So, for a system that implements the Strong APA scheduler, at time t=2
+ * the previous case. So, for a system that implements the Strong APA scheduler, at time t = 2
  * the system would like:  
  *
  * @dot
